@@ -1,0 +1,19 @@
+<wpml-config>
+    <admin-texts>
+      <key name="yith_mdbd_moodboard_title" />
+      <key name="yith_mdbd_moodboard_search_title" />
+      <key name="yith_mdbd_moodboard_manage_title" />
+      <key name="yith_mdbd_moodboard_create_title" />
+      <key name="yith_mdbd_add_to_moodboard_text" />
+      <key name="yith_mdbd_browse_moodboard_text" />
+      <key name="yith_mdbd_already_in_moodboard_text" />
+      <key name="yith_mdbd_product_added_text" />
+      <key name="yith_mdbd_add_to_moodboard_popup_text" />
+      <key name="yith_mdbd_add_to_cart_text" />
+      <key name="yith_mdbd_socials_title" />
+      <key name="yith_mdbd_socials_text" />
+      <key name="yith_mdbd_show_login_notice" />
+      <key name="yith_mdbd_login_anchor_text" />
+      <key name="yith_mdbd_additional_info_textarea_label" />
+    </admin-texts>
+</wpml-config>
