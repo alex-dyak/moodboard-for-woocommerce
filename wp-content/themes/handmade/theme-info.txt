@@ -2,7 +2,7 @@
 Theme Name:         HandMade
 Theme URI:          http://themes.g5plus.net/handmade/
 Description:        HandMade theme framework is a WordPress starter theme based on HTML5 Boilerplate & Bootstrap. <a href="http://www.g5plus.net">Visit site</a>
-Version:            1.0
+Version:            3.2
 Author:             g5plus
 Author URI:         http://g5plus.net/
 

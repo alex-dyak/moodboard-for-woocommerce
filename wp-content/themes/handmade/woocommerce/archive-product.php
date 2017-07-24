@@ -40,16 +40,10 @@ if (!in_array($archive_display_columns, array('2','3','4'))) {
     $archive_display_columns = $g5plus_options['product_display_columns'];
 }
 
-$g5plus_woocommerce_loop['columns'] = $archive_display_columns;
-
 $product_rating = isset($_GET['rating']) ? $_GET['rating'] : '';
 if (!in_array($product_rating,array(0,1))) {
 	$product_rating = $g5plus_options['product_show_rating'];
 }
-
-$g5plus_woocommerce_loop['rating'] = $product_rating;
-
-
 
 $sidebar_col = 'col-md-3';
 if ($sidebar_width == 'large') {
@@ -126,10 +120,13 @@ do_action('g5plus_before_archive_product');
                                  * @hooked woocommerce_catalog_ordering - 30
                                  */
                                 do_action( 'woocommerce_before_shop_loop' );
+	                            $g5plus_woocommerce_loop['columns'] = $archive_display_columns;
+	                            $g5plus_woocommerce_loop['rating'] = $product_rating;
+
                                 ?>
 
-
                                 <?php woocommerce_product_loop_start(); ?>
+	                            <?php woocommerce_product_subcategories(); ?>
 
                                 <?php while ( have_posts() ) : the_post(); ?>
 

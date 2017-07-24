@@ -69,7 +69,7 @@ if ( ! class_exists( 'ReduxFramework_editor' ) ) {
             $defaults = array(
                 'textarea_name' => $this->field['name'] . $this->field['name_suffix'],
                 'editor_class'  => $this->field['class'],
-                'textarea_rows' => 10, //Wordpress default
+                'textarea_rows' => 10, //WordPress default
                 'teeny'         => true,
             );
 

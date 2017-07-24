@@ -6,7 +6,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.1.0
+ * @version     2.5.0
  */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -21,11 +21,12 @@ if (isset($g5plus_options['header_shopping_cart_button'])
 if (!isset($args) || !isset($args['list_class'])) {
 	$args['list_class'] = '';
 }
-$cart_list_sub_class = array();
-$cart_list_sub_class[] = 'cart_list_wrapper';
+$cart_list_sub_classes = array();
+$cart_list_sub_classes[] = 'cart_list_wrapper';
 if ( sizeof( WC()->cart->get_cart() ) > 0 ) {
-	$cart_list_sub_class[] = 'has-cart';
+	$cart_list_sub_classes[] = 'has-cart';
 }
+$cart_list_sub_class = implode(' ',$cart_list_sub_classes);
 ?>
 <?php do_action( 'woocommerce_before_mini_cart' ); ?>
 <div class="widget_shopping_cart_icon">
@@ -33,7 +34,7 @@ if ( sizeof( WC()->cart->get_cart() ) > 0 ) {
 	<span class="total"><?php echo sizeof( WC()->cart->get_cart()); ?></span>
 </div>
 <div class="sub-total-text"><?php echo WC()->cart->get_cart_subtotal(); ?></div>
-<div class="<?php g5plus_the_attr_value($cart_list_sub_class) ?>">
+<div class="<?php echo esc_attr($cart_list_sub_class) ?>">
 	<ul class="cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
 		<?php if ( sizeof( WC()->cart->get_cart() ) > 0 ) : ?>
 

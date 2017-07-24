@@ -46,7 +46,7 @@
                 }
 
                 // set the admin notice msg
-                $this->display_message();
+                //$this->display_message();
             }
 
             private function get_notice_json() {

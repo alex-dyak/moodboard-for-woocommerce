@@ -71,7 +71,7 @@
 
                 </div>
                 <div class="is_user">
-                    <p align="left"><?php _e( 'Listed below are the Wordpress plugins and/or theme installed on your site that utilize Redux Framework. We do not directly support products created with our framework.  It is the responsibility of the plugin or theme developer to support their work. You will need to contact the author(s) of the products listed below with your support questions.', 'redux-framework' ); ?></p>
+                    <p align="left"><?php _e( 'Listed below are the WordPress plugins and/or theme installed on your site that utilize Redux Framework. We do not directly support products created with our framework.  It is the responsibility of the plugin or theme developer to support their work. You will need to contact the author(s) of the products listed below with your support questions.', 'redux-framework' ); ?></p>
 
                     <p>
                         <strong><?php _e( 'Please be sure to include for your developer - via cut and paste - the Support URL in the box below.', 'redux-framework' ); ?></strong>

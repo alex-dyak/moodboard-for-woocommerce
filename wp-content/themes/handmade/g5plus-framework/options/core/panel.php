@@ -56,7 +56,7 @@
                  */
                 do_action( "redux/{$this->parent->args['opt_name']}/panel/before" );
 
-                echo '<div class="wrap"><h2></h2></div>'; // Stupid hack for Wordpress alerts and warnings
+                echo '<div class="wrap"><h2></h2></div>'; // Stupid hack for WordPress alerts and warnings
 
                 echo '<div class="clear"></div>';
                 echo '<div class="wrap">';

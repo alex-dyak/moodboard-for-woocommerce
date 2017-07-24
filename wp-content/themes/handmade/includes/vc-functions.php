@@ -52,7 +52,7 @@ function g5plus_multi_select_settings_field_shortcode_param($settings, $value)
     $output .= '<script type="text/javascript">
 		        jQuery(document).ready(function($){
 
-					$("#' . $param_name . '_select2").select2();
+					$("#' . $param_name . '_select2").select2({width : "100%"});
 
 					var order = $("#' . $param_name . '").val();
 					if (order != "") {
@@ -62,24 +62,28 @@ function g5plus_multi_select_settings_field_shortcode_param($settings, $value)
 							var option = $("#' . $param_name . '_select2 option[value="+ order[i]  + "]");
 							if (option.length > 0) {
 							    choices[i] = {id:order[i], text:option[0].label, element: option};
+							    option.detach();
+						        $("#' . $param_name . '_select2").append(option);
 							}
 						}
-						$("#' . $param_name . '_select2").select2("data", choices);
+
+						$("#' . $param_name . '_select2").val(order).trigger("change");
 					}
 
-			        $("#' . $param_name . '_select2").on("select2-selecting", function(e) {
-			            var ids = $("#' . $param_name . '").val();
+
+                    $("#' . $param_name . '_select2").on("select2:selecting",function(e){
+                        var ids = $("#' . $param_name . '").val();
 			            if (ids != "") {
 			                ids +=",";
 			            }
-			            ids += e.val;
+			            ids += e.params.args.data.id;
 			            $("#' . $param_name . '").val(ids);
-                    }).on("select2-removed", function(e) {
-				          var ids = $("#' . $param_name . '").val();
-				          var arr_ids = ids.split(",");
-				          var newIds = "";
-				          for(var i = 0 ; i < arr_ids.length; i++) {
-				            if (arr_ids[i] != e.val){
+                    }).on("select2:unselecting",function(e){
+                        var ids = $("#' . $param_name . '").val();
+                         var arr_ids = ids.split(",");
+                         var newIds = "";
+                         for(var i = 0 ; i < arr_ids.length; i++) {
+				            if (arr_ids[i] != e.params.args.data.id){
 				                if (newIds != "") {
 			                        newIds +=",";
 					            }
@@ -87,7 +91,16 @@ function g5plus_multi_select_settings_field_shortcode_param($settings, $value)
 				            }
 				          }
 				          $("#' . $param_name . '").val(newIds);
-		             });
+                    }).on("select2:select", function(e){
+                        var element = e.params.data.element;
+						var $element = $(element);
+
+						$element.detach();
+						$(this).append($element);
+						$(this).trigger("change");
+
+                    });
+
 
 		            $("#' . $param_name . '_select_all").click(function(){
 		                if($("#' . $param_name . '_select_all").is(":checked") ){
@@ -382,14 +395,14 @@ function g5plus_add_vc_param()
                 'type' => 'dropdown',
                 'param_name' => 'style',
                 'value' => array(
-                    esc_html__('Handmade', 'js_composer') => 'tab_style1',
-                    esc_html__('Classic', 'js_composer') => 'classic',
-                    esc_html__('Modern', 'js_composer') => 'modern',
-                    esc_html__('Flat', 'js_composer') => 'flat',
-                    esc_html__('Outline', 'js_composer') => 'outline',
+                    esc_html__('Handmade', 'g5plus-handmade') => 'tab_style1',
+                    esc_html__('Classic', 'g5plus-handmade') => 'classic',
+                    esc_html__('Modern', 'g5plus-handmade') => 'modern',
+                    esc_html__('Flat', 'g5plus-handmade') => 'flat',
+                    esc_html__('Outline', 'g5plus-handmade') => 'outline',
                 ),
-                'heading' => esc_html__('Style', 'js_composer'),
-                'description' => esc_html__('Select tabs display style.', 'js_composer'),
+                'heading' => esc_html__('Style', 'g5plus-handmade'),
+                'description' => esc_html__('Select tabs display style.', 'g5plus-handmade'),
                 'weight' => 1,
             )
         );
@@ -398,12 +411,12 @@ function g5plus_add_vc_param()
                 'param_name' => 'style',
                 'value' => array(
                     esc_html__('Handmade', 'g5plus-handmade') => 'tour_style1',
-                    esc_html__('Classic', 'js_composer') => 'classic',
-                    esc_html__('Modern', 'js_composer') => 'modern',
-                    esc_html__('Flat', 'js_composer') => 'flat',
-                    esc_html__('Outline', 'js_composer') => 'outline',
+                    esc_html__('Classic', 'g5plus-handmade') => 'classic',
+                    esc_html__('Modern', 'g5plus-handmade') => 'modern',
+                    esc_html__('Flat', 'g5plus-handmade') => 'flat',
+                    esc_html__('Outline', 'g5plus-handmade') => 'outline',
                 ),
-                'heading' => esc_html__('Style', 'js_composer'),
+                'heading' => esc_html__('Style', 'g5plus-handmade'),
                 'description' => esc_html__('Select tour display style.', 'g5plus-handmade'),
                 'weight' => 1,
             )
@@ -767,21 +780,44 @@ function register_vc_map()
             ),
         ),
         array(
+            'type' => 'dropdown',
+            'heading' => esc_html__('Columns gap', 'g5plus-handmade'),
+            'param_name' => 'gap',
+            'value' => array(
+                '0px' => '0',
+                '1px' => '1',
+                '2px' => '2',
+                '3px' => '3',
+                '4px' => '4',
+                '5px' => '5',
+                '10px' => '10',
+                '15px' => '15',
+                '20px' => '20',
+                '25px' => '25',
+                '30px' => '30',
+                '35px' => '35',
+            ),
+            'std' => '0',
+            'description' => esc_html__('Select gap between columns in row.', 'g5plus-handmade'),
+        ),
+        array(
             'type' => 'checkbox',
-            'heading' => esc_html__('Full height row?', 'js_composer'),
+            'heading' => esc_html__('Full height row?', 'g5plus-handmade'),
             'param_name' => 'full_height',
-            'description' => esc_html__('If checked row will be set to full height.', 'js_composer'),
-            'value' => array(esc_html__('Yes', 'js_composer') => 'yes')
+            'description' => esc_html__('If checked row will be set to full height.', 'g5plus-handmade'),
+            'value' => array(esc_html__('Yes', 'g5plus-handmade') => 'yes'),
         ),
         array(
             'type' => 'dropdown',
-            'heading' => esc_html__('Content position', 'js_composer'),
-            'param_name' => 'content_placement',
+            'heading' => esc_html__('Columns position', 'g5plus-handmade'),
+            'param_name' => 'columns_placement',
             'value' => array(
-                esc_html__('Middle', 'js_composer') => 'middle',
-                esc_html__('Top', 'js_composer') => 'top',
+                esc_html__('Middle', 'g5plus-handmade') => 'middle',
+                esc_html__('Top', 'g5plus-handmade') => 'top',
+                esc_html__('Bottom', 'g5plus-handmade') => 'bottom',
+                esc_html__('Stretch', 'g5plus-handmade') => 'stretch',
             ),
-            'description' => esc_html__('Select content position within row.', 'js_composer'),
+            'description' => esc_html__('Select columns position within row.', 'g5plus-handmade'),
             'dependency' => array(
                 'element' => 'full_height',
                 'not_empty' => true,
@@ -789,17 +825,37 @@ function register_vc_map()
         ),
         array(
             'type' => 'checkbox',
-            'heading' => esc_html__('Use video background?', 'js_composer'),
+            'heading' => esc_html__('Equal height', 'g5plus-handmade'),
+            'param_name' => 'equal_height',
+            'description' => esc_html__('If checked columns will be set to equal height.', 'g5plus-handmade'),
+            'value' => array(esc_html__('Yes', 'g5plus-handmade') => 'yes')
+        ),
+        array(
+            'type' => 'dropdown',
+            'heading' => esc_html__('Content position', 'g5plus-handmade'),
+            'param_name' => 'content_placement',
+            'value' => array(
+                esc_html__('Default', 'g5plus-handmade') => '',
+                esc_html__('Top', 'g5plus-handmade') => 'top',
+                esc_html__('Middle', 'g5plus-handmade') => 'middle',
+                esc_html__('Bottom', 'g5plus-handmade') => 'bottom',
+            ),
+            'description' => esc_html__('Select content position within columns.', 'g5plus-handmade'),
+        ),
+        array(
+            'type' => 'checkbox',
+            'heading' => esc_html__('Use video background?', 'g5plus-handmade'),
             'param_name' => 'video_bg',
-            'description' => esc_html__('If checked, video will be used as row background.', 'js_composer'),
-            'value' => array(esc_html__('Yes', 'js_composer') => 'yes')
+            'description' => esc_html__('If checked, video will be used as row background.', 'g5plus-handmade'),
+            'value' => array(esc_html__('Yes', 'g5plus-handmade') => 'yes'),
         ),
         array(
             'type' => 'textfield',
-            'heading' => esc_html__('YouTube link', 'js_composer'),
+            'heading' => esc_html__('YouTube link', 'g5plus-handmade'),
             'param_name' => 'video_bg_url',
-            'value' => 'https://www.youtube.com/watch?v=lMJXxhRFO1k', // default video url
-            'description' => esc_html__('Add YouTube link.', 'js_composer'),
+            'value' => 'https://www.youtube.com/watch?v=lMJXxhRFO1k',
+            // default video url
+            'description' => esc_html__('Add YouTube link.', 'g5plus-handmade'),
             'dependency' => array(
                 'element' => 'video_bg',
                 'not_empty' => true,
@@ -807,14 +863,14 @@ function register_vc_map()
         ),
         array(
             'type' => 'dropdown',
-            'heading' => esc_html__('Parallax', 'js_composer'),
+            'heading' => esc_html__('Parallax', 'g5plus-handmade'),
             'param_name' => 'video_bg_parallax',
             'value' => array(
-                esc_html__('None', 'js_composer') => '',
-                esc_html__('Simple', 'js_composer') => 'content-moving',
-                esc_html__('With fade', 'js_composer') => 'content-moving-fade',
+                esc_html__('None', 'g5plus-handmade') => '',
+                esc_html__('Simple', 'g5plus-handmade') => 'content-moving',
+                esc_html__('With fade', 'g5plus-handmade') => 'content-moving-fade',
             ),
-            'description' => esc_html__('Add parallax type background for row.', 'js_composer'),
+            'description' => esc_html__('Add parallax type background for row.', 'g5plus-handmade'),
             'dependency' => array(
                 'element' => 'video_bg',
                 'not_empty' => true,
@@ -822,14 +878,14 @@ function register_vc_map()
         ),
         array(
             'type' => 'dropdown',
-            'heading' => esc_html__('Parallax', 'js_composer'),
+            'heading' => esc_html__('Parallax', 'g5plus-handmade'),
             'param_name' => 'parallax',
             'value' => array(
-                esc_html__('None', 'js_composer') => '',
-                esc_html__('Simple', 'js_composer') => 'content-moving',
-                esc_html__('With fade', 'js_composer') => 'content-moving-fade',
+                esc_html__('None', 'g5plus-handmade') => '',
+                esc_html__('Simple', 'g5plus-handmade') => 'content-moving',
+                esc_html__('With fade', 'g5plus-handmade') => 'content-moving-fade',
             ),
-            'description' => esc_html__('Add parallax type background for row (Note: If no image is specified, parallax will use background image from Design Options).', 'js_composer'),
+            'description' => esc_html__('Add parallax type background for row (Note: If no image is specified, parallax will use background image from Design Options).', 'g5plus-handmade'),
             'dependency' => array(
                 'element' => 'video_bg',
                 'is_empty' => true,
@@ -837,10 +893,10 @@ function register_vc_map()
         ),
         array(
             'type' => 'attach_image',
-            'heading' => esc_html__('Image', 'js_composer'),
+            'heading' => esc_html__('Image', 'g5plus-handmade'),
             'param_name' => 'parallax_image',
             'value' => '',
-            'description' => esc_html__('Select image from media library.', 'js_composer'),
+            'description' => esc_html__('Select image from media library.', 'g5plus-handmade'),
             'dependency' => array(
                 'element' => 'parallax',
                 'not_empty' => true,
@@ -894,21 +950,21 @@ function register_vc_map()
         ),
         array(
             'type' => 'el_id',
-            'heading' => esc_html__('Row ID', 'js_composer'),
+            'heading' => esc_html__('Row ID', 'g5plus-handmade'),
             'param_name' => 'el_id',
-            'description' => sprintf(esc_html__('Enter row ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'js_composer'), 'http://www.w3schools.com/tags/att_global_id.asp'),
+            'description' => sprintf(esc_html__('Enter row ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'g5plus-handmade'), 'http://www.w3schools.com/tags/att_global_id.asp'),
         ),
         array(
             'type' => 'textfield',
-            'heading' => esc_html__('Extra class name', 'js_composer'),
+            'heading' => esc_html__('Extra class name', 'g5plus-handmade'),
             'param_name' => 'el_class',
-            'description' => esc_html__('Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer'),
+            'description' => esc_html__('Style particular content element differently - add a class name and refer to it in custom CSS.', 'g5plus-handmade'),
         ),
         array(
             'type' => 'css_editor',
-            'heading' => esc_html__('CSS box', 'js_composer'),
+            'heading' => esc_html__('CSS box', 'g5plus-handmade'),
             'param_name' => 'css',
-            'group' => esc_html__('Design Options', 'js_composer')
+            'group' => esc_html__('Design Options', 'g5plus-handmade'),
         ),
         $add_css_animation,
         $add_duration_animation,
@@ -1251,39 +1307,39 @@ function register_vc_map()
     ));
     global $pixel_icons;
     $custom_colors = array(
-        esc_html__('Informational', 'js_composer') => 'info',
-        esc_html__('Warning', 'js_composer') => 'warning',
-        esc_html__('Success', 'js_composer') => 'success',
-        esc_html__('Error', 'js_composer') => "danger",
-        esc_html__('Informational Classic', 'js_composer') => 'alert-info',
-        esc_html__('Warning Classic', 'js_composer') => 'alert-warning',
-        esc_html__('Success Classic', 'js_composer') => 'alert-success',
-        esc_html__('Error Classic', 'js_composer') => "alert-danger",
-        esc_html__('Handmade Informational', 'js_composer') => "hm-info",
-        esc_html__('Handmade Warning', 'js_composer') => "hm-warning",
-        esc_html__('Handmade Success', 'js_composer') => "hm-success",
-        esc_html__('Handmade Error', 'js_composer') => "hm-danger",
+        esc_html__('Informational', 'g5plus-handmade') => 'info',
+        esc_html__('Warning', 'g5plus-handmade') => 'warning',
+        esc_html__('Success', 'g5plus-handmade') => 'success',
+        esc_html__('Error', 'g5plus-handmade') => "danger",
+        esc_html__('Informational Classic', 'g5plus-handmade') => 'alert-info',
+        esc_html__('Warning Classic', 'g5plus-handmade') => 'alert-warning',
+        esc_html__('Success Classic', 'g5plus-handmade') => 'alert-success',
+        esc_html__('Error Classic', 'g5plus-handmade') => "alert-danger",
+        esc_html__('Handmade Informational', 'g5plus-handmade') => "hm-info",
+        esc_html__('Handmade Warning', 'g5plus-handmade') => "hm-warning",
+        esc_html__('Handmade Success', 'g5plus-handmade') => "hm-success",
+        esc_html__('Handmade Error', 'g5plus-handmade') => "hm-danger",
     );
     vc_map(array(
-        'name' => esc_html__('Message Box', 'js_composer'),
+        'name' => esc_html__('Message Box', 'g5plus-handmade'),
         'base' => 'vc_message',
         'icon' => 'icon-wpb-information-white',
-        'category' => esc_html__('Content', 'js_composer'),
-        'description' => esc_html__('Notification box', 'js_composer'),
+        'category' => esc_html__('Content', 'g5plus-handmade'),
+        'description' => esc_html__('Notification box', 'g5plus-handmade'),
         'params' => array(
             array(
                 'type' => 'params_preset',
-                'heading' => esc_html__('Message Box Presets', 'js_composer'),
+                'heading' => esc_html__('Message Box Presets', 'g5plus-handmade'),
                 'param_name' => 'color', // due to backward compatibility, really it is message_box_type
                 'value' => '',
                 'options' => array(
                     array(
-                        'label' => esc_html__('Custom', 'js_composer'),
+                        'label' => esc_html__('Custom', 'g5plus-handmade'),
                         'value' => '',
                         'params' => array(),
                     ),
                     array(
-                        'label' => esc_html__('Informational', 'js_composer'),
+                        'label' => esc_html__('Informational', 'g5plus-handmade'),
                         'value' => 'info',
                         'params' => array(
                             'message_box_color' => 'info',
@@ -1292,7 +1348,7 @@ function register_vc_map()
                         ),
                     ),
                     array(
-                        'label' => esc_html__('Warning', 'js_composer'),
+                        'label' => esc_html__('Warning', 'g5plus-handmade'),
                         'value' => 'warning',
                         'params' => array(
                             'message_box_color' => 'warning',
@@ -1301,7 +1357,7 @@ function register_vc_map()
                         ),
                     ),
                     array(
-                        'label' => esc_html__('Success', 'js_composer'),
+                        'label' => esc_html__('Success', 'g5plus-handmade'),
                         'value' => 'success',
                         'params' => array(
                             'message_box_color' => 'success',
@@ -1310,7 +1366,7 @@ function register_vc_map()
                         ),
                     ),
                     array(
-                        'label' => esc_html__('Error', 'js_composer'),
+                        'label' => esc_html__('Error', 'g5plus-handmade'),
                         'value' => 'danger',
                         'params' => array(
                             'message_box_color' => 'danger',
@@ -1319,7 +1375,7 @@ function register_vc_map()
                         ),
                     ),
                     array(
-                        'label' => esc_html__('Informational Classic', 'js_composer'),
+                        'label' => esc_html__('Informational Classic', 'g5plus-handmade'),
                         'value' => 'alert-info', // due to backward compatibility
                         'params' => array(
                             'message_box_color' => 'alert-info',
@@ -1328,7 +1384,7 @@ function register_vc_map()
                         ),
                     ),
                     array(
-                        'label' => esc_html__('Warning Classic', 'js_composer'),
+                        'label' => esc_html__('Warning Classic', 'g5plus-handmade'),
                         'value' => 'alert-warning', // due to backward compatibility
                         'params' => array(
                             'message_box_color' => 'alert-warning',
@@ -1337,7 +1393,7 @@ function register_vc_map()
                         ),
                     ),
                     array(
-                        'label' => esc_html__('Success Classic', 'js_composer'),
+                        'label' => esc_html__('Success Classic', 'g5plus-handmade'),
                         'value' => 'alert-success',  // due to backward compatibility
                         'params' => array(
                             'message_box_color' => 'alert-success',
@@ -1346,7 +1402,7 @@ function register_vc_map()
                         ),
                     ),
                     array(
-                        'label' => esc_html__('Error Classic', 'js_composer'),
+                        'label' => esc_html__('Error Classic', 'g5plus-handmade'),
                         'value' => 'alert-danger',  // due to backward compatibility
                         'params' => array(
                             'message_box_color' => 'alert-danger',
@@ -1355,50 +1411,50 @@ function register_vc_map()
                         ),
                     ),
                 ),
-                'description' => esc_html__('Select predefined message box design or choose "Custom" for custom styling.', 'js_composer'),
+                'description' => esc_html__('Select predefined message box design or choose "Custom" for custom styling.', 'g5plus-handmade'),
                 'param_holder_class' => 'vc_message-type vc_colored-dropdown',
             ),
             array(
                 'type' => 'dropdown',
-                'heading' => esc_html__('Style', 'js_composer'),
+                'heading' => esc_html__('Style', 'g5plus-handmade'),
                 'param_name' => 'message_box_style',
                 'value' => getVcShared('message_box_styles'),
-                'description' => esc_html__('Select message box design style.', 'js_composer')
+                'description' => esc_html__('Select message box design style.', 'g5plus-handmade')
             ),
             array(
                 'type' => 'dropdown',
-                'heading' => esc_html__('Shape', 'js_composer'),
+                'heading' => esc_html__('Shape', 'g5plus-handmade'),
                 'param_name' => 'style', // due to backward compatibility message_box_shape
                 'std' => 'rounded',
                 'value' => array(
-                    esc_html__('Square', 'js_composer') => 'square',
-                    esc_html__('Rounded', 'js_composer') => 'rounded',
-                    esc_html__('Round', 'js_composer') => 'round',
+                    esc_html__('Square', 'g5plus-handmade') => 'square',
+                    esc_html__('Rounded', 'g5plus-handmade') => 'rounded',
+                    esc_html__('Round', 'g5plus-handmade') => 'round',
                 ),
-                'description' => esc_html__('Select message box shape.', 'js_composer'),
+                'description' => esc_html__('Select message box shape.', 'g5plus-handmade'),
             ),
             array(
                 'type' => 'dropdown',
-                'heading' => esc_html__('Color', 'js_composer'),
+                'heading' => esc_html__('Color', 'g5plus-handmade'),
                 'param_name' => 'message_box_color',
                 'value' => $custom_colors + getVcShared('colors'),
-                'description' => esc_html__('Select message box color.', 'js_composer'),
+                'description' => esc_html__('Select message box color.', 'g5plus-handmade'),
                 'param_holder_class' => 'vc_message-type vc_colored-dropdown',
             ),
             array(
                 'type' => 'dropdown',
-                'heading' => esc_html__('Icon library', 'js_composer'),
+                'heading' => esc_html__('Icon library', 'g5plus-handmade'),
                 'value' => array(
                     esc_html__('Pe Icon 7 Stroke', 'g5plus-handmade') => 'pe_7_stroke',
-                    esc_html__('Font Awesome', 'js_composer') => 'fontawesome',
-                    esc_html__('Open Iconic', 'js_composer') => 'openiconic',
-                    esc_html__('Typicons', 'js_composer') => 'typicons',
-                    esc_html__('Entypo', 'js_composer') => 'entypo',
-                    esc_html__('Linecons', 'js_composer') => 'linecons',
-                    esc_html__('Pixel', 'js_composer') => 'pixelicons',
+                    esc_html__('Font Awesome', 'g5plus-handmade') => 'fontawesome',
+                    esc_html__('Open Iconic', 'g5plus-handmade') => 'openiconic',
+                    esc_html__('Typicons', 'g5plus-handmade') => 'typicons',
+                    esc_html__('Entypo', 'g5plus-handmade') => 'entypo',
+                    esc_html__('Linecons', 'g5plus-handmade') => 'linecons',
+                    esc_html__('Pixel', 'g5plus-handmade') => 'pixelicons',
                 ),
                 'param_name' => 'icon_type',
-                'description' => esc_html__('Select icon library.', 'js_composer'),
+                'description' => esc_html__('Select icon library.', 'g5plus-handmade'),
             ),
             array(
                 'type' => 'iconpicker',
@@ -1419,7 +1475,7 @@ function register_vc_map()
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => esc_html__('Icon', 'js_composer'),
+                'heading' => esc_html__('Icon', 'g5plus-handmade'),
                 'param_name' => 'icon_fontawesome',
                 'value' => 'fa fa-info-circle',
                 'settings' => array(
@@ -1430,11 +1486,11 @@ function register_vc_map()
                     'element' => 'icon_type',
                     'value' => 'fontawesome',
                 ),
-                'description' => esc_html__('Select icon from library.', 'js_composer'),
+                'description' => esc_html__('Select icon from library.', 'g5plus-handmade'),
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => esc_html__('Icon', 'js_composer'),
+                'heading' => esc_html__('Icon', 'g5plus-handmade'),
                 'param_name' => 'icon_openiconic',
                 'settings' => array(
                     'emptyIcon' => false, // default true, display an "EMPTY" icon?
@@ -1445,11 +1501,11 @@ function register_vc_map()
                     'element' => 'icon_type',
                     'value' => 'openiconic',
                 ),
-                'description' => esc_html__('Select icon from library.', 'js_composer'),
+                'description' => esc_html__('Select icon from library.', 'g5plus-handmade'),
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => esc_html__('Icon', 'js_composer'),
+                'heading' => esc_html__('Icon', 'g5plus-handmade'),
                 'param_name' => 'icon_typicons',
                 'settings' => array(
                     'emptyIcon' => false, // default true, display an "EMPTY" icon?
@@ -1460,11 +1516,11 @@ function register_vc_map()
                     'element' => 'icon_type',
                     'value' => 'typicons',
                 ),
-                'description' => esc_html__('Select icon from library.', 'js_composer'),
+                'description' => esc_html__('Select icon from library.', 'g5plus-handmade'),
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => esc_html__('Icon', 'js_composer'),
+                'heading' => esc_html__('Icon', 'g5plus-handmade'),
                 'param_name' => 'icon_entypo',
                 'settings' => array(
                     'emptyIcon' => false, // default true, display an "EMPTY" icon?
@@ -1478,7 +1534,7 @@ function register_vc_map()
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => esc_html__('Icon', 'js_composer'),
+                'heading' => esc_html__('Icon', 'g5plus-handmade'),
                 'param_name' => 'icon_linecons',
                 'settings' => array(
                     'emptyIcon' => false, // default true, display an "EMPTY" icon?
@@ -1489,11 +1545,11 @@ function register_vc_map()
                     'element' => 'icon_type',
                     'value' => 'linecons',
                 ),
-                'description' => esc_html__('Select icon from library.', 'js_composer'),
+                'description' => esc_html__('Select icon from library.', 'g5plus-handmade'),
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => esc_html__('Icon', 'js_composer'),
+                'heading' => esc_html__('Icon', 'g5plus-handmade'),
                 'param_name' => 'icon_pixelicons',
                 'settings' => array(
                     'emptyIcon' => false, // default true, display an "EMPTY" icon?
@@ -1504,30 +1560,30 @@ function register_vc_map()
                     'element' => 'icon_type',
                     'value' => 'pixelicons',
                 ),
-                'description' => esc_html__('Select icon from library.', 'js_composer'),
+                'description' => esc_html__('Select icon from library.', 'g5plus-handmade'),
             ),
             array(
                 'type' => 'textarea_html',
                 'holder' => 'div',
                 'class' => 'messagebox_text',
-                'heading' => esc_html__('Message text', 'js_composer'),
+                'heading' => esc_html__('Message text', 'g5plus-handmade'),
                 'param_name' => 'content',
-                'value' => esc_html__('<p>I am message box. Click edit button to change this text.</p>', 'js_composer')
+                'value' => esc_html__('<p>I am message box. Click edit button to change this text.</p>', 'g5plus-handmade')
             ),
             $add_css_animation,
             $add_duration_animation,
             $add_delay_animation,
             array(
                 'type' => 'textfield',
-                'heading' => esc_html__('Extra class name', 'js_composer'),
+                'heading' => esc_html__('Extra class name', 'g5plus-handmade'),
                 'param_name' => 'el_class',
-                'description' => esc_html__('Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer')
+                'description' => esc_html__('Style particular content element differently - add a class name and refer to it in custom CSS.', 'g5plus-handmade')
             ),
             array(
                 'type' => 'css_editor',
-                'heading' => esc_html__('CSS box', 'js_composer'),
+                'heading' => esc_html__('CSS box', 'g5plus-handmade'),
                 'param_name' => 'css',
-                'group' => esc_html__('Design Options', 'js_composer')
+                'group' => esc_html__('Design Options', 'g5plus-handmade')
             ),
         ),
         'js_view' => 'VcMessageView_Backend'

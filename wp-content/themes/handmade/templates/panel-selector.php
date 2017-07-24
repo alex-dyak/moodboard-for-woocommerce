@@ -49,7 +49,7 @@
             <section class="panel-selector-section clearfix">
                 <div class="panel-selector-row clearfix">
                     <a id="panel-selector-reset" href="#" class="panel-selector-btn"><?php esc_html_e('Reset','g5plus-handmade'); ?></a>
-                    <a data-mode="off" id="panel-selector-rtl" href="#" class="panel-selector-btn"><?php esc_html_e('RTL On','g5plus-framework'); ?></a>
+                    <a data-mode="off" id="panel-selector-rtl" href="#" class="panel-selector-btn"><?php esc_html_e('RTL On','g5plus-handmade'); ?></a>
                 </div>
             </section>
         </div>

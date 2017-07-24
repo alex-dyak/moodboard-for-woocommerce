@@ -3,47 +3,42 @@
 /* COMMENT FIELDS
 /*---------------------------------------------------*/
 if (!function_exists('g5plus_comment_fields')) {
-    function g5plus_comment_fields($fields) {
+	function g5plus_comment_fields($fields){
 
-        $commenter = wp_get_current_commenter();
-        $req = get_option('require_name_email');
-        $aria_req = ($req ? " aria-required='true'" : '');
-        $html5 = current_theme_supports('html5', 'comment-form') ? 'html5' : 'xhtml';;
+		$commenter = wp_get_current_commenter();
+		$req      = get_option( 'require_name_email' );
+		$aria_req = ( $req ? " aria-required='true'" : '' );
+		$html_req = ( $req ? " required='required'" : '' );
+		$html5 = current_theme_supports('html5', 'comment-form') ? 'html5' : 'xhtml';;
 
-        $fields = array(
-            'author' => '<div class="form-group col-md-12">' .
-                '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" placeholder="'.esc_html__('Name*','g5plus-handmade').'" ' . $aria_req . '>' .
-                '</div>',
-            'email' => '<div class="form-group col-md-12">' .
-                '<input id="email" name="email" ' . ($html5 ? 'type="email"' : 'type="text"') . ' value="' . esc_attr($commenter['comment_author_email']) . '" placeholder="'.esc_html__('Email*','g5plus-handmade').'" ' . $aria_req . '>' .
-                '</div>'
-        );
-
-        return $fields;
-
-    }
-    add_filter('g5plus_comment_fields','g5plus_comment_fields');
+		$fields   =  array(
+			'author' => '<p class="comment-form-author">' . '<label for="author">' . esc_html__('Name','g5plus-handmade') . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+				'<input placeholder="'. esc_html__('Name','g5plus-handmade') .'" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></p>',
+			'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__('Email','g5plus-handmade') . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+				'<input placeholder="'. esc_html__('Email','g5plus-handmade') .'" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' /></p>',
+			//'url'    => '<p class="comment-form-url"><label for="url">' . esc_html__('Website','g5plus-handmade') . '</label> ' .
+			//	'<input placeholder="'. esc_html__('Website','g5plus-handmade') .'"  id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></p>',
+		);
+		return $fields;
+	}
+	add_filter('comment_form_default_fields','g5plus_comment_fields');
 }
 
 /*---------------------------------------------------
 /* COMMENT FORMS ARGS
 /*---------------------------------------------------*/
 if (!function_exists('g5plus_comment_form_args')) {
-    function g5plus_comment_form_args($comment_form_args) {
-        $commenter = wp_get_current_commenter();
-        $req = get_option('require_name_email');
-        $aria_req = ($req ? " aria-required='true'" : '');
-        $html5 = current_theme_supports('html5', 'comment-form') ? 'html5' : 'xhtml';;
+	function g5plus_comment_form_args($comment_form_args) {
+		$defaults = array(
+			'comment_field' => '<p class="comment-form-comment"><label for="comment">' . esc_html__('Comment','g5plus-handmade') . '</label> <textarea placeholder="'. esc_html__('Comment','g5plus-handmade') .'" id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p>',
+			'label_submit' => esc_html__('Send us now','g5plus-handmade'),
+			'class_submit' => 'handmade-button style1 button-2x'
+		);
 
-        $comment_form_args['comment_field'] = '<div class="form-group col-md-12">' .
-            '<textarea rows="6" id="comment" name="comment"  placeholder="'.esc_html__('Message*','g5plus-handmade') .'" '. $aria_req .'></textarea>' .
-            '</div>';
-
-        $comment_form_args['class_submit'] = 'handmade-button style1 button-2x';
-        $comment_form_args['label_submit'] = esc_html__('Send us now', 'g5plus-handmade');
-        return $comment_form_args;
-    }
-    add_filter('g5plus_comment_form_args','g5plus_comment_form_args');
+		$comment_form_args = wp_parse_args($defaults,$comment_form_args);
+		return $comment_form_args;
+	}
+	add_filter('comment_form_defaults','g5plus_comment_form_args');
 }
 
 /*---------------------------------------------------
@@ -147,7 +142,7 @@ if (!function_exists('g5plus_header_customize_filter')) {
 /*---------------------------------------------------*/
 if (!function_exists('g5plus_less_css_url_rewrite')) {
 	function g5plus_less_css_url_rewrite() {
-		add_rewrite_rule( 'wp-content/themes/handmade/g5plus-less-css', 'index.php', 'top' );
+		add_rewrite_rule( 'wp-content/themes/g5plus-handmade/g5plus-less-css', 'index.php', 'top' );
 		flush_rewrite_rules();
 	}
 	add_action( 'init', 'g5plus_less_css_url_rewrite');

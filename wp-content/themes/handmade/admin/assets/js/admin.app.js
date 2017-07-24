@@ -167,42 +167,45 @@
         },
         widget_select2_item: function(target){
             $(target).addClass('select2-ready');
-
-            var data_value = $(target).attr('data-value');
-
-            var choices = [];
-
-            if (data_value != '') {
-                var arr_data_value = data_value.split('||');
-
-                for (var i = 0; i < arr_data_value.length; i++) {
-                    var option = $('option[value='+ arr_data_value[i]  + ']', target);
-                    choices[i] = { 'id':arr_data_value[i], 'text':option.text()};
+            $(target).select2({width : '100%'});
+            var $multiple = $(target).attr('multiple');
+            if (typeof($multiple) != 'undefined') {
+                var data_value = $(target).attr('data-value').split(',');
+                for (var i = 0; i < data_value.length; i++) {
+                    var $element = $(target).find('option[value="'+ data_value[i] +'"]');
+                    $element.detach();
+                    $(target).append($element);
                 }
-
-            }
-            $(target).select2().select2('data', choices);
-            $(target).on("select2-selecting", function(e) {
-                var ids = $('input',$(this).parent()).val();
-                if (ids != "") {
-                    ids +="||";
-                }
-                ids += e.val;
-                $('input',$(this).parent()).val(ids);
-            }).on("select2-removed", function(e) {
+                $(target).val(data_value).trigger('change');
+                $(target).on('select2:selecting',function(e){
                     var ids = $('input',$(this).parent()).val();
-                    var arr_ids = ids.split("||");
+                    if (ids != "") {
+                        ids +=",";
+                    }
+                    ids += e.params.args.data.id;
+                    $('input',$(this).parent()).val(ids);
+                }).on('select2:unselecting',function(e){
+                    var ids = $('input',$(this).parent()).val();
+                    var arr_ids = ids.split(",");
                     var newIds = "";
                     for(var i = 0 ; i < arr_ids.length; i++) {
-                        if (arr_ids[i] != e.val){
+                        if (arr_ids[i] != e.params.args.data.id){
                             if (newIds != "") {
-                                newIds +="||";
+                                newIds +=",";
                             }
                             newIds += arr_ids[i];
                         }
                     }
                     $('input',$(this).parent()).val(newIds);
+                }).on('select2:select',function(e){
+                    var element = e.params.data.element;
+                    var $element = $(element);
+
+                    $element.detach();
+                    $(this).append($element);
+                    $(this).trigger("change");
                 });
+            }
         },
         widget_select2_process: function() {
             $(document).on('widget-added', AdminAPP.widget_select2);

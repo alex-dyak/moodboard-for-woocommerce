@@ -86,7 +86,7 @@ if ( !class_exists('G5Plus_Install_Demo' ) ) {
 				ob_end_clean();
 				$data_response = array(
 					'code' => 'fileNotFound',
-					'message' => esc_html__("The Auto importing script could not be loaded. please use the wordpress importer and import the XML file that is located in your themes folder manually.",'g5plus-handmade')
+					'message' => esc_html__("The Auto importing script could not be loaded. please use the WordPress importer and import the XML file that is located in your themes folder manually.",'g5plus-handmade')
 				);
 				echo json_encode($data_response);
 				die();

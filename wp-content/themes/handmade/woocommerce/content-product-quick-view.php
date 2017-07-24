@@ -5,15 +5,9 @@
  * Date: 8/8/2015
  * Time: 9:09 AM
  */
-global $g5plus_options;
+global $g5plus_options,$product;
 $classes = array('product');
 $classes[] = 'add-to-cart-animation-visible';
-
-$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
-$assets_path = str_replace(array('http:', 'https:'), '', WC()->plugin_url()) . '/assets/';
-$frontend_script_path = $assets_path . 'js/frontend/';
-$add_to_cart_url = $frontend_script_path . 'add-to-cart' . $suffix . '.js';
-$add_to_cart_variation_url = $frontend_script_path . 'add-to-cart-variation' . $suffix . '.js';
 ?>
 <div id="popup-product-quick-view-wrapper" class="site-content-single-product modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
      aria-hidden="true">
@@ -22,7 +16,7 @@ $add_to_cart_variation_url = $frontend_script_path . 'add-to-cart-variation' . $
 			<a class="popup-close" data-dismiss="modal" href="javascript:;"><i class="fa fa-close"></i></a>
 			<div class="modal-body">
 				<div class="woocommerce">
-					<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+					<div id="product-<?php the_ID(); ?>" <?php post_class($classes); ?>>
 						<div class="single-product-info clearfix">
 							<div class="single-product-image-wrap">
 								<div class="single-product-image">
@@ -61,15 +55,38 @@ $add_to_cart_variation_url = $frontend_script_path . 'add-to-cart-variation' . $
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript"
-	        src="<?php echo esc_url($add_to_cart_url); ?>"></script>
-	<script type="text/javascript"
-	        src="<?php echo esc_url($add_to_cart_variation_url); ?>"></script>
-	<script>
-		(function ($) {
-			"use strict";
-			$('.variations_form').wc_variation_form();
-			$('.variations_form .variations select').change();
-		})(jQuery);
-	</script>
+	<?php
+	$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+	$assets_path = str_replace(array('http:', 'https:'), '', WC()->plugin_url()) . '/assets/';
+	$frontend_script_path = $assets_path . 'js/frontend/';
+	$add_to_cart_url = $frontend_script_path . 'add-to-cart' . $suffix . '.js';
+	$add_to_cart_variation_url = $frontend_script_path . 'add-to-cart-variation' . $suffix . '.js';
+	$underscore_url = HOME_URL . 'wp-includes/js/underscore.min.js';
+	$wp_util_url = HOME_URL. 'wp-includes/js/wp-util.min.js';
+	?>
+	<script type="text/javascript" src="<?php echo esc_url($add_to_cart_url); ?>"></script>
+	<?php if (g5plus_woocommerce_get_product_type($product) == 'variable') : ?>
+		<?php if (defined('WOOCOMMERCE_VERSION') && version_compare(WOOCOMMERCE_VERSION,'2.5.0','>=')) : ?>
+			<?php wc_get_template( 'single-product/add-to-cart/variation.php' ); ?>
+			<script type="text/javascript" src="<?php echo esc_url($underscore_url); ?>"></script>
+			<script type="text/javascript" src="<?php echo esc_url($wp_util_url); ?>"></script>
+			<script>
+				if (typeof(wc_add_to_cart_variation_params) === 'undefined') {
+					var wc_add_to_cart_variation_params = {
+						'i18n_no_matching_variations_text' : '<?php echo esc_attr__( 'Sorry, no products matched your selection. Please choose a different combination.', 'g5plus-handmade' ); ?>',
+						'i18n_make_a_selection_text' : '<?php echo esc_attr__( 'Select product options before adding this product to your cart.', 'g5plus-handmade' ); ?>',
+						'i18n_unavailable_text' : '<?php echo esc_attr__( 'Sorry, this product is unavailable. Please choose a different combination.', 'g5plus-handmade' ); ?>'
+					};
+				}
+			</script>
+		<?php endif; ?>
+		<script type="text/javascript" src="<?php echo esc_url($add_to_cart_variation_url); ?>"></script>
+		<script>
+			(function ($) {
+				"use strict";
+				$('.variations_form').wc_variation_form();
+				$('.variations_form .variations select').change();
+			})(jQuery);
+		</script>
+	<?php endif; ?>
 </div>

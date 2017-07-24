@@ -3,7 +3,7 @@
 /**
  * Field Select Image
  *
- * @package     Wordpress
+ * @package     WordPress
  * @subpackage  ReduxFramework
  * @since       3.1.2
  * @author      Kevin Provance <kprovance>

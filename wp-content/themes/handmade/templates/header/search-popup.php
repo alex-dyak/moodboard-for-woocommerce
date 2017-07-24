@@ -25,7 +25,7 @@ global $g5plus_options;
 			</div>
 			<div class="dialog-inner">
 				<h2><?php esc_html_e('Enter your keyword','g5plus-handmade'); ?></h2>
-				<form  method="get" action="<?php echo esc_url(site_url()); ?>" class="search-popup-inner">
+				<form  method="get" action="<?php echo esc_url(home_url('/')); ?>" class="search-popup-inner">
 					<input type="text" name="s" placeholder="<?php esc_html_e('Search...','g5plus-handmade'); ?>">
 					<button type="submit"><?php esc_html_e('Search','g5plus-handmade'); ?></button>
 				</form>

@@ -141,7 +141,11 @@
                             }
                             break;
                     }
-                }
+                },
+	            error: function() {
+		            G5Plus_Install_DemoData.vars.try_install_count = 0;
+		            G5Plus_Install_DemoData.install(type, method, demo_site, demo_path, other_data);
+	            }
             });
         },
 

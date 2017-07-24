@@ -6,6 +6,73 @@
  * Time: 5:50 PM
  */
 /*================================================
+BODY CLASS
+================================================== */
+if (!function_exists('g5plus_body_class_name')) {
+	function g5plus_body_class_name($classes) {
+		global $g5plus_options, $g5plus_header_layout;
+		$prefix = 'g5plus_';
+		$g5plus_header_layout = rwmb_meta($prefix . 'header_layout');
+
+		if (($g5plus_header_layout === '') || ($g5plus_header_layout == '-1')) {
+			$g5plus_header_layout = $g5plus_options['header_layout'];
+		}
+
+
+		$classes[] = 'footer-static';
+		if ($g5plus_options['home_preloader'] != 'none' && !empty($g5plus_options['home_preloader'])) {
+			$classes[] = 'site-loading';
+		}
+
+		$layout_style = rwmb_meta($prefix.'layout_style');
+		if(!isset($layout_style) || $layout_style == '-1' || $layout_style == '') {
+			$layout_style = $g5plus_options['layout_style'];
+		}
+
+		if ($layout_style != 'wide') {
+			$classes[] =  $layout_style;
+		}
+
+
+		$page_class_extra =  rwmb_meta($prefix.'page_class_extra');
+		if (!empty($page_class_extra)) {
+			$classes[] = $page_class_extra;
+		}
+
+		$classes[] = $g5plus_header_layout;
+		switch ($g5plus_header_layout) {
+			case 'header-7':
+				$classes[] = 'header-left';
+				break;
+		}
+
+		$header_layout_float = rwmb_meta($prefix . 'header_layout_float');
+
+		if (($header_layout_float === '') || ($header_layout_float == '-1')) {
+			$header_layout_float = $g5plus_options['header_layout_float'];
+		}
+		if ($header_layout_float == '1') {
+			$classes[] = 'header-float';
+		}
+
+		$action = isset($_GET['action']) ? $_GET['action'] : '';
+		if ($action == 'yith-woocompare-view-table') {
+			$classes[] = 'woocommerce-compare-page';
+		}
+
+		if (class_exists( 'WooCommerce' )) {
+			$classes[] = 'woocommerce';
+		}
+
+
+
+		return $classes;
+	}
+	add_filter('body_class','g5plus_body_class_name');
+}
+
+
+/*================================================
 SITE LOADING
 ================================================== */
 if (!function_exists('g5plus_site_loading')) {

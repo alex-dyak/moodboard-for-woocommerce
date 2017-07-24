@@ -77,7 +77,7 @@ if ( ! class_exists( 'Redux_Functions' ) ) {
         }
 
         /**
-         * initWpFilesystem - Initialized the Wordpress filesystem, if it already isn't.
+         * initWpFilesystem - Initialized the WordPress filesystem, if it already isn't.
          *
          * @since       3.2.3
          * @access      public
@@ -86,7 +86,7 @@ if ( ! class_exists( 'Redux_Functions' ) ) {
         public static function initWpFilesystem() {
             global $wp_filesystem;
 
-            // Initialize the Wordpress filesystem, no more using file_put_contents function
+            // Initialize the WordPress filesystem, no more using file_put_contents function
             if ( empty( $wp_filesystem ) ) {
                 require_once( ABSPATH . '/wp-admin/includes/file.php' );
                 WP_Filesystem();
@@ -217,7 +217,7 @@ if ( ! class_exists( 'Redux_Functions' ) ) {
 
                             // Check if we are on admin.php.  If we are, we have
                             // to get the current page slug and tab, so we can
-                            // feed it back to Wordpress.  Why>  admin.php cannot
+                            // feed it back to WordPress.  Why>  admin.php cannot
                             // be accessed without the page parameter.  We add the
                             // tab to return the user to the last panel they were
                             // on.

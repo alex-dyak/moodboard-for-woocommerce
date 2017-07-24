@@ -2,16 +2,26 @@
 /**
  * Single Product Image
  *
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     2.0.14
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product/product-image.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @author  WooThemes
+ * @package WooCommerce/Templates
+ * @version 3.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit;
 }
 
-global $post, $woocommerce, $product,$g5plus_options;
+global $post, $product, $g5plus_options;
+
 $single_product_show_image_thumb = isset($g5plus_options['single_product_show_image_thumb']) ? $g5plus_options['single_product_show_image_thumb'] : 0;
 
 $index = 0;
@@ -26,9 +36,7 @@ if (has_post_thumbnail()) {
 	$index++;
 }
 
-
-// Additional Images
-$attachment_ids = $product->get_gallery_attachment_ids();
+$attachment_ids  = $product->get_gallery_image_ids();
 if ($attachment_ids) {
 	foreach ( $attachment_ids as $attachment_id ) {
 		if (in_array($attachment_id,$image_ids)) continue;
@@ -40,8 +48,7 @@ if ($attachment_ids) {
 	}
 }
 
-
-if ($product->product_type == 'variable') {
+if (g5plus_woocommerce_get_product_type($product) == 'variable') {
 	$available_variations = $product->get_available_variations();
 	if (isset($available_variations)){
 		foreach ($available_variations as $available_variation){
@@ -69,11 +76,10 @@ if ($product->product_type == 'variable') {
 		}
 	}
 }
-$attachment_count = count($attachment_ids);
-if ( $attachment_count > 0 ) {
-    $gallery = '[product-gallery]';
+if ( count($product_images) > 1 ) {
+	$gallery = '[product-gallery]';
 } else {
-    $gallery = '';
+	$gallery = '';
 }
 
 $product_images_thumb = array('product-thumb-wrap');
@@ -82,7 +88,6 @@ if ($single_product_show_image_thumb == 0) {
 	$product_images_thumb[] = 'product-thumb-disable';
 }
 ?>
-
 <div class="single-product-image-inner">
     <div id="sync1" class="owl-carousel manual">
 
@@ -113,39 +118,39 @@ if ($single_product_show_image_thumb == 0) {
 
 	    ?>
 
-    </div>
-	<div class="<?php echo join(' ',$product_images_thumb); ?>">
-		<div id="sync2" class="owl-carousel manual">
-			<?php
-			foreach($product_images as $key => $value) {
-				$index = $key;
-				$image_id = $value['image_id'];
-				$variation_id = isset($value['variation_id']) ? $value['variation_id'] : '' ;
-				$image_title 	= esc_attr( get_the_title( $image_id ) );
-				$image_caption = '';
-				$image_obj = get_post( $image_id );
-				if (isset($image_obj) && isset($image_obj->post_excerpt)) {
-					$image_caption 	= $image_obj->post_excerpt;
-				}
-
-
-				$image_link  	= wp_get_attachment_url( $image_id );
-				$image       	= wp_get_attachment_image( $image_id,  apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ), array(
-					'title'	=> $image_title,
-					'alt'	=> $image_title
-				) );
-				echo '<div class="thumbnail-image">';
-				if (!empty($variation_id)) {
-					echo  apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-thumbnail-image" title="%s" data-variation_id="%s" data-index="%s">%s</a>', $image_link, $image_caption,$variation_id,$index,  $image ), $post->ID );
-				} else {
-					echo  apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-thumbnail-image" title="%s" data-index="%s">%s</a>', $image_link, $image_caption,$index , $image), $post->ID );
-				}
-				echo '</div>';
+</div>
+<div class="<?php echo join(' ',$product_images_thumb); ?>">
+	<div id="sync2" class="owl-carousel manual">
+		<?php
+		foreach($product_images as $key => $value) {
+			$index = $key;
+			$image_id = $value['image_id'];
+			$variation_id = isset($value['variation_id']) ? $value['variation_id'] : '' ;
+			$image_title 	= esc_attr( get_the_title( $image_id ) );
+			$image_caption = '';
+			$image_obj = get_post( $image_id );
+			if (isset($image_obj) && isset($image_obj->post_excerpt)) {
+				$image_caption 	= $image_obj->post_excerpt;
 			}
 
-			?>
-		</div>
+
+			$image_link  	= wp_get_attachment_url( $image_id );
+			$image       	= wp_get_attachment_image( $image_id,  apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ), array(
+				'title'	=> $image_title,
+				'alt'	=> $image_title
+			) );
+			echo '<div class="thumbnail-image">';
+			if (!empty($variation_id)) {
+				echo  apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-thumbnail-image" title="%s" data-variation_id="%s" data-index="%s">%s</a>', $image_link, $image_caption,$variation_id,$index,  $image ), $post->ID );
+			} else {
+				echo  apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-thumbnail-image" title="%s" data-index="%s">%s</a>', $image_link, $image_caption,$index , $image), $post->ID );
+			}
+			echo '</div>';
+		}
+
+		?>
 	</div>
+</div>
 </div>
 <script type="text/javascript">
 	(function($) {
@@ -186,7 +191,7 @@ if ($single_product_show_image_thumb == 0) {
 					.find(".owl-item")
 					.removeClass("synced")
 					.eq(current)
-					.addClass("synced")
+					.addClass("synced");
 				if($("#sync2").data("owlCarousel") !== undefined){
 					center(current);
 				}
@@ -225,65 +230,34 @@ if ($single_product_show_image_thumb == 0) {
 			}
 
 
-			$(document).on('change','.variations_form .variations select,.variations_form .variation_form_section select,div.select',function(){
-				var variation_form = $(this).closest( '.variations_form' );
-				var current_settings = {},
-					reset_variations = variation_form.find( '.reset_variations' );
-				variation_form.find('.variations select,.variation_form_section select' ).each( function() {
-					// Encode entities
-					var value = $(this ).val();
-
-					// Add to settings array
-					current_settings[ $( this ).attr( 'name' ) ] = jQuery(this ).val();
-				});
-
-				variation_form.find('.variation_form_section div.select input[type="hidden"]' ).each( function() {
-					// Encode entities
-					var value = $(this ).val();
-
-					// Add to settings array
-					current_settings[ $( this ).attr( 'name' ) ] = jQuery(this ).val();
-				});
-
-				var all_variations = variation_form.data( 'product_variations' );
-
-				var variation_id = 0;
-				var match = true;
-
-				for (var i = 0; i < all_variations.length; i++)
-				{
-					match = true;
-					var variations_attributes = all_variations[i]['attributes'];
-					for(var attr_name in variations_attributes) {
-						var val1 = variations_attributes[attr_name];
-						var val2 = current_settings[attr_name];
-						if (val1 == undefined || val2 == undefined ) {
-							match = false;
-							break;
-						}
-						if (val1.length == 0) {
-							continue;
-						}
-
-						if (val1 != val2) {
-							match = false;
-							break;
-						}
+			$(document).on('found_variation',function(event,variation){
+				var $product = $(event.target).closest('.product');
+				if ((typeof variation !== 'undefined') && (typeof variation.variation_id !== 'undefined')) {
+					var $stock    = $product.find( '.product_meta' ).find( '.product_stock' );
+					// Display SKU
+					if ( variation.availability_html ) {
+						$stock.wc_set_content( $(variation.availability_html).text() );
+					} else {
+						$stock.wc_reset_content();
 					}
-					if (match) {
-						variation_id = all_variations[i]['variation_id'];
-						break;
-					}
-				}
 
-				if (variation_id > 0) {
-					var index = parseInt($('a[data-variation_id*="|'+variation_id+'|"]','#sync1').data('index'),10) ;
+
+					var variation_id = variation.variation_id,
+						$mainImage = $product.find('#sync1');
+					var index = parseInt($('a[data-variation_id*="|'+variation_id+'|"]',$mainImage).data('index'),10) ;
 					if (!isNaN(index) ) {
 						sync1.trigger("owl.goTo",index);
 					}
 				}
 			});
 
+			$(document).on('reset_data',function(event){
+				var $product = $(event.target).closest('.product');
+				$product.find( '.product_meta' ).find( '.product_stock').wc_reset_content();
+				sync1.trigger("owl.goTo",0);
+			});
+
 		});
 	})(jQuery);
 </script>
+

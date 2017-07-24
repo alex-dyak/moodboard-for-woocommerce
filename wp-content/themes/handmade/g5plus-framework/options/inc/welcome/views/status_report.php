@@ -114,13 +114,13 @@
         </tr>
         <tr>
             <td data-export-label="Permalink Structure"><?php _e( 'Permalink Structure', 'redux-framework' ); ?>:</td>
-            <td class="help"><?php echo '<a href="#" class="redux-hint-qtip" qtip-content="' . esc_attr__( 'The current permalink structure as defined in Wordpress Settings->Permalinks.', 'redux-framework' ) . '">[?]</a>'; ?></td>
+            <td class="help"><?php echo '<a href="#" class="redux-hint-qtip" qtip-content="' . esc_attr__( 'The current permalink structure as defined in WordPress Settings->Permalinks.', 'redux-framework' ) . '">[?]</a>'; ?></td>
             <td><?php echo $sysinfo['permalink_structure']; ?></td>
         </tr>
         <?php $sof = $sysinfo['front_page_display']; ?>
         <tr>
             <td data-export-label="Front Page Display"><?php _e( 'Front Page Display', 'redux-framework' ); ?>:</td>
-            <td class="help"><?php echo '<a href="#" class="redux-hint-qtip" qtip-content="' . esc_attr__( 'The current Reading mode of Wordpress.', 'redux-framework' ) . '">[?]</a>'; ?></td>
+            <td class="help"><?php echo '<a href="#" class="redux-hint-qtip" qtip-content="' . esc_attr__( 'The current Reading mode of WordPress.', 'redux-framework' ) . '">[?]</a>'; ?></td>
             <td><?php echo $sof; ?></td>
         </tr>
 
@@ -156,7 +156,7 @@
         <tr>
             <td data-export-label="Database Table Prefix"><?php _e( 'Database Table Prefix', 'redux-framework' ); ?>:
             </td>
-            <td class="help"><?php echo '<a href="#" class="redux-hint-qtip" qtip-content="' . esc_attr__( 'The prefix structure of the current Wordpress database.', 'redux-framework' ) . '">[?]</a>'; ?></td>
+            <td class="help"><?php echo '<a href="#" class="redux-hint-qtip" qtip-content="' . esc_attr__( 'The prefix structure of the current WordPress database.', 'redux-framework' ) . '">[?]</a>'; ?></td>
             <td><?php echo $sysinfo['db_table_prefix']; ?></td>
         </tr>
         <tr>

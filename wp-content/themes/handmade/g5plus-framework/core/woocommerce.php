@@ -79,15 +79,7 @@ if ( class_exists( 'WooCommerce' ) ) {
         add_action('g5plus_woocommerce_product_actions','g5plus_woocomerce_template_loop_compare',5);
     }
 
-	/*================================================
-	  MOODBOARD TEMPLATE
-	  ================================================== */
-	if (!function_exists('g5plus_woocomerce_template_loop_moodboard')) {
-		function g5plus_woocomerce_template_loop_moodboard() {
-			wc_get_template( 'loop/moodboard.php' );
-		}
-		add_action('g5plus_woocommerce_product_actions','g5plus_woocomerce_template_loop_moodboard',3);
-	}
+
 
 
 
@@ -112,6 +104,34 @@ if ( class_exists( 'WooCommerce' ) ) {
     }
 
 
+    /**
+     * Get Product Type
+     */
+    if (!function_exists('g5plus_woocommerce_get_product_type')) {
+        function g5plus_woocommerce_get_product_type($product) {
+            if (defined('WOOCOMMERCE_VERSION') && version_compare(WOOCOMMERCE_VERSION,'3.0.0','<')) {
+                return $product->product_type;
+            }
+            return $product->get_type();
+        }
+    }
+
+    /**
+     * Get ProductId
+     */
+    if (!function_exists('g5plus_woocommerce_get_product_id')) {
+        function g5plus_woocommerce_get_product_id($product) {
+            if (defined('WOOCOMMERCE_VERSION') && version_compare(WOOCOMMERCE_VERSION,'2.5.0','<')) {
+                return $product->id;
+            }
+            return $product->get_id();
+        }
+    }
+
+
+
+
+
     /*================================================
     OVERWRITE LOOP PRODUCT THUMBNAIL
     ================================================== */
@@ -125,7 +145,12 @@ if ( class_exists( 'WooCommerce' ) ) {
          */
         function woocommerce_template_loop_product_thumbnail() {
             global $product;
-            $attachment_ids  = $product->get_gallery_attachment_ids();
+            if (defined('WOOCOMMERCE_VERSION') && version_compare(WOOCOMMERCE_VERSION,'3.0.0','<')) {
+                $attachment_ids  = $product->get_gallery_attachment_ids();
+            } else {
+                $attachment_ids  = $product->get_gallery_image_ids();
+            }
+
             $secondary_image = '';
             $class           = 'product-thumb-one';
             $post_thumbnail_id = '';
@@ -138,7 +163,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 
 
-            if ($product->product_type == 'variable') {
+            if (g5plus_woocommerce_get_product_type($product) == 'variable') {
                 $available_variations = $product->get_available_variations();
                 if (isset($available_variations)){
                     foreach ($available_variations as $available_variation){
@@ -198,7 +223,11 @@ if ( class_exists( 'WooCommerce' ) ) {
             global $product;
 
             $post_attachment_id = has_post_thumbnail() ?  get_post_thumbnail_id(): 0;
-            $attachment_ids  = $product->get_gallery_attachment_ids();
+            if (defined('WOOCOMMERCE_VERSION') && version_compare(WOOCOMMERCE_VERSION,'3.0.0','<')) {
+                $attachment_ids  = $product->get_gallery_attachment_ids();
+            } else {
+                $attachment_ids  = $product->get_gallery_image_ids();
+            }
             $secondary_image = $primary_image = '';
             $class           = 'product-thumb-one';
 
@@ -323,8 +352,8 @@ if ( class_exists( 'WooCommerce' ) ) {
             $product_sale_flash_mode = isset($g5plus_options['product_sale_flash_mode']) ? $g5plus_options['product_sale_flash_mode'] : '' ;
             if ($product_sale_flash_mode == 'percent') {
                 $sale_percent = 0;
-                if ($product->is_on_sale() && $product->product_type != 'grouped') {
-                    if ($product->product_type == 'variable') {
+                if ($product->is_on_sale() && g5plus_woocommerce_get_product_type($product) != 'grouped') {
+                    if (g5plus_woocommerce_get_product_type($product) == 'variable') {
                         $available_variations =  $product->get_available_variations();
                         for ($i = 0; $i < count($available_variations); ++$i) {
                             $variation_id = $available_variations[$i]['variation_id'];
@@ -399,6 +428,16 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 
     /*================================================
+	CATALOG PAGE SIZE
+	================================================== */
+    if (!function_exists('g5plus_woocommerce_catalog_page_size')) {
+        function g5plus_woocommerce_catalog_page_size() {
+            wc_get_template('loop/page-size.php');
+        }
+        add_action('g5plus_before_shop_loop','g5plus_woocommerce_catalog_page_size',25);
+    }
+
+    /*================================================
 	SHOP PAGE CONTENT
 	================================================== */
     if (!function_exists('g5plus_shop_page_content')) {
@@ -431,25 +470,6 @@ if ( class_exists( 'WooCommerce' ) ) {
             add_action('g5plus_after_archive_product_listing','g5plus_shop_page_content',5);
         }
 
-    }
-
-    /*================================================
-	ADD EXTEND CLASS IN POPUP COMPARE
-	================================================== */
-    if (!function_exists('g5plus_compare_body_class')) {
-        function g5plus_compare_body_class($classes) {
-            $classes[] = 'woocommerce';
-            $action = isset($_GET['action']) ? $_GET['action'] : '';
-            if (isset($action)) {
-                switch ($action) {
-                    case 'yith-woocompare-view-table':
-                        $classes[] = 'woocommerce-compare-page';
-                        break;
-                }
-            }
-            return $classes;
-        }
-        add_filter('body_class', 'g5plus_compare_body_class');
     }
 
 
@@ -615,5 +635,41 @@ if ( class_exists( 'WooCommerce' ) ) {
             echo '</div>';
         }
         add_action('woocommerce_after_customer_login_form','g5plus_woocommerce_after_customer_login_form',10);
+    }
+
+    /*================================================
+    FIX 2.5.0
+    ================================================== */
+    if (  ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
+        /**
+         * Show the product title in the product loop. By default this is an H3.
+         */
+        function woocommerce_template_loop_product_title() {
+            wc_get_template( 'loop/title.php' );
+        }
+    }
+
+    if (defined('WOOCOMMERCE_VERSION') && version_compare(WOOCOMMERCE_VERSION,'2.5.0','<')) {
+        if (!function_exists('woocommerce_template_loop_add_to_cart')) {
+            function woocommerce_template_loop_add_to_cart( $args = array() ) {
+                global $product;
+                if ( $product ) {
+                    $ajax_cart_en         = 'yes' === get_option( 'woocommerce_enable_ajax_add_to_cart' );
+                    $defaults = array(
+                        'quantity' => 1,
+                        'class'    => implode( ' ', array_filter( array(
+                            'button',
+                            'product_type_' . g5plus_woocommerce_get_product_type($product),
+                            $product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
+                            $ajax_cart_en ? 'ajax_add_to_cart' : ''
+                        ) ) )
+                    );
+
+                    $args = apply_filters( 'woocommerce_loop_add_to_cart_args', wp_parse_args( $args, $defaults ), $product );
+
+                    wc_get_template( 'loop/add-to-cart.php', $args );
+                }
+            }
+        }
     }
 }

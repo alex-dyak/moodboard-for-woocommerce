@@ -317,9 +317,9 @@ function g5plus_register_meta_boxes()
 				'std' 	=> '-1',
 				'options' => array(
 					'-1' => esc_html__('Default','g5plus-handmade'),
-					'none' => esc_html__('Disable','g5plus-framework'),
-					'show' => esc_html__('Always Show','g5plus-framework'),
-					'toggle' => esc_html__('Toggle','g5plus-framework')
+					'none' => esc_html__('Disable','g5plus-handmade'),
+					'show' => esc_html__('Always Show','g5plus-handmade'),
+					'toggle' => esc_html__('Toggle','g5plus-handmade')
 				),
 				'desc' => esc_html__('Top drawer type', 'g5plus-handmade'),
 			),
@@ -339,9 +339,9 @@ function g5plus_register_meta_boxes()
 				'std' 	=> '-1',
 				'options' => array(
 					'-1' => esc_html__('Default','g5plus-handmade'),
-					'full' => esc_html__('Full Width','g5plus-framework'),
-					'container' => esc_html__('Container','g5plus-framework'),
-					'container-fluid' => esc_html__('Container Fluid','g5plus-framework')
+					'full' => esc_html__('Full Width','g5plus-handmade'),
+					'container' => esc_html__('Container','g5plus-handmade'),
+					'container-fluid' => esc_html__('Container Fluid','g5plus-handmade')
 				),
 				'required-field' => array($prefix . 'top_drawer_type','<>','none'),
 			),
@@ -353,8 +353,8 @@ function g5plus_register_meta_boxes()
 				'std' 	=> '-1',
 				'options' => array(
 					'-1' => esc_html__('Default','g5plus-handmade'),
-					'1' => esc_html__('Show on mobile','g5plus-framework'),
-					'0' => esc_html__('Hide on mobile','g5plus-framework'),
+					'1' => esc_html__('Show on mobile','g5plus-handmade'),
+					'0' => esc_html__('Hide on mobile','g5plus-handmade'),
 				),
 				'required-field' => array($prefix . 'top_drawer_type','<>','none'),
 			),
@@ -1065,7 +1065,7 @@ function g5plus_register_meta_boxes()
 		'fields' => array(
 			array(
 				'id'    => $prefix.  'custom_logo',
-				'name'  => esc_html__('Custom Logo', 'g5plus-handmade'),
+				'name'  => esc_html__('Custom Logo ••A•L•L•4•S•H•A•R•E•.•N•E•T••', 'g5plus-handmade'),
 				'desc'  => esc_html__('Upload custom logo in header.', 'g5plus-handmade'),
 				'type'  => 'image_advanced',
 				'max_file_uploads' => 1,

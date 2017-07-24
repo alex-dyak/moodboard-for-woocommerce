@@ -731,8 +731,8 @@ if ( ! class_exists( 'Redux_Framework_options_config' ) ) {
                         'desc' => '',
                         'options' => array(
                             'left' => esc_html__('Left','g5plus-handmade'),
-                            'center' => esc_html__('Center','g5plus-framework'),
-                            'right' => esc_html__('Right','g5plus-framework')
+                            'center' => esc_html__('Center','g5plus-handmade'),
+                            'right' => esc_html__('Right','g5plus-handmade')
                         ),
                         'default' => 'right'
                     ),
@@ -952,8 +952,8 @@ if ( ! class_exists( 'Redux_Framework_options_config' ) ) {
                         'desc' => '',
                         'options' => array(
                             'left' => esc_html__('Left','g5plus-handmade'),
-                            'center' => esc_html__('Center','g5plus-framework'),
-                            'right' => esc_html__('Right','g5plus-framework')
+                            'center' => esc_html__('Center','g5plus-handmade'),
+                            'right' => esc_html__('Right','g5plus-handmade')
                         ),
                         'default' => 'right'
                     ),
@@ -1336,7 +1336,7 @@ if ( ! class_exists( 'Redux_Framework_options_config' ) ) {
                     array(
                         'id' => 'top_bar_right_sidebar',
                         'type' => 'select',
-                        'title' => esc_html__('Top Right Sidebar', 'g5plus-handmade'),
+                        'title' => esc_html__('Top Right Sidebar A¯L¯L¯4¯S¯H¯A¯R¯E¯.¯N¯E¯T', 'g5plus-handmade'),
                         'subtitle' => "Choose the default top right sidebar",
                         'data'      => 'sidebars',
                         'desc' => '',
@@ -1487,8 +1487,8 @@ if ( ! class_exists( 'Redux_Framework_options_config' ) ) {
 		                'type'      => 'button_set',
 		                'title'     => esc_html__('Header navigation hover', 'g5plus-handmade'),
 		                'options'  => array(
-			                'nav-hover-primary' => esc_html__('Primary Color','g5plus-framework'),
-			                'nav-hover-primary-base' => esc_html__('Base Primary Color','g5plus-framework'),
+			                'nav-hover-primary' => esc_html__('Primary Color','g5plus-handmade'),
+			                'nav-hover-primary-base' => esc_html__('Base Primary Color','g5plus-handmade'),
 		                ),
 		                'default'  => 'nav-hover-primary'
 	                ),
@@ -1706,11 +1706,11 @@ if ( ! class_exists( 'Redux_Framework_options_config' ) ) {
 			        ),
 			        array(
 				        'id' => 'header_customize_nav_separate',
-				        'title' => esc_html__('Header customize separate','g5plus-framework'),
+				        'title' => esc_html__('Header customize separate','g5plus-handmade'),
 				        'type'  => 'button_set',
 				        'options' => array(
-					        '0'   => esc_html__('Off','g5plus-framework'),
-					        '1'   => esc_html__('On','g5plus-framework'),
+					        '0'   => esc_html__('Off','g5plus-handmade'),
+					        '1'   => esc_html__('On','g5plus-handmade'),
 				        ),
 				        'default'  => '0',
 			        ),
@@ -1812,11 +1812,11 @@ if ( ! class_exists( 'Redux_Framework_options_config' ) ) {
 			        ),
 			        array(
 				        'id' => 'header_customize_left_separate',
-				        'title' => esc_html__('Header customize separate','g5plus-framework'),
+				        'title' => esc_html__('Header customize separate','g5plus-handmade'),
 				        'type'  => 'button_set',
 				        'options' => array(
-					        '0'   => esc_html__('Off','g5plus-framework'),
-					        '1'   => esc_html__('On','g5plus-framework'),
+					        '0'   => esc_html__('Off','g5plus-handmade'),
+					        '1'   => esc_html__('On','g5plus-handmade'),
 				        ),
 				        'default'  => '0',
 			        ),
@@ -1918,11 +1918,11 @@ if ( ! class_exists( 'Redux_Framework_options_config' ) ) {
 			        ),
 			        array(
 				        'id' => 'header_customize_right_separate',
-				        'title' => esc_html__('Header customize separate','g5plus-framework'),
+				        'title' => esc_html__('Header customize separate','g5plus-handmade'),
 				        'type'  => 'button_set',
 				        'options' => array(
-					        '0'   => esc_html__('Off','g5plus-framework'),
-					        '1'   => esc_html__('On','g5plus-framework'),
+					        '0'   => esc_html__('Off','g5plus-handmade'),
+					        '1'   => esc_html__('On','g5plus-handmade'),
 				        ),
 				        'default'  => '0',
 			        ),
@@ -2014,7 +2014,7 @@ if ( ! class_exists( 'Redux_Framework_options_config' ) ) {
                     array(
                         'id'       => 'mobile_header_top_bar',
                         'type'     => 'button_set',
-                        'title'    => esc_html__( 'Top Bar', 'g5plus-handmade' ),
+                        'title'    => esc_html__( 'Top Bar ¨¨A¨L¨L¨4¨S¨H¨A¨R¨E¨.¨N¨E¨T¨¨', 'g5plus-handmade' ),
                         'subtitle' => esc_html__( 'Enable Top bar.', 'g5plus-handmade' ),
                         'desc'     => '',
                         'options'  => array( '1' => 'On', '0' => 'Off' ),
@@ -3011,6 +3011,15 @@ if ( ! class_exists( 'Redux_Framework_options_config' ) ) {
                         'options'  => array( '1' => 'On', '0' => 'Off' ),
                         'default'  => '1'
                     ),
+                    array(
+                        'id'       => 'product_show_catalog_page_size',
+                        'type'     => 'button_set',
+                        'title'    => esc_html__( 'Show Catalog Page Size', 'g5plus-handmade' ),
+                        'subtitle' => esc_html__( 'Show/Hide Catalog Page Size', 'g5plus-handmade' ),
+                        'desc'     => '',
+                        'options'  => array( '1' => 'On', '0' => 'Off' ),
+                        'default'  => '0'
+                    ),
 	                array(
 		                'id'       => 'product_quick_view',
 		                'type'     => 'button_set',
@@ -3949,13 +3958,13 @@ if ( ! class_exists( 'Redux_Framework_options_config' ) ) {
                 } else {
                     $v = str_replace( '-', '_', $this->args['opt_name'] );
                 }
-                $this->args['intro_text'] = sprintf( esc_html__( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'g5plus-handmade' ), $v );
+                $this->args['intro_text'] = sprintf( wp_kses_post(__( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'g5plus-handmade' )) , $v );
             } else {
-                $this->args['intro_text'] = esc_html__( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'g5plus-handmade' );
+                $this->args['intro_text'] = wp_kses_post(__( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'g5plus-handmade' ));
             }
 
             // Add content after the form.
-            $this->args['footer_text'] = esc_html__( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'g5plus-handmade' );
+            $this->args['footer_text'] = wp_kses_post(__( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'g5plus-handmade' ))  ;
         }
 
     }

@@ -177,8 +177,7 @@ if (!function_exists('g5plus_custom_css_variable_header')) {
 
 		// Header scheme
 		$header_scheme = rwmb_meta($prefix . 'header_scheme', array(), $page_id);
-
-		if (($header_scheme === '') || ($header_scheme == '-1')) {
+		if (($header_scheme === false) || ($header_scheme === '') || ($header_scheme == '-1')) {
 			$header_scheme = isset($g5plus_options['header_scheme']) && !empty($g5plus_options['header_scheme']) ? $g5plus_options['header_scheme'] : 'light';
 		}
 
@@ -226,7 +225,6 @@ if (!function_exists('g5plus_custom_css_variable_header')) {
 						if (($header_background_color !== '' ) && ($header_background_color_opacity !== '')) {
 							$header_background_color = g5plus_hex2rgba($header_background_color, $header_background_color_opacity / 100.0);
 						}
-
 						$is_set_header_background_css =  true;
 						$header_border_color = rwmb_meta($prefix . 'header_border_color', array(), $page_id);
 						$header_border_color_opacity = rwmb_meta($prefix . 'header_border_color_opacity', array(), $page_id);
@@ -291,7 +289,7 @@ if (!function_exists('g5plus_custom_css_variable_header')) {
 				!empty($header_background_color) ?
 					'background-color:' . $header_background_color  . ';' : 'background-color:transparent;',
 				!empty($header_background_image) ?
-					'background-image:url(' . $header_background_image['url'] . ');' : 'background-image:none;',
+					'background-image:url(' . (is_array($header_background_image) ? $header_background_image['url'] : $header_background_image ) . ');' : 'background-image:none;',
 				!empty($header_background_repeat) ?
 					'background-repeat:' . $header_background_repeat . ';' : '',
 				!empty($header_background_position) ?
@@ -983,4 +981,20 @@ if (!function_exists('g5plus_enqueue_header_custom_style')) {
 		}
 	}
 	add_action('wp_head', 'g5plus_enqueue_header_custom_style',100);
+}
+
+
+
+/**
+ * Get Tax meta with key not prefix
+ * *******************************************************
+ */
+if ( !function_exists( 'g5plus_get_tax_meta') ) {
+	function g5plus_get_tax_meta($term_id,$key,$multi = false) {
+		if ( function_exists('get_term_meta')){
+			return get_term_meta($term_id, $key, !$multi );
+		}else{
+			return get_tax_meta( $term_id, $key, !$multi  );
+		}
+	}
 }

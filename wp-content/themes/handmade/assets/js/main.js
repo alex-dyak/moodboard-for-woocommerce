@@ -207,7 +207,9 @@ var G5Plus = G5Plus || {};
         },
         tooltip : function () {
             if ($().tooltip && !isMobileAlt) {
-                $('[data-toggle="tooltip"]').tooltip();
+                if (!$body.hasClass('woocommerce-compare-page')) {
+                    $('[data-toggle="tooltip"]').tooltip();
+                }
                 $('.yith-wcwl-wishlistexistsbrowse,.yith-wcwl-add-button,.yith-wcwl-wishlistaddedbrowse', '.product-actions').tooltip({
                     title: g5plus_framework_constant.product_wishList
                 });
@@ -431,7 +433,6 @@ var G5Plus = G5Plus || {};
                     var $wpadminbar = $('#wpadminbar');
                     var $windowHeight = $(window).height();
 
-                    console.log('$windowHeight:' + $windowHeight + ' $wpb_wrapper:'+ $wpb_wrapper.outerHeight());
                     if($windowHeight > $wpb_wrapper.outerHeight()){
                         $content.css('height',$windowHeight);
                     }else{
@@ -616,7 +617,9 @@ var G5Plus = G5Plus || {};
         init: function () {
             G5Plus.woocommerce.setCartScrollBar();
             G5Plus.woocommerce.addCartQuantity();
-            G5Plus.woocommerce.addToCart();
+            if (!$body.hasClass('woocommerce-compare-page')) {
+                G5Plus.woocommerce.addToCart();
+            }
             G5Plus.woocommerce.quickView();
             G5Plus.woocommerce.updateShippingMethod();
             G5Plus.woocommerce.addToWishlist();
@@ -664,40 +667,53 @@ var G5Plus = G5Plus || {};
         addCartQuantity: function () {
             $(document).off('click', '.quantity .btn-number').on('click', '.quantity .btn-number', function (event) {
                 event.preventDefault();
-                var type = $(this).data('type');
-                var input = $('input', $(this).parent());
-                var current_value = parseInt(input.val());
+                var type = $(this).data('type'),
+                    input = $('input', $(this).parent()),
+                    current_value = parseFloat(input.val()),
+                    max  = parseFloat(input.attr('max')),
+                    min = parseFloat(input.attr('min')),
+                    step = parseFloat(input.attr('step')),
+                    stepLength = 0;
+                if (input.attr('step').indexOf('.') > 0) {
+                    stepLength = input.attr('step').split('.')[1].length;
+                }
 
-                var max = input.attr('max');
-                if (typeof(max) == 'undefined') {
+                if (isNaN(max)) {
                     max = 100;
                 }
-
-                var min = input.attr('min');
-                if (typeof(min) == 'undefined') {
+                if (isNaN(min)) {
                     min = 0;
                 }
+                if (isNaN(step)) {
+                    step = 1;
+                    stepLength = 0;
+                }
+
                 if (!isNaN(current_value)) {
                     if (type == 'minus') {
                         if (current_value > min) {
-                            input.val(current_value - 1).change();
+                            current_value = (current_value - step).toFixed(stepLength);
+                            input.val(current_value).change();
                         }
-                        if (parseInt(input.val()) == min) {
+
+                        if (parseFloat(input.val()) <= min) {
+                            input.val(min).change();
                             $(this).attr('disabled', true);
                         }
                     }
 
                     if (type == 'plus') {
-
                         if (current_value < max) {
-                            input.val(current_value + 1).change();
+                            current_value = (current_value + step).toFixed(stepLength);
+                            input.val(current_value).change();
                         }
-                        if (parseInt(input.val()) == max) {
+                        if (parseFloat(input.val()) >= max) {
+                            input.val(max).change();
                             $(this).attr('disabled', true);
                         }
                     }
                 } else {
-                    input.val(0);
+                    input.val(min);
                 }
             });
 
@@ -707,18 +723,23 @@ var G5Plus = G5Plus || {};
             });
 
             $('input', '.quantity').on('change', function () {
-                var input = $(this);
-                var max = input.attr('max');
-                if (typeof(max) == 'undefined') {
+                var input = $(this),
+                    max = parseFloat(input.attr('max')),
+                    min = parseFloat(input.attr('min')),
+                    current_value = parseFloat(input.val()),
+                    step = parseFloat(input.attr('step'));
+
+                if (isNaN(max)) {
                     max = 100;
                 }
-
-                var min = input.attr('min');
-                if (typeof(min) == 'undefined') {
+                if (isNaN(min)) {
                     min = 0;
                 }
 
-                var current_value = parseInt(input.val());
+                if (isNaN(step)) {
+                    step = 1;
+                }
+
 
                 var btn_add_to_cart = $('.add_to_cart_button', $(this).parent().parent().parent());
                 if (current_value >= min) {
@@ -793,6 +814,10 @@ var G5Plus = G5Plus || {};
                 }, 700);
 
 
+            });
+
+            $body.on('wc_fragments_refreshed',function(){
+                G5Plus.woocommerce.setCartScrollBar();
             });
         },
         quickView : function() {
@@ -981,7 +1006,6 @@ var G5Plus = G5Plus || {};
 	G5Plus.search = {
 		up: function($wrapper) {
 			var $item = $('li.selected', $wrapper);
-			console.log($item, $wrapper);
 			if ($('li', $wrapper).length < 2) return;
 			var $prev = $item.prev();
 			$item.removeClass('selected');
@@ -1141,6 +1165,10 @@ var G5Plus = G5Plus || {};
 
             if (($adminBar.length > 0) && ($adminBar.css('position') =='fixed')) {
                 topSpacing = $adminBar.outerHeight();
+            }
+
+            if ($('.demo_store').length && ($('.demo_store').css('position') == 'fixed')) {
+                topSpacing += $('.demo_store').outerHeight();
             }
 
             $('.header-sticky, .header-mobile-sticky').unstick();

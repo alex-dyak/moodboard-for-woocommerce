@@ -27,7 +27,11 @@ if (has_post_thumbnail()) {
 
 
 // Additional Images
-$attachment_ids = $product->get_gallery_attachment_ids();
+if (defined('WOOCOMMERCE_VERSION') && version_compare(WOOCOMMERCE_VERSION,'3.0.0','<')) {
+	$attachment_ids  = $product->get_gallery_attachment_ids();
+} else {
+	$attachment_ids  = $product->get_gallery_image_ids();
+}
 if ($attachment_ids) {
 	foreach ( $attachment_ids as $attachment_id ) {
 		if (in_array($attachment_id,$image_ids)) continue;
@@ -40,7 +44,7 @@ if ($attachment_ids) {
 }
 
 
-if ($product->product_type == 'variable') {
+if (g5plus_woocommerce_get_product_type($product) == 'variable') {
 	$available_variations = $product->get_available_variations();
 	if (isset($available_variations)){
 		foreach ($available_variations as $available_variation){
@@ -88,6 +92,7 @@ if ($single_product_show_image_thumb == 0) {
 
 	    <?php
 	    foreach($product_images as $key => $value) {
+		    $index = $key;
 		    $image_id = $value['image_id'];
 		    $variation_id = isset($value['variation_id']) ? $value['variation_id'] : '' ;
 		    $image_title 	= esc_attr( get_the_title( $image_id ) );
@@ -117,6 +122,7 @@ if ($single_product_show_image_thumb == 0) {
 		<div id="sync2" class="owl-carousel manual quick-view-images-thumb">
 			<?php
 			foreach($product_images as $key => $value) {
+				$index = $key;
 				$image_id = $value['image_id'];
 				$variation_id = isset($value['variation_id']) ? $value['variation_id'] : '' ;
 				$image_title 	= esc_attr( get_the_title( $image_id ) );
@@ -220,8 +226,35 @@ if ($single_product_show_image_thumb == 0) {
 		        }
 	        }
 
+	        $(document).on('found_variation',function(event,variation){
+		        var $product = $(event.target).closest('.product');
+		        if ((typeof variation !== 'undefined') && (typeof variation.variation_id !== 'undefined')) {
+			        var $stock    = $product.find( '.product_meta' ).find( '.product_stock' );
+			        // Display SKU
+			        if ( variation.availability_html ) {
+				        $stock.wc_set_content( $(variation.availability_html).text() );
+			        } else {
+				        $stock.wc_reset_content();
+			        }
 
-            $(document).on('change','.variations_form .variations select,.variations_form .variation_form_section select,div.select',function(){
+
+			        var variation_id = variation.variation_id,
+				        $mainImage = $product.find('#sync1');
+			        var index = parseInt($('a[data-variation_id*="|'+variation_id+'|"]',$mainImage).data('index'),10) ;
+			        if (!isNaN(index) ) {
+				        sync1.trigger("owl.goTo",index);
+			        }
+		        }
+	        });
+
+	        $(document).on('reset_data',function(event){
+		        var $product = $(event.target).closest('.product');
+		        $product.find( '.product_meta' ).find( '.product_stock').wc_reset_content();
+		        sync1.trigger("owl.goTo",0);
+	        });
+
+
+            /*$(document).on('change','.variations_form .variations select,.variations_form .variation_form_section select,div.select',function(){
                 var variation_form = $(this).closest( '.variations_form' );
                 var current_settings = {},
                     reset_variations = variation_form.find( '.reset_variations' );
@@ -273,12 +306,12 @@ if ($single_product_show_image_thumb == 0) {
                 }
 
                 if (variation_id > 0) {
-                    var index = parseInt($('a[data-variation_id=*"|'+variation_id+'|"]','#sync1').data('index'),10) ;
+                    var index = parseInt($('a[data-variation_id*="|'+variation_id+'|"]','#sync1').data('index'),10) ;
                     if (!isNaN(index) ) {
                         sync1.trigger("owl.goTo",index);
                     }
                 }
-            });
+            });*/
 
         });
     })(jQuery);

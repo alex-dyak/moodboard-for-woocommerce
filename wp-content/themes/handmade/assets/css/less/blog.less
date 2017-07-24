@@ -429,7 +429,7 @@
 		-moz-border-radius: 100%;
 		border-radius: 100%;
 		&.next,
-		&.prev, {
+		&.prev {
 			border: none;
 			-webkit-border-radius: 0;
 			-moz-border-radius: 0;
@@ -930,19 +930,6 @@
 }
 
 .comment-form {
-	.entry-comments-form-avatar .avatar {
-		float: left;
-		width: 70px;
-		-webkit-border-radius: 100%;
-		-moz-border-radius: 100%;
-		border-radius: 100%;
-		margin: 0 20px 0 0;
-	}
-	.comment-fields-inner {
-		position: relative;
-		overflow: hidden;
-	}
-
 	input[type="text"],
 	input[type="search"],
 	input[type="email"],
@@ -954,16 +941,12 @@
 	textarea {
 		height: 100px;
 	}
-
-	.form-group {
-		margin-bottom: 10px;
+	> p > label {
+		display: none;
 	}
-	.form-submit {
-		padding: 0 15px;
-		margin: 5px 0 0 0;
+	p.comment-form-comment {
+		line-height: 0;
 	}
-
-	.comment-notes,
 	.logged-in-as {
 		display: none;
 	}

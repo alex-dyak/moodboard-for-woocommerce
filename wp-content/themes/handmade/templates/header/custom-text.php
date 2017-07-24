@@ -9,7 +9,6 @@ switch ($g5plus_header_customize_current) {
 		$enable_header_customize = rwmb_meta($prefix . 'enable_header_customize_nav');
 		if ($enable_header_customize == '1') {
 			$header_customize_text = rwmb_meta($prefix . 'header_customize_nav_text');
-			var_dump($header_customize_text);
 		}
 		else {
 			$header_customize_text = $g5plus_options['header_customize_nav_text'];

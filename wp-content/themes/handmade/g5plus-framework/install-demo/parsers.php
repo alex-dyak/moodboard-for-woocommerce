@@ -41,8 +41,8 @@ if ( !class_exists( 'G5Plus_Parser' ) ) {
 					echo sprintf('%s', $error[0] . ':' . $error[1] . ' ' . esc_html( $error[2] ));
 				}
 				echo '</pre>';
-				echo '<p><strong>' . esc_html__( 'There was an error when reading this WXR file', 'wordpress-importer' ) . '</strong><br />';
-				echo esc_html__( 'Details are shown above. The importer will now try again with a different parser...', 'wordpress-importer' ) . '</p>';
+				echo '<p><strong>' . esc_html__( 'There was an error when reading this WXR file', 'g5plus-handmade' ) . '</strong><br />';
+				echo esc_html__( 'Details are shown above. The importer will now try again with a different parser...', 'g5plus-handmade' ) . '</p>';
 			}
 
 			// use regular expressions if nothing else available or this is bad XML
@@ -78,7 +78,7 @@ if ( !class_exists( 'G5Plus_Parser_SimpleXML' ) ) {
 			}
 
 			if ( ! $success || isset( $dom->doctype ) ) {
-				return new WP_Error( 'SimpleXML_parse_error', esc_html__( 'There was an error when reading this WXR file', 'wordpress-importer' ), libxml_get_errors() );
+				return new WP_Error( 'SimpleXML_parse_error', esc_html__( 'There was an error when reading this WXR file', 'g5plus-handmade' ), libxml_get_errors() );
 			}
 
 			$xml = simplexml_import_dom( $dom );
@@ -86,16 +86,16 @@ if ( !class_exists( 'G5Plus_Parser_SimpleXML' ) ) {
 
 			// halt if loading produces an error
 			if ( ! $xml )
-				return new WP_Error( 'SimpleXML_parse_error', esc_html__( 'There was an error when reading this WXR file', 'wordpress-importer' ), libxml_get_errors() );
+				return new WP_Error( 'SimpleXML_parse_error', esc_html__( 'There was an error when reading this WXR file', 'g5plus-handmade' ), libxml_get_errors() );
 
 			$wxr_version = $xml->xpath('/rss/channel/wp:wxr_version');
 			if ( ! $wxr_version )
-				return new WP_Error( 'WXR_parse_error', esc_html__( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'wordpress-importer' ) );
+				return new WP_Error( 'WXR_parse_error', esc_html__( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'g5plus-handmade' ) );
 
 			$wxr_version = (string) trim( $wxr_version[0] );
 			// confirm that we are dealing with the correct file format
 			if ( ! preg_match( '/^\d+\.\d+$/', $wxr_version ) )
-				return new WP_Error( 'WXR_parse_error', esc_html__( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'wordpress-importer' ) );
+				return new WP_Error( 'WXR_parse_error', esc_html__( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'g5plus-handmade' ) );
 
 			$base_url = $xml->xpath('/rss/channel/wp:base_site_url');
 			$base_url = (string) trim( $base_url[0] );
@@ -288,7 +288,7 @@ if ( !class_exists( 'G5Plus_Parser_XML' ) ) {
 			xml_parser_free( $xml );
 
 			if ( ! preg_match( '/^\d+\.\d+$/', $this->wxr_version ) )
-				return new WP_Error( 'WXR_parse_error', esc_html__( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'wordpress-importer' ) );
+				return new WP_Error( 'WXR_parse_error', esc_html__( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'g5plus-handmade' ) );
 
 			return array(
 				'authors' => $this->authors,
@@ -415,7 +415,7 @@ if ( !class_exists( 'G5Plus_Parser_Regex' ) ) {
 		var $terms = array();
 		var $base_url = '';
 
-		function G5Plus_Parser_Regex() {
+		function __construct() {
 			$this->has_gzip = is_callable( 'gzopen' );
 		}
 
@@ -475,7 +475,7 @@ if ( !class_exists( 'G5Plus_Parser_Regex' ) ) {
 			}
 
 			if ( ! $wxr_version )
-				return new WP_Error( 'WXR_parse_error', esc_html__( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'wordpress-importer' ) );
+				return new WP_Error( 'WXR_parse_error', esc_html__( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'g5plus-handmade' ) );
 
 			return array(
 				'authors' => $this->authors,

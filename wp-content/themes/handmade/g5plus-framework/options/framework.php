@@ -399,24 +399,6 @@
                     }
                     // Ajax saving!!!
                     add_action( "wp_ajax_" . $this->args['opt_name'] . '_ajax_save', array( $this, "ajax_save" ) );
-
-                    if ( $this->args['dev_mode'] == true || Redux_Helpers::isLocalHost() == true ) {
-                        include_once 'core/dashboard.php';
-
-                        if ( ! isset ( $GLOBALS['redux_notice_check'] ) ) {
-                            include_once 'core/newsflash.php';
-
-                            $params = array(
-                                'dir_name'    => 'notice',
-                                'server_file' => 'http://www.reduxframework.com/' . 'wp-content/uploads/redux/redux_notice.json',
-                                'interval'    => 3,
-                                'cookie_id'   => 'redux_blast',
-                            );
-
-                            new reduxNewsflash( $this, $params );
-                            $GLOBALS['redux_notice_check'] = 1;
-                        }
-                    }
                 }
 
                 /**
@@ -888,7 +870,7 @@
                 if ( empty ( $data ) && ! empty ( $type ) ) {
 
                     /**
-                     * Use data from Wordpress to populate options array
+                     * Use data from WordPress to populate options array
                      * */
                     if ( ! empty ( $type ) && empty ( $data ) ) {
                         if ( empty ( $args ) ) {
@@ -1245,7 +1227,7 @@
             }
 
             /**
-             * Class Add Sub Menu Function, creates options submenu in Wordpress admin area.
+             * Class Add Sub Menu Function, creates options sub menu in WordPress admin area.
              *
              * @since       3.1.9
              * @access      private

@@ -18,7 +18,7 @@ if (!function_exists('g5plus_enqueue_styles')) {
 		if (isset($g5plus_options['cdn_font_awesome']) && !empty($g5plus_options['cdn_font_awesome'])) {
 			$url_font_awesome = $g5plus_options['cdn_font_awesome'];
 		}
-		wp_enqueue_style('g5plus_framework_font_awesome', $url_font_awesome, array());
+		wp_enqueue_style('g5plus_framework_font_awesome', $url_font_awesome, array(),'4.6.3');
 		wp_enqueue_style('g5plus_framework_font_awesome_animation', THEME_URL . 'assets/plugins/fonts-awesome/css/font-awesome-animation.min.css', array());
 
 		/*bootstrap*/
@@ -139,4 +139,22 @@ if(!function_exists('g5plus_enqueue_custom_script')){
         }
     }
     add_action( 'wp_footer', 'g5plus_enqueue_custom_script' );
+}
+
+if (!function_exists('g5plus_woocompare_custom_style')) {
+	function g5plus_woocompare_custom_style() {
+		$action = isset($_GET['action']) ? $_GET['action'] : '';
+		if ($action == 'yith-woocompare-view-table') {
+			$custom_css = '
+			.woocommerce-compare-page h1 {
+				font-size: 24px;
+				background-color: #f7f7f7;
+				color: #333333;
+			}';
+			echo '<style id="g5plus_woocompare_custom_style" type="text/css"></style>';
+			echo sprintf('<style type="text/css">%s %s</style>',"\n",$custom_css);
+		}
+
+	}
+	add_action('wp_print_footer_scripts','g5plus_woocompare_custom_style');
 }

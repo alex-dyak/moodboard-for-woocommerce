@@ -4,7 +4,7 @@ $prefix = 'g5plus_';
 
 $is_show_top_bar = rwmb_meta($prefix . 'top_bar');
 
-if (($is_show_top_bar === '') || ($is_show_top_bar == '-1')) {
+if (($is_show_top_bar === '') || ($is_show_top_bar == '-1') || !is_singular()) {
 	$is_show_top_bar = $g5plus_options['top_bar'];
 }
 if (!$is_show_top_bar) {

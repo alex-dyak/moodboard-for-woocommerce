@@ -1,9 +1,9 @@
 <?php
 
 /**
- *  Resizes an image and returns an array containing the resized URL, width, height and file type. Uses native Wordpress functionality.
+ *  Resizes an image and returns an array containing the resized URL, width, height and file type. Uses native WordPress functionality.
  *
- *  Because Wordpress 3.5 has added the new 'WP_Image_Editor' class and depreciated some of the functions
+ *  Because WordPress 3.5 has added the new 'WP_Image_Editor' class and depreciated some of the functions
  *  we would normally rely on (such as wp_load_image), a separate function has been created for 3.5+.
  *
  *  Providing two separate functions means we can be backwards compatible and future proof. Hooray!
@@ -13,7 +13,7 @@
  *  If none of the supported libraries are available the function will bail and return the original image.
  *
  *  Both functions produce the exact same results when successful.
- *  Images are saved to the Wordpress uploads directory, just like images uploaded through the Media Library.
+ *  Images are saved to the WordPress uploads directory, just like images uploaded through the Media Library.
  * 
 	*  Copyright 2013 Matthew Ruddy (http://easinglider.com)
 	*  
@@ -99,7 +99,7 @@ function matthewruddy_image_resize( $url, $width = NULL, $height = NULL, $crop =
 			if ( !$get_attachment )
 				return array( 'url' => $url, 'width' => $width, 'height' => $height );
 
-			// Load Wordpress Image Editor
+			// Load WordPress Image Editor
 			$editor = wp_get_image_editor( $file_path );
 			if ( is_wp_error( $editor ) )
 				return array( 'url' => $url, 'width' => $width, 'height' => $height );
@@ -185,7 +185,7 @@ function matthewruddy_image_resize_id($images_id,$width = NULL, $height = NULL, 
 }
 
 /**
- *  Deletes the resized images when the original image is deleted from the Wordpress Media Library.
+ *  Deletes the resized images when the original image is deleted from the WordPress Media Library.
  *
  *  @author Matthew Ruddy
  */
@@ -203,7 +203,7 @@ function matthewruddy_delete_resized_images( $post_id ) {
 	$pathinfo = pathinfo( $metadata['file'] );
 	$resized_images = $metadata['image_meta']['resized_images'];
 
-	// Get Wordpress uploads directory (and bail if it doesn't exist)
+	// Get WordPress uploads directory (and bail if it doesn't exist)
 	$wp_upload_dir = wp_upload_dir();
 	$upload_dir = $wp_upload_dir['basedir'];
 	if ( !is_dir( $upload_dir ) )

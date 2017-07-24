@@ -213,7 +213,7 @@ if ( ($header_social_profile == array()) || (empty( $header_social_profile )) ) 
 		$social_icons .= '<li><a href="' . esc_url( $rss ) . '" target="_blank"><i class="fa fa-rss"></i></a></li>' . "\n";
 	}
 	if ( $email ) {
-		$social_icons .= '<li><a href="mailto:' . esc_attr( $email ) . '" target="_blank"><i class="fa fa-vk"></i></a></li>' . "\n";
+		$social_icons .= '<li><a href="mailto:' . esc_attr( $email ) . '" target="_blank"><i class="fa fa-envelope"></i></a></li>' . "\n";
 	}
 } else {
 	if (empty($twitter)) { $twitter = '#'; }
@@ -300,7 +300,7 @@ if ( ($header_social_profile == array()) || (empty( $header_social_profile )) ) 
 			$social_icons .= '<li><a href="' . esc_url( $rss ) . '" target="_blank"><i class="fa fa-rss"></i></a></li>' . "\n";
 		}
 		if ( ( $id == 'email' ) && $email ) {
-			$social_icons .= '<li><a href="mailto:' . esc_attr( $email ) . '" target="_blank"><i class="fa fa-vk"></i></a></li>' . "\n";
+			$social_icons .= '<li><a href="mailto:' . esc_attr( $email ) . '" target="_blank"><i class="fa fa-envelope"></i></a></li>' . "\n";
 		}
 	}
 }

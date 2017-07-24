@@ -15,7 +15,7 @@ if (!isset($footer_top_bar) || $footer_top_bar === '-1' || $footer_top_bar == ''
 $footer_top_bar_layout_custom = rwmb_meta($prefix . 'footer_top_bar_layout');
 $footer_top_bar_layout = $footer_top_bar_layout_custom;
 if (!isset($footer_top_bar_layout) || $footer_top_bar_layout == '-1' || $footer_top_bar_layout == '') {
-    $footer_top_bar_layout = $g5plus_options['footer_top_bar_layout'];
+    $footer_top_bar_layout = isset($g5plus_options['footer_top_bar_layout']) ? $g5plus_options['footer_top_bar_layout'] : 'footer-top-bar-1';
 }
 
 if (!isset($footer_top_bar_layout_custom) || $footer_top_bar_layout_custom == '-1' || $footer_top_bar_layout_custom == '') {

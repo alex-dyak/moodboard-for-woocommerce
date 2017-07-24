@@ -86,16 +86,6 @@ if ( !function_exists( 'g5plus_is_blog_page' ) ){
 	}
 }
 
-/* ATTRIBUTE VALUE
-    ================================================== */
-if ( !function_exists( 'g5plus_the_attr_value' ) ){
-	function g5plus_the_attr_value($attr) {
-		foreach ($attr as $key) {
-			echo esc_attr($key) . ' ';
-		}
-	}
-}
-
 /*================================================
 MAINTENANCE MODE
 ================================================== */
@@ -208,7 +198,7 @@ if (!function_exists('g5plus_categories_binder')) {
 			if (empty($term) || (!isset($term->parent))) {
 				continue;
 			}
-			if (($term->parent !== $parent)) {
+			if (((int)$term->parent !== (int)$parent) || ($parent === null) || ($term->parent === null)) {
 				continue;
 			}
 

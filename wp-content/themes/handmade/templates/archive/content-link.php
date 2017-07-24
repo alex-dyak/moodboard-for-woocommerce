@@ -6,8 +6,8 @@
  * Time: 2:29 PM
  */
 $prefix = 'g5plus_';
-$url = rwmb_meta($prefix.'post_format_link_url');
-$text = rwmb_meta($prefix.'post_format_link_text');
+$url = rwmb_meta($prefix.'post_format_link_url', array(), get_the_ID());
+$text = rwmb_meta($prefix.'post_format_link_text', array(), get_the_ID());
 
 $class = array();
 $class[]= "clearfix";

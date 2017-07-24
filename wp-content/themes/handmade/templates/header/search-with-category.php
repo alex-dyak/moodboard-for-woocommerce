@@ -9,7 +9,7 @@
 <div class="search-with-category header-customize-item" data-hint-message="<?php esc_html_e('Type at least 3 characters to search','g5plus-handmade') ?>">
 	<div class="search-with-category-inner search-box">
 		<div class="form-search-left">
-			<span data-id="-1"><?php esc_html_e('Categories','handmade-framework') ?></span>
+			<span data-id="-1"><?php esc_html_e('Categories','g5plus-handmade') ?></span>
 			<?php if (!empty($category_content)):?>
 				<?php echo wp_kses_post($category_content) ?>
 			<?php endif; ?>

@@ -34,37 +34,37 @@ function g_register_required_plugins() {
      * If the source is NOT from the .org repo, then source is also required.
      */
     $plugins = array(
-
         array(
             'name'               => 'Handmade Framework', // The plugin name
             'slug'               => 'handmade-framework', // The plugin slug (typically the folder name)
-            'source'             => get_template_directory_uri() . '/theme-plugins/handmade-framework.zip', // The plugin source
+            'source'             => 'http://themes.g5plus.net/theme-plugins/handmade/handmade-framework-v1.3.zip', // The plugin source
             'required'           => true, // If false, the plugin is only 'recommended' instead of required
+	        'version'           => '1.3',
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
             'external_url'       => '', // If set, overrides default API URL and points to an external URL
         ),
+	    array(
+		    'name'               => 'Revolution Slider', // The plugin name
+		    'slug'               => 'revslider', // The plugin slug (typically the folder name)
+		    'source'             => 'http://themes.g5plus.net/theme-plugins/revslider_5.4.3.1.zip', // The plugin source
+		    'required'           => true, // If false, the plugin is only 'recommended' instead of required
+		    'version'            => '5.4.3.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+		    'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+		    'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+		    'external_url'       => '', // If set, overrides default API URL and points to an external URL
+	    ),
+	    array(
+		    'name'               => 'Visual Composer', // The plugin name
+		    'slug'               => 'js_composer', // The plugin slug (typically the folder name)
+		    'source' => 'http://themes.g5plus.net/theme-plugins/js_composer_5.1.1.zip', // The plugin source
+		    'required'           => true, // If false, the plugin is only 'recommended' instead of required
+		    'version' => '5.1.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+		    'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+		    'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+		    'external_url'       => '', // If set, overrides default API URL and points to an external URL
+	    ),
 
-        array(
-            'name'               => 'Revolution Slider', // The plugin name
-            'slug'               => 'revslider', // The plugin slug (typically the folder name)
-            'source'             => 'http://themes.g5plus.net/theme-plugins/revslider.zip', // The plugin source
-            'required'           => true, // If false, the plugin is only 'recommended' instead of required
-            'version'            => '5.0.8.5', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-            'external_url'       => '', // If set, overrides default API URL and points to an external URL
-        ),
-        array(
-            'name'               => 'Visual Composer', // The plugin name
-            'slug'               => 'js_composer', // The plugin slug (typically the folder name)
-            'source' => 'http://themes.g5plus.net/theme-plugins/js_composer_4.7.4.zip', // The plugin source
-            'required'           => true, // If false, the plugin is only 'recommended' instead of required
-            'version' => '4.7.4', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-            'external_url'       => '', // If set, overrides default API URL and points to an external URL
-        ),
         array(
             'name'               => 'Envato WordPress Toolkit', // The plugin name
             'slug'               => 'envato-wordpress-toolkit', // The plugin slug (typically the folder name)

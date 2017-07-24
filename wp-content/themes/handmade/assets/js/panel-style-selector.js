@@ -8,7 +8,9 @@
 			isLoading: false
 		},
 		initialize: function () {
-			G5PlusPanelStyleSelector.build();
+			if (!$('body').hasClass('woocommerce-compare-page')) {
+				G5PlusPanelStyleSelector.build();
+			}
 		},
 		build: function () {
 			$.ajax({

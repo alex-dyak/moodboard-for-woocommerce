@@ -25,6 +25,9 @@ if ( ! class_exists( 'RWMB_Sorter_Field' ) )
 			if (isset($meta['enable'])) {
 				$meta_arr = explode('||', $meta['enable']);
 			}
+			elseif (isset($field['std']) && is_array($field['std'])) {
+				$meta['enable'] = join('||', $field['std']);
+			}
 			$html = sprintf('<div class="rwmb-sorter">');
 			$html .= sprintf(
 				'<input type="hidden" class="rwmb-hidden" name="%s[enable]" value="%s" data-enable="true"/>',

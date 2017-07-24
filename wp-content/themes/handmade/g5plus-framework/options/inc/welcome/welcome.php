@@ -96,7 +96,6 @@
         }
         
         public function change_wp_footer() {
-            echo 'If you like <strong>Redux</strong> please leave us a <a href="https://wordpress.org/support/view/plugin-reviews/redux-framework?filter=5#postform" target="_blank" class="redux-rating-link" data-rated="Thanks :)">★★★★★</a> rating. A huge thank you from Redux in advance!';
         }
 
         public function support_hash() {
@@ -371,7 +370,7 @@
          * @return void
          */
         public function about_screen() {
-            // Stupid hack for Wordpress alerts and warnings
+            // Stupid hack for WordPress alerts and warnings
             echo '<div class="wrap" style="height:0;overflow:hidden;"><h2></h2></div>';
 
             include_once(THEME_DIR . 'g5plus-framework/options/inc/welcome/views/about.php' );
@@ -386,7 +385,7 @@
          * @return void
          */
         public function changelog_screen() {
-            // Stupid hack for Wordpress alerts and warnings
+            // Stupid hack for WordPress alerts and warnings
             echo '<div class="wrap" style="height:0;overflow:hidden;"><h2></h2></div>';
 
             include_once( THEME_DIR . 'g5plus-framework/options/inc/welcome/views/changelog.php' );
@@ -401,7 +400,7 @@
          * @return void
          */
         public function redux_extensions() {
-            // Stupid hack for Wordpress alerts and warnings
+            // Stupid hack for WordPress alerts and warnings
             echo '<div class="wrap" style="height:0;overflow:hidden;"><h2></h2></div>';
 
             include_once( THEME_DIR . 'g5plus-framework/options/inc/welcome/views/extensions.php' );
@@ -417,7 +416,7 @@
          * @return void
          */
         public function get_support() {
-            // Stupid hack for Wordpress alerts and warnings
+            // Stupid hack for WordPress alerts and warnings
             echo '<div class="wrap" style="height:0;overflow:hidden;"><h2></h2></div>';
 
             include_once( THEME_DIR . 'g5plus-framework/options/inc/welcome/views/support.php' );
@@ -432,7 +431,7 @@
          * @return void
          */
         public function credits_screen() {
-            // Stupid hack for Wordpress alerts and warnings
+            // Stupid hack for WordPress alerts and warnings
             echo '<div class="wrap" style="height:0;overflow:hidden;"><h2></h2></div>';
 
             include_once( THEME_DIR . 'g5plus-framework/options/inc/welcome/views/credits.php' );
@@ -447,7 +446,7 @@
          * @return void
          */
         public function status_screen() {
-            // Stupid hack for Wordpress alerts and warnings
+            // Stupid hack for WordPress alerts and warnings
             echo '<div class="wrap" style="height:0;overflow:hidden;"><h2></h2></div>';
 
             include_once( THEME_DIR . 'g5plus-framework/options/inc/welcome/views/status_report.php' );

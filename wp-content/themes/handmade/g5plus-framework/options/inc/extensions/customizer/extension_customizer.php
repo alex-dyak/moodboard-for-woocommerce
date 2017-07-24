@@ -317,7 +317,7 @@
                             $option['title'] = "";
                         }
 
-                        // Wordpress doesn't support multi-select
+                        // WordPress doesn't support multi-select
                         if ( $option['type'] == "select" && isset( $option['multi'] ) && $option['multi'] == true ) {
                             continue;
                         }

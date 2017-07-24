@@ -3,7 +3,7 @@ G5THEME USAGE LICENSE
 By using our product, you agree to the following terms:
 
 1. License
-Our Commercial WordPress themes (Premium wordpress themes) are released under the GNU Public License 3.0. 
+Our Commercial WordPress themes (Premium WordPress themes) are released under the GNU Public License 3.0.
 
 2. Ownership
 You may not claim intellectual or exclusive ownership to any of our products, modified or unmodified.

@@ -7,9 +7,9 @@
  */
 $prefix = 'g5plus_';
 
-$quote_content = rwmb_meta($prefix.'post_format_quote');
-$quote_author = rwmb_meta($prefix.'post_format_quote_author');
-$quote_author_url = rwmb_meta($prefix.'post_format_quote_author_url');
+$quote_content = rwmb_meta($prefix.'post_format_quote', array(), get_the_ID());
+$quote_author = rwmb_meta($prefix.'post_format_quote_author', array(), get_the_ID());
+$quote_author_url = rwmb_meta($prefix.'post_format_quote_author_url', array(), get_the_ID());
 
 $class = array();
 $class[]= "clearfix";

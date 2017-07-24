@@ -684,54 +684,6 @@ if (!function_exists('g5plus_render_comments')) {
 }
 
 /*================================================
-COMMENTS FORM
-================================================== */
-if (!function_exists('g5plus_comment_form')) {
-    function g5plus_comment_form() {
-        $commenter = wp_get_current_commenter();
-        $req = get_option('require_name_email');
-        $aria_req = ($req ? " aria-required='true'" : '');
-        $html5 = current_theme_supports('html5', 'comment-form') ? 'html5' : 'xhtml';;
-        $fields = array(
-            'author' => '<div class="form-group col-md-12">' .
-                '<label for="author">'.esc_html__('Name*','g5plus-handmade').'</label>'.
-                '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" placeholder="'.esc_html__('Name*','g5plus-handmade').'" ' . $aria_req . '>' .
-                '</div>',
-            'email' => '<div class="form-group col-md-12">' .
-                '<label for="email">'.esc_html__('Email*','g5plus-handmade').'</label>'.
-                '<input id="email" name="email" ' . ($html5 ? 'type="email"' : 'type="text"') . ' value="' . esc_attr($commenter['comment_author_email']) . '" placeholder="'.esc_html__('Email*','g5plus-handmade').'" ' . $aria_req . '>' .
-                '</div>',
-            'url'   => '<div class="form-group col-md-12">'.
-                '<label for="url">'.esc_html__("Website",'g5plus-handmade').'</label>'.
-                '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="'.esc_html__('Website','g5plus-handmade').'" />'.
-                '</div>'
-        );
-        $fields = apply_filters('g5plus_comment_fields',$fields);
-        $comment_form_args = array(
-            'fields' => $fields,
-            'comment_field' => '<div class="form-group col-md-12">' .
-                '<label for="comment">'.esc_html__('Message*','g5plus-handmade').'</label>'.
-                '<textarea rows="6" id="comment" name="comment" placeholder="'.esc_html__('Message*','g5plus-handmade') .'" '. $aria_req .'></textarea>' .
-                '</div>',
-            'comment_notes_before' => '<p class="comment-notes">' .
-                esc_html__('Your email address will not be published.', 'g5plus-handmade') /* . ( $req ? $required_text : '' ) */ .
-                '</p>',
-            'comment_notes_after' => '',
-            'id_submit' => 'btnComment',
-            'class_submit' => 'button-comment',
-            'title_reply' => esc_html__('Leave a Comment', 'g5plus-handmade'),
-            'title_reply_to' => esc_html__('Leave a Comment to %s', 'g5plus-handmade'),
-            'cancel_reply_link' => esc_html__('Cancel reply', 'g5plus-handmade'),
-            'label_submit' => esc_html__('Send', 'g5plus-handmade')
-        );
-
-        $comment_form_args = apply_filters('g5plus_comment_form_args',$comment_form_args);
-
-        comment_form($comment_form_args);
-    }
-}
-
-/*================================================
 Replaces the excerpt "more" text by a link
 ================================================== */
 if (!function_exists('g5plus_excerpt_more')) {

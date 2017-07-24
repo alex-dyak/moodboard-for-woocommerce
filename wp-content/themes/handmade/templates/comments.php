@@ -47,7 +47,7 @@ if (post_password_required()) {
         <?php endif; ?>
         <?php if (comments_open()) : ?>
             <div class="entry-comments-form">
-                <?php g5plus_comment_form(); ?>
+                <?php comment_form(); ?>
             </div>
         <?php endif; ?>
     </div>

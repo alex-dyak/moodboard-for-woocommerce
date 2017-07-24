@@ -132,7 +132,7 @@ if (!class_exists('ReduxFramework_rows')) {
                                 //Upload controls DIV
                                 $output_html .= '<div class="upload_button_div">';
                                 //If the user has WP3.5+ show upload/remove button
-                                $output_html .= '<span class="button media_upload_button" data-field-name="' . $field['name'] . '" data-row-index="' . $x . '"  id="add_' . $x . '">' . __('Upload ' . $field['title'], 'redux-framework') . '</span>';
+                                $output_html .= '<span class="button media_upload_button" data-field-name="' . $field['name'] . '" data-row-index="' . $x . '"  id="add_' . $x . '">' . __('Upload ' , 'redux-framework') . $field['title'] . '</span>';
 
                                 $output_html .= '<span class="button remove-image' . $hide . '" data-field-name="' . $field['name'] . '" data-row-index="' . $x . '"  id="reset_' . $x . '" rel="' . $slide[$field['name']]['attachment_id'] . '">' . __('Remove', 'redux-framework') . '</span>';
 
@@ -373,7 +373,7 @@ if (!class_exists('ReduxFramework_rows')) {
                                 //Upload controls DIV
                                 $output_html .= '<div class="upload_button_div">';
                                 //If the user has WP3.5+ show upload/remove button
-                                $output_html .= '<span class="button media_upload_button" data-field-name="' . $field['name'] . '" data-row-index="' . $x . '"  id="add_' . $x . '">' . __('Upload ' . $field['title'], 'redux-framework') . '</span>';
+                                $output_html .= '<span class="button media_upload_button" data-field-name="' . $field['name'] . '" data-row-index="' . $x . '"  id="add_' . $x . '">' . __('Upload ' , 'redux-framework') . $field['title'] . '</span>';
 
                                 $output_html .= '<span class="button remove-image' . $hide . '" data-field-name="' . $field['name'] . '" data-row-index="' . $x . '"  id="reset_' . $x . '" rel="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][attachment_id]">' . __('Remove', 'redux-framework') . '</span>';
 

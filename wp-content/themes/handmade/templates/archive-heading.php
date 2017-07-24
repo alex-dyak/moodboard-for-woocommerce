@@ -63,8 +63,8 @@ $page_title_bg_image = '';
 $page_title_height = '';
 $cat = get_queried_object();
 if ($cat && property_exists( $cat, 'term_id' )) {
-    $page_title_bg_image = get_tax_meta($cat,$prefix.'page_title_background');
-    $page_title_height = get_tax_meta($cat,$prefix.'page_title_height');
+    $page_title_bg_image = g5plus_get_tax_meta($cat->term_id,$prefix.'page_title_background');
+    $page_title_height = g5plus_get_tax_meta($cat->term_id,$prefix.'page_title_height');
 }
 
 

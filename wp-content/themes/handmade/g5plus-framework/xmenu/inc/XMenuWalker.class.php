@@ -493,7 +493,7 @@ class XMenuWalker extends Walker_Nav_Menu {
 			$item_classes [] = 'x-has-description';
 		}
 
-		// This is the stock Wordpress code that builds the <li> with all of its attributes
+		// This is the stock WordPress code that builds the <li> with all of its attributes
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $item_classes ), $item ) );
 
 		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';

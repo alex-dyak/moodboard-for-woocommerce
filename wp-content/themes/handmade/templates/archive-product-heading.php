@@ -17,8 +17,8 @@ $page_title_bg_image = '';
 $page_title_height = '';
 $cat = get_queried_object();
 if ($cat && property_exists( $cat, 'term_id' )) {
-    $page_title_bg_image = get_tax_meta($cat,$prefix.'page_title_background');
-    $page_title_height = get_tax_meta($cat,$prefix.'page_title_height');
+    $page_title_bg_image = g5plus_get_tax_meta($cat->term_id,$prefix.'page_title_background');
+    $page_title_height = g5plus_get_tax_meta($cat->term_id,$prefix.'page_title_height');
 }
 
 if(!$page_title_bg_image || $page_title_bg_image === '') {
@@ -33,9 +33,10 @@ if (isset($page_title_bg_image) && isset($page_title_bg_image['url'])) {
 $breadcrumbs_in_page_title = $g5plus_options['breadcrumbs_in_archive_product_title'];
 $product_show_result_count = $g5plus_options['product_show_result_count'];
 $product_show_catalog_ordering = $g5plus_options['product_show_catalog_ordering'];
+$product_show_catalog_page_size = isset($g5plus_options['product_show_catalog_page_size']) ? $g5plus_options['product_show_catalog_page_size'] : 0;
 $breadcrumb_class = array('breadcrumb-wrap breadcrumb-archive-product-wrap');
 
-if (($product_show_result_count == 0) && ($product_show_catalog_ordering == 0) ) {
+if (($product_show_result_count == 0) && ($product_show_catalog_ordering == 0) && ($product_show_catalog_page_size == 0) ) {
 	$breadcrumb_class[] = 'catalog-filter-visible';
 } else {
 	if ($product_show_result_count == 0) {
