@@ -3,6 +3,12 @@
 do_action('g5plus_before_page');
 
 $data_section_id = uniqid();
+$cat = $cat_filter = '';
+$terms = wp_get_post_terms(get_the_ID(), array(G5PLUS_PORTFOLIO_CATEGORY_TAXONOMY));
+foreach ($terms as $term) {
+    $cat_filter .= preg_replace('/\s+/', '', $term->name) . ' ';
+    $cat .=  '<span><a href="'.get_category_link($term->term_id).'">'.$term->name . '</a></span> , ';
+}
 ?>
 <div class="portfolio-full detail-01" id="content">
     <div class="fullwidth">
@@ -107,7 +113,7 @@ $data_section_id = uniqid();
                         </div>
                         <div class="portfolio-info-box">
                             <h6 class="p-color p-font"><?php echo esc_html__('Category','g5plus-handmade') ?>: </h6>
-                            <div class="portfolio-term line-height-1"><?php echo wp_kses_post($cat); ?></div>
+                            <div class="portfolio-term line-height-1"><?php echo rtrim($cat,','); ?></div>
                         </div>
                         <div class="portfolio-info-box">
                             <h6 class="p-color p-font"><?php echo esc_html__('Client','g5plus-handmade') ?>: </h6>

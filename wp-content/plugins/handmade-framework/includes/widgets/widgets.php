@@ -12,6 +12,7 @@ include_once( PLUGIN_G5PLUS_FRAMEWORK_DIR . 'includes/widgets/payment-gate.php' 
 include_once( PLUGIN_G5PLUS_FRAMEWORK_DIR . 'includes/widgets/partner-carousel.php' );
 include_once( PLUGIN_G5PLUS_FRAMEWORK_DIR . 'includes/widgets/map-scrollup.php' );
 include_once( PLUGIN_G5PLUS_FRAMEWORK_DIR . 'includes/widgets/myaccount.php' );
+include_once( PLUGIN_G5PLUS_FRAMEWORK_DIR . 'includes/widgets/posts-advanced.php' );
 
 
 /*include_once( PLUGIN_G5PLUS_FRAMEWORK_DIR . 'includes/widgets/demo_acf.php' );*/
@@ -194,7 +195,7 @@ if (!function_exists('g5plus_get_social_icon')) {
 			}
 		} else {
 
-			$social_type = explode( '||', $icons );
+			$social_type = explode( ',', $icons );
 			if (empty($twitter)) { $twitter = '#'; }
 			if (empty($facebook)) { $facebook = '#'; }
 			if (empty($dribbble)) { $dribbble = '#'; }

@@ -48,118 +48,7 @@ h3.sc-title {
 	}
 
 
-	.product-category {
-		.product-category-inner {
-			position: relative;
-			margin-bottom: 15px;
-			&:before {
-				content:  "";
-				display: block;
-				position: absolute;
-				background-color: rgba(221,221,221,0.5);
-				left: 0;
-				right: 0;
-				top: 0;
-				bottom: 0;
-				margin: auto;
-				z-index: 1;
-			}
-			&:after {
-				content:  "";
-				display: block;
-				position: absolute;
-				border-style: solid;
-				border-width: 2px;
-				left: 0;
-				right: 0;
-				top: 0;
-				bottom: 0;
-				margin: auto;
-				z-index: -1;
 
-				opacity: 0;
-				visibility: hidden;
-
-				-webkit-transition: all 0.2s;
-				-moz-transition: all 0.2s;
-				-ms-transition: all 0.2s;
-				-o-transition: all 0.2s;
-				transition: all 0.2s;
-			}
-
-			&:hover {
-				&:after {
-					opacity: 1;
-					visibility: visible;
-
-					-webkit-transform: translateY(15px) translateX(15px);
-					-moz-transform: translateY(15px) translateX(15px);
-					-ms-transform: translateY(15px) translateX(15px);
-					-o-transform: translateY(15px) translateX(15px);
-					transform: translateY(15px) translateX(15px);
-				}
-				div a {
-					padding-right: 45px;
-					i {
-						visibility: visible;
-						opacity: 1;
-						display: inline-block;
-					}
-				}
-			}
-
-
-			div {
-				position: absolute;
-				height: 35px;
-				top: 0;
-				bottom: 0;
-				right: 0;
-				left: 0;
-				margin: auto;
-				z-index: 2;
-				a {
-					position: relative;
-					display: inline-block;
-					font-size: 15px;
-					height: 35px;
-					line-height: 35px;
-					padding: 0 20px;
-					margin: 0;
-					color: #fff;
-
-					-webkit-transition: all 0.2s;
-					-moz-transition: all 0.2s;
-					-ms-transition: all 0.2s;
-					-o-transition: all 0.2s;
-					transition: all 0.2s;
-					i {
-						position: absolute;
-						right: 15px;
-						top: 0;
-						bottom: 0;
-						margin: auto;
-						font-size: 20px;
-						height: 20px;
-						vertical-align: middle;
-						visibility: hidden;
-						opacity: 0;
-						display: none;
-
-						-webkit-transition: all 0.2s;
-						-moz-transition: all 0.2s;
-						-ms-transition: all 0.2s;
-						-o-transition: all 0.2s;
-						transition: all 0.2s;
-
-					}
-				}
-			}
-		}
-		img {
-			width: 100%;
-		}
-	}
 
 	&.no-title {
 		.owl-theme .owl-controls {
@@ -387,6 +276,14 @@ h3.sc-title {
 			color: #999999;
 		}
 	}
+}
+
+.vc_tta-panel-body a.iso-filter span{
+	background-color: #fff;
+	z-index: 999;
+}
+.vc_tta-panel-body a.iso-filter span.prev{
+	right: 40px;
 }
 
 @media only screen and (max-width: 1023px) {

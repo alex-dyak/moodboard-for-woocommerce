@@ -36,45 +36,64 @@ if (!class_exists('g5plusFramework_Shortcode_Product_Sidebar')) {
 				'duration'      => '',
 				'delay'         => ''
 			), $atts));
-			$meta_query = WC()->query->get_meta_query();
+
+			$product_visibility_term_ids = wc_get_product_visibility_term_ids();
 			$query_args = array(
-				'post_type'				=> 'product',
-				'post_status' 			=> 'publish',
-				'ignore_sticky_posts'	=> 1,
-				'posts_per_page' 		=> $total_item,
-				'meta_query' 			=> $meta_query
+				'posts_per_page' => $total_item,
+				'post_status'    => 'publish',
+				'post_type'      => 'product',
+				'no_found_rows'  => 1,
+				'meta_query'     => array(),
+				'tax_query'      => array(
+					'relation' => 'AND',
+				),
 			);
+
+			if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
+				$query_args['tax_query'] = array(
+					array(
+						'taxonomy' => 'product_visibility',
+						'field'    => 'term_taxonomy_id',
+						'terms'    => $product_visibility_term_ids['outofstock'],
+						'operator' => 'NOT IN',
+					),
+				);
+			}
 
 
 
 			if (!empty($category)) {
-				$query_args['tax_query'] = array(
-					array(
+				$query_args['tax_query'][] = array(
 						'taxonomy' 		=> 'product_cat',
 						'terms' 		=>  explode(',',$category),
 						'field' 		=> 'slug',
 						'operator' 		=> 'IN'
-					)
 				);
 			}
 
 			switch($feature) {
 				case 'sale':
-					$product_ids_on_sale = wc_get_product_ids_on_sale();
-					$query_args['post__in'] = array_merge( array( 0 ), $product_ids_on_sale );
+					$product_ids_on_sale    = wc_get_product_ids_on_sale();
+					$product_ids_on_sale[]  = 0;
+					$query_args['post__in'] = $product_ids_on_sale;
 					break;
 				case 'new-in':
 					$query_args['orderby'] = 'DESC';
 					$query_args['order'] = 'date';
 					break;
 				case 'featured':
-					$query_args['meta_query'][] = array(
-						'key'   => '_featured',
-						'value' => 'yes'
+					$query_args['tax_query'][] = array(
+						'taxonomy' => 'product_visibility',
+						'field'    => 'term_taxonomy_id',
+						'terms'    => $product_visibility_term_ids['featured'],
 					);
 					break;
 				case 'top-rated':
-					add_filter( 'posts_clauses',  array( WC()->query, 'order_by_rating_post_clauses' ) );
+					$query_args['meta_key'] = '_wc_average_rating';
+					$query_args['orderby'] = 'meta_value_num';
+					$query_args['order'] = 'DESC';
+					$query_args['meta_query'] = WC()->query->get_meta_query();
+					$query_args['tax_query'] = WC()->query->get_tax_query();
 					break;
 				case 'recent-review':
 					add_filter( 'posts_clauses', array($this, 'order_by_comment_date_post_clauses' ) );
@@ -110,10 +129,6 @@ if (!class_exists('g5plusFramework_Shortcode_Product_Sidebar')) {
 
 
 			$products = new WP_Query( apply_filters( 'woocommerce_shortcode_products_query', $query_args, $atts ) );
-
-			if($feature =='top-rated'){
-				remove_filter( 'posts_clauses',  array( WC()->query, 'order_by_rating_post_clauses' ) );
-			}
 
 			if($feature =='recent-review' ){
 				remove_filter( 'posts_clauses', array($this, 'order_by_comment_date_post_clauses' )  );
@@ -171,7 +186,7 @@ if (!class_exists('g5plusFramework_Shortcode_Product_Sidebar')) {
 						$index++;
 						?>
 					<?php endwhile; // end of the loop. ?>
-					<?php if (($index_sub != $per_page) && ($index > 0)) : ?>
+					<?php if (($slider == 'slider') && ($index_sub != $per_page) && ($index > 0)) : ?>
 						</div>
 					<?php endif; ?>
 					<?php woocommerce_product_loop_end(); ?>

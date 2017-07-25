@@ -78,7 +78,15 @@ if (!class_exists('g5plusFramework_Shortcode_Product_Reviews')) {
 								<?php
 								    $_product = wc_get_product( $comment->comment_post_ID );
 								    $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
-								    $rating_html = $_product->get_rating_html( $rating );
+
+								if (defined('WOOCOMMERCE_VERSION') && version_compare(WOOCOMMERCE_VERSION,'3.0.0','<')) {
+									$rating_html = $_product->get_rating_html( $rating );
+								} else {
+									$rating_html = wc_get_rating_html( $rating );
+								}
+
+
+
 
 								 ?>
 								 <div class="product-sidebar-item comment">

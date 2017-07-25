@@ -440,18 +440,18 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
 		    extract( $args );
 
 		    if( ! empty( $user_id ) || ! empty( $wishlist_token ) || ! empty( $wishlist_id ) ) {
+			    $hidden_products = yith_wcwl_get_hidden_products();
+
 			    $sql = "SELECT *
-                        FROM `{$wpdb->yith_wcwl_items}` AS i
-                        LEFT JOIN {$wpdb->yith_wcwl_wishlists} AS l ON l.`ID` = i.`wishlist_id`
-                        INNER JOIN {$wpdb->posts} AS p ON p.ID = i.prod_id
-                        INNER JOIN {$wpdb->postmeta} AS pm ON pm.post_id = p.ID
-                        WHERE 1 AND p.post_type = %s AND p.post_status = %s AND pm.meta_key = %s AND pm.meta_value = %s";
+                    FROM `{$wpdb->yith_wcwl_items}` AS i
+                    LEFT JOIN {$wpdb->yith_wcwl_wishlists} AS l ON l.`ID` = i.`wishlist_id`
+                    INNER JOIN {$wpdb->posts} AS p ON p.ID = i.prod_id 
+                    WHERE 1 AND p.post_type = %s AND p.post_status = %s";
+			    $sql .= $hidden_products ? " AND p.ID NOT IN ( " . implode( ', ', $hidden_products ) . " )" : "";
 
 			    $sql_args = array(
 				    'product',
-				    'publish',
-				    '_visibility',
-				    'visible'
+				    'publish'
 			    );
 
 			    if( ! empty( $user_id ) ){
@@ -527,7 +527,18 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
 		    }
 		    else{
 			    $wishlist = yith_getcookie( 'yith_wcwl_products' );
-			    $existing_products = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} AS p LEFT JOIN {$wpdb->postmeta} AS pm ON p.ID = pm.post_id WHERE post_type = %s AND post_status = %s AND pm.meta_key = %s AND pm.meta_value = %s", array( 'product', 'publish', '_visibility', 'visible' ) ) );
+			    $hidden_products = yith_wcwl_get_hidden_products();
+
+			    $query = "SELECT ID FROM {$wpdb->posts} AS p
+                          WHERE post_type = %s AND post_status = %s";
+			    $query .= ! empty( $hidden_products ) ? ( " AND p.ID NOT IN ( " . implode( ', ', $hidden_products ). " )" ) : "";
+
+			    $query_args = array(
+				    'product',
+				    'publish'
+			    );
+
+			    $existing_products = $wpdb->get_col( $wpdb->prepare( $query, $query_args ) );
 
 			    foreach( $wishlist as $key => $cookie ){
 				    if( ! in_array( $cookie['prod_id'], $existing_products ) ){
@@ -570,18 +581,18 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
                     $count = get_transient( 'yith_wcwl_user_default_count_' . get_current_user_id() );
                 }
 
-                if( false === $count ){
-                    $sql  = "SELECT COUNT( i.`prod_id` ) AS `cnt`
+                if( true || false === $count ){
+	                $hidden_products = yith_wcwl_get_hidden_products();
+
+                    $sql  = "SELECT i.`prod_id` AS `cnt`
                         FROM `{$wpdb->yith_wcwl_items}` AS i
                         LEFT JOIN `{$wpdb->yith_wcwl_wishlists}` AS l ON l.ID = i.wishlist_id
                         INNER JOIN `{$wpdb->posts}` AS p ON i.`prod_id` = p.`ID`
-                        INNER JOIN `{$wpdb->postmeta}` AS pm ON p.`ID` = pm.`post_id`
-                        WHERE p.`post_type` = %s AND p.`post_status` = %s AND pm.`meta_key` = %s AND pm.`meta_value` = %s";
+                        WHERE p.`post_type` = %s AND p.`post_status` = %s";
+	                $sql .= $hidden_products ? " AND p.ID NOT IN ( " . implode( ', ', $hidden_products ) . " )" : "";
                     $args = array(
                         'product',
-                        'publish',
-                        '_visibility',
-                        'visible'
+                        'publish'
                     );
 
                     if ( ! empty( $wishlist_token ) ) {
@@ -593,8 +604,10 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
                         $args[] = get_current_user_id();
                     }
 
+	                $sql .= " GROUP BY i.prod_id, l.ID";
+
                     $query = $wpdb->prepare( $sql, $args );
-                    $count = $wpdb->get_var( $query );
+                    $count = count( $wpdb->get_col( $query ) );
 
                     $transient_name = ! empty( $wishlist_token ) ? ( 'yith_wcwl_wishlist_count_' . $wishlist_token ) : ( 'yith_wcwl_user_default_count_' . get_current_user_id() );
                     set_transient( $transient_name, $count, WEEK_IN_SECONDS );
@@ -604,8 +617,17 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
             }
             else {
                 $cookie = yith_getcookie( 'yith_wcwl_products' );
+	            $hidden_products = yith_wcwl_get_hidden_products();
 
-                $existing_products = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} AS p LEFT JOIN {$wpdb->postmeta} AS pm ON p.ID = pm.post_id WHERE post_type = %s AND post_status = %s AND pm.meta_key = %s AND pm.meta_value = %s", array( 'product', 'publish', '_visibility', 'visible' ) ) );
+	            $query = "SELECT ID FROM {$wpdb->posts} AS p
+                          WHERE post_type = %s AND post_status = %s";
+	            $query .= ! empty( $hidden_products ) ? ( " AND p.ID NOT IN ( " . implode( ', ', $hidden_products ). " )" ) : "";
+	            $query_args = array(
+		            'product',
+		            'publish'
+	            );
+
+	            $existing_products = $wpdb->get_col( $wpdb->prepare( $query, $query_args ) );
                 $wishlist_products = array();
 
                 if( ! empty( $cookie ) ){
@@ -633,16 +655,20 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
                 $user_id = get_current_user_id();
 
                 if( false === $count = get_transient( 'yith_wcwl_user_total_count_' . $user_id ) ) {
+	                $hidden_products = yith_wcwl_get_hidden_products();
+
                     $sql = "SELECT COUNT( i.`prod_id` ) AS `cnt`
                         FROM `{$wpdb->yith_wcwl_items}` AS i
                         WHERE i.`user_id` = %d AND i.`prod_id` IN (
                             SELECT ID
                             FROM {$wpdb->posts} AS p
-                            LEFT JOIN {$wpdb->postmeta} AS pm ON p.`ID` = pm.`post_id`
-                            WHERE p.`post_type` = %s AND p.`post_status` = %s AND pm.`meta_key` = %s AND pm.`meta_value` = %s
-                        )";
+                            WHERE p.`post_type` = %s AND p.`post_status` = %s";
 
-                    $query = $wpdb->prepare( $sql, array( $user_id, 'product', 'publish', '_visibility', 'visible' ) );
+	                $sql .= ! empty( $hidden_products ) ? ( " AND p.ID NOT IN ( " . implode( ', ', $hidden_products ). " )" ) : "";
+
+                    $sql .= ")";
+
+                    $query = $wpdb->prepare( $sql, array( $user_id, 'product', 'publish' ) );
                     $count = $wpdb->get_var( $query );
 
                     set_transient( 'yith_wcwl_user_total_count_' . $user_id, $count, WEEK_IN_SECONDS );
@@ -652,8 +678,18 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
             }
             else {
                 $cookie = yith_getcookie( 'yith_wcwl_products' );
+	            $hidden_products = yith_wcwl_get_hidden_products();
 
-                $existing_products = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} AS p LEFT JOIN {$wpdb->postmeta} AS pm ON p.ID = pm.post_id WHERE post_type = %s AND post_status = %s AND pm.meta_key = %s AND pm.meta_value = %s", array( 'product', 'publish', '_visibility', 'visible' ) ) );
+	            $query = "SELECT ID FROM {$wpdb->posts} AS p
+                          WHERE post_type = %s AND post_status = %s";
+	            $query .= ! empty( $hidden_products ) ? ( " AND p.ID NOT IN ( " . implode( ', ', $hidden_products ). " )" ) : "";
+
+	            $query_args = array(
+		            'product',
+		            'publish'
+	            );
+
+	            $existing_products = $wpdb->get_col( $wpdb->prepare( $query, $query_args ) );
                 $wishlist_products = array();
 
                 if( ! empty( $cookie ) ){
@@ -1109,8 +1145,17 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
                 return;
             }
 
-            add_rewrite_rule( '(([^/]+/)*' . $wishlist_page_slug . ')(/(.*))?/page/([0-9]{1,})/?$', 'index.php?pagename=$matches[1]&wishlist-action=$matches[4]&paged=$matches[5]', 'top' );
-            add_rewrite_rule( '(([^/]+/)*' . $wishlist_page_slug . ')(/(.*))?/?$', 'index.php?pagename=$matches[1]&wishlist-action=$matches[4]', 'top' );
+            $regex_paged = '(([^/]+/)*' . $wishlist_page_slug . ')(/(.*))?/page/([0-9]{1,})/?$';
+            $regex_simple = '(([^/]+/)*' . $wishlist_page_slug . ')(/(.*))?/?$';
+
+            add_rewrite_rule( $regex_paged, 'index.php?pagename=$matches[1]&wishlist-action=$matches[4]&paged=$matches[5]', 'top' );
+            add_rewrite_rule( $regex_simple, 'index.php?pagename=$matches[1]&wishlist-action=$matches[4]', 'top' );
+
+            $rewrite_rules = get_option( 'rewrite_rules' );
+
+            if( ! is_array( $rewrite_rules ) || ! array_key_exists( $regex_paged, $rewrite_rules ) || ! array_key_exists( $regex_simple, $rewrite_rules ) ){
+            	flush_rewrite_rules();
+            }
         }
 
         /**
@@ -1213,7 +1258,7 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
 
             global $product;
             	
-            return esc_url( add_query_arg( 'add_to_wishlist', $product->id ) );
+            return esc_url( add_query_arg( 'add_to_wishlist', yit_get_product_id( $product ) ) );
         }
         
         /**
@@ -1276,7 +1321,9 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
 	     * @since 2.0.5
 	     */
 	    public function print_notices() {
-		    wc_print_notices();
+		    if( function_exists( 'wc_print_notices' ) ) {
+			    wc_print_notices();
+		    }
 	    }
 
 	    /* === FONTAWESOME FIX === */

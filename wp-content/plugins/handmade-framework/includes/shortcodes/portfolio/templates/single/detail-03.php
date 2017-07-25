@@ -10,9 +10,10 @@ $data_section_id = uniqid();
 
 $terms = wp_get_post_terms(get_the_ID(), array(G5PLUS_PORTFOLIO_CATEGORY_TAXONOMY));
 $cat = $cat_filter = '';
+
 foreach ($terms as $term) {
     $cat_filter .= preg_replace('/\s+/', '', $term->name) . ' ';
-    $cat .=  '<span>'.$term->name . '</span>';
+    $cat .=  '<span><a href="'.get_category_link($term->term_id).'">'.$term->name . '</a></span>';
 }
 
 ?>

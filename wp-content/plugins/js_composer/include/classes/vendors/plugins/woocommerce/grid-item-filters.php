@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * Append 'add to card' link to the list of Add link for grid element shortcodes.
  *
@@ -58,28 +62,34 @@ function vc_gitem_post_data_get_link_target_woocommerce( $link, $atts ) {
  *
  * @param $link
  * @param $atts
+ * @param $post
  * @param string $css_class
- *
+ * @return string
  * @since 4.5
  *
- * @return string
  */
 function vc_gitem_post_data_get_link_real_link_woocommerce( $link, $atts, $post, $css_class = '' ) {
 	if ( isset( $atts['link'] ) && 'woo_add_to_card' === $atts['link'] ) {
 		$css_class .= ' add_to_cart_button vc-gitem-link-ajax product_type_simple';
 
-		return 'a href="'
-		       . do_shortcode( '[add_to_cart_url id="' . $post->ID . '"]' )
-		       . '" class="' . esc_attr( $css_class ) . '" data-product_id="'
-		       . esc_attr( vc_gitem_template_attribute_woocommerce_product( '',
-			array(
-				'post' => $post,
-				'data' => 'id'
-			) ) ) . '"' . ' data-product_sku="' . esc_attr( vc_gitem_template_attribute_woocommerce_product( '',
-			array(
-				'post' => $post,
-				'data' => 'sku'
-			) ) ) . '" data-product-quantity="1"';
+		$link = 'a href="'
+		        . do_shortcode( '[add_to_cart_url id="' . $post->ID . '"]' )
+		        . '" class="' . esc_attr( $css_class ) . '" data-product_id="'
+		        . esc_attr(
+			        vc_gitem_template_attribute_woocommerce_product( '',
+				        array(
+					        'post' => $post,
+					        'data' => 'id',
+				        )
+			        )
+		        ) . '"' . ' data-product_sku="' . esc_attr(
+			        vc_gitem_template_attribute_woocommerce_product( '',
+				        array(
+					        'post' => $post,
+					        'data' => 'sku',
+				        )
+			        )
+		        ) . '" data-product-quantity="1"';
 	}
 
 	return $link;

@@ -234,6 +234,10 @@ jQuery(document).ready(function($) {
             });
         });
 
+    $('body').on('added_to_cart', function( ev, fragments, cart_hash, $thisbutton ){
+        if( $( $thisbutton).closest( 'table.compare-list' ).length )
+            $thisbutton.hide();
+    });
 
     function yith_add_query_arg(key, value)
     {

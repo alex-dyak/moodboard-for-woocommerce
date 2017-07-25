@@ -48,7 +48,7 @@ $data_section_id = uniqid();
             $terms = wp_get_post_terms(get_the_ID(), array(G5PLUS_PORTFOLIO_CATEGORY_TAXONOMY));
             $cat = $cat_filter = '';
             foreach ($terms as $term) {
-                $cat_filter .= preg_replace('/\s+/', '', $term->name) . ' ';
+                $cat_filter .=  preg_replace('/\s+/', '', str_replace('%','',$term->slug)) . ' ';
                 $cat .= $term->name . ', ';
             }
             $cat = rtrim($cat, ', ');

@@ -19,13 +19,12 @@ if (!class_exists('g5plusFramework_Shortcode_Google_Map')) {
 			$map_zoom = '';
 			$map_style = '';
 			$el_class='';
-			$css_animation=$duration=$delay='';
+			$css_animation = $duration = $delay = $api_url = '';
 			$atts = vc_map_get_attributes( 'handmade_google_map', $atts );
 			extract( $atts );
 			global $g5plus_options;
 			$min_suffix = (isset($g5plus_options['enable_minifile_js']) && $g5plus_options['enable_minifile_js'] == 1) ? '.min' : '';
-			$protocol = (!empty ($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https:" : "http:";
-			wp_enqueue_script('handmade-google-api', $protocol . '//maps.google.com/maps/api/js?v=3.15&sensor=false&libraries=places', array(), false, true);
+			wp_enqueue_script('handmade-google-api', $api_url, array(), false, true);
 			wp_enqueue_script('handmade-google-maps', plugins_url('handmade-framework/includes/shortcodes/google-map/assets/js/google-map' . $min_suffix . '.js'), array('handmade-google-api'), false, true);
 			$g5plus_animation = ' ' . esc_attr($el_class) . g5plusFramework_Shortcodes::g5plus_get_css_animation($css_animation);
 			ob_start();

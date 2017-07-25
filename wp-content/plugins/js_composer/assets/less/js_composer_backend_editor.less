@@ -11,28 +11,25 @@
 
 // Navigation bar
 @vc_navbar_sprite_left_position: -60px;
+@vc_navbar_icon_color: #4F5C64;
 @vc_navbar_background_color: #FCFCFC;
 @vc_navbar_icon_btn_color: #F5F5F5;
 @vc_navbar_border_color: #F5F5F5;
-@vc_navbar_spinner: '../vc/backend_ajax_spinner.gif';
-@import "modules/vc_license_activation_notice.less";
 @import "modules/vc_navbar.less";
+@import "modules/vc_fullscreen.less";
 // Message box shown when post content is empty
-@vc_welcome_margin: 14px;
 @import "modules/vc_welcome.less";
-@import "modules/vc_default_templates.less";
 
 // Backend switcher
 @import "modules/vc_switcher.less";
 // Edit form for shortcode
 @import "popups/panel_edit_form.less";
 
+// Template library
+@import "popups/panel_template_library";
+
 // Templates editor
 @import "modules/ui/vc_ui-panel-templates.less";
-// Post settings
-@import "popups/panel_post_settings.less";
-// Edit row layout
-@import "popups/panel_edit_layout.less";
 // Teaser box for posts wused by Post grid and post carusel
 @import "modules/vc_teaser_box.less";
 #vc_settings-title-container {
@@ -44,6 +41,7 @@
 @import "lib/backend_controls.less";
 @import "lib/backend_grid_element_pointers.less";
 @import "lib/vc_pointer.less";
+@import "lib/panel_preview.less";
 // Shortcodes
 @import "backend_shortcodes/rows_columns.less";
 @import "backend_shortcodes/empty_containers.less";
@@ -112,6 +110,9 @@
   label {
     vertical-align: inherit;
   }
+  &.hidden-label {
+    display: none;
+  }
 }
 
 // Vendors
@@ -138,11 +139,21 @@
   @media (max-width: @screen-xs-max) {
     .vc_backend-editor-invisibility-settings;
   }
+  .vc_hidden-xs {
+    > * {
+      .opacity(1) !important;
+    }
+  }
 }
 
 .vc_hidden-sm {
   @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
     .vc_backend-editor-invisibility-settings;
+  }
+  .vc_hidden-sm {
+    > * {
+      .opacity(1) !important;
+    }
   }
 }
 
@@ -150,11 +161,21 @@
   @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
     .vc_backend-editor-invisibility-settings;
   }
+  .vc_hidden-md {
+    > * {
+      .opacity(1) !important;
+    }
+  }
 }
 
 .vc_hidden-lg {
   @media (min-width: @screen-lg-min) {
     .vc_backend-editor-invisibility-settings;
+  }
+  .vc_hidden-lg {
+    > * {
+      .opacity(1) !important;
+    }
   }
 }
 
@@ -212,11 +233,4 @@
 // fix mobile overlay
 body.mobile.modal-open #wpwrap {
   position: relative !important;
-}
-
-@media (max-width: @screen-xs-max) {
-  .vc_subnav-fixed {
-    top: 0;
-    padding-left: 10px;
-  }
 }

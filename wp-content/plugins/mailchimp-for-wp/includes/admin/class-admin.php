@@ -305,7 +305,8 @@ class MC4WP_Admin {
                     'renew_mailchimp_lists' => __( 'Renew MailChimp lists', 'mailchimp-for-wp' ),
                     'fetching_mailchimp_lists' => __( 'Fetching MailChimp lists', 'mailchimp-for-wp' ),
                     'fetching_mailchimp_lists_done' => __( 'Done! MailChimp lists renewed.', 'mailchimp-for-wp' ),
-                    'fetching_mailchimp_lists_can_take_a_while' => __( 'This can take a while if you have many MailChimp lists.', 'mailchimp-for-wp' )
+					'fetching_mailchimp_lists_can_take_a_while' => __( 'This can take a while if you have many MailChimp lists.', 'mailchimp-for-wp' ),
+					'fetching_mailchimp_lists_error' => __( 'Failed to renew your lists. An error occured.', 'mailchimp-for-wp' ),
 				)
 			)
 		);
@@ -412,7 +413,7 @@ class MC4WP_Admin {
                 $connected = $this->get_api()->is_connected();
             } catch( MC4WP_API_Connection_Exception $e ) {
                 $message = sprintf( "<strong>%s</strong><br /> %s", __( "Error connecting to MailChimp:", 'mailchimp-for-wp' ), $e );
-                $message .= '<br /><br />' . sprintf( '<a href="%s">' . __( 'Here\'s some info on solving common connectivity issues.', 'mailchimp-for-wp' ) . '</a>', 'https://mc4wp.com/kb/solving-connectivity-issues/#utm_source=wp-plugin&utm_medium=mailchimp-for-wp&utm_campaign=settings-notice' );
+                $message .= '<br /><br />' . sprintf( '<a href="%s">' . __( 'Here\'s some info on solving common connectivity issues.', 'mailchimp-for-wp' ) . '</a>', 'https://kb.mc4wp.com/solving-connectivity-issues/#utm_source=wp-plugin&utm_medium=mailchimp-for-wp&utm_campaign=settings-notice' );
                 $this->messages->flash( $message, 'error' );
                 $connected = false;
             } catch( MC4WP_API_Exception $e ) {

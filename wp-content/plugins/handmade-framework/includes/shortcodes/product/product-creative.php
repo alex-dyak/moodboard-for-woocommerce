@@ -76,7 +76,15 @@ if (!class_exists('g5plusFramework_Shortcode_Product_Cretive')) {
                     );
                     break;
                 case 'top-rated':
-                    add_filter('posts_clauses', array(WC()->query, 'order_by_rating_post_clauses'));
+                    if (defined('WOOCOMMERCE_VERSION') && version_compare(WOOCOMMERCE_VERSION,'3.0.0','<')) {
+                        add_filter( 'posts_clauses',  array( WC()->query, 'order_by_rating_post_clauses' ) );
+                    } else {
+                        $query_args['meta_key'] = '_wc_average_rating';
+                        $query_args['orderby'] = 'meta_value_num';
+                        $query_args['order'] = 'DESC';
+                        $query_args['meta_query'] = WC()->query->get_meta_query();
+                        $query_args['tax_query'] = WC()->query->get_tax_query();
+                    }
                     break;
                 case 'recent-review':
                     add_filter('posts_clauses', array($this, 'order_by_comment_date_post_clauses'));
@@ -111,7 +119,9 @@ if (!class_exists('g5plusFramework_Shortcode_Product_Cretive')) {
             $products = new WP_Query(apply_filters('woocommerce_shortcode_products_query', $query_args, $atts));
 
             if ($feature == 'top-rated') {
-                remove_filter('posts_clauses', array(WC()->query, 'order_by_rating_post_clauses'));
+                if (defined('WOOCOMMERCE_VERSION') && version_compare(WOOCOMMERCE_VERSION,'3.0.0','<')) {
+                    remove_filter( 'posts_clauses',  array( WC()->query, 'order_by_rating_post_clauses' ) );
+                }
             }
 
             if ($feature == 'recent-review') {
@@ -142,12 +152,18 @@ if (!class_exists('g5plusFramework_Shortcode_Product_Cretive')) {
                 <?php if (!empty($title)) : ?>
                     <h3 class="sc-title s-font"><span><?php echo esc_html($title); ?></span></h3>
                 <?php endif; ?>
-                <?php if ($pages > 1) { ?>
-                    <a href="javascript:;" class="iso-filter" data-section-id="<?php echo esc_attr($data_section_id) ?>"
+                <?php if ($pages >= 1) {
+                    $nav_class= 'iso-filter ';
+                    if ($pages==1){
+                        $nav_class .= ' hidden-lg';
+
+                    }
+                    ?>
+                    <a href="javascript:;" class="<?php echo $nav_class ?>" data-section-id="<?php echo esc_attr($data_section_id) ?>"
                        data-page="1" data-total-product="<?php echo esc_attr($total_product) ?>"
                        data-total-pages="<?php echo esc_attr($pages) ?>" data-navigation="prev"><span class="prev"><i
                                 class='fa fa-angle-left'></i></span></a>
-                    <a href="javascript:;" class="iso-filter" data-section-id="<?php echo esc_attr($data_section_id) ?>"
+                    <a href="javascript:;" class="<?php echo $nav_class ?>" data-section-id="<?php echo esc_attr($data_section_id) ?>"
                        data-page="1" data-total-product="<?php echo esc_attr($total_product) ?>"
                        data-total-pages="<?php echo esc_attr($pages) ?>" data-navigation="next"><span class="next"><i
                                 class='fa fa-angle-right'></i></span></a>

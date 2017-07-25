@@ -20,19 +20,27 @@ Popup_icon = {
 			}
 		}
 
-        jQuery.ajax({
-            type   : 'POST',
-            data   : 'action=popup_icon',
-            url    : g5plus_framework_meta.ajax_url,
-            success: function (html) {
-                jQuery('body').append(html);
-                Popup_icon.processButton();
-                tb_position();
+		if (jQuery('#g5plus-framework-popup-icon-wrapper').length == 0) {
+			jQuery.ajax({
+				type   : 'POST',
+				data   : 'action=popup_icon',
+				url    : g5plus_framework_meta.ajax_url,
+				success: function (html) {
+					jQuery('body').append(html);
+					Popup_icon.showPopup();
+				},
+				error  : function (html) {
+				}
+			});
+		} else {
+			Popup_icon.showPopup();
+		}
 
-            },
-            error  : function (html) {
-            }
-        });
+
+	},
+	showPopup: function() {
+		Popup_icon.processButton();
+		tb_show('Icons','#TB_inline?height=545&width=750&inlineId=g5plus-framework-popup-icon-wrapper',false);
 	},
 	processButton : function() {
 		jQuery('#txtSearch',Popup_icon.htmlTag.wrapper).keyup(function(){
@@ -71,18 +79,13 @@ Popup_icon = {
 			var obj_icon_current = jQuery('.list-icon ul li a[title="'+Popup_icon.vars.current_icon+ '"]',Popup_icon.htmlTag.wrapper);
 			if (obj_icon_current.length > 0){
 				obj_icon_current.addClass('active');
-				var scrollTop =obj_icon_current.offset().top - jQuery('.list-icon',Popup_icon.htmlTag.wrapper).offset().top;
-				jQuery('.list-icon',Popup_icon.htmlTag.wrapper).animate({scrollTop : scrollTop},1000);
+				setTimeout(function(){
+					var scrollTop =obj_icon_current.offset().top - jQuery('.list-icon',Popup_icon.htmlTag.wrapper).offset().top;
+					jQuery('.list-icon',Popup_icon.htmlTag.wrapper).animate({scrollTop : scrollTop},1000);
+				},500);
+
 			}
 		}
-		jQuery('.tb-close-icon').on('click',function()
-		{
-			Popup_icon.close();
-		});
-	},
-	close : function() {
-		//tb_remove();
-        jQuery('#g5plus-framework-popup-icon-wrapper').remove();
 
 	},
 	setPreview : function() {
@@ -93,7 +96,7 @@ Popup_icon = {
 
 		}
 	}
-}
+};
 jQuery(document).ready(function(){
 	setTimeout(function() {
 		jQuery(document).on('click','.browse-icon',function(){

@@ -20,7 +20,7 @@ if(isset($g5plus_options['portfolio_disable_link_detail']) && $g5plus_options['p
     <div class="entry-thumbnail-hover p-bg-rgba-color">
         <div class="entry-hover-wrapper">
             <div class="entry-hover-inner line-height-1">
-                <?php if (isset($disable_link_detail) && $disable_link_detail=='yes'){?>
+                <?php if ($disable_link){?>
                     <h5 class="line-height-1 fc-white p-font"><?php the_title() ?></h5>
                 <?php } else{?>
                     <a href="<?php echo get_permalink(get_the_ID()) ?>" class="title"><h5 class="line-height-1 fc-white p-font"><?php the_title() ?></h5></a>

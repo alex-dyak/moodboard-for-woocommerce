@@ -204,7 +204,7 @@ $localized_table_text = apply_filters ( 'wpml_translate_single_string', $table_t
 <script type="text/javascript">
 
     jQuery(document).ready(function($){
-        <?php if ( $is_iframe ) : ?>$('a').attr('target', '_parent');<?php endif; ?>
+        $('a').attr('target', '_parent');
 
         var oTable;
         $('body').on( 'yith_woocompare_render_table', function(){
@@ -227,25 +227,25 @@ $localized_table_text = apply_filters ( 'wpml_translate_single_string', $table_t
         }).trigger('yith_woocompare_render_table');
 
         // add to cart
-        var button_clicked,
-            redirect_to_cart = false;
-
-        $(document).on('click', 'a.add_to_cart_button', function(){
-            button_clicked = $(this);
-            button_clicked.block({message: null, overlayCSS: {background: '#fff url(' + woocommerce_params.ajax_loader_url + ') no-repeat center', backgroundSize: '16px 16px', opacity: 0.6}});
-        });
+        var redirect_to_cart = false,
+            body             = $('body');
 
         // close colorbox if redirect to cart is active after add to cart
-        $('body').on( 'adding_to_cart', function ( $thisbutton, data ) {
+        body.on( 'adding_to_cart', function ( $thisbutton, data ) {
             if( wc_add_to_cart_params.cart_redirect_after_add == 'yes' ) {
                 wc_add_to_cart_params.cart_redirect_after_add = 'no';
                 redirect_to_cart = true;
             }
         });
 
-        // remove add to cart button after added
-        $('body').on('added_to_cart', function( ev, fragments, cart_hash, button ){
+        body.on('wc_cart_button_updated', function( ev, button ){
+            $('a.added_to_cart').attr('target', '_parent');
+        });
 
+        // remove add to cart button after added
+        body.on('added_to_cart', function( ev, fragments, cart_hash, button ){
+
+            $('a').attr('target', '_parent');
 
             if( redirect_to_cart == true ) {
                 // redirect
@@ -253,18 +253,12 @@ $localized_table_text = apply_filters ( 'wpml_translate_single_string', $table_t
                 return;
             }
 
-            button_clicked.hide();
-
-            <?php if ( $is_iframe ) : ?>
-            $('a').attr('target', '_parent');
-
             // Replace fragments
             if ( fragments ) {
                 $.each(fragments, function(key, value) {
                     $(key, window.parent.document).replaceWith(value);
                 });
             }
-            <?php endif; ?>
         });
 
         // close window

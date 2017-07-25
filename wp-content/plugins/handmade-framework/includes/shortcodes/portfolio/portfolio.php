@@ -21,7 +21,7 @@ if (!class_exists('G5PlusFramework_Portfolio')) {
             add_shortcode('g5plusframework_portfolio', array($this, 'portfolio_shortcode'));
             add_filter('rwmb_meta_boxes', array($this, 'register_meta_boxes'));
             add_filter('single_template', array($this, 'get_portfolio_single_template'));
-
+            add_filter('archive_template', array($this, 'get_portfolio_archive_template'));
             if (is_admin()) {
                 add_filter('manage_edit-' . G5PLUS_PORTFOLIO_POST_TYPE . '_columns', array($this, 'add_portfolios_columns'));
                 add_action('manage_' . G5PLUS_PORTFOLIO_POST_TYPE . '_posts_custom_column', array($this, 'set_portfolios_columns_value'), 10, 2);
@@ -70,11 +70,11 @@ if (!class_exists('G5PlusFramework_Portfolio')) {
                     'labels' => array(
                         'name' => $name,
                         'singular_name' => $singular_name,
-                        'menu_name' => esc_html__($name, 'g5plus-handmade'),
+                        'menu_name' => esc_attr($name),
                         'parent_item_colon' => esc_html__('Parent Item:', 'g5plus-handmade'),
-                        'all_items' => esc_html__(sprintf('All %s', $name), 'g5plus-handmade'),
+                        'all_items' => sprintf(esc_html__('All %s','g5plus-handmade'),$name),
                         'view_item' => esc_html__('View Item', 'g5plus-handmade'),
-                        'add_new_item' => esc_html__(sprintf('Add New  %s', $name), 'g5plus-handmade'),
+                        'add_new_item' => sprintf(esc_html__('Add New  %s', 'g5plus-handmade'), $name),
                         'add_new' => esc_html__('Add New', 'g5plus-handmade'),
                         'edit_item' => esc_html__('Edit Item', 'g5plus-handmade'),
                         'update_item' => esc_html__('Update Item', 'g5plus-handmade'),
@@ -253,6 +253,29 @@ if (!class_exists('G5PlusFramework_Portfolio')) {
                     return $template_path;
             }
             return $single;
+        }
+
+        function get_portfolio_archive_template($archive_template)
+        {
+            global $g5plus_options;
+            /* Checks for archive template by post type */
+            if (is_post_type_archive(G5PLUS_PORTFOLIO_POST_TYPE) || is_tax(G5PLUS_PORTFOLIO_CATEGORY_TAXONOMY)) {
+                $archive_id = null;
+                $archive_id = isset($g5plus_options['portfolio_archive_page']) ? $g5plus_options['portfolio_archive_page'] : '';
+                if(isset($archive_id) && $archive_id!=''){
+                    $cat = get_queried_object();
+                    $category = '';
+                    if(isset($cat) && isset($cat->slug)){
+                        $category = $cat->slug;
+                    }
+                    $archive_url = get_permalink( $archive_id);
+                    error_log($archive_id);
+                    error_log($archive_url);
+                    $archive_url = $category ? $archive_url.'?cat='.$category : $archive_url;
+                    wp_redirect($archive_url);
+                }
+            }
+            return $archive_template;
         }
 
         function add_portfolios_columns($columns)

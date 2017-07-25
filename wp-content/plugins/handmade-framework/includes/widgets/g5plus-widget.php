@@ -26,9 +26,9 @@ abstract class G5Plus_Widget extends WP_Widget {
 
 		parent::__construct( $this->widget_id, $this->widget_name, $widget_ops );
 
-		add_action( 'save_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'flush_widget_cache' ) );
+		add_action( 'save_post', array( $this, 'flush_g5widget_cache' ) );
+		add_action( 'deleted_post', array( $this, 'flush_g5widget_cache' ) );
+		add_action( 'switch_theme', array( $this, 'flush_g5widget_cache' ) );
 
 	}
 
@@ -44,7 +44,7 @@ abstract class G5Plus_Widget extends WP_Widget {
 		}
 
 		if ( isset( $cache[ $args['widget_id'] ] ) ) {
-			echo esc_html($cache[ $args['widget_id'] ]);
+			echo wp_kses_post($cache[ $args['widget_id'] ]);
 			return true;
 		}
 
@@ -66,7 +66,7 @@ abstract class G5Plus_Widget extends WP_Widget {
 	 *
 	 * @return void
 	 */
-	public function flush_widget_cache() {
+	public function flush_g5widget_cache() {
 		wp_cache_delete( apply_filters( 'g5plus_cached_widget_id', $this->widget_id ), 'widget' );
 	}
 
@@ -99,7 +99,7 @@ abstract class G5Plus_Widget extends WP_Widget {
 				$instance[ $key ] = 0;
 			}
 		}
-		$this->flush_widget_cache();
+		$this->flush_g5widget_cache();
 
 		return $instance;
 	}

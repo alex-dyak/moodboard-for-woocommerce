@@ -28,7 +28,7 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
                 return;
             }
             global $g5plus_options;
-            $cpt_disable = $g5plus_options['cpt-disable'];
+            $cpt_disable = isset($g5plus_options['cpt-disable']) ? $g5plus_options['cpt-disable'] : null;
             include_once(PLUGIN_G5PLUS_FRAMEWORK_DIR . 'includes/shortcodes/slider-container/slider-container.php');
             include_once(PLUGIN_G5PLUS_FRAMEWORK_DIR . 'includes/shortcodes/heading/heading.php');
             include_once(PLUGIN_G5PLUS_FRAMEWORK_DIR . 'includes/shortcodes/button/button.php');
@@ -125,7 +125,7 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
         {
 
             global $g5plus_options;
-            $cpt_disable = $g5plus_options['cpt-disable'];
+            $cpt_disable = isset($g5plus_options['cpt-disable']) ? $g5plus_options['cpt-disable'] : null;
 
             if (function_exists('vc_map')) {
                 $add_css_animation = array(
@@ -1196,7 +1196,7 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
                             'type' => 'dropdown',
                             'heading' => __('Color Background', 'g5plus-handmade'),
                             'param_name' => 'color_background',
-                            'value' => array(__('Primary Color', 'g5plus-handmade') => 'pri-color', __('Gray Color', 'g5plus') => 'gray-color'),
+                            'value' => array(__('Primary Color', 'g5plus-handmade') => 'pri-color', __('Gray Color', 'g5plus-handmade') => 'gray-color'),
                             'description' => __('Select Background Color', 'g5plus-handmade'),
                             'dependency' => array('element'=>'layout_style','value'=>'style1')
                         ),
@@ -1225,7 +1225,7 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
                         ),
                         array(
                             'type' => 'checkbox',
-                            'heading' => __('Add icon?', 'g5plus-framework'),
+                            'heading' => __('Add icon?', 'g5plus-handmade'),
                             'param_name' => 'add_icon',
                             'value' => array(__('Yes, please', 'g5plus-handmade') => 'yes'),
                         ),
@@ -2071,7 +2071,7 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
                             ),
                             array(
                                 'type' => 'checkbox',
-                                'heading' => __('Add Button?', 'g5plus-framework'),
+                                'heading' => __('Add Button?', 'g5plus-handmade'),
                                 'param_name' => 'add_button',
                                 'value' => array(__('Yes, please', 'g5plus-handmade') => 'yes-add'),
                                 'dependency' => array('element'=>'layout_style','value'=>array('style2')),
@@ -2079,7 +2079,7 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
                             ),
                             array(
                                 'type' => 'checkbox',
-                                'heading' => __('Display Overlay?', 'g5plus-framework'),
+                                'heading' => __('Display Overlay?', 'g5plus-handmade'),
                                 'param_name' => 'overlay_banner',
                                 'value' => array(__('Yes, please', 'g5plus-handmade') => 'yes-display'),
                                 'dependency' => array('element'=>'layout_style','value'=>'custom'),
@@ -2240,9 +2240,9 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
                                     'param_name' => 'orderby',
                                     'value' => array(
                                         __('Date', 'g5plus-handmade') => 'date',
-                                        __('Price', 'g5plus-framework') => 'price',
+                                        __('Price', 'g5plus-handmade') => 'price',
                                         __('Random', 'g5plus-handmade') => 'rand',
-                                        __('Sales', 'g5plus-framework') => 'sales'
+                                        __('Sales', 'g5plus-handmade') => 'sales'
                                     ),
                                     'description' => __('Select how to sort retrieved products.', 'g5plus-handmade'),
 	                                'dependency' => array(
@@ -2421,9 +2421,9 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
                                     'param_name' => 'orderby',
                                     'value' => array(
                                         __('Date', 'g5plus-handmade') => 'date',
-                                        __('Price', 'g5plus-framework') => 'price',
+                                        __('Price', 'g5plus-handmade') => 'price',
                                         __('Random', 'g5plus-handmade') => 'rand',
-                                        __('Sales', 'g5plus-framework') => 'sales'
+                                        __('Sales', 'g5plus-handmade') => 'sales'
                                     ),
                                     'description' => __('Select how to sort retrieved products.', 'g5plus-handmade'),
                                     'dependency' => array(
@@ -2642,10 +2642,10 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
                                     'param_name' => 'transition_style',
                                     'value' => array(
                                         __('default', 'g5plus-handmade') => 'false',
-                                        __('fade', 'g5plus-framework') => 'fade',
+                                        __('fade', 'g5plus-handmade') => 'fade',
                                         __('backSlide', 'g5plus-handmade') => 'backSlide',
-                                        __('goDown', 'g5plus-framework') => 'goDown',
-                                        __('fadeUp', 'g5plus-framework') => 'fadeUp'
+                                        __('goDown', 'g5plus-handmade') => 'goDown',
+                                        __('fadeUp', 'g5plus-handmade') => 'fadeUp'
 
                                     ),
                                     'std' => 'false',
@@ -2663,9 +2663,9 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
                                     'param_name' => 'orderby',
                                     'value' => array(
                                         __('Date', 'g5plus-handmade') => 'date',
-                                        __('Price', 'g5plus-framework') => 'price',
+                                        __('Price', 'g5plus-handmade') => 'price',
                                         __('Random', 'g5plus-handmade') => 'rand',
-                                        __('Sales', 'g5plus-framework') => 'sales'
+                                        __('Sales', 'g5plus-handmade') => 'sales'
 
                                     ),
                                     'description' => __('Select how to sort retrieved products.', 'g5plus-handmade'),
@@ -2780,10 +2780,10 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
                                     'param_name' => 'transition_style',
                                     'value' => array(
                                         __('default', 'g5plus-handmade') => 'false',
-                                        __('fade', 'g5plus-framework') => 'fade',
+                                        __('fade', 'g5plus-handmade') => 'fade',
                                         __('backSlide', 'g5plus-handmade') => 'backSlide',
-                                        __('goDown', 'g5plus-framework') => 'goDown',
-                                        __('fadeUp', 'g5plus-framework') => 'fadeUp'
+                                        __('goDown', 'g5plus-handmade') => 'goDown',
+                                        __('fadeUp', 'g5plus-handmade') => 'fadeUp'
 
                                     ),
                                     'std' => 'false',
@@ -2865,6 +2865,12 @@ if (!class_exists('g5plusFramework_Shortcodes')) {
                                     __('Mono Green', 'g5plus-handmade') => 'mono_green',
 					            )
 				            ),
+                            array(
+                                'type' => 'textfield',
+                                'heading' => esc_html__('API Url', 'g5plus-handmade'),
+                                'param_name' => 'api_url',
+                                'std' => 'http://maps.googleapis.com/maps/api/js?key=AIzaSyCSyxJHoDq9Ug4Y6CtYNbgLFAW-OacttnQ',
+                            ),
 				            $add_el_class,
 				            $add_css_animation,
 				            $add_duration_animation,

@@ -445,7 +445,7 @@ class WPAlchemy_MetaBox
 	 */
 	var $_loop_data;
 	
-	function WPAlchemy_MetaBox($arr)
+	function __construct($arr)
 	{
 		$this->_loop_data = new stdClass;
 		
@@ -527,23 +527,27 @@ class WPAlchemy_MetaBox
 			
 			global $wp_import;
 
-			foreach ( $wp_import->posts as $post )
-			{
-				if ( $post_id == $post['post_id'] )
+			if (isset($wp_import->posts)) {
+				foreach ( $wp_import->posts as $post )
 				{
-					foreach( $post['postmeta'] as $meta )
+					if ( $post_id == $post['post_id'] )
 					{
-						if ( $key == $meta['key'] )
+						foreach( $post['postmeta'] as $meta )
 						{
-							// try to fix corrupted serialized data, specifically "\r\n" being converted to "\n" during wordpress XML export (WXR)
-							// "maybe_unserialize()" fixes a wordpress bug which double serializes already serialized data during export/import
-							$value = maybe_unserialize( preg_replace( '!s:(\d+):"(.*?)";!es', "'s:'.strlen('$2').':\"$2\";'", stripslashes( $meta['value'] ) ) );
-							
-							update_post_meta( $post_id, $key,  $value );
+							if ( $key == $meta['key'] )
+							{
+								// try to fix corrupted serialized data, specifically "\r\n" being converted to "\n" during WordPress XML export (WXR)
+								// "maybe_unserialize()" fixes a WordPress bug which double serializes already serialized data during export/import
+								$value = maybe_unserialize( preg_replace( '!s:(\d+):"(.*?)";!es', "'s:'.strlen('$2').':\"$2\";'", stripslashes( $meta['value'] ) ) );
+
+								update_post_meta( $post_id, $key,  $value );
+							}
 						}
 					}
 				}
 			}
+
+
 		}
 	}
 
@@ -2186,7 +2190,7 @@ class WPAlchemy_MetaBox
 		 * to get values for a revision (as it has no post meta data)
 		 * see http://alexking.org/blog/2008/09/06/wordpress-26x-duplicate-custom-field-issue
 		 *
-		 * why let the code run twice? wordpress does not currently save post meta
+		 * why let the code run twice? WordPress does not currently save post meta
 		 * data per revisions (I think it should, so users can do a complete revert),
 		 * so in the case that this functionality changes, let it run twice
 		 */

@@ -224,46 +224,37 @@ var widget_acf = {
     initSelect2: function ($wrap) {
         if (jQuery.isFunction(jQuery.fn.select2)) {
             jQuery('select.select2', $wrap).each(function () {
-                var id = '#s2id_' + jQuery(this).attr('id');
-                var divSelect2 = jQuery(id, jQuery(this).parent());
+                var id = jQuery(this).attr('id');
+                var divSelect2 = jQuery(this).next();
                 if (typeof (divSelect2) != 'undefined') {
                     divSelect2.remove();
                 }
-                jQuery(this).select2({
-                    allowClear: true
-                });
-
+                jQuery(this).select2({width : '100%'});
                 var $multiple = jQuery(this).attr('data-multiple');
                 if (typeof($multiple) != 'undefined' && $multiple == '1') {
-
                     var $input = jQuery('input', jQuery(this).parent()).first();
-                    var $values = jQuery($input).val();
-
-                    var choices = [];
-                    if (typeof ($values) != 'undefined' && $values != '') {
-                        $values = $values.split(",");
-                        for (var i = 0; i < $values.length; i++) {
-                            var option = jQuery("option[value=" + $values[i] + "]", jQuery(this));
-                            choices[i] = {id: $values[i], text: option[0].label, element: option};
-                        }
-                        jQuery(this).select2("data", choices);
+                    var $values = jQuery($input).val().split(',');
+                    for (var i = 0; i < $values.length; i++) {
+                        var $element = jQuery(this).find('option[value="'+ $values[i] +'"]');
+                        $element.detach();
+                        jQuery(this).append($element);
                     }
-
-                    jQuery(this).on("select2-selecting",function (e) {
-                        var ids = jQuery(this).val();
+                    jQuery(this).val($values).trigger('change');
+                    jQuery(this).on('select2:selecting',function(e){
+                        var ids = $(this).val();
                         if (typeof (ids) == 'undefined' || ids == null)
                             ids = '';
                         if (ids != "") {
                             ids += ",";
                         }
-                        ids += e.val;
+                        ids += e.params.args.data.id;
                         jQuery($input).val(ids);
-                    }).on("select2-removed", function (e) {
+                    }).on('select2:unselecting',function(e){
                         var ids = jQuery($input).val();
                         var arr_ids = ids.split(",");
                         var newIds = "";
                         for (var i = 0; i < arr_ids.length; i++) {
-                            if (arr_ids[i] != e.val) {
+                            if (arr_ids[i] != e.params.args.data.id) {
                                 if (newIds != "") {
                                     newIds += ",";
                                 }
@@ -271,13 +262,17 @@ var widget_acf = {
                             }
                         }
                         jQuery($input).val(newIds);
+                    }).on('select2:select',function(e){
+                        var element = e.params.data.element;
+                        var $element = $(element);
+                        $element.detach();
+                        jQuery(this).append($element);
+                        jQuery(this).trigger("change");
                     });
-                }
-                ;
 
+                }
                 var data_select_icon = jQuery(this).attr('data-select-icon');
                 if (typeof data_select_icon != 'undefined' && data_select_icon == '1') {
-                    console.log(data_select_icon);
                     jQuery(this).select2({
                         formatResult: widget_acf.formatIconState,
                         formatSelection: widget_acf.formatIconState
@@ -357,8 +352,7 @@ var widget_acf = {
         var id = $wrap.attr('id');
         var value = $wrap.val();
 
-
-        jQuery('div[data-require-element-id="' + id + '"').each(function () {
+        jQuery('div[data-require-element-id="' + id + '"]').each(function () {
             var compare = jQuery(this).attr('data-require-compare');
             var values = jQuery(this).attr('data-require-values');
             if (typeof values != 'undefined' && values != '') {
@@ -393,5 +387,5 @@ var widget_acf = {
         return $state;
     }
 
-}
+};
 

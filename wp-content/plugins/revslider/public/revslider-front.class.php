@@ -53,12 +53,15 @@ class RevSliderFront extends RevSliderBaseFront{
 		
 		$includesGlobally = RevSliderFunctions::getVal($arrValues, "includes_globally","on");
 		$includesFooter = RevSliderFunctions::getVal($arrValues, "js_to_footer","off");
+		$load_all_javascript = RevSliderFunctions::getVal($arrValues, "load_all_javascript","off");
 		$strPutIn = RevSliderFunctions::getVal($arrValues, "pages_for_includes");
 		$isPutIn = RevSliderOutput::isPutIn($strPutIn,true);
 		
+		$do_inclusion = apply_filters('revslider_include_libraries', false);
+		
 		//put the includes only on pages with active widget or shortcode
 		// if the put in match, then include them always (ignore this if)			
-		if($isPutIn == false && $includesGlobally == "off"){
+		if($isPutIn == false && $includesGlobally == "off" && $do_inclusion == false){
 			$isWidgetActive = is_active_widget( false, false, "rev-slider-widget", true );
 			$hasShortcode = RevSliderFunctionsWP::hasShortcode("rev_slider");
 			
@@ -79,33 +82,36 @@ class RevSliderFront extends RevSliderBaseFront{
 		
 		wp_enqueue_script(array('jquery'));
 		
-		//add icon sets
-		//wp_register_style('rs-icon-set-fa-icon-', RS_PLUGIN_URL .'public/assets/fonts/font-awesome/css/font-awesome.css', array(), $slver);
-		//wp_register_style('rs-icon-set-pe-7s-', RS_PLUGIN_URL .'public/assets/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css', array(), $slver);
-
-
-		if($includesFooter == "off"){
-
-			$waitfor = array('jquery');
-			
-			$enable_logs = RevSliderFunctions::getVal($arrValues, "enable_logs",'off');
-			
-			if($enable_logs == 'on'){
-				wp_enqueue_script('enable-logs', RS_PLUGIN_URL .'public/assets/js/jquery.themepunch.enablelog.js', $waitfor, $slver);
-				$waitfor[] = 'enable-logs';
-			}
-			
-			wp_enqueue_script('tp-tools', RS_PLUGIN_URL .'public/assets/js/jquery.themepunch.tools.min.js', $waitfor, $slver);
-			wp_enqueue_script('revmin', RS_PLUGIN_URL .'public/assets/js/jquery.themepunch.revolution.min.js', 'tp-tools', $slver);
-			
-		}else{
-			//put javascript to footer
-
-			add_action('wp_footer', array('RevSliderFront', 'putJavascript'));
+		$waitfor = array('jquery');
+		
+		$enable_logs = RevSliderFunctions::getVal($arrValues, "enable_logs",'off');
+		if($enable_logs == 'on'){
+			wp_enqueue_script('enable-logs', RS_PLUGIN_URL .'public/assets/js/jquery.themepunch.enablelog.js', $waitfor, $slver);
+			$waitfor[] = 'enable-logs';
 		}
-
+		
+		
+		$ft = ($includesFooter == "on") ? true : false;
+		
+		wp_enqueue_script('tp-tools', RS_PLUGIN_URL .'public/assets/js/jquery.themepunch.tools.min.js', $waitfor, $slver, $ft);
+		wp_enqueue_script('revmin', RS_PLUGIN_URL .'public/assets/js/jquery.themepunch.revolution.min.js', 'tp-tools', $slver, $ft);
+		
+		
+		if($load_all_javascript !== 'off'){ //if on, load all libraries instead of dynamically loading them
+			wp_enqueue_script('revmin-actions', RS_PLUGIN_URL .'public/assets/js/extensions/revolution.extension.actions.min.js', 'tp-tools', $slver, $ft);
+			wp_enqueue_script('revmin-carousel', RS_PLUGIN_URL .'public/assets/js/extensions/revolution.extension.carousel.min.js', 'tp-tools', $slver, $ft);
+			wp_enqueue_script('revmin-kenburn', RS_PLUGIN_URL .'public/assets/js/extensions/revolution.extension.kenburn.min.js', 'tp-tools', $slver, $ft);
+			wp_enqueue_script('revmin-layeranimation', RS_PLUGIN_URL .'public/assets/js/extensions/revolution.extension.layeranimation.min.js', 'tp-tools', $slver, $ft);
+			wp_enqueue_script('revmin-migration', RS_PLUGIN_URL .'public/assets/js/extensions/revolution.extension.migration.min.js', 'tp-tools', $slver, $ft);
+			wp_enqueue_script('revmin-navigation', RS_PLUGIN_URL .'public/assets/js/extensions/revolution.extension.navigation.min.js', 'tp-tools', $slver, $ft);
+			wp_enqueue_script('revmin-parallax', RS_PLUGIN_URL .'public/assets/js/extensions/revolution.extension.parallax.min.js', 'tp-tools', $slver, $ft);
+			wp_enqueue_script('revmin-slideanims', RS_PLUGIN_URL .'public/assets/js/extensions/revolution.extension.slideanims.min.js', 'tp-tools', $slver, $ft);
+			wp_enqueue_script('revmin-video', RS_PLUGIN_URL .'public/assets/js/extensions/revolution.extension.video.min.js', 'tp-tools', $slver, $ft);
+		}
 		
 		add_action('wp_head', array('RevSliderFront', 'add_meta_generator'));
+		add_action('wp_head', array('RevSliderFront', 'add_setREVStartSize'), 99);
+		add_action('admin_head', array('RevSliderFront', 'add_setREVStartSize'), 99);
 		add_action("wp_footer", array('RevSliderFront',"load_icon_fonts") );
 		
 		// Async JS Loading
@@ -113,7 +119,7 @@ class RevSliderFront extends RevSliderBaseFront{
 		if($js_defer!='off') add_filter('clean_url', array('RevSliderFront', 'add_defer_forscript'), 11, 1);
 		
 		add_action('wp_before_admin_bar_render', array('RevSliderFront', 'add_admin_menu_nodes'));
-		add_action('wp_footer', array('RevSliderFront', 'putAdminBarMenus'));
+		add_action('wp_footer', array('RevSliderFront', 'putAdminBarMenus'), 99);
 		
 	}
 	
@@ -133,7 +139,7 @@ class RevSliderFront extends RevSliderBaseFront{
 					jQuery('.rev_slider_wrapper').each(function() {
 						aliases.push(jQuery(this).data('alias'));
 					});								
-					if 	(aliases.length>0)	
+					if(aliases.length>0)
 						jQuery('#wp-admin-bar-revslider-default li').each(function() {
 							var li = jQuery(this),
 								t = jQuery.trim(li.find('.ab-item .rs-label').data('alias')); //text()
@@ -166,7 +172,7 @@ class RevSliderFront extends RevSliderBaseFront{
 		
 		if(!empty($sliders)){
 			foreach($sliders as $id => $slider){
-				self::_add_node('<span class="rs-label" data-alias="'.esc_attr($slider['alias']).'">'.esc_attr($slider['title']).'</span>', 'revslider', admin_url('admin.php?page=revslider&view=slide&id=new&slider='.intval($id)), array('class' => 'revslider-sub-menu' ), esc_attr($slider['alias'])); //<span class="wp-menu-image dashicons-before dashicons-update"></span>
+				self::_add_node('<span class="rs-label" data-alias="'.esc_attr($slider['alias']).'">'.esc_html($slider['title']).'</span>', 'revslider', admin_url('admin.php?page=revslider&view=slide&id=new&slider='.intval($id)), array('class' => 'revslider-sub-menu' ), esc_attr($slider['alias'])); //<span class="wp-menu-image dashicons-before dashicons-update"></span>
 			}
 		}
 		
@@ -203,12 +209,16 @@ class RevSliderFront extends RevSliderBaseFront{
 	 * create db tables
 	 */
 	public static function createDBTables(){
-		self::createTable(RevSliderGlobals::TABLE_SLIDERS_NAME);
-		self::createTable(RevSliderGlobals::TABLE_SLIDES_NAME);
-		self::createTable(RevSliderGlobals::TABLE_STATIC_SLIDES_NAME);
-		self::createTable(RevSliderGlobals::TABLE_CSS_NAME);
-		self::createTable(RevSliderGlobals::TABLE_LAYER_ANIMS_NAME);
-		self::createTable(RevSliderGlobals::TABLE_NAVIGATION_NAME);
+		if(get_option('revslider_change_database', false) || get_option('rs_tables_created', false) === false){
+			self::createTable(RevSliderGlobals::TABLE_SLIDERS_NAME);
+			self::createTable(RevSliderGlobals::TABLE_SLIDES_NAME);
+			self::createTable(RevSliderGlobals::TABLE_STATIC_SLIDES_NAME);
+			self::createTable(RevSliderGlobals::TABLE_CSS_NAME);
+			self::createTable(RevSliderGlobals::TABLE_LAYER_ANIMS_NAME);
+			self::createTable(RevSliderGlobals::TABLE_NAVIGATION_NAME);
+		}
+		update_option('rs_tables_created', true);
+		update_option('revslider_change_database', false);
 		
 		self::updateTables();
 	}
@@ -221,6 +231,10 @@ class RevSliderFront extends RevSliderBaseFront{
 	
 	public static function updateTables(){
 		$cur_ver = get_option('revslider_table_version', '1.0.0');
+		if(get_option('revslider_change_database', false)){
+			$cur_ver = '1.0.0';
+		}
+		
 		if(version_compare($cur_ver, '1.0.1', '<')){ //add missing settings field, for new creates lines in slide editor for example
 			require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 			
@@ -229,8 +243,8 @@ class RevSliderFront extends RevSliderBaseFront{
 						  id int(9) NOT NULL AUTO_INCREMENT,
 						  slider_id int(9) NOT NULL,
 						  slide_order int not NULL,
-						  params text NOT NULL,
-						  layers text NOT NULL,
+						  params LONGTEXT NOT NULL,
+						  layers LONGTEXT NOT NULL,
 						  settings text NOT NULL,
 						  UNIQUE KEY id (id)
 						);";
@@ -240,8 +254,8 @@ class RevSliderFront extends RevSliderBaseFront{
 			$sql = "CREATE TABLE " .self::$table_prefix.$tableName ." (
 						  id int(9) NOT NULL AUTO_INCREMENT,
 						  slider_id int(9) NOT NULL,
-						  params text NOT NULL,
-						  layers text NOT NULL,
+						  params LONGTEXT NOT NULL,
+						  layers LONGTEXT NOT NULL,
 						  settings text NOT NULL,
 						  UNIQUE KEY id (id)
 						);";
@@ -259,7 +273,7 @@ class RevSliderFront extends RevSliderBaseFront{
 						  id int(9) NOT NULL AUTO_INCREMENT,
 						  title tinytext NOT NULL,
 						  alias tinytext,
-						  params text NOT NULL,
+						  params LONGTEXT NOT NULL,
 						  settings text NULL,
 						  UNIQUE KEY id (id)
 						);";
@@ -276,8 +290,8 @@ class RevSliderFront extends RevSliderBaseFront{
 			$sql = "CREATE TABLE " .self::$table_prefix.$tableName ." (
 						  id int(9) NOT NULL AUTO_INCREMENT,
 						  handle TEXT NOT NULL,
-						  settings TEXT,
-						  hover TEXT,
+						  settings LONGTEXT,
+						  hover LONGTEXT,
 						  advanced MEDIUMTEXT,
 						  params TEXT NOT NULL,
 						  UNIQUE KEY id (id)
@@ -319,21 +333,6 @@ class RevSliderFront extends RevSliderBaseFront{
 		if(version_compare($cur_ver, '1.0.5', '<')){
 			require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 			
-			$sql = "CREATE TABLE " .self::$table_prefix.RevSliderGlobals::TABLE_SLIDERS_NAME ." (
-					  type VARCHAR(191) NOT NULL,
-					  params MEDIUMTEXT NOT NULL
-					);";
-			dbDelta($sql);
-			$sql = "CREATE TABLE " .self::$table_prefix.RevSliderGlobals::TABLE_SLIDES_NAME ." (
-					  params MEDIUMTEXT NOT NULL,
-					  layers MEDIUMTEXT NOT NULL
-					);";
-			dbDelta($sql);
-			$sql = "CREATE TABLE " .self::$table_prefix.RevSliderGlobals::TABLE_STATIC_SLIDES_NAME ." (
-					  params MEDIUMTEXT NOT NULL,
-					  layers MEDIUMTEXT NOT NULL
-					);";
-			dbDelta($sql);
 			$sql = "CREATE TABLE " .self::$table_prefix.RevSliderGlobals::TABLE_LAYER_ANIMS_NAME ." (
 					  settings text NULL
 					);";
@@ -341,6 +340,33 @@ class RevSliderFront extends RevSliderBaseFront{
 			
 			update_option('revslider_table_version', '1.0.5');
 			$cur_ver = '1.0.5';
+		}
+		
+		if(version_compare($cur_ver, '1.0.6', '<')){
+			require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+			$sql = "CREATE TABLE " .self::$table_prefix.RevSliderGlobals::TABLE_SLIDERS_NAME ." (
+					 type VARCHAR(191) NOT NULL DEFAULT '',
+					 params LONGTEXT NOT NULL
+					);";
+			dbDelta($sql);
+			$sql = "CREATE TABLE " .self::$table_prefix.RevSliderGlobals::TABLE_SLIDES_NAME ." (
+					  settings text NOT NULL DEFAULT '',
+					  params LONGTEXT NOT NULL,
+					  layers LONGTEXT NOT NULL
+					);";
+			dbDelta($sql);
+			$sql = "CREATE TABLE " .self::$table_prefix.RevSliderGlobals::TABLE_STATIC_SLIDES_NAME ." (
+					  params LONGTEXT NOT NULL,
+					  layers LONGTEXT NOT NULL
+					);";
+			dbDelta($sql);
+			$sql = "CREATE TABLE " .self::$table_prefix.RevSliderGlobals::TABLE_CSS_NAME ." (
+					  advanced LONGTEXT
+					);";
+			dbDelta($sql);
+			
+			update_option('revslider_table_version', '1.0.6');
+			$cur_ver = '1.0.6';
 		}
 
 	}
@@ -370,19 +396,21 @@ class RevSliderFront extends RevSliderBaseFront{
 			$RevSliderOperations->importCaptionsCssContentArray();
 			$RevSliderOperations->moveOldCaptionsCss();
 		}
-
-		//if table exists - don't create it.
-		$tableRealName = self::$table_prefix.$tableName;
-		if(RevSliderFunctionsWP::isDBTableExists($tableRealName))
-			return(false);
-
+		
+		if(!get_option('revslider_change_database', false)){
+			//if table exists - don't create it.
+			$tableRealName = self::$table_prefix.$tableName;
+			if(RevSliderFunctionsWP::isDBTableExists($tableRealName))
+				return(false);
+		}
+		
 		switch($tableName){
 			case RevSliderGlobals::TABLE_SLIDERS_NAME:
 			$sql = "CREATE TABLE " .self::$table_prefix.$tableName ." (
 						  id int(9) NOT NULL AUTO_INCREMENT,
 						  title tinytext NOT NULL,
 						  alias tinytext,
-						  params MEDIUMTEXT NOT NULL,
+						  params LONGTEXT NOT NULL,
 						  UNIQUE KEY id (id)
 						);";
 			break;
@@ -391,8 +419,8 @@ class RevSliderFront extends RevSliderBaseFront{
 							  id int(9) NOT NULL AUTO_INCREMENT,
 							  slider_id int(9) NOT NULL,
 							  slide_order int not NULL,
-							  params MEDIUMTEXT NOT NULL,
-							  layers MEDIUMTEXT NOT NULL,
+							  params LONGTEXT NOT NULL,
+							  layers LONGTEXT NOT NULL,
 							  UNIQUE KEY id (id)
 							);";
 			break;
@@ -400,8 +428,8 @@ class RevSliderFront extends RevSliderBaseFront{
 				$sql = "CREATE TABLE " .self::$table_prefix.$tableName ." (
 							  id int(9) NOT NULL AUTO_INCREMENT,
 							  slider_id int(9) NOT NULL,
-							  params MEDIUMTEXT NOT NULL,
-							  layers MEDIUMTEXT NOT NULL,
+							  params LONGTEXT NOT NULL,
+							  layers LONGTEXT NOT NULL,
 							  UNIQUE KEY id (id)
 							);";
 			break;
@@ -409,9 +437,9 @@ class RevSliderFront extends RevSliderBaseFront{
 				$sql = "CREATE TABLE " .self::$table_prefix.$tableName ." (
 							  id int(9) NOT NULL AUTO_INCREMENT,
 							  handle TEXT NOT NULL,
-							  settings MEDIUMTEXT,
-							  hover MEDIUMTEXT,
-							  params MEDIUMTEXT NOT NULL,
+							  settings LONGTEXT,
+							  hover LONGTEXT,
+							  params LONGTEXT NOT NULL,
 							  UNIQUE KEY id (id)
 							);";
 				$parseCssToDb = true;
@@ -429,13 +457,12 @@ class RevSliderFront extends RevSliderBaseFront{
 							  id int(9) NOT NULL AUTO_INCREMENT,
 							  name VARCHAR(191) NOT NULL,
 							  handle VARCHAR(191) NOT NULL,
-							  css MEDIUMTEXT NOT NULL,
-							  markup MEDIUMTEXT NOT NULL,
-							  settings MEDIUMTEXT NULL,
+							  css LONGTEXT NOT NULL,
+							  markup LONGTEXT NOT NULL,
+							  settings LONGTEXT NULL,
 							  UNIQUE KEY id (id)
 							);";
 			break;
-
 			default:
 				RevSliderFunctions::throwError("table: $tableName not found");
 			break;
@@ -444,10 +471,12 @@ class RevSliderFront extends RevSliderBaseFront{
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		dbDelta($sql);
 		
-		if($parseCssToDb){
-			$RevSliderOperations = new RevSliderOperations();
-			$RevSliderOperations->importCaptionsCssContentArray();
-			$RevSliderOperations->moveOldCaptionsCss();
+		if(!get_option('revslider_change_database', false)){
+			if($parseCssToDb){
+				$RevSliderOperations = new RevSliderOperations();
+				$RevSliderOperations->importCaptionsCssContentArray();
+				$RevSliderOperations->moveOldCaptionsCss();
+			}
 		}
 
 	}
@@ -477,27 +506,6 @@ class RevSliderFront extends RevSliderBaseFront{
 	
 	
 	/**
-	 * 
-	 * javascript output to footer
-	 */
-	public static function putJavascript(){
-		$slver = apply_filters('revslider_remove_version', RevSliderGlobals::SLIDER_REVISION);
-		
-		$urlPlugin = RS_PLUGIN_URL."public/assets/";
-		
-		$operations = new RevSliderOperations();
-		$arrValues = $operations->getGeneralSettingsValues();
-		
-		$js_defer = RevSliderBase::getVar($arrValues, 'js_defer', 'off');
-		if($js_defer!='off') $js_defer = 'defer="defer"';
-		else $js_defer = '';
-		?>
-		<script type='text/javascript' <?php echo $js_defer;?> src='<?php echo $urlPlugin; ?>js/jquery.themepunch.tools.min.js?rev=<?php echo $slver; ?>'></script>
-		<script type='text/javascript' <?php echo $js_defer;?> src='<?php echo $urlPlugin; ?>js/jquery.themepunch.revolution.min.js?rev=<?php echo  $slver; ?>'></script>
-		<?php
-	}
-	
-	/**
 	 * Add Meta Generator Tag in FrontEnd
 	 * @since: 5.0
 	 */
@@ -505,6 +513,22 @@ class RevSliderFront extends RevSliderBaseFront{
 		global $revSliderVersion;
 		
 		echo apply_filters('revslider_meta_generator', '<meta name="generator" content="Powered by Slider Revolution '.$revSliderVersion.' - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />'."\n");
+	}
+	
+	
+	/**
+	 * Add Meta Generator Tag in FrontEnd
+	 * @since: 5.4.3
+	 */
+	public static function add_setREVStartSize(){
+		$script = '<script type="text/javascript">';
+		$script .= 'function setREVStartSize(e){
+				try{ var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;					
+					if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})					
+				}catch(d){console.log("Failure at Presize of Slider:"+d)}
+			};';
+		$script .= '</script>'."\n";
+		echo apply_filters('revslider_add_setREVStartSize', $script);
 	}
 
 	/**

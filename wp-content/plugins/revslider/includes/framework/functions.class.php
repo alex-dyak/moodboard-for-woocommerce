@@ -86,7 +86,7 @@ class RevSliderFunctions{
 
 	
 	//------------------------------------------------------------
-	// get variable from post or from get. get wins.
+	// get variable from post or from get. post wins.
 	public static function getPostGetVariable($name,$initVar = ""){
 		$var = $initVar;
 		if(isset($_POST[$name])) $var = $_POST[$name];
@@ -207,7 +207,9 @@ class RevSliderFunctions{
 			$json = json_encode($arr);
 			$json = addslashes($json);
 		}
-		
+
+		if(empty($json)) $json = '{}';
+
 		$json = "'".$json."'";
 		
 		return($json);
@@ -483,7 +485,7 @@ class RevSliderFunctions{
 	/**
 	 * change hex to rgba
 	 */
-    public static function hex2rgba($hex, $transparency = false) {
+    public static function hex2rgba($hex, $transparency = false, $raw = false, $do_rgb = false) {
         if($transparency !== false){
 			$transparency = ($transparency > 0) ? number_format( ( $transparency / 100 ), 2, ".", "" ) : 0;
         }else{
@@ -503,8 +505,17 @@ class RevSliderFunctions{
             $g = hexdec(substr($hex,2,2));
             $b = hexdec(substr($hex,4,2));
         }
-
-        return 'rgba('.$r.', '.$g.', '.$b.', '.$transparency.')';
+		
+		if($do_rgb){
+			$ret = $r.', '.$g.', '.$b;
+		}else{
+			$ret = $r.', '.$g.', '.$b.', '.$transparency;
+		}
+		if($raw){
+			return $ret;
+		}else{
+			return 'rgba('.$ret.')';
+		}
 
     }
 	

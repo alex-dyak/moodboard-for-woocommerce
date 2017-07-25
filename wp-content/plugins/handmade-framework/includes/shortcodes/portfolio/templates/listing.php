@@ -14,6 +14,10 @@ $args = array(
     'post_type' => G5PLUS_PORTFOLIO_POST_TYPE,
     'post_status' => 'publish');
 
+$query_category = isset($_REQUEST['cat']) ? $_REQUEST['cat'] : '';
+if($query_category!=''){
+    $category = $query_category;
+}
 if ($data_source == '') {
     $args = array(
         'offset' => $offset,
@@ -58,9 +62,13 @@ $paging_style = $show_pagging == 2 ? 'slider' : 'paging';
                                 $termIds[$term->term_id] = $term->term_id;
                         }
                     }
-                    $array_terms = array(
-                        'include' => $termIds
-                    );
+                    $array_terms = array();
+                    if($query_category==''){
+                        $array_terms = array(
+                            'include' => $termIds
+                        );
+                    }
+
                     $terms = get_terms(G5PLUS_PORTFOLIO_CATEGORY_TAXONOMY, $array_terms);
 
                     if (count($terms) > 0) {
@@ -69,8 +77,8 @@ $paging_style = $show_pagging == 2 ? 'slider' : 'paging';
                         <div
                             class="tab-wrapper line-height-1 <?php echo esc_attr($show_category) ?>">
                             <ul>
-                                <li class="active">
-                                    <a class="isotope-portfolio ladda-button handmade-button style2 button-dark button-2x  active"
+                                <li class="<?php if($query_category==''){ echo 'active';} ;?>">
+                                    <a class="isotope-portfolio ladda-button handmade-button style2 button-dark button-2x  <?php if($query_category==''){ echo 'active';} ;?>"
                                        data-section-id="<?php echo esc_attr($data_section_id) ?>"
                                        data-load-type="<?php echo esc_attr($tab_category_action) ?>"
                                        data-category=""
@@ -95,8 +103,8 @@ $paging_style = $show_pagging == 2 ? 'slider' : 'paging';
                                     ?>
                                     <li class="<?php if ($index == count($terms)) {
                                         echo "last";
-                                    } ?>">
-                                        <a class="isotope-portfolio ladda-button handmade-button style2 button-dark button-2x "
+                                    } ?> <?php if($query_category==$term->slug){ echo ' active';} ;?>">
+                                        <a class="isotope-portfolio ladda-button handmade-button style2 button-dark button-2x <?php if($query_category==$term->slug){ echo ' active';} ;?>"
                                            href="javascript:;" data-section-id="<?php echo esc_attr($data_section_id) ?>"
                                            data-load-type="<?php echo esc_attr($tab_category_action) ?>"
                                            data-category="<?php echo esc_attr($term->slug) ?>"
@@ -109,9 +117,9 @@ $paging_style = $show_pagging == 2 ? 'slider' : 'paging';
                                            data-post-per-page="<?php echo esc_attr($post_per_page) ?>"
                                            data-column="<?php echo esc_attr($column) ?>"
                                            data-order="<?php echo esc_attr($order) ?>"
-                                           data-group="<?php echo preg_replace('/\s+/', '', $term->slug) ?>"
+                                           data-group="<?php echo preg_replace('/\s+/', '', str_replace('%','',$term->slug)) ?>"
                                            data-show-paging="<?php echo esc_attr($show_pagging) ?>"
-                                           data-filter=".<?php echo esc_attr($term->slug) ?>"
+                                           data-filter=".<?php echo str_replace('%','',$term->slug) ?>"
                                            data-style="zoom-out"
                                            data-spinner-color="#fff">
                                             <?php echo wp_kses_post($term->name) ?>
@@ -150,7 +158,7 @@ $paging_style = $show_pagging == 2 ? 'slider' : 'paging';
                 $terms = wp_get_post_terms(get_the_ID(), array(G5PLUS_PORTFOLIO_CATEGORY_TAXONOMY));
                 $cat = $cat_filter = '';
                 foreach ($terms as $term) {
-                    $cat_filter .= $term->slug . ' ';
+                    $cat_filter .= str_replace("%","",$term->slug) . ' ';
                     $cat .= $term->name . ', ';
                 }
                 $cat = rtrim($cat, ', ');

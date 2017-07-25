@@ -129,7 +129,7 @@ class RevSliderBase {
 			
 		}catch (Exception $e){
 			header("status: 500");
-			echo $e->getMessage();
+			echo __('Image not Found', 'revslider');
 			exit();
 		}
 	}
@@ -324,6 +324,78 @@ class RevSliderBase {
 		return $attachment_id;
 	}
 	
+	/**
+	 * get all the svg url sets used in Slider Revolution
+	 * @since: 5.1.7
+	 **/
+	public static function get_svg_sets_url(){
+		$svg_sets = array();
+		
+		$path = RS_PLUGIN_PATH . 'public/assets/assets/svg/';
+		$url = RS_PLUGIN_URL . 'public/assets/assets/svg/';
+		
+		if(!file_exists($path.'action/ic_3d_rotation_24px.svg')){ //the path needs to be changed to the uploads folder then
+			$upload_dir = wp_upload_dir();
+			$path = $upload_dir['basedir'].'/revslider/assets/svg/';
+			$url = $upload_dir['baseurl'].'/revslider/assets/svg/';
+		}
+		
+		$svg_sets['Actions'] = array('path' => $path.'action/', 'url' => $url.'action/');
+		$svg_sets['Alerts'] = array('path' => $path.'alert/', 'url' => $url.'alert/');
+		$svg_sets['AV'] = array('path' => $path.'av/', 'url' => $url.'av/');
+		$svg_sets['Communication'] = array('path' => $path.'communication/', 'url' => $url.'communication/');
+		$svg_sets['Content'] = array('path' => $path.'content/', 'url' => $url.'content/');
+		$svg_sets['Device'] = array('path' => $path.'device/', 'url' => $url.'device/');
+		$svg_sets['Editor'] = array('path' => $path.'editor/', 'url' => $url.'editor/');
+		$svg_sets['File'] = array('path' => $path.'file/', 'url' => $url.'file/');
+		$svg_sets['Hardware'] = array('path' => $path.'hardware/', 'url' => $url.'hardware/');
+		$svg_sets['Images'] = array('path' => $path.'image/', 'url' => $url.'image/');
+		$svg_sets['Maps'] = array('path' => $path.'maps/', 'url' => $url.'maps/');
+		$svg_sets['Navigation'] = array('path' => $path.'navigation/', 'url' => $url.'navigation/');
+		$svg_sets['Notifications'] = array('path' => $path.'notification/', 'url' => $url.'notification/');
+		$svg_sets['Places'] = array('path' => $path.'places/', 'url' => $url.'places/');
+		$svg_sets['Social'] = array('path' => $path.'social/', 'url' => $url.'social/');
+		$svg_sets['Toggle'] = array('path' => $path.'toggle/', 'url' => $url.'toggle/');
+		
+		
+		$svg_sets = apply_filters('revslider_get_svg_sets', $svg_sets);
+		
+		return $svg_sets;
+	}
+	
+	/**
+	 * get all the svg files for given sets used in Slider Revolution
+	 * @since: 5.1.7
+	 **/
+	public static function get_svg_sets_full(){
+		
+		$svg_sets = self::get_svg_sets_url();
+		
+		$svg = array();
+		
+		if(!empty($svg_sets)){
+			foreach($svg_sets as $handle => $values){
+				$svg[$handle] = array();
+				
+				if($dir = opendir($values['path'])) {
+					while(false !== ($file = readdir($dir))){
+						if ($file != "." && $file != "..") {
+							$filetype = pathinfo($file);
+							
+							if(isset($filetype['extension']) && $filetype['extension'] == 'svg'){
+								$svg[$handle][$file] = $values['url'].$file;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		$svg = apply_filters('revslider_get_svg_sets_full', $svg);
+		
+		return $svg;
+	}
+	
 	
 	/**
 	 * get all the icon sets used in Slider Revolution
@@ -496,14 +568,21 @@ class RevSliderBase {
 				}
 				
 				if(!$zimage){
-					echo $image.__(' not found!<br>', 'revslider');
+					//echo $image.__(' not found!<br>', 'revslider');
 				}else{
 					if(!isset($alreadyImported['images/'.$image])){
-						if($strip == true){ //pclzip
-							$importImage = RevSliderFunctionsWP::import_media($d_path.str_replace('//', '/', 'images/'.$image), $alias.'/');
+						//check if we are object folder, if yes, do not import into media library but add it to the object folder
+						$uimg = ($strip == true) ? str_replace('//', '/', 'images/'.$image) : $image; //pclzip
+						
+						$object_library = (strpos($uimg, 'revslider/objects/') === 0) ? true : false;
+						
+						if($object_library === true){ //copy the image to the objects folder if false
+							$objlib = new RevSliderObjectLibrary();
+							$importImage = $objlib->_import_object($d_path.'images/'.$uimg);
 						}else{
-							$importImage = RevSliderFunctionsWP::import_media($d_path.'images/'.$image, $alias.'/');
+							$importImage = RevSliderFunctionsWP::import_media($d_path.'images/'.$uimg, $alias.'/');
 						}
+						
 						if($importImage !== false){
 							$alreadyImported['images/'.$image] = $importImage['path'];
 							
@@ -541,6 +620,33 @@ class RevSliderBase {
 		}
 	}
 	
+	
+	/**
+	 * prints out debug text if constant TP_DEBUG is defined and true
+ 	 * @since: 5.2.4
+	 */
+	public static function debug($value , $message, $where = "console"){
+		if( defined('TP_DEBUG') && TP_DEBUG ){
+			if($where=="console"){
+				echo '<script>
+					jQuery(document).ready(function(){
+						if(window.console) {
+							console.log("'.$message.'");
+							console.log('.json_encode($value).');
+						}
+					});
+				</script>
+				';
+			}
+			else{
+				var_dump($value);
+			}
+		}
+		else {
+			return false;
+		}
+	}
+
 }
 
 /**

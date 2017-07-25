@@ -1,5 +1,10 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
+ * @deprecated
  * Shortcode attributes
  * @var $atts
  * @var $title

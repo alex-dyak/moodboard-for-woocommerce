@@ -252,3 +252,44 @@ if( !function_exists( 'yith_wcwl_object_id' ) ){
         }
     }
 }
+
+if( !function_exists( 'yith_wcwl_get_hidden_products' ) ){
+    /**
+     * Retrieves a list of hidden products, whatever WC version is running
+     *
+     * WC switched from meta _visibility to product_visibility taxonomy since version 3.0.0,
+     * forcing a split handling (Thank you, WC!)
+     * 
+     * @return array List of hidden product ids
+     * @since 2.1.1
+     */
+    function yith_wcwl_get_hidden_products(){
+        global $wpdb;
+        $hidden_products = array();
+
+        if( version_compare( WC()->version, '3.0.0', '<' ) ){
+            $query = "SELECT p.ID
+                      FROM {$wpdb->posts} AS p
+                      LEFT JOIN {$wpdb->postmeta} AS pm ON p.ID = pm.post_id
+                      WHERE meta_key = %s AND meta_value <> %s";
+            $query_args = array(
+                '_visibility',
+                'visible'
+            );
+        }
+        else{
+            $product_visibility_term_ids = wc_get_product_visibility_term_ids();
+            $query = "SELECT tr.object_id 
+                      FROM {$wpdb->term_relationships} AS tr
+                      LEFT JOIN {$wpdb->term_taxonomy} AS tt USING( term_taxonomy_id ) 
+                      WHERE tt.taxonomy = %s AND tr.term_taxonomy_id = %d";
+            $query_args = array(
+                'product_visibility',
+                $product_visibility_term_ids['exclude-from-catalog'] 
+            );
+        }
+
+        $hidden_products = $wpdb->get_col( $wpdb->prepare( $query, $query_args ) );
+        return $hidden_products;
+    }
+}

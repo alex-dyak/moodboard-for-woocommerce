@@ -1,5 +1,14 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+/**
+ * @var $param Vc_Column_Offset
+ * @var $sizes Vc_Column_Offset::$size_types
+ */
+?>
 <div class="vc_column-offset" data-column-offset="true">
-	<?php if ( vc_settings()->get( 'not_responsive_css' ) === '1' ): ?>
+	<?php if ( '1' === vc_settings()->get( 'not_responsive_css' ) ) :  ?>
 		<div class="wpb_alert wpb_content_element vc_alert_rounded wpb_alert-warning">
 			<div class="messagebox_text">
 				<p><?php printf( __( 'Responsive design settings are currently disabled. You can enable them in Visual Composer <a href="%s">settings page</a> by unchecking "Disable responsive content elements".', 'js_composer' ), admin_url( 'admin.php?page=vc-general' ) ) ?></p>
@@ -24,10 +33,10 @@
 				<?php _e( 'Hide on device?', 'js_composer' ) ?>
 			</th>
 		</tr>
-		<?php foreach ( $sizes as $key => $size ): ?>
+		<?php foreach ( $sizes as $key => $size ) :  ?>
 			<tr class="vc_size-<?php echo $key ?>">
 				<td class="vc_screen-size vc_screen-size-<?php echo $key ?>">
-					<span class="vc_icon" title="<?php echo $size ?>"></span>
+					<span title="<?php echo $size ?>"><i class="vc-composer-icon vc-c-icon-layout-<?php echo $key ?>"></i></span>
 				</td>
 				<td>
 					<?php echo $param->offsetControl( $key ) ?>
@@ -43,13 +52,12 @@
 					</label>
 				</td>
 			</tr>
-		<?php endforeach; ?>
+		<?php endforeach ?>
 	</table>
 </div>
 <script type="text/javascript">
-	window.VcI8nColumnOffsetParam =
-	<?php echo json_encode(array(
-			'inherit' => __('Inherit: ', 'js_composer'),
-			'inherit_default' => __('Inherit from default', 'js_composer')
-		)) ?>
+	window.VcI8nColumnOffsetParam = <?php echo json_encode(array(
+			'inherit' => __( 'Inherit: ', 'js_composer' ),
+			'inherit_default' => __( 'Inherit from default', 'js_composer' ),
+		)) ?>;
 </script>

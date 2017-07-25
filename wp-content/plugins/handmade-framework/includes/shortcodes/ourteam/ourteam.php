@@ -81,11 +81,11 @@ if (!class_exists('g5plusFramework_Shortcode_Ourteam')) {
                     'labels' => array(
                         'name' => $name,
                         'singular_name' => $singular_name,
-                        'menu_name' => esc_html__($name, 'g5plus-handmade'),
+                        'menu_name' => esc_attr($name),
                         'parent_item_colon' => esc_html__('Parent Item:', 'g5plus-handmade'),
-                        'all_items' => esc_html__(sprintf('All %s', $name), 'g5plus-handmade'),
+                        'all_items' => sprintf(esc_html__('All %s', 'g5plus-handmade'), $name),
                         'view_item' => esc_html__('View Item', 'g5plus-handmade'),
-                        'add_new_item' => esc_html__(sprintf('Add New  %s', $name), 'g5plus-handmade'),
+                        'add_new_item' => sprintf(esc_html__('Add New  %s', 'g5plus-handmade'), $name),
                         'add_new' => esc_html__('Add New', 'g5plus-handmade'),
                         'edit_item' => esc_html__('Edit Item', 'g5plus-handmade'),
                         'update_item' => esc_html__('Update Item', 'g5plus-handmade'),
@@ -252,16 +252,18 @@ if (!class_exists('g5plusFramework_Shortcode_Ourteam')) {
                                             <ul>
                                                 <?php
                                                 $meta = get_post_meta(get_the_id(), $ourteam_metabox->get_the_id(), true);
-                                                foreach ($meta['ourteam'] as $col) {
-                                                    $socialName = isset($col['socialName']) ? $col['socialName'] : '';
-                                                    $socialLink = isset($col['socialLink']) ? $col['socialLink'] : '';
-                                                    $socialIcon = isset($col['socialIcon']) ? $col['socialIcon'] : '';
-                                                    ?>
-                                                    <li><a href="<?php echo esc_url($socialLink) ?>"
-                                                           title="<?php echo esc_url($socialName) ?>"><i
-                                                                class="<?php echo esc_attr($socialIcon) ?>"></i></a>
-                                                    </li>
-                                                    <?php
+                                                if (is_array($meta)) {
+                                                    foreach ($meta['ourteam'] as $col) {
+                                                        $socialName = isset($col['socialName']) ? $col['socialName'] : '';
+                                                        $socialLink = isset($col['socialLink']) ? $col['socialLink'] : '';
+                                                        $socialIcon = isset($col['socialIcon']) ? $col['socialIcon'] : '';
+                                                        ?>
+                                                        <li><a href="<?php echo esc_url($socialLink) ?>"
+                                                               title="<?php echo esc_url($socialName) ?>"><i
+                                                                    class="<?php echo esc_attr($socialIcon) ?>"></i></a>
+                                                        </li>
+                                                        <?php
+                                                    }
                                                 }
                                                 ?>
                                             </ul>
@@ -296,16 +298,18 @@ if (!class_exists('g5plusFramework_Shortcode_Ourteam')) {
                                             <ul>
                                                 <?php
                                                 $meta = get_post_meta(get_the_id(), $ourteam_metabox->get_the_id(), true);
-                                                foreach ($meta['ourteam'] as $col) {
-                                                    $socialName = isset($col['socialName']) ? $col['socialName'] : '';
-                                                    $socialLink = isset($col['socialLink']) ? $col['socialLink'] : '';
-                                                    $socialIcon = isset($col['socialIcon']) ? $col['socialIcon'] : '';
-                                                    ?>
-                                                    <li><a href="<?php echo esc_url($socialLink) ?>"
-                                                           title="<?php echo esc_url($socialName) ?>"><i
-                                                                class="<?php echo esc_attr($socialIcon) ?>"></i></a>
-                                                    </li>
-                                                    <?php
+                                                if (is_array($meta)) {
+                                                    foreach ($meta['ourteam'] as $col) {
+                                                        $socialName = isset($col['socialName']) ? $col['socialName'] : '';
+                                                        $socialLink = isset($col['socialLink']) ? $col['socialLink'] : '';
+                                                        $socialIcon = isset($col['socialIcon']) ? $col['socialIcon'] : '';
+                                                        ?>
+                                                        <li><a href="<?php echo esc_url($socialLink) ?>"
+                                                               title="<?php echo esc_url($socialName) ?>"><i
+                                                                    class="<?php echo esc_attr($socialIcon) ?>"></i></a>
+                                                        </li>
+                                                        <?php
+                                                    }
                                                 }
                                                 ?>
                                             </ul>

@@ -56,7 +56,7 @@ var PortfolioAjaxAction = {
                 if($data_show_paging=='1'){
                     jQuery('#load-more-' + $section_id).empty();
                     if(jQuery('.paging',data).length>0){
-                        var $loadButton = jQuery('.paging a',data);
+                        var $loadButton = jQuery('.portfolio .paging a',data);
                         $loadButton.attr('data-section-id',$section_id);
                         jQuery('#load-more-' + $section_id).append($loadButton);
                         PortfolioAjaxAction.registerLoadmore();
@@ -84,6 +84,7 @@ var PortfolioAjaxAction = {
                 }
                 if(isLoadmore !=null && isLoadmore && $filterType=='ajax'){
                     $container.append( $item );
+
                 }else{
 
                     $container.append( $item ).isotope( 'appended', $item);
@@ -133,6 +134,10 @@ var PortfolioAjaxAction = {
         jQuery('a','#load-more-' + sectionId).off();
         jQuery('a','#load-more-' + sectionId).click(function(){
             PortfolioAjaxAction.processFilter(this, true);
+            jQuery('li.active','.portfolio-tabs').removeClass('active');
+            jQuery('a.active','.portfolio-tabs').removeClass('active');
+            jQuery('li:first-child','.portfolio-tabs').addClass('active');
+            jQuery('li:first-child a','.portfolio-tabs').addClass('active');
         });
     },
 

@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 VcShortcodeAutoloader::getInstance()->includeClass( 'WPBakeryShortCode_VC_Tta_Accordion' );
 
 class WPBakeryShortCode_VC_Tta_Section extends WPBakeryShortCode_VC_Tta_Accordion {
@@ -131,6 +135,9 @@ class WPBakeryShortCode_VC_Tta_Section extends WPBakeryShortCode_VC_Tta_Accordio
 
 	/**
 	 * Section param active
+	 * @param $atts
+	 * @param $content
+	 * @return bool|null
 	 */
 	public function getParamSectionIsActive( $atts, $content ) {
 		if ( is_object( self::$tta_base_shortcode ) ) {
@@ -237,13 +244,13 @@ class WPBakeryShortCode_VC_Tta_Section extends WPBakeryShortCode_VC_Tta_Accordio
 				'data-vc-accordion' => '',
 				'data-vc-target' => '',
 				'data-vc-tta-controls-icon-wrapper' => '',
-				'data-vc-use-cache' => 'false'
+				'data-vc-use-cache' => 'false',
 			);
 		} else {
 			$attributes = array(
 				'data-vc-container' => '.vc_tta-container',
 				'data-vc-accordion' => '',
-				'data-vc-target' => esc_attr( '#' . $this->getTemplateVariable( 'tab_id' ) )
+				'data-vc-target' => esc_attr( '#' . $this->getTemplateVariable( 'tab_id' ) ),
 			);
 		}
 
@@ -254,5 +261,17 @@ class WPBakeryShortCode_VC_Tta_Section extends WPBakeryShortCode_VC_Tta_Accordio
 		';
 
 		return $output;
+	}
+	/**
+	 * Check is allowed to add another element inside current element.
+	 *
+	 * @since 4.8
+	 *
+	 * @return bool
+	 */
+	public function getAddAllowed() {
+		return  vc_user_access()
+			->part( 'shortcodes' )
+			->checkStateAny( true, 'custom', null )->get();
 	}
 }

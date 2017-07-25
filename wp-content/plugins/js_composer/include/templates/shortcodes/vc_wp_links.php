@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * Shortcode attributes
  * @var $atts
@@ -7,10 +11,11 @@
  * @var $options
  * @var $limit
  * @var $el_class
+ * @var $el_id
  * Shortcode class
  * @var $this WPBakeryShortCode_VC_Wp_Links
  */
-$category = $options = $orderby = $limit = $el_class = '';
+$category = $options = $orderby = $limit = $el_class = $el_id = '';
 $output = '';
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
@@ -30,8 +35,11 @@ if ( in_array( 'rating', $options ) ) {
 }
 
 $el_class = $this->getExtraClass( $el_class );
-
-$output = '<div class="vc_wp_links wpb_content_element' . esc_attr( $el_class ) . '">';
+$wrapper_attributes = array();
+if ( ! empty( $el_id ) ) {
+	$wrapper_attributes[] = 'id="' . esc_attr( $el_id ) . '"';
+}
+$output = '<div ' . implode( ' ', $wrapper_attributes ) . ' class="vc_wp_links wpb_content_element' . esc_attr( $el_class ) . '">';
 $type = 'WP_Widget_Links';
 $args = array();
 global $wp_widget_factory;

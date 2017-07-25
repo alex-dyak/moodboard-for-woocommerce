@@ -4,7 +4,7 @@
  *    Plugin Name: Handmade Framework
  *    Plugin URI: http://g5plus.net
  *    Description: The Handmade Framework plugin.
- *    Version: 1.0
+ *    Version: 1.3
  *    Author: g5plus
  *    Author URI: http://g5plus.net
  *
@@ -69,15 +69,9 @@ if (!class_exists('g5plusFrameWork')) {
 			require_once PLUGIN_G5PLUS_FRAMEWORK_DIR . 'includes/widgets/widgets.php';
 		}
 
-		public function load_plugin_textdomain()
-		{
-		}
-
 
 		private function define_hook()
 		{
-			/*set locale*/
-			$this->loader->add_action('plugins_loaded', $this, 'load_plugin_textdomain');
 
 			/*admin*/
 			$plugin_admin = new g5plusFramework_Admin($this->get_prefix(), $this->get_version());
