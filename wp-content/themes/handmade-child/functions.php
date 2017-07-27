@@ -11,4 +11,6 @@ function g5plus_child_theme_setup(){
         load_child_theme_textdomain('g5plus-handmade', $language_path );
     }
 }
-// if you want to add some custom function
+
+// Include Widgets and Sidebars.
+require_once( get_stylesheet_directory() . '/inc/widgets-sidebars.php' );
