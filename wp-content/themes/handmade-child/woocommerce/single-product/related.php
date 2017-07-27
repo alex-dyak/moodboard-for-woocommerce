@@ -87,11 +87,15 @@ $g5plus_woocommerce_loop['layout'] = 'slider';
 	<?php
 	// Get products by collection.
 	$product_collection = wc_get_product_terms(  $product->get_id(),  'collections',  $args = array() );
-	$term_id = $product_collection[0]->term_id;
 
 	$args = array(
-		'post_type' => 'product',
-		'category'  => $term_id,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'collections',
+				'field'    => 'slug',
+				'terms'    => $product_collection[0]->slug
+			)
+		)
 	);
 	$products = new WP_Query( $args );
 
@@ -99,7 +103,9 @@ $g5plus_woocommerce_loop['layout'] = 'slider';
 	if ( $products->have_posts() ) {
 		while ( $products->have_posts() ) {
 			$products->the_post();
-			$related_products[] = wc_get_product( get_the_ID() );
+			if ( get_the_ID() != $product->get_id() ) {
+				$related_products[] = wc_get_product( get_the_ID() );
+			}
 		}
 	}
 
@@ -115,14 +121,13 @@ $g5plus_woocommerce_loop['layout'] = 'slider';
 			<?php foreach ( $related_products as $related_product ) : ?>
 
 				<?php
-				if ( $related_product->get_id() != $product->get_id() ) {
 
 				$post_object = get_post( $related_product->get_id() );
 
 				setup_postdata( $GLOBALS['post'] =& $post_object );
 
 				wc_get_template_part( 'content', 'product' );
-				} ?>
+				?>
 
 			<?php endforeach; ?>
 
