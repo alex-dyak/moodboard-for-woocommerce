@@ -188,6 +188,10 @@ class Toolset_Assets_Manager {
 
 	const SCRIPT_UTILS = 'toolset-utils';
 
+	// chosen lib
+	const SCRIPT_CHOSEN = 'toolset-chosen';
+	const SCRIPT_CHOSEN_WRAPPER = 'toolset-chosen-wrapper';
+
 	/**
 	 * For compatibility with ACF Plugin that's not using the right handle for this module (wp-event-manager)
 	 * we are using ACF handle to prevent unwanted overrides of window.wp.hooks namespace (******!)
@@ -226,10 +230,16 @@ class Toolset_Assets_Manager {
 	const STYLE_TOOLSET_PROMOTION = 'toolset-promotion';
 
 
+
+	// chosen lib
+	const STYLE_TOOLSET_CHOSEN = 'toolset-chosen-styles';
+
 	// WordPress Core handles
 	//
 	//
 	const STYLE_JQUERY_UI_DIALOG = 'wp-jquery-ui-dialog';
+
+	const STYLE_ONTHEGOSYSTEMS_ICONS = 'onthegosystems-icons';
 
 
 	/**
@@ -352,7 +362,7 @@ class Toolset_Assets_Manager {
 			self::STYLE_FONT_AWESOME,
 			$this->assets_url . '/res/lib/font-awesome/css/font-awesome.min.css',
 			array(),
-			'4.4.0',
+			'4.7.0',
 			'screen'
 		);
 
@@ -376,6 +386,14 @@ class Toolset_Assets_Manager {
 			array(),
 			'1.4.31'
 		);
+
+		$this->register_style(
+			self::STYLE_TOOLSET_CHOSEN,
+			$this->assets_url . '/res/lib/chosen/chosen.css',
+			array(),
+			'1.6.2'
+		);
+
 
 
 		// Custom styles
@@ -464,6 +482,13 @@ class Toolset_Assets_Manager {
 			TOOLSET_COMMON_VERSION
 		);
 
+		$this->register_style(
+			self::STYLE_ONTHEGOSYSTEMS_ICONS,
+			ON_THE_GO_SYSTEMS_BRANDING_REL_PATH . 'onthegosystems-icons/css/onthegosystems-icons.css',
+			array( self::STYLE_TOOLSET_COMMON ),
+			TOOLSET_COMMON_VERSION
+		);
+
 		return apply_filters( 'toolset_add_registered_styles', $this->styles );
 	}
 
@@ -503,6 +528,23 @@ class Toolset_Assets_Manager {
 			$this->assets_url . "/res/lib/select2/select2.js",
 			array( 'jquery', self::SCRIPT_SELECT2_COMPATIBILITY ),
 			'4.0.3',
+			true
+		);
+
+		$this->register_script(
+			self::SCRIPT_CHOSEN_WRAPPER,
+			$this->assets_url . "/res/js/toolset-chosen-wrapper.js",
+			array( 'jquery', self::SCRIPT_CHOSEN ),
+			TOOLSET_COMMON_VERSION,
+			true
+		);
+
+		$this->register_script(
+			self::SCRIPT_CHOSEN,
+			$this->assets_url . "/res/lib/chosen/chosen.jquery.js",
+			array( 'jquery' ),
+			TOOLSET_COMMON_VERSION,
+			'1.6.2',
 			true
 		);
 
@@ -734,7 +776,7 @@ class Toolset_Assets_Manager {
 				'autosave_failed' => '<i class="fa fa-exclamation-triangle"></i>' . __( 'Saving failed. Please reload the page and try again.', 'wpv-views' ),
 				'toolset_bootstrap_version_filter' => apply_filters( 'toolset-toolset_bootstrap_version_filter', false ),
 				'toolset_bootstrap_version_selected' => apply_filters( 'toolset-toolset_bootstrap_version_manually_selected', false ),
-				'toolset_theme_loads_own_bs' => __( 'This theme loads its own version of Bootstrap. You should select this option to avoid loading Bootstrap twice and causing display problems on the site\'s front-end', 'wpv_views' )
+				'toolset_theme_loads_own_bs' => __( 'This theme loads its own version of Bootstrap. You should select this option to avoid loading Bootstrap twice and causing display problems on the site\'s front-end', 'wpv-views' )
 			)
 		);
 

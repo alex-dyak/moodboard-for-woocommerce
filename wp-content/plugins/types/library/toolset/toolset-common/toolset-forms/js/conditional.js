@@ -3,11 +3,12 @@
  *
  *
  */
-var wptCondTriggers = {}
-, wptCondFields = {}
-, wptCondCustomTriggers = {}
-, wptCondCustomFields = {}
-, wptCondDebug = false;
+var wptCondTriggers = {},
+    wptCondFields = {},
+    wptCondCustomTriggers = {},
+    wptCondCustomFields = {},
+    wptCondDebug = false,
+    didInitCustom = false;
 
 var wptCond = (function ($) {
 
@@ -34,61 +35,9 @@ var wptCond = (function ($) {
         // Fire validation after init conditional
         wptCallbacks.validationInit.fire();
         // check initial custom NOTE this might be deprecated and not needed anymore
-        //Fix double showHide on submition failed: commenting this 
+        //Fix double showHide on submition failed: commenting this
         //_init_custom();
     }
-
-    // hide / show effects
-
-    $.fn.condSlideFadeDown = function (speed, easing, callback) {
-        easing = easing || 'linear';
-        return this.each(function () {
-            $(this).fadeIn(speed, function () {
-                //$(this).css('height', 'auto');
-                if ($.browser.msie) {
-                    this.style.removeAttribute('filter');
-                }
-                if ($.isFunction(callback)) {
-                    callback.call(this);
-                }
-            });
-
-//            $(this).animate({opacity: 'show', height: 'show'}, speed, easing, function () {
-//                $(this).css('height', 'auto');
-//                if ($.browser.msie) {
-//                    this.style.removeAttribute('filter');
-//                }
-//                if ($.isFunction(callback)) {
-//                    callback.call(this);
-//                }
-//            });
-        });
-    };
-
-    $.fn.condSlideFadeUp = function (speed, easing, callback) {
-        easing = easing || 'linear';
-        return this.each(function () {
-            $(this).fadeOut(speed, function () {
-                //$(this).css('height', 'auto');
-                if ($.browser.msie) {
-                    this.style.removeAttribute('filter');
-                }
-                if ($.isFunction(callback)) {
-                    callback.call(this);
-                }
-            });
-
-//            $(this).animate({opacity: 'hide', height: 'hide'}, speed, easing, function () {
-//                $(this).css('height', 'auto');
-//                if ($.browser.msie) {
-//                    this.style.removeAttribute('filter');
-//                }
-//                if ($.isFunction(callback)) {
-//                    callback.call(this);
-//                }
-//            });
-        });
-    };
 
     function _getTrigger(trigger, formID)
     {
@@ -565,19 +514,6 @@ var wptCond = (function ($) {
                     console.log("The value is ", value, " for element: ", t, $trigger);
                 }
 
-                //Fix https://icanlocalize.basecamphq.com/projects/7393061-toolset/todo_items/193595717/comments
-                //group issue on select
-                if (false) {
-                    if ($trigger.is('select') && !$trigger.attr('multiple')) {
-                        $("#" + $trigger.attr('id') + " > option").each(function () {
-                            //console.log(value + " " + this.text + ' ' + this.value + ' ' + $(this).data('typesValue'));                        
-                            if ($(this).data('typesValue') && $(this).data('typesValue') == value || this.text == value || value == this.value)
-                                value = this.text;
-                        });
-                    }
-                }
-                //#####################################################################################
-
                 if (typeof value != 'undefined') {
 
                     // make it a string by wrapping in quotes if
@@ -666,7 +602,6 @@ var wptCond = (function ($) {
                 //group issue on select
                 if ($trigger.is('select') && !$trigger.attr('multiple')) {
                     $("#" + $trigger.attr('id') + " > option").each(function () {
-                        //console.log(value + " " + this.text + ' ' + this.value + ' ' + $(this).data('typesValue'));                        
                         if ($(this).data('typesValue') && $(this).data('typesValue') == value || this.text == value || value == this.value)
                             value = this.text;
                     });
@@ -686,10 +621,6 @@ var wptCond = (function ($) {
                     if (is_array === true) {
 
                         var val_array = '';
-
-                        if (wptCondDebug) {
-                            //console.log();
-                        }
 
                         if (value instanceof Array) {
                             for (var i = 0; i < value.length; i++) {
@@ -756,13 +687,6 @@ var wptCond = (function ($) {
 
     function _showHide(show, $el)
     {
-        //Fix https://icanlocalize.basecamphq.com/projects/7393061-toolset/todo_items/193353994/comments#302703480
-
-        //TODO: check this cause side effect
-        /*if (jQuery('.wpt-form-error').length) {            
-         jQuery('.wpt-form-error').hide();
-         }*/
-
         if (wptCondDebug) {
             console.info('_showHide');
             console.log(show, $el);
@@ -790,24 +714,18 @@ var wptCond = (function ($) {
             }
             $el.addClass('wpt-conditional-visible').removeClass('wpt-conditional-hidden js-wpt-remove-on-submit js-wpt-validation-ignore');
             switch (effectmode) {
-                case 'fade-slide':
-                    setTimeout(function () {
-                        $el.stop(true).condSlideFadeDown('linear', function () {
-                            $(document).trigger('js_event_toolset_forms_conditional_field_toggled', data_for_events);
-                        });
-                    }, delay);
-                    break;
                 case 'slide':
                     setTimeout(function () {
-                        $el.stop(true).slideDown('linear', function () {
+                        $el.slideDown('fast', function () {
                             $el.css('height', 'auto');
                             $(document).trigger('js_event_toolset_forms_conditional_field_toggled', data_for_events);
                         });
                     }, delay);
                     break;
+				case 'fade-slide':
                 case 'fade':
                     setTimeout(function () {
-                        $el.stop(true).fadeIn('fast', function () {
+                        $el.fadeIn('fast', function () {
                             $(document).trigger('js_event_toolset_forms_conditional_field_toggled', data_for_events);
                         });
                     }, delay);
@@ -825,24 +743,18 @@ var wptCond = (function ($) {
         } else {
             $el.addClass('wpt-conditional-hidden js-wpt-remove-on-submit js-wpt-validation-ignore').removeClass('wpt-conditional-visible');
             switch (effectmode) {
-                case 'fade-slide':
-                    setTimeout(function () {
-                        $el.stop(true).condSlideFadeUp('linear', function () {
-                            $(document).trigger('js_event_toolset_forms_conditional_field_toggled', data_for_events);
-                        });
-                    }, delay);
-                    break;
                 case 'slide':
                     setTimeout(function () {
-                        $el.stop(true).slideUp('linear', function () {
+                        $el.slideUp('fast', function () {
                             $el.css('height', 'auto');
                             $(document).trigger('js_event_toolset_forms_conditional_field_toggled', data_for_events);
                         });
                     }, delay);
                     break;
+				case 'fade-slide':
                 case 'fade':
                     setTimeout(function () {
-                        $el.stop(true).fadeOut('fast', function () {
+                        $el.fadeOut('fast', function () {
                             $(document).trigger('js_event_toolset_forms_conditional_field_toggled', data_for_events);
                         });
                     }, delay);
@@ -860,6 +772,11 @@ var wptCond = (function ($) {
         }
     }
 
+	// @bug This seems to be only used by date.js on its conditional_check_date method,
+	// which again gets only used by its ajaxConditional method, 
+	// which seems hooked into a commented out JS action.
+	// The PHP side is in bootstrap.php :-/
+	// I do not think we have AJAX conditionals, not even for date fields :-//
     function ajaxCheck(formID, field, conditions)
     {
         var values = {};
@@ -934,6 +851,22 @@ var wptCond = (function ($) {
         })
     }
 
+    jQuery(document).on('cred_form_ready', function(evt, evt_data){
+
+        // Queue initialisation, init date fields first then the conditional groups to prevent jQuery validation errors
+		// @bug This does not init date fields as they are actually initialized on CRED forms in date.js
+		// and they require a flag source: 'cred_form_ready_init'
+        setTimeout(function(){
+            wptDate.init('#' + evt_data.form_id);
+        }, 1);
+
+		// @bug This is inid in main.js:18 and I can not even start wondering what side effects can have doing it twice
+		// For now, sjow/hide effects are binded twice and that might be causing some nasty visual :-(
+        setTimeout(function(){
+            init();
+        }, 2);
+    });
+
     return {
         init: init,
         ajaxCheck: ajaxCheck,
@@ -941,4 +874,3 @@ var wptCond = (function ($) {
     };
 
 })(jQuery);
-
