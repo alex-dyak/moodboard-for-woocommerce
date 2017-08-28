@@ -1,0 +1,2116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: poedit\n"
+"Report-Msgid-Bugs-To: help@poedit.net\n"
+"POT-Creation-Date: 2017-06-01 17:42+0200\n"
+"PO-Revision-Date: 2017-04-13 11:59-0400\n"
+"Last-Translator: vslavik <vaclav@slavik.io>\n"
+"Language-Team: Hebrew\n"
+"Language: he_IL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: poedit\n"
+"X-Crowdin-Language: he\n"
+"X-Crowdin-File: /locales/poedit.pot\n"
+
+msgid "Hide this notification message"
+msgstr "הסתר התראה זו"
+
+msgid "Don't Show Again"
+msgstr "אל תציג שוב"
+
+msgid "Don't show again"
+msgstr "אל תציג שוב"
+
+#, c-format
+msgid "(New: %i, obsolete: %i)"
+msgstr "(חדש: %i, מיושן: %i)"
+
+msgid "Updating catalog"
+msgstr "מעדכן קטלוג"
+
+msgid "Collecting source files..."
+msgstr "אוסף קבצי מקור..."
+
+msgid "Extracting translatable strings..."
+msgstr "מחלץ מחרוזות הניתנות לתרגום..."
+
+msgid "Failed to load extracted catalog."
+msgstr "טעינת הקטלוג שחולץ נכשלה."
+
+msgid "Merging differences..."
+msgstr "ממזג בין ההבדלים..."
+
+#, c-format
+msgid "'%s' is not a valid POT file."
+msgstr "'%s' אינו קובץ POT חוקי."
+
+#, c-format
+msgid "%i line of file '%s' was not loaded correctly."
+msgid_plural "%i lines of file '%s' were not loaded correctly."
+msgstr[0] "שורה %i בקובץ '%s' לא נטענה כראוי."
+msgstr[1] "%i שורות בקובץ '%s' לא נטענו כראוי."
+msgstr[2] "%i שורות בקובץ '%s' לא נטענו כראוי."
+msgstr[3] "%i שורות בקובץ '%s' לא נטענו כראוי."
+
+#, c-format
+msgid "Line %d of file '%s' is corrupted (not valid %s data)."
+msgstr "שורה %d בקובץ '%s' הינה פגומה (נתוני %s לא חוקיים)."
+
+#, c-format
+msgid "Malformed header: '%s'"
+msgstr "כותרת שגויה: '%s'"
+
+msgid ""
+"Broken catalog file: singular form msgstr used together with msgid_plural"
+msgstr "קובץ קטלוג פגום: לשון יחיד של msgstr בשימוש עם msgid_plural"
+
+msgid "Broken catalog file: plural form msgstr used without msgid_plural"
+msgstr "קובץ קטלוג פגום: לשון רבים של msgstr בשימוש בלי mdgid_plural"
+
+msgid ""
+"There were errors when loading the catalog. Some data may be missing or "
+"corrupted as the result."
+msgstr ""
+"אירעו שגיאות בעת טעינת הקטלוג. כתוצאה מכך, ייתכן שחלק מהמידע חסר או פגום."
+
+#, c-format
+msgid "Couldn't load file %s, it is probably corrupted."
+msgstr "לא ניתן לטעון קובץ %s, הוא ככל הנראה פגום."
+
+#, c-format
+msgid ""
+"File '%s' is read-only and cannot be saved.\n"
+"Please save it under different name."
+msgstr ""
+"הקובץ '%s' הינו לקריאה בלבד ולא ניתן לשמור אותו.\n"
+"יש לשמור אותו בשם אחר."
+
+#, c-format
+msgid "Couldn't save file %s."
+msgstr "לא ניתן לשמור את הקובץ %s."
+
+msgid ""
+"There was a problem formatting the file nicely (but it was saved all right)."
+msgstr "הייתה בעיה בעת עיצוב הקובץ בצורה נקייה (אך הוא נשמר כראוי)."
+
+#, c-format
+msgid ""
+"The catalog couldn't be saved in '%s' charset as specified in catalog "
+"settings.\n"
+"\n"
+"It was saved in UTF-8 instead and the setting was modified accordingly."
+msgstr ""
+"לא ניתן לשמור את הקטלוג בקידוד '%s' כמו שצוין בהגדרות הקטלוג.\n"
+"\n"
+"במקום זאת הוא נשמר בקידוד UTF-8 וההגדרות שונו בהתאם."
+
+msgid "Error saving catalog"
+msgstr "שגיאה בשמירת הקטלוג"
+
+msgid "PO Translation Files"
+msgstr "קבצי תרגום PO"
+
+msgid "POT Translation Templates"
+msgstr "תבניות תרגום POT"
+
+msgid "All Translation Files"
+msgstr "כל קבצי התרגום"
+
+msgid "(Use default language)"
+msgstr "(שימוש בשפת ברירת המחדל)"
+
+msgid "Select your preferred language"
+msgstr "בחר בשפה המועדפת עליך"
+
+msgid "Language selection"
+msgstr "בחירת שפה"
+
+msgid "You must restart Poedit for this change to take effect."
+msgstr "יש להפעיל מחדש את Poedit כדי שהשינויים ייכנסו לתוקף."
+
+msgid "Syncing"
+msgstr "מסנכרן"
+
+#. TRANSLATORS: %s is a cloud destination, e.g. "Crowdin" or ftp.wordpress.com etc.
+#, c-format
+msgid "Syncing with %s…"
+msgstr "מסנכרן עם %s…"
+
+#. TRANSLATORS: %s is a cloud destination, e.g. "Crowdin" or ftp.wordpress.com etc.
+#, c-format
+msgid "Syncing with %s failed."
+msgstr "הסנכרון עם %s נכשל."
+
+msgid "Syncing error"
+msgstr "שגיאת סנכרון"
+
+msgid "Downloading translations is disabled in this project."
+msgstr "הורדת תרגומים מושבתת עבור פרויקט זה."
+
+msgid "Not authorized, please sign in again."
+msgstr "לא מורשה, נא להתחבר שנית."
+
+msgid ""
+"Crowdin is an online localization management platform and collaborative "
+"translation tool. Poedit can seamlessly sync PO files managed at Crowdin."
+msgstr ""
+"Crowdin היא מערכת ניהול לוקליזציה מקוונת וכלי תרגום שיתופי. Poedit יכול "
+"לסנכרן קבצי PO המנוהלים ב-Crowdin בצורה חלקה."
+
+msgid "Sign In"
+msgstr "התחברות"
+
+msgid "Sign in"
+msgstr "התחברות"
+
+msgid "Sign Out"
+msgstr "התנתקות"
+
+msgid "Sign out"
+msgstr "התנתקות"
+
+msgid "Waiting for authentication…"
+msgstr "מחכה לאימות…"
+
+msgid "Updating user information…"
+msgstr "מעדכן נתוני משתמש…"
+
+msgid "Signed in as:"
+msgstr "מחובר בשם:"
+
+msgid "Learn More About Crowdin"
+msgstr "מידע נוסף אודות Crowdin"
+
+msgid "Learn more about Crowdin"
+msgstr "מידע נוסף אודות Crowdin"
+
+msgid "Sign in to Crowdin"
+msgstr "התחברות אל Crowdin"
+
+msgid "Open Crowdin translation"
+msgstr "פתיחת תרגום Crowdin"
+
+msgid "Project:"
+msgstr "פרוייקט:"
+
+msgid "Language:"
+msgstr "שפה:"
+
+msgid "File:"
+msgstr "קובץ:"
+
+msgid "No translation projects listed in your Crowdin account."
+msgstr "אין פרוייקטי תרגום הרשומים בחשבון Crowdin שלך."
+
+msgid "This project has no files that can be translated in Poedit."
+msgstr "לפרויקט זה אין קבצים הניתנים לתרגום ב-Poedit."
+
+msgid "This file can only be edited in Crowdin’s web interface."
+msgstr "קובץ זה ניתן לעריכה רק בממשק האינטרנט של Crowdin."
+
+msgid "Downloading latest translations…"
+msgstr "מוריד תרגומים עדכניים…"
+
+msgid "Syncing with Crowdin failed."
+msgstr "הסנכרון עם Crowdin נכשל."
+
+msgid "Crowdin error"
+msgstr "שגיאת Crowdin"
+
+msgid "Uploading translations…"
+msgstr "מעלה תרגומים…"
+
+msgid "&Copy"
+msgstr "ה&עתק"
+
+msgid "Learn more"
+msgstr "מידע נוסף"
+
+msgid "Learn More"
+msgstr "מידע נוסף"
+
+msgid "&Help"
+msgstr "ע&זרה"
+
+msgid "MO files can’t be directly edited in Poedit."
+msgstr "לא ניתן לערוך קבצי MO ישירות ב-Poedit."
+
+msgid "Error opening file"
+msgstr "שגיאה בפתיחת הקובץ"
+
+msgid ""
+"Please open and edit the corresponding PO file instead. When you save it, "
+"the MO file will be updated as well."
+msgstr ""
+"אנא פתח וערוך את קובץ ה-PO המקביל במקום. כשתשמור אותו, קובץ ה-MO יתעדכן "
+"בהתאם."
+
+msgid "don't delete temporary files (for debugging)"
+msgstr "אל תמחק קבצים זמניים (לצורך ניפוי שגיאות)"
+
+msgid "handle a poedit:// URI"
+msgstr "טפל ב-poedit:// URI"
+
+msgid "go to item at given line number"
+msgstr ""
+
+msgid "Failed to communicate with Poedit process."
+msgstr "התקשורת עם תהליך Poedit נכשל."
+
+#, c-format
+msgid "Unhandled exception occurred: %s"
+msgstr "אירעה חריגה: %s"
+
+msgid "Open catalog"
+msgstr "פתיחת קטלוג"
+
+#, c-format
+msgid "File '%s' doesn't exist."
+msgstr "הקובץ '%s' לא קיים."
+
+msgid "Poedit is an easy to use translations editor."
+msgstr "Poedit הינו עורך תרגומים פשוט לתפעול."
+
+msgid "Catalogs Manager"
+msgstr "מנהל הקטלוגים"
+
+msgid "Check for Updates..."
+msgstr "בדיקה אחר עדכונים..."
+
+msgid "&Edit"
+msgstr "&עריכה"
+
+msgid "Undo"
+msgstr "בטל"
+
+msgid "Redo"
+msgstr "בצע שוב"
+
+msgid "Paste and Match Style"
+msgstr "הדבק והתאם לסגנון"
+
+msgid "Delete"
+msgstr "מחק"
+
+msgid "Spelling and Grammar"
+msgstr "איות ודקדוק"
+
+msgid "Show Spelling and Grammar"
+msgstr "הצג איות ודקדוק"
+
+msgid "Check Document Now"
+msgstr "בדוק את המסמך כעת"
+
+msgid "Check Spelling While Typing"
+msgstr "בדוק איות במהלך ההקלדה"
+
+msgid "Check Grammar With Spelling"
+msgstr "בדוק דקדוק ביחד עם איות"
+
+msgid "Correct Spelling Automatically"
+msgstr "תקן איות באופן אוטומטי"
+
+msgid "Substitutions"
+msgstr "החלפות"
+
+msgid "Show Substitutions"
+msgstr "הצג החלפות"
+
+msgid "Smart Copy/Paste"
+msgstr "העתקה והדבקה חכמות"
+
+msgid "Smart Quotes"
+msgstr "מרכאות חכמות"
+
+msgid "Smart Dashes"
+msgstr "מיקוף חכם"
+
+msgid "Smart Links"
+msgstr "קישורים חכמים"
+
+msgid "Text Replacement"
+msgstr "מלל חלופי"
+
+msgid "Transformations"
+msgstr "המרות"
+
+msgid "Make Upper Case"
+msgstr "הפוך לאותיות גדולות"
+
+msgid "Make Lower Case"
+msgstr "הפוך לאותיות קטנות"
+
+msgid "Capitalize"
+msgstr "הפוך לאותיות רישיות"
+
+msgid "Speech"
+msgstr "דיבור"
+
+msgid "Start Speaking"
+msgstr "הקרא"
+
+msgid "Stop Speaking"
+msgstr "הפסק הקראה"
+
+msgid "&View"
+msgstr "ת&צוגה"
+
+msgid "Enter Full Screen"
+msgstr "עבור למסך מלא"
+
+msgid "Window"
+msgstr "חלון"
+
+msgid "Minimize"
+msgstr "מזעור"
+
+msgid "Zoom"
+msgstr "הגדל/הקטן"
+
+msgid "Bring All to Front"
+msgstr "הבא הכל קדימה"
+
+#. TRANSLATORS:File kind displayed in Finder/Explorer
+msgid "PO Translation"
+msgstr "תרגום PO"
+
+msgid "The file cannot be opened."
+msgstr "לא ניתן לפתוח את הקובץ."
+
+msgid "Invalid file"
+msgstr "קובץ שגוי"
+
+msgid ""
+"The file may be either corrupted or in a format not recognized by Poedit."
+msgstr "יתכן שהקובץ פגום או מכיל פורמט שלא מזוהה ע\"י Poedit."
+
+msgid "You can't drop more than one file on Poedit window."
+msgstr "לא ניתן לשחרר יותר מקובץ אחד בחלון של Poedit."
+
+#, c-format
+msgid "File '%s' is not a message catalog."
+msgstr "הקובץ '%s' אינו קטלוג הודעות."
+
+msgid "Poedit"
+msgstr "Poedit"
+
+msgid "&File"
+msgstr "&קובץ"
+
+msgid "&Go"
+msgstr "מע&בר אל"
+
+#. TRANSLATORS: %s is language name in its basic form (as you
+#. would see e.g. in a list of supported languages). You may need
+#. to rephrase it, e.g. to an equivalent of "for language %s".
+#, c-format
+msgid ""
+"Spellchecking is disabled, because the dictionary for %s isn’t installed."
+msgstr "בדיקת איות מושבתת, מכיוון שהמילון לשפה %s אינו מותקן."
+
+msgid "Install"
+msgstr "התקנה"
+
+msgid "Catalog modified. Do you want to save changes?"
+msgstr "הקטלוג שונה. האם ברצונך לשמור את השינויים?"
+
+msgid "Save changes"
+msgstr "שמירת שינויים"
+
+msgid "Your changes will be lost if you don't save them."
+msgstr "השינויים שביצעת יאבדו אם לא תשמור אותם."
+
+msgid "Save"
+msgstr "שמור"
+
+msgid "Don't save"
+msgstr "אל תשמור"
+
+msgid "Don't Save"
+msgstr "אל תשמור"
+
+msgid "Save as..."
+msgstr "שמירה בשם..."
+
+msgid "Compile to..."
+msgstr "ביצוע הידור ל..."
+
+msgid "Compiled Translation Files"
+msgstr "קבצי תרגום מהודרים"
+
+msgid "Export as..."
+msgstr "ייצוא בשם..."
+
+msgid "HTML Files"
+msgstr "קבצי HTML"
+
+msgid "Open catalog template"
+msgstr "פתח תבנית קטלוג"
+
+msgid "Source code not available."
+msgstr "קוד המקור אינו זמין."
+
+msgid "Updating failed"
+msgstr "העדכון נכשל"
+
+msgid ""
+"Translations couldn’t be updated from the source code, because no code was "
+"found in the location specified in the catalog’s Properties."
+msgstr ""
+"לא ניתן לעדכן תרגומים מקוד המקור, מכיוון שלא נמצא קוד במיקום שצויין במאפייני "
+"הקטלוג."
+
+msgid "Entries in the catalog are probably incorrect."
+msgstr "קיימות רשומות בקטלוג שככל הנראה אינן נכונות."
+
+msgid "Updating the catalog failed. Click on 'Details >>' for details."
+msgstr "עדכון הקטלוג נכשל. יש ללחוץ על 'עוד >>' לקבלת פרטים נוספים."
+
+#, c-format
+msgid "%d issue with the translation found."
+msgid_plural "%d issues with the translation found."
+msgstr[0] "נמצאו %d בעיות עם התרגום."
+msgstr[1] "נמצאו %d בעיות עם התרגום."
+msgstr[2] "נמצאו %d בעיות עם התרגום."
+msgstr[3] "נמצאו %d בעיות עם התרגום."
+
+msgid "Validation results"
+msgstr "תוצאות האימות"
+
+msgid ""
+"Entries with errors were marked in red in the list. Details of the error "
+"will be shown when you select such an entry."
+msgstr ""
+"רשומות עם שגיאות סומנו באדום ברשימה. פרטי השגיאה יופיעו בעת בחירת רשומה "
+"שכזאת."
+
+msgid "The file was saved safely."
+msgstr "הקובץ נשמר בבטחה."
+
+msgid ""
+"The file was saved safely and compiled into the MO format, but it will "
+"probably not work correctly."
+msgstr "הקובץ נשמר בבטחה והודר לפורמט ה-MO, אך יתכן שהוא לא יעבוד כראוי."
+
+msgid ""
+"The file was saved safely, but it cannot be compiled into the MO format and "
+"used."
+msgstr "הקובץ נשמר בבטחה, אך לא ניתן להדר אותו לפורמט ה-MO לצורך שימוש."
+
+msgid ""
+"The file was compiled into the MO format, but it will probably not work "
+"correctly."
+msgstr "הקובץ הודר לפורמט ה-MO, אך יתכן שהוא לא יעבוד כראוי."
+
+msgid "The file cannot be compiled into the MO format and used."
+msgstr "לא ניתן להדר קובץ זה לפורמט ה-MO לצורך שימוש."
+
+msgid "No problems with the translation found."
+msgstr "לא נמצאו בעיות בתרגום."
+
+#, c-format
+msgid "The translation is ready for use, but %d entry is not translated yet."
+msgid_plural ""
+"The translation is ready for use, but %d entries are not translated yet."
+msgstr[0] "התרגום מוכן לשימוש, אבל %d רשומות לא תורגמו עדיין."
+msgstr[1] "התרגום מוכן לשימוש, אבל %d רשומות לא תורגמו עדיין."
+msgstr[2] "התרגום מוכן לשימוש, אבל %d רשומות לא תורגמו עדיין."
+msgstr[3] "התרגום מוכן לשימוש, אבל %d רשומות לא תורגמו עדיין."
+
+msgid "The translation is ready for use."
+msgstr "התרגום מוכן לשימוש."
+
+#, c-format
+msgid "Poedit automatically fixed invalid content in the file “%s”."
+msgstr "Poedit תיקן באופן אוטומטי תוכן שגוי בקובץ \"%s\"."
+
+msgid ""
+"The file contained duplicate items, which is not allowed in PO files and "
+"would prevent the file from being used. Poedit fixed the issue, but you "
+"should review translations of any items marked as needing work and correct "
+"them if necessary."
+msgstr ""
+"הקובץ הכיל פריטים כפולים, מה שלא מורשה בקבצי PO, ובסופו של דבר ימנע שימוש "
+"בקובץ. Poedit תיקן את הבעיה, אך יש לסקור את התרגומים של כל הפריטים המסומנים "
+"כדורשים סקירה, ולתקן אותם במידת הצורך."
+
+msgid "Language of the translation isn't set."
+msgstr "שפת התרגום אינה מוגדרת."
+
+msgid "Set Language"
+msgstr "הגדרת שפה"
+
+msgid "Set language"
+msgstr "הגדרת שפה"
+
+#. TRANSLATORS: This is shown underneath "Language of the translation isn't set (or ...is the same as source language)."
+msgid ""
+"Suggestions are not available if the translation language is not set "
+"correctly. Other features, such as plural forms, may be affected as well."
+msgstr ""
+"הצעות אינן זמינות אם שפת התרגום לא מוגדרת כראוי. יתכן שמאפיינים אחרים, כמו "
+"לשון רבים, יושפעו גם כן."
+
+msgid "Language of the translation is the same as source language."
+msgstr "שפת התרגום זהה לשפת המקור."
+
+msgid "Fix Language"
+msgstr "תיקון שפה"
+
+msgid "Fix language"
+msgstr "תיקון שפה"
+
+msgid ""
+"This catalog has entries with plural forms, but doesn't have Plural-Forms "
+"header configured."
+msgstr "לקטלוג זה יש רשומות עם צורות רבים, אך לא מוגדרת כותרת Plural-Forms."
+
+msgid ""
+"Entries in this catalog have different plural forms count from what "
+"catalog's Plural-Forms header says"
+msgstr ""
+"לרשומות בקטלוג זה יש כמות צורות רבים שונה ממה שכתוב בכותרת Plural-Forms של "
+"הקטלוג"
+
+msgid "Required header Plural-Forms is missing."
+msgstr "הכותרת ההכרחית Plural-Forms חסרה."
+
+#, c-format
+msgid "Syntax error in Plural-Forms header (\"%s\")."
+msgstr "שגיאת תחביר בכותרת ה-Plural-Forms‏ (\"%s\")."
+
+msgid "Fix the Header"
+msgstr "תיקון הכותרת"
+
+msgid "Fix the header"
+msgstr "תיקון הכותרת"
+
+#. TRANSLATORS: %s is language name in its basic form (as you
+#. would see e.g. in a list of supported languages). You may need
+#. to rephrase it, e.g. to an equivalent of "for language %s".
+#, c-format
+msgid "Plural forms expression used by the catalog is unusual for %s."
+msgstr "שימוש בביטויי לשון רבים שבקטלוג אינו שגרתי עבור השפה %s."
+
+#. TRANSLATORS: A verb, shown as action button with ""Plural forms expression used by the catalog is unusual for %s.")"
+msgid "Review"
+msgstr "סקירה"
+
+#, c-format
+msgid "Error loading message catalog file '%s'."
+msgstr "שגיאה בטעינת קובץ קטלוג ההודעות '%s'."
+
+#, c-format
+msgid "Translated: %d of %d (%d %%)"
+msgstr "תורגמו: %d מתוך %d (%d%%)"
+
+#, c-format
+msgid "Remaining: %d"
+msgstr "נותרו: %d"
+
+#, c-format
+msgid "%d error"
+msgid_plural "%d errors"
+msgstr[0] "שגיאה %d"
+msgstr[1] "%d שגיאות"
+msgstr[2] "%d שגיאות"
+msgstr[3] "%d שגיאות"
+
+#, c-format
+msgid "%d entry"
+msgid_plural "%d entries"
+msgstr[0] "רשומה %d"
+msgstr[1] "%d רשומות"
+msgstr[2] "%d רשומות"
+msgstr[3] "%d רשומות"
+
+msgid " (unsaved)"
+msgstr " (לא נשמר)"
+
+msgid " (modified)"
+msgstr " (שונה)"
+
+#, c-format
+msgid "Failed to update translation memory: %s"
+msgstr "עדכון זיכרון התרגום נכשל: %s"
+
+msgid "Purge deleted translations"
+msgstr "פינוי תרגומים שנמחקו"
+
+msgid "Do you want to remove all translations that are no longer used?"
+msgstr "האם ברצונך להסיר את כל התרגומים שאינם עוד בשימוש?"
+
+msgid ""
+"If you continue with purging, all translations marked as deleted will be "
+"permanently removed. You will have to translate them again if they are added "
+"back in the future."
+msgstr ""
+"אם הליך הפינוי יימשך, כל התרגומים שסומנו כמחוקים יוסרו לצמיתות. יהיה עליך "
+"לתרגם אותם מחדש אם הם יתווספו שוב בעתיד."
+
+msgid "Keep"
+msgstr "שמירה"
+
+msgid "Purge"
+msgstr "פינוי"
+
+msgid "Copy from source text"
+msgstr "העתקה מטקסט המקור"
+
+msgid "Copy from Source Text"
+msgstr "העתקה מטקסט המקור"
+
+#. TRANSLATORS: This is the key shortcut used in menus on Windows, some languages call them differently
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Ctrl+"
+msgstr "Ctrl+"
+
+msgid "Clear translation"
+msgstr "מחיקת התרגום"
+
+msgid "Clear Translation"
+msgstr "מחיקת התרגום"
+
+msgid "Edit comment"
+msgstr "עריכת הערה"
+
+msgid "Edit Comment"
+msgstr "עריכת הערה"
+
+msgid "References:"
+msgstr "הפניות:"
+
+msgid "&Bookmarks"
+msgstr "&סימניות"
+
+#. TRANSLATORS: This is the key shortcut used in menus on Windows, some languages call them differently
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Alt+"
+msgstr "Alt+"
+
+#, c-format
+msgid "Set bookmark %i"
+msgstr "הגדרה כסימניה %i"
+
+#, c-format
+msgid "Go to bookmark %i"
+msgstr "מעבר לסימניה %i"
+
+#, c-format
+msgid "Set Bookmark %i"
+msgstr "הגדרה כסימניה %i"
+
+#, c-format
+msgid "Go to Bookmark %i"
+msgstr "מעבר לסימניה %i"
+
+msgid "Hide Sidebar"
+msgstr "הסתרת סרגל הצד"
+
+msgid "Show Sidebar"
+msgstr "הצגת סרגל הצד"
+
+msgid "Hide Status Bar"
+msgstr "הסתרת שורת המצב"
+
+msgid "Show Status Bar"
+msgstr "הצגת שורת המצב"
+
+msgid "Source text:"
+msgstr "טקסט המקור:"
+
+msgid "Singular:"
+msgstr "לשון יחיד:"
+
+msgid "Plural:"
+msgstr "לשון רבים:"
+
+msgid "Translation:"
+msgstr "תרגום:"
+
+msgid "Pre-translated"
+msgstr "תורגם מראש"
+
+msgid "Needs Work"
+msgstr "דורש סקירה"
+
+#. TRANSLATORS: This indicates that the string's translation isn't final
+#. and has known problems.  For example, it might be machine translated or
+#. fuzzy matched from an older string. The translation should be short and
+#. convey this. If it's problematic to translate it, "Needs review" is
+#. acceptable substitute, but note that the meaning is subtly different:
+#. "needs review" implies that somebody else should review the string after
+#. I am done with it (i.e. consider it good), while "needs work" implies I
+#. need to return to it and finish the translation.
+msgid "Needs work"
+msgstr "דורש סקירה"
+
+msgid ""
+"POT files are only templates and don’t contain any translations themselves.\n"
+"To make a translation, create a new PO file based on the template."
+msgstr ""
+"קבצי POT הינם תבניות בלבד ולא מכילים תרגומים.\n"
+"על מנת ליצור תרגום, יש ליצור קובץ PO חדש המבוסס על התבנית."
+
+msgid "Create New Translation"
+msgstr "יצירת תרגום חדש"
+
+msgid "Create new translation"
+msgstr "יצירת תרגום חדש"
+
+msgid "Everything"
+msgstr "הכל"
+
+#, c-format
+msgid "Form %i"
+msgstr "צורה %i"
+
+msgid "Singular"
+msgstr "יחיד"
+
+msgid "Zero"
+msgstr "אפס"
+
+msgid "One"
+msgstr "אחד"
+
+msgid "Two"
+msgstr "שתיים"
+
+msgid "Plural"
+msgstr "רבים"
+
+msgid "Other"
+msgstr "אחר"
+
+#, c-format
+msgid "%s Format"
+msgstr "פורמט %s"
+
+#. TRANSLATORS: %s is replaced with language name, e.g. "PHP" or "C", so "PHP Format" etc."
+#, c-format
+msgid "%s format"
+msgstr "פורמט %s"
+
+#, c-format
+msgid "Source text — %s"
+msgstr "טקסט המקור — %s"
+
+msgid "Source text"
+msgstr "טקסט המקור"
+
+msgid "unknown language"
+msgstr "שפה לא ידועה"
+
+#, c-format
+msgid "Translation — %s"
+msgstr "תרגום — %s"
+
+msgid "ID"
+msgstr "מזהה"
+
+#, c-format
+msgid "Failed command: %s"
+msgstr "הפקודה נכשלה: %s"
+
+msgid "Failed to merge gettext catalogs."
+msgstr "מיזוג קטלוגים של gettext נכשל."
+
+msgid "Source file"
+msgstr "קובץ מקור"
+
+msgid "Source file occurrence:"
+msgstr "מופע בקובץ המקור:"
+
+msgid "Open in Editor"
+msgstr "פתיחה בעורך"
+
+msgid "Open in editor"
+msgstr "פתיחה בעורך"
+
+msgid "No references for the selected item."
+msgstr "אין הפניות עבור הפריט הנבחר."
+
+#, c-format
+msgid "Error opening file %s!"
+msgstr "שגיאה בפתיחת הקובץ %s!"
+
+msgid "Find"
+msgstr "חיפוש"
+
+msgid "Replace"
+msgstr "החלפה"
+
+#. TRANSLATORS: Expander in Find window for additional options (case sensitive etc.)
+msgid "Options"
+msgstr "אפשרויות"
+
+msgid "Ignore case"
+msgstr "התעלמות מרישיות"
+
+msgid "Wrap around"
+msgstr "חזרה להתחלה בסיום"
+
+msgid "Whole words only"
+msgstr "מילים שלמות בלבד"
+
+msgid "Find in source texts"
+msgstr "חיפוש בטקסט המקור"
+
+msgid "Find in translations"
+msgstr "חיפוש בתרגומים"
+
+msgid "Find in comments"
+msgstr "חיפוש בהערות"
+
+msgid "Close"
+msgstr "סגירה"
+
+msgid "Replace &All"
+msgstr "החלפת ה&כל"
+
+msgid "Replace &all"
+msgstr "החלפת ה&כל"
+
+msgid "&Replace"
+msgstr "ה&חלפה"
+
+msgid "< &Previous"
+msgstr "< ה&קודם"
+
+msgid "&Next >"
+msgstr "ה&בא >"
+
+msgid "String to find"
+msgstr "מחרוזת לחיפוש"
+
+msgid "Replacement string"
+msgstr "מחרוזת להחלפה"
+
+#, c-format
+msgid "Cannot execute program: %s"
+msgstr "לא ניתן להריץ את היישום: %s"
+
+msgid "Language Code or Name (e.g. en_GB)"
+msgstr "השם או הקוד של השפה (לדוגמה: he_IL או he)"
+
+msgid "Translation Language"
+msgstr "שפת התרגום"
+
+msgid "Language of the translation:"
+msgstr "שפת התרגום:"
+
+msgid "Poedit - Catalogs manager"
+msgstr "Poedit - מנהל הקטלוגים"
+
+msgid "Catalog"
+msgstr "קטלוג"
+
+msgid "Total"
+msgstr "סה\"כ"
+
+msgid "Untrans"
+msgstr "לא מתורגמים"
+
+msgid "Errors"
+msgstr "שגיאות"
+
+msgid "Last modified"
+msgstr "שונה לאחרונה"
+
+msgid "Select directory"
+msgstr "בחירת ספרייה"
+
+msgid "Directories:"
+msgstr "ספריות:"
+
+msgid "<unnamed>"
+msgstr "<ללא שם>"
+
+msgid "Do you want to delete the project?"
+msgstr "האם ברצונך למחוק את הפרוייקט?"
+
+msgid "Confirmation"
+msgstr "אימות"
+
+msgid ""
+"Do you really want to do mass update of\n"
+"all catalogs in this project?"
+msgstr "האם אתה בטוח שברצונך לבצע עדכון קבוצתי של כל הקטלוגים בפרוייקט?"
+
+msgid "Information about the translator"
+msgstr "מידע על המתרגם"
+
+msgid "Name:"
+msgstr "שם:"
+
+msgid "Your Name"
+msgstr "השם שלך"
+
+msgid "Email:"
+msgstr "אימייל:"
+
+msgid "your_email@example.com"
+msgstr "your_email@example.com"
+
+msgid ""
+"Your name and email address are only used to set the Last-Translator header "
+"of GNU gettext files."
+msgstr ""
+"יעשה שימוש בשימך ובכתובת הדוא\"ל שלך רק על מנת להגדיר את הכותרת של המתרגם "
+"האחרון בקבצי GNU gettext."
+
+msgid "Editing"
+msgstr "עריכה"
+
+msgid "Automatically compile MO file when saving"
+msgstr "ביצוע הידור קובץ MO באופן אוטומטי בעת שמירה"
+
+msgid "Show summary after catalog update"
+msgstr "הצגת תקציר לאחר עדכון קטלוג"
+
+msgid "Check spelling"
+msgstr "בדיקת איות"
+
+msgid "Always change focus to text input field"
+msgstr "שנה תמיד את המיקוד לשדה הקלט של הטקסט"
+
+msgid ""
+"Never let the list of strings take focus. If enabled, you must use Ctrl-"
+"arrows for keyboard navigation but you can also type text immediately, "
+"without having to press Tab to change focus."
+msgstr ""
+"לא מאפשר לרשימת המחרוזות לקבל מיקוד. אם מופעל, עליך להשתמש במקשי החיצים "
+"בצירוף מקש ה-Ctrl לניווט, אבל גם ניתן לכתוב טקסט מיידית, ללא צורך בלחיצה על "
+"Tab לשינוי המיקוד."
+
+msgid "Appearance"
+msgstr "תצוגה"
+
+msgid "Use custom list font:"
+msgstr "שימוש בגופן מותאם אישית לרשימה:"
+
+msgid "Use custom text fields font:"
+msgstr "שימוש בגופן מותאם אישית לשדות טקסט:"
+
+msgid "Change UI language"
+msgstr "החלפת שפת הממשק"
+
+#. TRANSLATORS: This is a note appended to "Check spelling" when running on older Windows versions
+msgid "(requires Windows 8 or newer)"
+msgstr "(דורש Windows 8 ומעלה)"
+
+msgid "General"
+msgstr "כללי"
+
+msgid "Use translation memory"
+msgstr "שימוש בזיכרון תרגום"
+
+msgid "Learn From Files..."
+msgstr "למידה מקבצים..."
+
+msgid "Learn from files..."
+msgstr "למידה מקבצים..."
+
+#. TRANSLATORS: This is a button that deletes everything in the translation memory (i.e. clears/resets it).
+msgid "Reset"
+msgstr "איפוס"
+
+#. TRANSLATORS: Followed by "match translations within the file" or "pre-translate from TM"
+msgid "When updating from sources"
+msgstr "בעת עדכון ממקורות"
+
+#. TRANSLATORS: Preceded by "When updating from sources"
+msgid "fuzzy match within the file"
+msgstr "התאם תרגומים דומים מתוך הקובץ"
+
+#. TRANSLATORS: Preceded by "When updating from sources"
+msgid "pre-translate from TM"
+msgstr "בצע תרגום מראש מזיכרון התרגום"
+
+msgid ""
+"Poedit can attempt to fill in new entries from only previous translations in "
+"the file or from your entire translation memory. Using the TM won’t be very "
+"effective if it’s near-empty, but it will get better as you add more "
+"translations to it."
+msgstr ""
+"Poedit יכול לנסות להשלים רשומות חדשות מהתרגומים הקודמים שלך בקובץ או מזיכרון "
+"התרגום כולו. שימוש בזיכרון התרגום לא יהיה אפקטיבי אם הוא כמעט ריק, אבל הוא "
+"ישתפר ככל שתרגומים חדשים יתווספו אליו."
+
+msgid "Stored translations:"
+msgstr "תרגומים מאוחסנים:"
+
+msgid "Database size on disk:"
+msgstr "גודל מסד הנתונים בכונן:"
+
+msgid "Select translation files to import"
+msgstr "בחירת קבצי תרגום לייבוא"
+
+msgid "Translation Memory"
+msgstr "זיכרון תרגום"
+
+msgid "Importing translations..."
+msgstr "מייבא תרגומים..."
+
+msgid "Finalizing..."
+msgstr "מתבצעת סגירה..."
+
+msgid "Reset translation memory"
+msgstr "איפוס זיכרון התרגום"
+
+msgid "Are you sure you want to reset the translation memory?"
+msgstr "האם אתה בטוח שברצונך לאפס את זיכרון התרגום?"
+
+msgid ""
+"Resetting the translation memory will irrevocably delete all stored "
+"translations from it. You can’t undo this operation."
+msgstr ""
+"איפוס זיכרון התרגום ימחק את כל התרגומים המאוחסנים בו. לא ניתן לבטל פעולה זו."
+
+msgid "Cancel"
+msgstr "ביטול"
+
+#. TRANSLATORS: This is abbreviation of "Translation Memory" used in Preferences on macOS.
+#. Long text looks weird there, too short (like TM) too, but less so. "General" is about ideal
+#. length there.
+msgid "TM"
+msgstr "TM"
+
+msgid ""
+"Source code extractors are used to find translatable strings in the source "
+"code files and extract them so that they can be translated."
+msgstr ""
+"מחלצי קוד המקור משמשים לאיתור מחרוזות הניתנים לתרגום בקבצי קוד המקור ולחלצם "
+"כדי שיוכלו להיות מתורגמים."
+
+msgid "Custom Extractors:"
+msgstr "מחלצים מותאמים אישית:"
+
+msgid "Custom extractors:"
+msgstr "מחלצים מותאמים אישית:"
+
+msgid "Edit..."
+msgstr "עריכה..."
+
+msgid "GNU gettext"
+msgstr "GNU gettext"
+
+msgid ""
+"Supports all programming languages recognized by GNU gettext tools (PHP, C/C+"
+"+, C#, Perl, Python, Java, JavaScript and others)."
+msgstr ""
+"תומך בכל שפות התכנות המזוהות ע\"י כלי GNU gettext (למשל PHP, C/C++, C#, "
+"Perl, Python, Java, JavaScript ואחרים)."
+
+msgid "Delete extractor"
+msgstr "מחיקת מחלץ"
+
+#, c-format
+msgid "Are you sure you want to delete the “%s” extractor?"
+msgstr "האם אתה בטוח שברצונך למחוק את המחלץ \"%s\"?"
+
+msgid "Extractors"
+msgstr "מחלצים"
+
+msgid "Accounts"
+msgstr "חשבונות"
+
+msgid "Automatically check for updates"
+msgstr "בדיקה אחר עדכונים באופן אוטומטי"
+
+msgid "Include beta versions"
+msgstr "הכלל גרסאות בטא"
+
+msgid ""
+"Beta versions contain the latest new features and improvements, but may be a "
+"bit less stable."
+msgstr ""
+"גרסאות בטא מכילות את התכונות והעדכונים החדשים ביותר, אך עשויות להיות פחות "
+"יציבות."
+
+msgid "Updates"
+msgstr "עדכונים"
+
+msgid ""
+"These settings affect internal formatting of PO files. Adjust them if you "
+"have specific requirements e.g. because of version control."
+msgstr ""
+"הגדרות אלו משפיעות על הפורמט הפנימי של קבצי PO. שנה אותן אם יש לך דרישות "
+"מסוימות, למשל בגלל שליטה על גרסה."
+
+msgid "Line endings:"
+msgstr "סיומות שורה:"
+
+msgid "Unix (recommended)"
+msgstr "Unix (מומלץ)"
+
+msgid "Windows"
+msgstr "Windows"
+
+#. TRANSLATORS: Followed by text control for entering number; wraps text at given width
+msgid "Wrap at:"
+msgstr "גלישת שורה ב:"
+
+msgid "Preserve formatting of existing files"
+msgstr "שמירה על פורמט של קבצים קיימים"
+
+msgid "Advanced"
+msgstr "מתקדם"
+
+msgid "Pre-translating…"
+msgstr "מבצע תרגום מראש…"
+
+#, c-format
+msgid "Pre-translated %u string"
+msgid_plural "Pre-translated %u strings"
+msgstr[0] "%u מחרוזות מתורגמים מראש"
+msgstr[1] "%u מחרוזות מתורגמים מראש"
+msgstr[2] "%u מחרוזות מתורגמים מראש"
+msgstr[3] "%u מחרוזות מתורגמים מראש"
+
+#. TRANSLATORS: This is a somewhat common term describing the action where
+#. you apply the translation memory and/or machine translation to all of the
+#. strings you're translating as the first step, followed by correcting,
+#. improving etc., i.e. actually translating the strings. This may be tricky
+#. to express in other languages as simply as in English, but please try to
+#. keep it similarly concise. Please try to avoid, if possible, describing it
+#. as "auto-translation" and similar, because such terminology would mislead
+#. some users into thinking it's all that needs to be done (spoken from
+#. experience). "Pre-translate" nicely expresses that it's only the step done
+#. *before* actual translation.
+msgid "Pre-translate"
+msgstr "תרגום מראש"
+
+msgid "Only fill in exact matches"
+msgstr "השלם רק התאמות מדויקות"
+
+msgid ""
+"By default, inaccurate results are filled in as well and marked as needing "
+"work. Check this option to only include accurate matches."
+msgstr ""
+"כברירת מחדל, תוצאות שאינן מדויקות ממולאות גם כן ומסומנות ככאלו הדורשות "
+"סקירה. יש לבחור באפשרות זו כדי לכלול רק התאמות מדויקות."
+
+msgid "Don’t mark exact matches as needing work"
+msgstr "אל תסמן התאמות מדויקות ככאלו הדורשות סקירה"
+
+msgid ""
+"Only enable if you trust the quality of your TM. By default, all matches "
+"from the TM are marked as needing work and should be reviewed before use."
+msgstr ""
+"הפעל אפשרות זו רק אם אתה בוטח באיכות של זיכרון התרגום שלך. כברירת מחדל, כל "
+"ההתאמות מזיכרון התרגום מסומנות ככאלו הדורשות סקירה, ויש לעבור עליהם."
+
+msgid ""
+"Pre-translation automatically finds exact or fuzzy matches for untranslated "
+"strings in the translation memory and fills in their translations."
+msgstr ""
+"'תרגום מראש' מאתר באופן אוטומטי בזיכרון התרגום התאמות מדויקות או מעורפלות "
+"עבור מחרוזות שאינן מתורגמות, ומשלים את התרגומים שלהן."
+
+#, c-format
+msgid "%d entry was pre-translated."
+msgid_plural "%d entries were pre-translated."
+msgstr[0] "%d רשומות תורגמו מראש."
+msgstr[1] "%d רשומות תורגמו מראש."
+msgstr[2] "%d רשומות תורגמו מראש."
+msgstr[3] "%d רשומות תורגמו מראש."
+
+msgid ""
+"The translations were marked as needing work, because they may be "
+"inaccurate. You should review them for correctness."
+msgstr ""
+"התרגומים סומנו ככאלו הדורשים סקירה, מכיוון שיתכן שאינם מדויקים. כדאי לסקור "
+"אותם ולתקנם במידת הצורך."
+
+msgid "No entries could be pre-translated."
+msgstr "לא ניתן לתרגם מראש שום רשומה."
+
+msgid ""
+"The TM doesn’t contain any strings similar to the content of this file. It "
+"is only effective for semi-automatic translations after Poedit learns enough "
+"from files that you translated manually."
+msgstr ""
+"זיכרון התרגום לא מכיל מחרוזות הדומות לתוכן של קובץ זה. הוא יעיל לתרגומים חצי "
+"אוטומטיים רק לאחר ש-Poedit ילמד מספיק מקבצים שתתרגם באופן ידני."
+
+msgid ""
+"<big>Drag and Drop Folders Here</big>\n"
+"\n"
+"or use the + button"
+msgstr ""
+"<big>גרור ושחרר תיקיות לכאן</big>\n"
+"\n"
+"או השתמש בכפתור הפלוס (+)"
+
+msgid ""
+"<big>Drag and drop folders here</big>\n"
+"\n"
+"or use the + button"
+msgstr ""
+"<big>גרור ושחרר תיקיות לכאן</big>\n"
+"\n"
+"או השתמש בכפתור הפלוס (+)"
+
+msgid "Add Folders..."
+msgstr "הוספת תיקיות..."
+
+msgid "Add folders..."
+msgstr "הוספת תיקיות..."
+
+msgid "Add Files..."
+msgstr "הוספת קבצים..."
+
+msgid "Add files..."
+msgstr "הוספת קבצים..."
+
+msgid "Add Wildcard..."
+msgstr "הוספת Wildcard..."
+
+msgid "Add wildcard..."
+msgstr "הוספת Wildcard..."
+
+msgid "Paths"
+msgstr "נתיבים"
+
+msgid "Excluded paths"
+msgstr "נתיבים לא כלולים"
+
+msgid "Advanced extraction settings"
+msgstr "הגדרות חילוץ מתקדמות"
+
+msgid "Extract notes for translators from:"
+msgstr "חילוץ הערות למתרגמים מתוך:"
+
+msgid "Comments prefixed with:"
+msgstr "הערות המתחילות ב:"
+
+msgid "All comments"
+msgstr "כל ההערות"
+
+msgid "Additional xgettext flags:"
+msgstr "דגלי xgettext נוספים:"
+
+msgid "Additional keywords"
+msgstr "מילות מפתח נוספות"
+
+msgid "Name of the project the translation is for"
+msgstr "שם הפרוייקט עבורו מיועד התרגום"
+
+msgid "Team name and email address or URL"
+msgstr "שם הצוות וכתובת הדוא\"ל או כתובת האתר"
+
+msgid "e.g. nplurals=2; plural=(n > 1);"
+msgstr "לדוגמה ‪nplurals=2; plural=(n > 1);‬"
+
+msgid "UTF-8 (recommended)"
+msgstr "UTF-8 (מומלץ)"
+
+msgid "Please save the file first. This section cannot be edited until then."
+msgstr "נא לשמור את הקובץ תחילה. לא ניתן לערוך סעיף זה עד אז."
+
+msgid "Not all plural forms are translated."
+msgstr "לא כל צורות הרבים מתורגמות."
+
+msgid "The translation should start as a sentence."
+msgstr "התרגום אמור להתחיל כמשפט."
+
+msgid "The translation should start with a lowercase character."
+msgstr "התרגום אמור להתחיל באות לטינית קטנה."
+
+msgid "The translation doesn’t start with a space."
+msgstr "התרגום לא מתחיל ברווח."
+
+msgid "The translation starts with a space, but the source text doesn’t."
+msgstr "התרגום מתחיל ברווח, בניגוד לטקסט המקור."
+
+msgid "The translation is missing a newline at the end."
+msgstr "בסוף התרגום חסרה שורה חדשה."
+
+msgid "The translation ends with a newline, but the source text doesn’t."
+msgstr "התרגום מסתיים בשורה חדשה, בניגוד לטקסט המקור."
+
+msgid "The translation is missing a space at the end."
+msgstr "בסוף התרגום חסר רווח."
+
+msgid "The translation ends with a space, but the source text doesn’t."
+msgstr "התרגום מסתיים ברווח, בניגוד לטקסט המקור."
+
+#, c-format
+msgid "The translation should end with “%s”."
+msgstr "התרגום אמור להסתיים ב-“%s”."
+
+#, c-format
+msgid "The translation should not end with “%s”."
+msgstr "התרגום לא אמור להסתיים ב-“%s”."
+
+#, c-format
+msgid "The translation ends with “%s”, but the source text ends with “%s”."
+msgstr "התרגום מסתיים ב-“%s”, אבל טקסט המקור מסתיים ב-“%s”."
+
+msgid "Comment:"
+msgstr "הערה:"
+
+msgid "OK"
+msgstr "אישור"
+
+msgid "C&lear"
+msgstr "&מחיקה"
+
+msgid "Clear the comment"
+msgstr "מחיקת ההערה"
+
+msgid "New"
+msgstr "חדש"
+
+msgid "Create new translations project"
+msgstr "יצירת פרוייקט תרגומים חדש"
+
+msgid "Edit"
+msgstr "עריכה"
+
+msgid "Edit the project"
+msgstr "עריכת הפרוייקט"
+
+msgid "Delete the project"
+msgstr "מחיקת הפרוייקט"
+
+msgid "Update all"
+msgstr "עדכון הכל"
+
+msgid "Update all catalogs in the project"
+msgstr "עדכון כל הקטלוגים בפרוייקט"
+
+msgid "Edit project"
+msgstr "עריכת פרוייקט"
+
+msgid "Project name:"
+msgstr "שם הפרוייקט:"
+
+msgid "Browse"
+msgstr "עיון"
+
+msgid "Add directory to the list"
+msgstr "הוספת ספרייה לרשימה"
+
+msgid "&New..."
+msgstr "&חדש..."
+
+msgid "New from &POT/PO file..."
+msgstr "חדש מקובץ &POT/PO..."
+
+msgid "New From &POT/PO File..."
+msgstr "חדש מקובץ &POT/PO..."
+
+msgid "&Open..."
+msgstr "&פתיחה..."
+
+msgid "Open Recent"
+msgstr "פתח אחרונים"
+
+msgid "Open from Crowdin..."
+msgstr "פתיחה מ-Crowdin..."
+
+msgid "Open From Crowdin..."
+msgstr "פתיחה מ-Crowdin..."
+
+msgid "&Close"
+msgstr "&סגירה"
+
+msgid "&Save"
+msgstr "ש&מירה"
+
+msgid "Save &as..."
+msgstr "שמירה &בשם..."
+
+msgid "Save &As..."
+msgstr "שמירה &בשם..."
+
+msgid "Compile to MO..."
+msgstr "ביצוע הידור ל-MO..."
+
+msgid "E&xport as HTML..."
+msgstr "ייצוא כ-&HTML..."
+
+msgid "Check for updates..."
+msgstr "בדיקה אחר עדכונים..."
+
+msgid "&Preferences..."
+msgstr "&העדפות..."
+
+msgid "Catalogs &manager"
+msgstr "מ&נהל הקטלוגים"
+
+msgid "Catalogs &Manager"
+msgstr "מ&נהל הקטלוגים"
+
+msgid "E&xit"
+msgstr "י&ציאה"
+
+msgid "Quit"
+msgstr "יציאה"
+
+msgid "Copy from singular"
+msgstr "העתקה מ'לשון יחיד'"
+
+msgid "Copy From Singular"
+msgstr "העתקה מ'לשון יחיד'"
+
+msgid "Translation needs &work"
+msgstr "סימון כתרגום הדורש &סקירה"
+
+msgid "Translation Needs &Work"
+msgstr "סימון כתרגום הדורש &סקירה"
+
+msgid "Edit &comment"
+msgstr "עריכת &הערה"
+
+msgid "Edit &Comment"
+msgstr "עריכת &הערה"
+
+msgid "Suggestions"
+msgstr "הצעות"
+
+msgid "&Find..."
+msgstr "&חיפוש..."
+
+msgid "Replace..."
+msgstr "החלפה..."
+
+msgid "Find next"
+msgstr "חיפוש הבא"
+
+msgid "Find previous"
+msgstr "חיפוש הקודם"
+
+msgid "Find and Replace..."
+msgstr "חיפוש והחלפה..."
+
+msgid "Find Next"
+msgstr "חיפוש הבא"
+
+msgid "Find Previous"
+msgstr "חיפוש הקודם"
+
+msgid "&Preferences"
+msgstr "ה&עדפות"
+
+msgid "Display entry &IDs"
+msgstr "הצגת מ&זהים של רשומות"
+
+msgid "Display Entry &IDs"
+msgstr "הצגת מ&זהים של רשומות"
+
+msgid "Sort by &file order"
+msgstr "מיון לפי ה&סדר שבקובץ"
+
+msgid "Sort by &File Order"
+msgstr "מיון לפי ה&סדר שבקובץ"
+
+msgid "Sort by &source"
+msgstr "מיון לפי המ&קור"
+
+msgid "Sort by &Source"
+msgstr "מיון לפי המ&קור"
+
+msgid "Sort by &translation"
+msgstr "מיון לפי ה&תרגום"
+
+msgid "Sort by &Translation"
+msgstr "מיון לפי ה&תרגום"
+
+msgid "&Group by context"
+msgstr "קיבו&ץ לפי הקשר"
+
+msgid "&Group By Context"
+msgstr "קיבו&ץ לפי הקשר"
+
+msgid "Entries with errors first"
+msgstr "רשומות עם שגיאות תחילה"
+
+msgid "Entries with Errors First"
+msgstr "רשומות עם שגיאות תחילה"
+
+msgid "&Untranslated entries first"
+msgstr "רשומות ש&אינן מתורגמות תחילה"
+
+msgid "&Untranslated Entries First"
+msgstr "רשומות ש&אינן מתורגמות תחילה"
+
+msgid "&Show references"
+msgstr "הצגת ה&פניות"
+
+msgid "&Show References"
+msgstr "הצגת ה&פניות"
+
+msgid "Show sidebar"
+msgstr "הצגת סרגל הצד"
+
+msgid "Show status bar"
+msgstr "הצגת שורת המצב"
+
+msgid "C&atalog"
+msgstr "ק&טלוג"
+
+msgid "&Update from sources"
+msgstr "עדכון מ&מקורות"
+
+msgid "&Update from Sources"
+msgstr "עדכון מ&מקורות"
+
+msgid "Update from &POT file..."
+msgstr "עדכון מקובץ &POT..."
+
+msgid "Update from &POT File..."
+msgstr "עדכון מקובץ &POT..."
+
+msgid "Sync with Crowdin"
+msgstr "סנכרון עם Crowdin"
+
+msgid "Pre-&translate..."
+msgstr "&תרגום מראש..."
+
+msgid "&Purge deleted translations"
+msgstr "פינוי תרגומים ש&נמחקו"
+
+msgid "&Purge Deleted Translations"
+msgstr "פינוי תרגומים ש&נמחקו"
+
+msgid "&Validate translations"
+msgstr "&אימות התרגומים"
+
+msgid "&Validate Translations"
+msgstr "&אימות התרגומים"
+
+msgid "&Properties..."
+msgstr "מא&פיינים..."
+
+msgid "&Done and next"
+msgstr "ב&צע והמשך"
+
+msgid "&Done and Next"
+msgstr "ב&צע והמשך"
+
+msgid "&Previous translation"
+msgstr "התרגום ה&קודם"
+
+msgid "&Previous Translation"
+msgstr "התרגום ה&קודם"
+
+msgid "&Next translation"
+msgstr "התרגום ה&בא"
+
+msgid "&Next Translation"
+msgstr "התרגום ה&בא"
+
+msgid "P&revious unfinished"
+msgstr "הקו&דם שלא הושלם"
+
+msgid "P&revious Unfinished"
+msgstr "הקו&דם שלא הושלם"
+
+msgid "Ne&xt unfinished"
+msgstr "&הבא שלא הושלם"
+
+msgid "Ne&xt Unfinished"
+msgstr "&הבא שלא הושלם"
+
+msgid "Previous plural form"
+msgstr "לשון רבים הקודם"
+
+msgid "Previous Plural Form"
+msgstr "לשון רבים הקודם"
+
+msgid "Next plural form"
+msgstr "לשון רבים הבא"
+
+msgid "Next Plural Form"
+msgstr "לשון רבים הבא"
+
+msgid "&Online help"
+msgstr "עזרה מ&קוונת"
+
+msgid "&Online Help"
+msgstr "עזרה מ&קוונת"
+
+msgid "&GNU gettext manual"
+msgstr "הדרכה ל-&GNU gettext"
+
+msgid "&GNU gettext Manual"
+msgstr "הדרכה ל-&GNU gettext"
+
+msgid "&About Poedit"
+msgstr "&אודות Poedit"
+
+msgid "&About"
+msgstr "&אודות"
+
+msgid "Extractor setup"
+msgstr "הגדרת מחלץ"
+
+msgid "List of extensions separated by semicolons (e.g. *.cpp;*.h):"
+msgstr "רשימה של הרחבות המופרדות בנקודה פסיק (לדוגמה: ‎*.cpp;*.h):"
+
+msgid "Invocation:"
+msgstr "קריאה:"
+
+msgid "Command to extract translations:"
+msgstr "פקודה לחילוץ תרגומים:"
+
+msgid ""
+"This is the command used to launch the extractor.\n"
+"%o expands to the name of output file, %K to list\n"
+"of keywords, %F to list of input files,\n"
+"%C to charset flag (see below)."
+msgstr ""
+"זו הפקודה המשמשת לפתיחת המחלץ.\n"
+"%o יוחלף בשם של קובץ הפלט, %K ברשימת מילות המפתח, %F ברשימת קבצי הקלט,\n"
+"%C בדגל הקידוד (ראה למטה)."
+
+msgid "An item in keywords list:"
+msgstr "פריט ברשימת מילות המפתח:"
+
+msgid ""
+"This will be attached to the command line once\n"
+"for each keyword. %k expands to the keyword."
+msgstr ""
+"משתנה זה יתווסף לשורת הפקודה פעם אחת\n"
+"עבור כל מילת מפתח. %k יוחלף במילת המפתח."
+
+msgid "An item in input files list:"
+msgstr "פריט ברשימת קובצי הקלט:"
+
+#, c-format
+msgid ""
+"This will be attached to the command line once\n"
+"for each input file. %f expands to the filename."
+msgstr ""
+"משתנה זה יתווסף לשורת הפקודה פעם אחת\n"
+"עבור כל קובץ קלט. %f יוחלף בשם הקובץ."
+
+msgid "Source code charset:"
+msgstr "קידוד קוד המקור:"
+
+#, c-format
+msgid ""
+"This will be attached to the command line\n"
+"only if source code charset was given. %c expands to charset value."
+msgstr ""
+"משתנה זה יתווסף לשורת הפקודה\n"
+"רק אם הקידוד של קוד המקור סופק. %c יוחלף בערך הקידוד."
+
+msgid "Catalog properties"
+msgstr "מאפייני הקטלוג"
+
+msgid "Project name and version:"
+msgstr "שם הפרוייקט וגרסה:"
+
+msgid "Language team:"
+msgstr "צוות המתרגמים:"
+
+msgid "Plural forms:"
+msgstr "צורות רבים:"
+
+msgid "Use default rules for this language"
+msgstr "שימוש בכללי בררת המחדל לשפה זו"
+
+msgid "Use custom expression"
+msgstr "שימוש בביטוי מותאם אישית"
+
+msgid "Learn about plural forms"
+msgstr "מידע על לשון רבים"
+
+msgid "Charset:"
+msgstr "קידוד:"
+
+msgid "Advanced Extraction Settings..."
+msgstr "הגדרות חילוץ מתקדמות..."
+
+msgid "Advanced extraction settings..."
+msgstr "הגדרות חילוץ מתקדמות..."
+
+msgid "Translation Properties"
+msgstr "מאפייני התרגום"
+
+msgid "Translation properties"
+msgstr "מאפייני התרגום"
+
+msgid "Sources Paths"
+msgstr "נתיבי המקורות"
+
+msgid "Sources paths"
+msgstr "נתיבי המקורות"
+
+msgid "Extract text from source files in the following directories:"
+msgstr "חלץ טקסט מקבצי המקור בספריות הבאות:"
+
+msgid "Base path:"
+msgstr "נתיב הבסיס:"
+
+msgid "Sources Keywords"
+msgstr "מילות מפתח המקורות"
+
+msgid "Sources keywords"
+msgstr "מילות מפתח המקורות"
+
+msgid ""
+"Use these keywords (function names) to recognize translatable strings\n"
+"in source files:"
+msgstr ""
+"השתמש במילות מפתח אלה (שמות פונקציות) על מנת לזהות מחרוזות הניתנות לתרגום\n"
+"בקבצי המקור:"
+
+msgid "Also use default keywords for supported languages"
+msgstr "השתמש בנוסף במילות מפתח ברירת מחדל עבור שפות נתמכות"
+
+msgid "Learn About Gettext Keywords"
+msgstr "מידע נוסף אודות מילות מפתח של gettext"
+
+msgid "Learn about gettext keywords"
+msgstr "מידע נוסף אודות מילות מפתח של gettext"
+
+msgid "Update summary"
+msgstr "תקציר העדכון"
+
+msgid ""
+"These strings were found in the sources but were not in the catalog.\n"
+"Poedit will add them to the catalog now."
+msgstr ""
+"מחרוזות אלו נמצאו במקורות אבל לא בקטלוג.\n"
+"Poedit יוסיף אותן לקטלוג כעת."
+
+msgid "New strings"
+msgstr "מחרוזות חדשות"
+
+msgid ""
+"These strings are no longer in the sources.\n"
+"Poedit will remove them from the catalog now."
+msgstr ""
+"מחרוזות אלו אינן נמצאות עוד במקורות.\n"
+"Poedit יסיר אותן כעת מהקטלוג."
+
+msgid "Obsolete strings"
+msgstr "מחרוזות מיושנות"
+
+msgid "(0 new, 0 obsolete)"
+msgstr "(0 חדשות, 0 מיושנות)"
+
+msgid "Open"
+msgstr "פתיחה"
+
+msgid "Save catalog"
+msgstr "שמירת הקטלוג"
+
+msgid "Validate"
+msgstr "אימות"
+
+msgid "Check for errors in the translation"
+msgstr "בדיקת שגיאות בתרגום"
+
+msgid "Update"
+msgstr "עדכון"
+
+msgid "Update catalog - synchronize it with sources"
+msgstr "עדכון קטלוג - מסנכרן אותו עם המקורות"
+
+msgid "Sidebar"
+msgstr "סרגל הצד"
+
+msgid "Show or hide the sidebar"
+msgstr "הצגה או הסתרה של סרגל הצד"
+
+#. TRANSLATORS: "Previous" as in used in the past, now replaced with newer.
+msgid "Previous source text:"
+msgstr "טקסט המקור הקודם:"
+
+msgid ""
+"The old source text (before it changed during an update) that the now-"
+"inaccurate translation corresponds to."
+msgstr ""
+"טקסט המקור הקודם (לפני ששונה במהלך עדכון) אליו תואם התרגום שכעת אינו מדויק."
+
+msgid "Notes for translators:"
+msgstr "הערות למתרגמים:"
+
+msgid "Add comment"
+msgstr "הוספת הערה"
+
+msgid "Add Comment"
+msgstr "הוספת הערה"
+
+msgid "Translation suggestions:"
+msgstr "הצעות תרגום:"
+
+#. TRANSLATORS: This is shown when no translation suggestions can be found in the TM (Windows).
+msgid "No matches found"
+msgstr "לא נמצאו התאמות"
+
+#. TRANSLATORS: This is shown when no translation suggestions can be found in the TM (macOS, Linux).
+msgid "No Matches Found"
+msgstr "לא נמצאו התאמות"
+
+msgid "This string was found in Poedit’s translation memory."
+msgstr "מחרוזת זו אותרה בזיכרון התרגום של Poedit."
+
+msgid "Cannot create temporary directory."
+msgstr "לא ניתן ליצור ספרייה זמנית."
+
+msgid "Welcome to Poedit"
+msgstr "ברוכים הבאים ל-Poedit"
+
+#. TRANSLATORS: This is version information in about dialog, "%s" will be
+#. version number when used
+#, c-format
+msgid "Version %s"
+msgstr "גרסה %s"
+
+msgid "Edit a Translation"
+msgstr "עריכת תרגום"
+
+msgid "Edit a translation"
+msgstr "עריכת תרגום"
+
+msgid "Open an existing PO file and edit the translation."
+msgstr "פתיחת קובץ PO קיים ועריכת התרגום."
+
+msgid ""
+"Take an existing PO file or POT template and create a new translation from "
+"it."
+msgstr "שימוש בקובץ PO קיים או תבנית POT ויצירת תרגום חדש ממנו."
+
+msgid "Collaborate on a Translation with Others"
+msgstr "שיתוף פעולה עם אחרים על תרגום"
+
+msgid "Collaborate on a translation with others"
+msgstr "שיתוף פעולה עם אחרים על תרגום"
+
+msgid ""
+"Download a file from Crowdin project, translate and sync your changes back."
+msgstr "הורדת קובץ מפרויקט Crowdin, תרגום וסנכרון השינויים בחזרה."
+
+msgid "What is Crowdin?"
+msgstr "מה זה Crowdin?"
+
+msgid "There are no translations. That’s unusual."
+msgstr "אין תרגומים. זה מצב חריג."
+
+msgid ""
+"Translatable entries aren't added manually in the Gettext system, but are "
+"automatically extracted\n"
+"from source code. This way, they stay up to date and accurate.\n"
+"Translators typically use PO template files (POTs) prepared for them by the "
+"developer."
+msgstr ""
+"רשומות הניתנות לתרגום אינן מתווספות באופן ידני למערכת ה-Gettext, אבל מחולצות "
+"באופן אוטומטי מקוד המקור.\n"
+"בצורה הזו, הן נשארות מעודכנות ומדויקות.\n"
+"מתרגמים משתמשים בדרך כלל בקבצי תבנית PO (ובקיצור POTs) המוכנים עבור ע\"י "
+"המפתח."
+
+msgid "(Learn more about GNU gettext)"
+msgstr "(מידע נוסף אודות GNU gettext)"
+
+msgid "The simplest way to fill this catalog is to update it from a POT:"
+msgstr "הדרך הפשוטה ביותר להשלמת קטלוג זה היא לעדכן אותו מ-POT:"
+
+msgid "Update from POT"
+msgstr "עדכון מ-POT"
+
+msgid "Take translatable strings from an existing POT template."
+msgstr "שימוש במחרוזות הניתנות לתרגום מתבנית POT קיימת."
+
+msgid ""
+"You can also extract translatable strings directly from the source code:"
+msgstr "ניתן גם לחלץ את המחרוזות הניתנות לתרגום ישירות מקוד המקור:"
+
+msgid "Extract from sources"
+msgstr "חילוץ ממקורות"
+
+msgid "Configure source code extraction in Properties."
+msgstr "ניתן להגדיר את חילוץ קוד המקור במאפיינים."
+
+msgid "Sync"
+msgstr "סנכרון"
+
+msgid "Synchronize the translation with Crowdin"
+msgstr "סנכרון התרגום עם Crowdin"
+
+#. TRANSLATORS: This is titlebar of about dialog, "%s" is application name
+#. ("Poedit" here, but please use "%s")
+#, c-format
+msgid "About %s"
+msgstr "אודות %s"
+
+#. TRANSLATORS: Title of the preferences window on Windows and Linux. "%s" is replaced with "Poedit" when running.
+#, c-format
+msgid "%s Preferences"
+msgstr "העדפות של %s"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Services"
+msgstr "שירותים"
+
+#. TRANSLATORS: macOS item in app menu, %s is replaced with "Poedit"
+#, c-format
+msgid "Hide %s"
+msgstr "הסתר את %s"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Hide Others"
+msgstr "הסתר אחרים"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Show All"
+msgstr "הצג הכל"
+
+#. TRANSLATORS: macOS item in app menu, %s is replaced with "Poedit"
+#, c-format
+msgid "Quit %s"
+msgstr "סיים את %s"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Preferences..."
+msgstr "העדפות..."
+
+#. TRANSLATORS: Title of a category in Windows task menu (right-click icon in taskbar)
+msgid "Recent"
+msgstr "אחרונים"
+
+#. TRANSLATORS: Title of a category in Windows task menu (right-click icon in taskbar)
+msgid "Frequent"
+msgstr "תכוף"
+
+msgid "&Apply"
+msgstr "ה&חל"
+
+msgid "Apply"
+msgstr "החל"
+
+msgid "&Back"
+msgstr "ה&קודם"
+
+msgid "Back"
+msgstr "הקודם"
+
+msgid "&Cancel"
+msgstr "בי&טול"
+
+msgid "&Clear"
+msgstr "&נקה"
+
+msgid "Clear"
+msgstr "נקה"
+
+msgid "Copy"
+msgstr "העתק"
+
+msgid "Cu&t"
+msgstr "ג&זור"
+
+msgid "Cut"
+msgstr "גזור"
+
+msgid "&Delete"
+msgstr "&מחק"
+
+msgid "&Quit"
+msgstr "י&ציאה"
+
+msgid "File"
+msgstr "קובץ"
+
+msgid "Help"
+msgstr "עזרה"
+
+msgid "&New"
+msgstr "ח&דש"
+
+msgid "&No"
+msgstr "&לא"
+
+msgid "No"
+msgstr "לא"
+
+msgid "&OK"
+msgstr "&אישור"
+
+msgid "Open..."
+msgstr "פתיחה..."
+
+msgid "&Paste"
+msgstr "ה&דבק"
+
+msgid "Paste"
+msgstr "הדבק"
+
+msgid "Preferences"
+msgstr "העדפות"
+
+msgid "&Redo"
+msgstr "בצע &שוב"
+
+msgid "Refresh"
+msgstr "רענון"
+
+msgid "&Save as"
+msgstr "שמירה &בשם"
+
+msgid "Save as"
+msgstr "שמירה בשם"
+
+msgid "Select &All"
+msgstr "בחר ה&כל"
+
+msgid "Select All"
+msgstr "בחר הכל"
+
+msgid "&Undo"
+msgstr "&בטל"
+
+msgid "&Yes"
+msgstr "&כן"
+
+msgid "Yes"
+msgstr "כן"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Shift+"
+msgstr "Shift+"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Enter"
+msgstr "Enter"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Up"
+msgstr "Up"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Down"
+msgstr "Down"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Left"
+msgstr "Left"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Right"
+msgstr "Right"
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Ctrl+"
+msgid "ctrl"
+msgstr "ctrl"
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Alt+"
+msgid "alt"
+msgstr "alt"
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Shift+"
+msgid "shift"
+msgstr "shift"

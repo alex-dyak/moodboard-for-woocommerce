@@ -1,0 +1,2075 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: poedit\n"
+"Report-Msgid-Bugs-To: help@poedit.net\n"
+"POT-Creation-Date: 2017-06-01 17:42+0200\n"
+"PO-Revision-Date: 2017-04-13 11:59-0400\n"
+"Last-Translator: vslavik <vaclav@slavik.io>\n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: poedit\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /locales/poedit.pot\n"
+
+msgid "Hide this notification message"
+msgstr "隐藏这条消息"
+
+msgid "Don't Show Again"
+msgstr "不再显示"
+
+msgid "Don't show again"
+msgstr "不再显示"
+
+#, c-format
+msgid "(New: %i, obsolete: %i)"
+msgstr "（新条目：%i 项；已过时：%i 项）"
+
+msgid "Updating catalog"
+msgstr "正在更新编目"
+
+msgid "Collecting source files..."
+msgstr "正在收集源文件..."
+
+msgid "Extracting translatable strings..."
+msgstr "正在提取可翻译字符串..."
+
+msgid "Failed to load extracted catalog."
+msgstr "加载已提取的编目失败。"
+
+msgid "Merging differences..."
+msgstr "合并差异..."
+
+#, c-format
+msgid "'%s' is not a valid POT file."
+msgstr "“%s”不是一个有效的 POT 文件。"
+
+#, c-format
+msgid "%i line of file '%s' was not loaded correctly."
+msgid_plural "%i lines of file '%s' were not loaded correctly."
+msgstr[0] "共有 %i 行（文件“%s”中）未正确载入。"
+
+#, c-format
+msgid "Line %d of file '%s' is corrupted (not valid %s data)."
+msgstr "第 %d 行已损坏（文件“%s”中），不是有效的 %s 数据。"
+
+#, c-format
+msgid "Malformed header: '%s'"
+msgstr "格式异常的头：“%s”"
+
+msgid ""
+"Broken catalog file: singular form msgstr used together with msgid_plural"
+msgstr "编目文件不当：单数形式的 msgstr 被用在 msgid_plural"
+
+msgid "Broken catalog file: plural form msgstr used without msgid_plural"
+msgstr "编目文件不当：复数形式的 msgstr 被用在没有 msgid_plural 的位置"
+
+msgid ""
+"There were errors when loading the catalog. Some data may be missing or "
+"corrupted as the result."
+msgstr "加载编目时遇到错误。有些数据可能缺失或损坏。"
+
+#, c-format
+msgid "Couldn't load file %s, it is probably corrupted."
+msgstr "不能加载文件 %s，它可能已损坏。"
+
+#, c-format
+msgid ""
+"File '%s' is read-only and cannot be saved.\n"
+"Please save it under different name."
+msgstr ""
+"文件“%s”为只读，不能保存。\n"
+"请使用其他名称保存。"
+
+#, c-format
+msgid "Couldn't save file %s."
+msgstr "不能保存文件 %s。"
+
+msgid ""
+"There was a problem formatting the file nicely (but it was saved all right)."
+msgstr "在精确格式化文件时有一个问题（但文件保存正确）。"
+
+#, c-format
+msgid ""
+"The catalog couldn't be saved in '%s' charset as specified in catalog "
+"settings.\n"
+"\n"
+"It was saved in UTF-8 instead and the setting was modified accordingly."
+msgstr ""
+"不能按编目设置中所指定的将编目保存为 “%s” 字符集。\n"
+"\n"
+"将保存为 UTF-8 字符集，设置也会相应地被修改。"
+
+msgid "Error saving catalog"
+msgstr "保存编目时出错"
+
+msgid "PO Translation Files"
+msgstr "PO 翻译文件"
+
+msgid "POT Translation Templates"
+msgstr "POT 翻译模板"
+
+msgid "All Translation Files"
+msgstr "所有翻译文件"
+
+msgid "(Use default language)"
+msgstr "（使用默认语言）"
+
+msgid "Select your preferred language"
+msgstr "选择您的首选语言"
+
+msgid "Language selection"
+msgstr "语言选择"
+
+msgid "You must restart Poedit for this change to take effect."
+msgstr "您必须重新启动 Poedit 才能使这个更改生效。"
+
+msgid "Syncing"
+msgstr "同步中"
+
+#. TRANSLATORS: %s is a cloud destination, e.g. "Crowdin" or ftp.wordpress.com etc.
+#, c-format
+msgid "Syncing with %s…"
+msgstr "正在与 %s 同步…"
+
+#. TRANSLATORS: %s is a cloud destination, e.g. "Crowdin" or ftp.wordpress.com etc.
+#, c-format
+msgid "Syncing with %s failed."
+msgstr "与 %s 同步失败。"
+
+msgid "Syncing error"
+msgstr "同步出错"
+
+msgid "Downloading translations is disabled in this project."
+msgstr "此项目禁用了下载翻译。"
+
+msgid "Not authorized, please sign in again."
+msgstr "未授权，请尝试重新登录。"
+
+msgid ""
+"Crowdin is an online localization management platform and collaborative "
+"translation tool. Poedit can seamlessly sync PO files managed at Crowdin."
+msgstr ""
+"Crowdin 是一个在线的本地化管理平台和协作翻译工具。Poedit 可以无缝同步在 "
+"Crowdin 上管理的 PO 文件。"
+
+msgid "Sign In"
+msgstr "登录"
+
+msgid "Sign in"
+msgstr "登录"
+
+msgid "Sign Out"
+msgstr "登出"
+
+msgid "Sign out"
+msgstr "登出"
+
+msgid "Waiting for authentication…"
+msgstr "正在等待身份验证…"
+
+msgid "Updating user information…"
+msgstr "正在更新用户信息…"
+
+msgid "Signed in as:"
+msgstr "已登录为："
+
+msgid "Learn More About Crowdin"
+msgstr "了解更多有关 Crowdin"
+
+msgid "Learn more about Crowdin"
+msgstr "了解更多有关 Crowdin"
+
+msgid "Sign in to Crowdin"
+msgstr "登录到 Crowdin"
+
+msgid "Open Crowdin translation"
+msgstr "打开 Crowdin 翻译"
+
+msgid "Project:"
+msgstr "项目："
+
+msgid "Language:"
+msgstr "语言："
+
+msgid "File:"
+msgstr "文件："
+
+msgid "No translation projects listed in your Crowdin account."
+msgstr "您的 Crowdin 账户中没有列出翻译项目。"
+
+msgid "This project has no files that can be translated in Poedit."
+msgstr "此项目没有可以在 Poedit 中翻译的文件。"
+
+msgid "This file can only be edited in Crowdin’s web interface."
+msgstr "只能在 Crowdin 的网页界面中编辑此文件。"
+
+msgid "Downloading latest translations…"
+msgstr "正在下载最新的翻译…"
+
+msgid "Syncing with Crowdin failed."
+msgstr "与 Crowdin 同步失败。"
+
+msgid "Crowdin error"
+msgstr "Crowdin 错误"
+
+msgid "Uploading translations…"
+msgstr "正在上传翻译…"
+
+msgid "&Copy"
+msgstr "复制(&C)"
+
+msgid "Learn more"
+msgstr "了解更多"
+
+msgid "Learn More"
+msgstr "了解更多"
+
+msgid "&Help"
+msgstr "帮助(&H)"
+
+msgid "MO files can’t be directly edited in Poedit."
+msgstr "MO 文件不能直接在 Poedit 中编辑。"
+
+msgid "Error opening file"
+msgstr "打开文件时出错"
+
+msgid ""
+"Please open and edit the corresponding PO file instead. When you save it, "
+"the MO file will be updated as well."
+msgstr "请打开并编辑对应的 PO 文件。当你保存它时，MO 文件也将被更新。"
+
+msgid "don't delete temporary files (for debugging)"
+msgstr "不删除临时文件（供调试使用）"
+
+msgid "handle a poedit:// URI"
+msgstr "处理 poedit:// URI"
+
+msgid "go to item at given line number"
+msgstr ""
+
+msgid "Failed to communicate with Poedit process."
+msgstr "与 Poedit 进程的通信失败。"
+
+#, c-format
+msgid "Unhandled exception occurred: %s"
+msgstr "发生了不能处理的异常：%s"
+
+msgid "Open catalog"
+msgstr "打开编目"
+
+#, c-format
+msgid "File '%s' doesn't exist."
+msgstr "文件“%s”不存在。"
+
+msgid "Poedit is an easy to use translations editor."
+msgstr "Poedit 是一个易于使用的翻译编辑器。"
+
+msgid "Catalogs Manager"
+msgstr "编目管理器"
+
+msgid "Check for Updates..."
+msgstr "检查更新..."
+
+msgid "&Edit"
+msgstr "编辑(&E)"
+
+msgid "Undo"
+msgstr "撤销"
+
+msgid "Redo"
+msgstr "重做"
+
+msgid "Paste and Match Style"
+msgstr "粘贴并匹配样式"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Spelling and Grammar"
+msgstr "拼写和语法"
+
+msgid "Show Spelling and Grammar"
+msgstr "显示拼写和语法"
+
+msgid "Check Document Now"
+msgstr "立即检查文档"
+
+msgid "Check Spelling While Typing"
+msgstr "在输入时检查拼写"
+
+msgid "Check Grammar With Spelling"
+msgstr "检查拼写和语法"
+
+msgid "Correct Spelling Automatically"
+msgstr "自动更正拼写错误"
+
+msgid "Substitutions"
+msgstr "替换"
+
+msgid "Show Substitutions"
+msgstr "显示替换项目"
+
+msgid "Smart Copy/Paste"
+msgstr "智能复制/粘贴"
+
+msgid "Smart Quotes"
+msgstr "智能引号"
+
+msgid "Smart Dashes"
+msgstr "智能短划线"
+
+msgid "Smart Links"
+msgstr "智能链接"
+
+msgid "Text Replacement"
+msgstr "文本替换"
+
+msgid "Transformations"
+msgstr "转换"
+
+msgid "Make Upper Case"
+msgstr "转为大写"
+
+msgid "Make Lower Case"
+msgstr "转为小写"
+
+msgid "Capitalize"
+msgstr "大写"
+
+msgid "Speech"
+msgstr "朗读"
+
+msgid "Start Speaking"
+msgstr "开始朗读"
+
+msgid "Stop Speaking"
+msgstr "停止朗读"
+
+msgid "&View"
+msgstr "查看(&V)"
+
+msgid "Enter Full Screen"
+msgstr "进入全屏模式"
+
+msgid "Window"
+msgstr "窗口"
+
+msgid "Minimize"
+msgstr "最小化"
+
+msgid "Zoom"
+msgstr "缩放"
+
+msgid "Bring All to Front"
+msgstr "全部带到最前方"
+
+#. TRANSLATORS:File kind displayed in Finder/Explorer
+msgid "PO Translation"
+msgstr "PO 翻译"
+
+msgid "The file cannot be opened."
+msgstr "该文件无法打开。"
+
+msgid "Invalid file"
+msgstr "无效文件"
+
+msgid ""
+"The file may be either corrupted or in a format not recognized by Poedit."
+msgstr "该文件可能已损坏或不是 Poedit 所能识别的格式。"
+
+msgid "You can't drop more than one file on Poedit window."
+msgstr "您不能在 Poedit 窗口上放下一个以上的文件。"
+
+#, c-format
+msgid "File '%s' is not a message catalog."
+msgstr "文件“%s”不是一个消息编目。"
+
+msgid "Poedit"
+msgstr "Poedit"
+
+msgid "&File"
+msgstr "文件(&F)"
+
+msgid "&Go"
+msgstr "转到(&G)"
+
+#. TRANSLATORS: %s is language name in its basic form (as you
+#. would see e.g. in a list of supported languages). You may need
+#. to rephrase it, e.g. to an equivalent of "for language %s".
+#, c-format
+msgid ""
+"Spellchecking is disabled, because the dictionary for %s isn’t installed."
+msgstr "拼写检查被禁用，因为 %s 的字典没有安装。"
+
+msgid "Install"
+msgstr "安装"
+
+msgid "Catalog modified. Do you want to save changes?"
+msgstr "编目已修改。您想要保存更改吗？"
+
+msgid "Save changes"
+msgstr "保存更改"
+
+msgid "Your changes will be lost if you don't save them."
+msgstr "如果您不保存，则您的更改将丢失。"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Don't save"
+msgstr "不保存"
+
+msgid "Don't Save"
+msgstr "不保存"
+
+msgid "Save as..."
+msgstr "另存为..."
+
+msgid "Compile to..."
+msgstr "编译为..."
+
+msgid "Compiled Translation Files"
+msgstr "已编译的翻译文件"
+
+msgid "Export as..."
+msgstr "导出为..."
+
+msgid "HTML Files"
+msgstr "HTML 文件"
+
+msgid "Open catalog template"
+msgstr "打开编目模板"
+
+msgid "Source code not available."
+msgstr "源代码不可用。"
+
+msgid "Updating failed"
+msgstr "更新失败"
+
+msgid ""
+"Translations couldn’t be updated from the source code, because no code was "
+"found in the location specified in the catalog’s Properties."
+msgstr "不能从源代码更新翻译，因为在目录属性中指定的位置没有发现代码。"
+
+msgid "Entries in the catalog are probably incorrect."
+msgstr "编目中的条目可能不正确。"
+
+msgid "Updating the catalog failed. Click on 'Details >>' for details."
+msgstr "更新编目失败。点击“详细资料 >>”了解详情。"
+
+#, c-format
+msgid "%d issue with the translation found."
+msgid_plural "%d issues with the translation found."
+msgstr[0] "在翻译中发现了 %d 个问题。"
+
+msgid "Validation results"
+msgstr "验证结果"
+
+msgid ""
+"Entries with errors were marked in red in the list. Details of the error "
+"will be shown when you select such an entry."
+msgstr ""
+"有错误的条目在列表中被标记为红色。您选择这样的条目时将显示错误的详细信息。"
+
+msgid "The file was saved safely."
+msgstr "文件已被安全地保存。"
+
+msgid ""
+"The file was saved safely and compiled into the MO format, but it will "
+"probably not work correctly."
+msgstr "文件已安全地保存，并编译成 MO 格式的文件，但它可能不能正常工作。"
+
+msgid ""
+"The file was saved safely, but it cannot be compiled into the MO format and "
+"used."
+msgstr "文件已安全地保存，但它不能被编译成 MO 格式并使用。"
+
+msgid ""
+"The file was compiled into the MO format, but it will probably not work "
+"correctly."
+msgstr "文件被编译成 MO 格式，但它可能不能正确工作。"
+
+msgid "The file cannot be compiled into the MO format and used."
+msgstr "文件不能编译成 MO 格式并使用。"
+
+msgid "No problems with the translation found."
+msgstr "翻译中未发现问题。"
+
+#, c-format
+msgid "The translation is ready for use, but %d entry is not translated yet."
+msgid_plural ""
+"The translation is ready for use, but %d entries are not translated yet."
+msgstr[0] "翻译可以使用了，不过还有 %d 个条目没有被翻译。"
+
+msgid "The translation is ready for use."
+msgstr "翻译可以使用了。"
+
+#, c-format
+msgid "Poedit automatically fixed invalid content in the file “%s”."
+msgstr "Poedit 自动修复了“%s”文件中的无效内容。"
+
+msgid ""
+"The file contained duplicate items, which is not allowed in PO files and "
+"would prevent the file from being used. Poedit fixed the issue, but you "
+"should review translations of any items marked as needing work and correct "
+"them if necessary."
+msgstr ""
+"该文件中包含重复的项目，这是不允许的，并且影响了该文件被使用。Poedit 修复了该"
+"问题，但您应该审阅任何已被标记为“需要处理”的翻译和纠正它们（如有必要）。"
+
+msgid "Language of the translation isn't set."
+msgstr "翻译语言未设置。"
+
+msgid "Set Language"
+msgstr "设置语言"
+
+msgid "Set language"
+msgstr "选择语言"
+
+#. TRANSLATORS: This is shown underneath "Language of the translation isn't set (or ...is the same as source language)."
+msgid ""
+"Suggestions are not available if the translation language is not set "
+"correctly. Other features, such as plural forms, may be affected as well."
+msgstr ""
+"如果翻译语言设置不正确，建议将不可用。其他特性（例如复数形式）也可能受到影"
+"响。"
+
+msgid "Language of the translation is the same as source language."
+msgstr "翻译语言与源语言相同。"
+
+msgid "Fix Language"
+msgstr "修复语言"
+
+msgid "Fix language"
+msgstr "修复语言"
+
+msgid ""
+"This catalog has entries with plural forms, but doesn't have Plural-Forms "
+"header configured."
+msgstr "这个编目有带有复数形式的条目，但没有已配置的 Plural-Forms 头。"
+
+msgid ""
+"Entries in this catalog have different plural forms count from what "
+"catalog's Plural-Forms header says"
+msgstr "这个编目中的条目的复数形式数量与编目的 Plural-Forms 头所说明的不同"
+
+msgid "Required header Plural-Forms is missing."
+msgstr "缺少必需的头 Plural-Forms。"
+
+#, c-format
+msgid "Syntax error in Plural-Forms header (\"%s\")."
+msgstr "在 Plural-Forms 头中存在语法错误 (\"%s\")。"
+
+msgid "Fix the Header"
+msgstr "修复文件头"
+
+msgid "Fix the header"
+msgstr "修正头"
+
+#. TRANSLATORS: %s is language name in its basic form (as you
+#. would see e.g. in a list of supported languages). You may need
+#. to rephrase it, e.g. to an equivalent of "for language %s".
+#, c-format
+msgid "Plural forms expression used by the catalog is unusual for %s."
+msgstr "该目录中所使用的复数形式对于 %s 是不同寻常的。"
+
+#. TRANSLATORS: A verb, shown as action button with ""Plural forms expression used by the catalog is unusual for %s.")"
+msgid "Review"
+msgstr "检查"
+
+#, c-format
+msgid "Error loading message catalog file '%s'."
+msgstr "加载消息编目文件“%s”时发生错误。"
+
+#, c-format
+msgid "Translated: %d of %d (%d %%)"
+msgstr "已翻译：%d 共计 %d (%d %%)"
+
+#, c-format
+msgid "Remaining: %d"
+msgstr "剩余：%d"
+
+#, c-format
+msgid "%d error"
+msgid_plural "%d errors"
+msgstr[0] "%d 错误"
+
+#, c-format
+msgid "%d entry"
+msgid_plural "%d entries"
+msgstr[0] "%d 条目"
+
+msgid " (unsaved)"
+msgstr " （未保存）"
+
+msgid " (modified)"
+msgstr " （已修改）"
+
+#, c-format
+msgid "Failed to update translation memory: %s"
+msgstr "更新翻译记忆库失败： %s "
+
+msgid "Purge deleted translations"
+msgstr "清除已删除的翻译"
+
+msgid "Do you want to remove all translations that are no longer used?"
+msgstr "您确定要移除所有不再使用的翻译吗？"
+
+msgid ""
+"If you continue with purging, all translations marked as deleted will be "
+"permanently removed. You will have to translate them again if they are added "
+"back in the future."
+msgstr ""
+"如果您继续清除，则所有被标记为已删除的翻译都将被永久移除。如果未来它们被添加"
+"回来，您必须再翻译一遍。"
+
+msgid "Keep"
+msgstr "保持"
+
+msgid "Purge"
+msgstr "清除"
+
+msgid "Copy from source text"
+msgstr "复制源文本"
+
+msgid "Copy from Source Text"
+msgstr "复制源文本"
+
+#. TRANSLATORS: This is the key shortcut used in menus on Windows, some languages call them differently
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Ctrl+"
+msgstr "Ctrl+"
+
+msgid "Clear translation"
+msgstr "清除翻译"
+
+msgid "Clear Translation"
+msgstr "清除翻译"
+
+msgid "Edit comment"
+msgstr "编辑注释"
+
+msgid "Edit Comment"
+msgstr "编辑注释"
+
+msgid "References:"
+msgstr "引用："
+
+msgid "&Bookmarks"
+msgstr "书签(&B)"
+
+#. TRANSLATORS: This is the key shortcut used in menus on Windows, some languages call them differently
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Alt+"
+msgstr "Alt+"
+
+#, c-format
+msgid "Set bookmark %i"
+msgstr "设置书签 %i"
+
+#, c-format
+msgid "Go to bookmark %i"
+msgstr "转至书签 %i"
+
+#, c-format
+msgid "Set Bookmark %i"
+msgstr "设置书签 %i"
+
+#, c-format
+msgid "Go to Bookmark %i"
+msgstr "转至书签 %i"
+
+msgid "Hide Sidebar"
+msgstr "隐藏侧边栏"
+
+msgid "Show Sidebar"
+msgstr "显示侧边栏"
+
+msgid "Hide Status Bar"
+msgstr "隐藏状态栏"
+
+msgid "Show Status Bar"
+msgstr "显示状态栏"
+
+msgid "Source text:"
+msgstr "源文本："
+
+msgid "Singular:"
+msgstr "单数："
+
+msgid "Plural:"
+msgstr "复数："
+
+msgid "Translation:"
+msgstr "翻译："
+
+msgid "Pre-translated"
+msgstr "已预翻译"
+
+msgid "Needs Work"
+msgstr "需要处理"
+
+#. TRANSLATORS: This indicates that the string's translation isn't final
+#. and has known problems.  For example, it might be machine translated or
+#. fuzzy matched from an older string. The translation should be short and
+#. convey this. If it's problematic to translate it, "Needs review" is
+#. acceptable substitute, but note that the meaning is subtly different:
+#. "needs review" implies that somebody else should review the string after
+#. I am done with it (i.e. consider it good), while "needs work" implies I
+#. need to return to it and finish the translation.
+msgid "Needs work"
+msgstr "需要处理"
+
+msgid ""
+"POT files are only templates and don’t contain any translations themselves.\n"
+"To make a translation, create a new PO file based on the template."
+msgstr ""
+"POT 文件只是模板，不包含任何翻译内容。\n"
+"若要制作一个翻译，请基于模板创建一个新的 PO 文件。"
+
+msgid "Create New Translation"
+msgstr "创建新的翻译"
+
+msgid "Create new translation"
+msgstr "创建新的翻译"
+
+msgid "Everything"
+msgstr "一切"
+
+#, c-format
+msgid "Form %i"
+msgstr "表格 %i"
+
+msgid "Singular"
+msgstr "单数"
+
+msgid "Zero"
+msgstr "零"
+
+msgid "One"
+msgstr "一"
+
+msgid "Two"
+msgstr "二"
+
+msgid "Plural"
+msgstr "复数"
+
+msgid "Other"
+msgstr "其他"
+
+#, c-format
+msgid "%s Format"
+msgstr "%s 格式"
+
+#. TRANSLATORS: %s is replaced with language name, e.g. "PHP" or "C", so "PHP Format" etc."
+#, c-format
+msgid "%s format"
+msgstr "%s 格式"
+
+#, c-format
+msgid "Source text — %s"
+msgstr "源文本 — %s"
+
+msgid "Source text"
+msgstr "源文本"
+
+msgid "unknown language"
+msgstr "未知语言"
+
+#, c-format
+msgid "Translation — %s"
+msgstr "翻译 — %s"
+
+msgid "ID"
+msgstr "ID"
+
+#, c-format
+msgid "Failed command: %s"
+msgstr "命令失败：%s"
+
+msgid "Failed to merge gettext catalogs."
+msgstr "合并 gettext 编目失败。"
+
+msgid "Source file"
+msgstr "源文件"
+
+msgid "Source file occurrence:"
+msgstr "源文件出现："
+
+msgid "Open in Editor"
+msgstr "在编辑器中打开"
+
+msgid "Open in editor"
+msgstr "在编辑器中打开"
+
+msgid "No references for the selected item."
+msgstr "没有对选定项的引用。"
+
+#, c-format
+msgid "Error opening file %s!"
+msgstr "打开文件 %s 时出错！"
+
+msgid "Find"
+msgstr "查找"
+
+msgid "Replace"
+msgstr "替换"
+
+#. TRANSLATORS: Expander in Find window for additional options (case sensitive etc.)
+msgid "Options"
+msgstr "选项"
+
+msgid "Ignore case"
+msgstr "忽略大小写"
+
+msgid "Wrap around"
+msgstr "全字匹配"
+
+msgid "Whole words only"
+msgstr "仅整个单词"
+
+msgid "Find in source texts"
+msgstr "在源文本中查找"
+
+msgid "Find in translations"
+msgstr "在翻译中查找"
+
+msgid "Find in comments"
+msgstr "在注释中查找"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Replace &All"
+msgstr "全部替换(&A)"
+
+msgid "Replace &all"
+msgstr "全部替换(&A)"
+
+msgid "&Replace"
+msgstr "替换(&R)"
+
+msgid "< &Previous"
+msgstr "< 上一个(&P)"
+
+msgid "&Next >"
+msgstr "下一个(&N) >"
+
+msgid "String to find"
+msgstr "要查找的字符串"
+
+msgid "Replacement string"
+msgstr "替换字符串"
+
+#, c-format
+msgid "Cannot execute program: %s"
+msgstr "不能执行程序： %s"
+
+msgid "Language Code or Name (e.g. en_GB)"
+msgstr "语言的代码或名称（例如：en_GB）"
+
+msgid "Translation Language"
+msgstr "翻译"
+
+msgid "Language of the translation:"
+msgstr "要翻译的语言："
+
+msgid "Poedit - Catalogs manager"
+msgstr "Poedit - 编目管理器"
+
+msgid "Catalog"
+msgstr "编目"
+
+msgid "Total"
+msgstr "总计"
+
+msgid "Untrans"
+msgstr "未翻译"
+
+msgid "Errors"
+msgstr "错误"
+
+msgid "Last modified"
+msgstr "最后修改"
+
+msgid "Select directory"
+msgstr "选择目录"
+
+msgid "Directories:"
+msgstr "目录："
+
+msgid "<unnamed>"
+msgstr "<未命名>"
+
+msgid "Do you want to delete the project?"
+msgstr "您确定要删除此项目吗？"
+
+msgid "Confirmation"
+msgstr "确认"
+
+msgid ""
+"Do you really want to do mass update of\n"
+"all catalogs in this project?"
+msgstr ""
+"您确定要对这个项目中的所有编目执行\n"
+"大规模更新吗？"
+
+msgid "Information about the translator"
+msgstr "关于翻译者的信息"
+
+msgid "Name:"
+msgstr "名称："
+
+msgid "Your Name"
+msgstr "你的名字"
+
+msgid "Email:"
+msgstr "电子邮件："
+
+msgid "your_email@example.com"
+msgstr "your_email@example.com"
+
+msgid ""
+"Your name and email address are only used to set the Last-Translator header "
+"of GNU gettext files."
+msgstr ""
+"你的名称和电子邮件地址仅用于设置 GNU gettext 文件的 Last-Translator 信息。"
+
+msgid "Editing"
+msgstr "编辑"
+
+msgid "Automatically compile MO file when saving"
+msgstr "在保存时自动编译 MO 文件"
+
+msgid "Show summary after catalog update"
+msgstr "在编目更新之后显示摘要"
+
+msgid "Check spelling"
+msgstr "检查拼写"
+
+msgid "Always change focus to text input field"
+msgstr "总是将焦点移动到文本输入字段"
+
+msgid ""
+"Never let the list of strings take focus. If enabled, you must use Ctrl-"
+"arrows for keyboard navigation but you can also type text immediately, "
+"without having to press Tab to change focus."
+msgstr ""
+"从不让字串列表取得焦点。如果启用，您必须使用 “Ctrl-方向键” 进行键盘导航，但您"
+"也可以立即输入文本，不用按 Tab 改变焦点。"
+
+msgid "Appearance"
+msgstr "外观"
+
+msgid "Use custom list font:"
+msgstr "使用自定义的列表字体："
+
+msgid "Use custom text fields font:"
+msgstr "使用自定义的文本框字体："
+
+msgid "Change UI language"
+msgstr "更改用户界面语言"
+
+#. TRANSLATORS: This is a note appended to "Check spelling" when running on older Windows versions
+msgid "(requires Windows 8 or newer)"
+msgstr "（需要 Windows 8 或更高版本）"
+
+msgid "General"
+msgstr "常规"
+
+msgid "Use translation memory"
+msgstr "使用翻译记忆"
+
+msgid "Learn From Files..."
+msgstr "从文件中学习..."
+
+msgid "Learn from files..."
+msgstr "从文件中了解..."
+
+#. TRANSLATORS: This is a button that deletes everything in the translation memory (i.e. clears/resets it).
+msgid "Reset"
+msgstr "重置"
+
+#. TRANSLATORS: Followed by "match translations within the file" or "pre-translate from TM"
+msgid "When updating from sources"
+msgstr "当从源文更新时"
+
+#. TRANSLATORS: Preceded by "When updating from sources"
+msgid "fuzzy match within the file"
+msgstr "在文件内模糊匹配"
+
+#. TRANSLATORS: Preceded by "When updating from sources"
+msgid "pre-translate from TM"
+msgstr "根据翻译记忆预翻译"
+
+msgid ""
+"Poedit can attempt to fill in new entries from only previous translations in "
+"the file or from your entire translation memory. Using the TM won’t be very "
+"effective if it’s near-empty, but it will get better as you add more "
+"translations to it."
+msgstr ""
+"Poedit 可以根据以前的翻译文件或你的翻译记忆库来尝试填写新条目。接近空的翻译记"
+"忆库不会很有效，但如果你为它添加了更多的翻译，它也会变得更好。"
+
+msgid "Stored translations:"
+msgstr "存储翻译："
+
+msgid "Database size on disk:"
+msgstr "磁盘上数据文件的大小："
+
+msgid "Select translation files to import"
+msgstr "选择需要导入的翻译文件"
+
+msgid "Translation Memory"
+msgstr "翻译记忆"
+
+msgid "Importing translations..."
+msgstr "导入翻译..."
+
+msgid "Finalizing..."
+msgstr "正在完成..."
+
+msgid "Reset translation memory"
+msgstr "重置翻译记忆库"
+
+msgid "Are you sure you want to reset the translation memory?"
+msgstr "你确定你要重置翻译记忆库吗？"
+
+msgid ""
+"Resetting the translation memory will irrevocably delete all stored "
+"translations from it. You can’t undo this operation."
+msgstr "重置翻译记忆库将无可挽回地删除其中存储的所有翻译。你无法撤消此操作。"
+
+msgid "Cancel"
+msgstr "取消"
+
+#. TRANSLATORS: This is abbreviation of "Translation Memory" used in Preferences on macOS.
+#. Long text looks weird there, too short (like TM) too, but less so. "General" is about ideal
+#. length there.
+msgid "TM"
+msgstr "翻译记忆"
+
+msgid ""
+"Source code extractors are used to find translatable strings in the source "
+"code files and extract them so that they can be translated."
+msgstr ""
+"源代码提取器用于在源代码文件中找到可翻译字符串和提取它们，以便它们可以被翻"
+"译。"
+
+msgid "Custom Extractors:"
+msgstr "自定义提取器︰"
+
+msgid "Custom extractors:"
+msgstr "自定义提取器︰"
+
+msgid "Edit..."
+msgstr "编辑..."
+
+msgid "GNU gettext"
+msgstr "GNU gettext"
+
+msgid ""
+"Supports all programming languages recognized by GNU gettext tools (PHP, C/C+"
+"+, C#, Perl, Python, Java, JavaScript and others)."
+msgstr ""
+"支持 GNU gettext 工具可识别的所有编程语言（PHP、C/C++、C#、Perl、Python、"
+"Java、JavaScript 等）。"
+
+msgid "Delete extractor"
+msgstr "删除提取器"
+
+#, c-format
+msgid "Are you sure you want to delete the “%s” extractor?"
+msgstr "您确定要删除“%s”提取器吗？"
+
+msgid "Extractors"
+msgstr "提取器"
+
+msgid "Accounts"
+msgstr "账号"
+
+msgid "Automatically check for updates"
+msgstr "自动检查更新"
+
+msgid "Include beta versions"
+msgstr "包括测试版本"
+
+msgid ""
+"Beta versions contain the latest new features and improvements, but may be a "
+"bit less stable."
+msgstr "测试版包含最新功能和改进，但可能有点不太稳定。"
+
+msgid "Updates"
+msgstr "更新"
+
+msgid ""
+"These settings affect internal formatting of PO files. Adjust them if you "
+"have specific requirements e.g. because of version control."
+msgstr ""
+"这些设置会影响 PO 文件的内部格式。如果你有特定的要求例如版本控制时，调整它"
+"们。"
+
+msgid "Line endings:"
+msgstr "行结束符："
+
+msgid "Unix (recommended)"
+msgstr "Unix（推荐）"
+
+msgid "Windows"
+msgstr "Windows"
+
+#. TRANSLATORS: Followed by text control for entering number; wraps text at given width
+msgid "Wrap at:"
+msgstr "换行在："
+
+msgid "Preserve formatting of existing files"
+msgstr "保留现有文件的格式"
+
+msgid "Advanced"
+msgstr "高级"
+
+msgid "Pre-translating…"
+msgstr "正在预翻译…"
+
+#, c-format
+msgid "Pre-translated %u string"
+msgid_plural "Pre-translated %u strings"
+msgstr[0] "已预翻译 %u 个字符串"
+
+#. TRANSLATORS: This is a somewhat common term describing the action where
+#. you apply the translation memory and/or machine translation to all of the
+#. strings you're translating as the first step, followed by correcting,
+#. improving etc., i.e. actually translating the strings. This may be tricky
+#. to express in other languages as simply as in English, but please try to
+#. keep it similarly concise. Please try to avoid, if possible, describing it
+#. as "auto-translation" and similar, because such terminology would mislead
+#. some users into thinking it's all that needs to be done (spoken from
+#. experience). "Pre-translate" nicely expresses that it's only the step done
+#. *before* actual translation.
+msgid "Pre-translate"
+msgstr "预翻译"
+
+msgid "Only fill in exact matches"
+msgstr "仅填补完全匹配的项"
+
+msgid ""
+"By default, inaccurate results are filled in as well and marked as needing "
+"work. Check this option to only include accurate matches."
+msgstr ""
+"默认情况下，不准确的结果被填补并标记为需要处理。选中此选项只包括精确匹配的"
+"项。"
+
+msgid "Don’t mark exact matches as needing work"
+msgstr "不将精确匹配标为需要处理"
+
+msgid ""
+"Only enable if you trust the quality of your TM. By default, all matches "
+"from the TM are marked as needing work and should be reviewed before use."
+msgstr ""
+"仅在您信任你的翻译记忆的质量时启用。默认情况下，从翻译记忆匹配的所有条目被标"
+"记为模糊，在使用前应加以审查。"
+
+msgid ""
+"Pre-translation automatically finds exact or fuzzy matches for untranslated "
+"strings in the translation memory and fills in their translations."
+msgstr ""
+"预翻译自动在翻译记忆库中查找未翻译字符串的精确或模糊匹配项，并将其填入翻译。"
+
+#, c-format
+msgid "%d entry was pre-translated."
+msgid_plural "%d entries were pre-translated."
+msgstr[0] "%d 个条目已进行预翻译。"
+
+msgid ""
+"The translations were marked as needing work, because they may be "
+"inaccurate. You should review them for correctness."
+msgstr "这些翻译被标记为需要处理，因为其可能不准确。请检查它们的准确性。"
+
+msgid "No entries could be pre-translated."
+msgstr "没有条目可预翻译。"
+
+msgid ""
+"The TM doesn’t contain any strings similar to the content of this file. It "
+"is only effective for semi-automatic translations after Poedit learns enough "
+"from files that you translated manually."
+msgstr ""
+"翻译记忆库中没有包含任何与此文件内容相似的字符串。 Poedit 需要通过你手动翻译"
+"的文件来得到充分的学习，然后才能在半自动翻译中发挥作用。"
+
+msgid ""
+"<big>Drag and Drop Folders Here</big>\n"
+"\n"
+"or use the + button"
+msgstr ""
+"<big>拖放文件夹到这里</big>\n"
+"\n"
+"或者使用 + 按钮"
+
+msgid ""
+"<big>Drag and drop folders here</big>\n"
+"\n"
+"or use the + button"
+msgstr ""
+"<big>拖放文件夹到这里</big>\n"
+"\n"
+"或者使用 + 按钮"
+
+msgid "Add Folders..."
+msgstr "添加文件夹..."
+
+msgid "Add folders..."
+msgstr "添加文件夹..."
+
+msgid "Add Files..."
+msgstr "添加文件..."
+
+msgid "Add files..."
+msgstr "添加文件..."
+
+msgid "Add Wildcard..."
+msgstr "添加通配符..."
+
+msgid "Add wildcard..."
+msgstr "添加通配符..."
+
+msgid "Paths"
+msgstr "路径"
+
+msgid "Excluded paths"
+msgstr "排除的路径"
+
+msgid "Advanced extraction settings"
+msgstr "高级提取设置"
+
+msgid "Extract notes for translators from:"
+msgstr "为译者提取注释自："
+
+msgid "Comments prefixed with:"
+msgstr "有前缀的评论："
+
+msgid "All comments"
+msgstr "所有评论"
+
+msgid "Additional xgettext flags:"
+msgstr "额外的 xgettext 标志︰"
+
+msgid "Additional keywords"
+msgstr "额外的关键字"
+
+msgid "Name of the project the translation is for"
+msgstr "翻译的项目名称"
+
+msgid "Team name and email address or URL"
+msgstr "团队名称和电子邮件地址或 URL"
+
+msgid "e.g. nplurals=2; plural=(n > 1);"
+msgstr "例如： nplurals=2; plural=(n > 1);"
+
+msgid "UTF-8 (recommended)"
+msgstr "UTF-8（推荐）"
+
+msgid "Please save the file first. This section cannot be edited until then."
+msgstr "请先保存文件。以下内容在此之前不能被编辑。"
+
+msgid "Not all plural forms are translated."
+msgstr "复数形式不需全部翻译。"
+
+msgid "The translation should start as a sentence."
+msgstr "翻译应该为一个句子。"
+
+msgid "The translation should start with a lowercase character."
+msgstr "翻译开头应该为小写字母。"
+
+msgid "The translation doesn’t start with a space."
+msgstr "翻译不应以空格开头。"
+
+msgid "The translation starts with a space, but the source text doesn’t."
+msgstr "翻译开头存在源文本没有的空格。"
+
+msgid "The translation is missing a newline at the end."
+msgstr "翻译结尾缺少换行。"
+
+msgid "The translation ends with a newline, but the source text doesn’t."
+msgstr "翻译以换行符结尾，但是源文本没有换行符。"
+
+msgid "The translation is missing a space at the end."
+msgstr "翻译结尾缺少空格。"
+
+msgid "The translation ends with a space, but the source text doesn’t."
+msgstr "翻译以空格结尾，但是源文本没有空格。"
+
+#, c-format
+msgid "The translation should end with “%s”."
+msgstr "翻译应以“%s”结尾。"
+
+#, c-format
+msgid "The translation should not end with “%s”."
+msgstr "翻译不应以“%s”结尾。"
+
+#, c-format
+msgid "The translation ends with “%s”, but the source text ends with “%s”."
+msgstr "翻译以“%s”结尾，但是源文本是“%s”。"
+
+msgid "Comment:"
+msgstr "注释："
+
+msgid "OK"
+msgstr "确定"
+
+msgid "C&lear"
+msgstr "清除(&L)"
+
+msgid "Clear the comment"
+msgstr "清除注释"
+
+msgid "New"
+msgstr "新建"
+
+msgid "Create new translations project"
+msgstr "创建新的翻译项目"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "Edit the project"
+msgstr "编辑项目"
+
+msgid "Delete the project"
+msgstr "删除项目"
+
+msgid "Update all"
+msgstr "更新全部"
+
+msgid "Update all catalogs in the project"
+msgstr "更新项目中的所有编目"
+
+msgid "Edit project"
+msgstr "编辑项目"
+
+msgid "Project name:"
+msgstr "项目名称："
+
+msgid "Browse"
+msgstr "浏览"
+
+msgid "Add directory to the list"
+msgstr "将目录添加到列表"
+
+msgid "&New..."
+msgstr "新建(&N)..."
+
+msgid "New from &POT/PO file..."
+msgstr "从 &POT/PO 文件新建..."
+
+msgid "New From &POT/PO File..."
+msgstr "从 &POT/PO 文件新建..."
+
+msgid "&Open..."
+msgstr "打开(&O)..."
+
+msgid "Open Recent"
+msgstr "打开最近的"
+
+msgid "Open from Crowdin..."
+msgstr "从 Crowdin 打开..."
+
+msgid "Open From Crowdin..."
+msgstr "从 Crowdin 打开..."
+
+msgid "&Close"
+msgstr "关闭(&C)"
+
+msgid "&Save"
+msgstr "保存(&S)"
+
+msgid "Save &as..."
+msgstr "另存为(&A)..."
+
+msgid "Save &As..."
+msgstr "另存为(&A)..."
+
+msgid "Compile to MO..."
+msgstr "编译为 MO..."
+
+msgid "E&xport as HTML..."
+msgstr "导出为 HTML 格式(&X)..."
+
+msgid "Check for updates..."
+msgstr "检查更新..."
+
+msgid "&Preferences..."
+msgstr "首选项(&P)..."
+
+msgid "Catalogs &manager"
+msgstr "编目管理器(&M)"
+
+msgid "Catalogs &Manager"
+msgstr "编目管理器(&M)"
+
+msgid "E&xit"
+msgstr "退出(&X)"
+
+msgid "Quit"
+msgstr "退出"
+
+msgid "Copy from singular"
+msgstr "复制单数"
+
+msgid "Copy From Singular"
+msgstr "复制单数"
+
+msgid "Translation needs &work"
+msgstr "翻译需要处理(&W)"
+
+msgid "Translation Needs &Work"
+msgstr "翻译需要处理(&W)"
+
+msgid "Edit &comment"
+msgstr "编辑注释(&C)"
+
+msgid "Edit &Comment"
+msgstr "编辑注释(&C)"
+
+msgid "Suggestions"
+msgstr "建议"
+
+msgid "&Find..."
+msgstr "查找(&F)..."
+
+msgid "Replace..."
+msgstr "替换..."
+
+msgid "Find next"
+msgstr "查找下一个"
+
+msgid "Find previous"
+msgstr "查找上一个"
+
+msgid "Find and Replace..."
+msgstr "查找和替换..."
+
+msgid "Find Next"
+msgstr "查找下一个"
+
+msgid "Find Previous"
+msgstr "查找上一个"
+
+msgid "&Preferences"
+msgstr "首选项(&P)"
+
+msgid "Display entry &IDs"
+msgstr "显示条目 &ID"
+
+msgid "Display Entry &IDs"
+msgstr "显示条目 &ID"
+
+msgid "Sort by &file order"
+msgstr "按文件顺序排序(&F)"
+
+msgid "Sort by &File Order"
+msgstr "按文件顺序排序(&F)"
+
+msgid "Sort by &source"
+msgstr "按源文排序(&S)"
+
+msgid "Sort by &Source"
+msgstr "按源文排序(&S)"
+
+msgid "Sort by &translation"
+msgstr "按翻译排序(&T)"
+
+msgid "Sort by &Translation"
+msgstr "按翻译排序(&T)"
+
+msgid "&Group by context"
+msgstr "按上下文分组(&G)"
+
+msgid "&Group By Context"
+msgstr "按上下文分组(&G)"
+
+msgid "Entries with errors first"
+msgstr "带有错误的条目优先"
+
+msgid "Entries with Errors First"
+msgstr "带有错误的条目优先"
+
+msgid "&Untranslated entries first"
+msgstr "未翻译条目优先(&U)"
+
+msgid "&Untranslated Entries First"
+msgstr "未翻译条目优先(&U)"
+
+msgid "&Show references"
+msgstr "显示引用(&S)"
+
+msgid "&Show References"
+msgstr "显示引用(&S)"
+
+msgid "Show sidebar"
+msgstr "显示侧边栏"
+
+msgid "Show status bar"
+msgstr "显示状态栏"
+
+msgid "C&atalog"
+msgstr "编目(&A)"
+
+msgid "&Update from sources"
+msgstr "从源文更新(&U)"
+
+msgid "&Update from Sources"
+msgstr "从源文更新(&U)"
+
+msgid "Update from &POT file..."
+msgstr "从 &POT 文件更新..."
+
+msgid "Update from &POT File..."
+msgstr "从 &POT 文件更新..."
+
+msgid "Sync with Crowdin"
+msgstr "与 Crowdin 同步"
+
+msgid "Pre-&translate..."
+msgstr "预翻译(&T)..."
+
+msgid "&Purge deleted translations"
+msgstr "清除已删除的翻译(&P)"
+
+msgid "&Purge Deleted Translations"
+msgstr "清除已删除的翻译(&P)"
+
+msgid "&Validate translations"
+msgstr "验证翻译(&V)"
+
+msgid "&Validate Translations"
+msgstr "验证翻译(&V)"
+
+msgid "&Properties..."
+msgstr "属性(&P)..."
+
+msgid "&Done and next"
+msgstr "完成并转到下一个(&D)"
+
+msgid "&Done and Next"
+msgstr "完成并转到下一个(&D)"
+
+msgid "&Previous translation"
+msgstr "前一个翻译(&P)"
+
+msgid "&Previous Translation"
+msgstr "前一个翻译(&P)"
+
+msgid "&Next translation"
+msgstr "下一个翻译(&N)"
+
+msgid "&Next Translation"
+msgstr "下一个翻译(&N)"
+
+msgid "P&revious unfinished"
+msgstr "上一个未完成(&R)"
+
+msgid "P&revious Unfinished"
+msgstr "上一个未完成(&R)"
+
+msgid "Ne&xt unfinished"
+msgstr "下一个未完成(&X)"
+
+msgid "Ne&xt Unfinished"
+msgstr "下一个未完成(&X)"
+
+msgid "Previous plural form"
+msgstr "上一个复数形式"
+
+msgid "Previous Plural Form"
+msgstr "上一个复数形式"
+
+msgid "Next plural form"
+msgstr "下一个复数形式"
+
+msgid "Next Plural Form"
+msgstr "下一个复数形式"
+
+msgid "&Online help"
+msgstr "在线帮助(&O)"
+
+msgid "&Online Help"
+msgstr "在线帮助(&O)"
+
+msgid "&GNU gettext manual"
+msgstr "&GNU gettext 手册"
+
+msgid "&GNU gettext Manual"
+msgstr "&GNU gettext 手册"
+
+msgid "&About Poedit"
+msgstr "关于 Poedit (&A)"
+
+msgid "&About"
+msgstr "关于(&A)"
+
+msgid "Extractor setup"
+msgstr "提取器安装"
+
+msgid "List of extensions separated by semicolons (e.g. *.cpp;*.h):"
+msgstr "用分号分隔的扩展名列表（例如 *.cpp;*.h）："
+
+msgid "Invocation:"
+msgstr "调用："
+
+msgid "Command to extract translations:"
+msgstr "提取翻译的命令："
+
+msgid ""
+"This is the command used to launch the extractor.\n"
+"%o expands to the name of output file, %K to list\n"
+"of keywords, %F to list of input files,\n"
+"%C to charset flag (see below)."
+msgstr ""
+"这是用来启动提取器的命令。\n"
+"%o 提取到输出文件的名称，%K \n"
+"关键字的列表，%F \n"
+"输入文件的列表，%C \n"
+"字符集标记（见下面）。"
+
+msgid "An item in keywords list:"
+msgstr "在关键字列表中的项："
+
+msgid ""
+"This will be attached to the command line once\n"
+"for each keyword. %k expands to the keyword."
+msgstr ""
+"对于每个关键字，这将被附加到命令行一次。\n"
+"%k 展开成关键字。"
+
+msgid "An item in input files list:"
+msgstr "在输入文件列表中的项："
+
+#, c-format
+msgid ""
+"This will be attached to the command line once\n"
+"for each input file. %f expands to the filename."
+msgstr ""
+"对于每个输入文件，这将被附加到命令行一次。\n"
+"%f 展开成文件名。"
+
+msgid "Source code charset:"
+msgstr "源代码字符集："
+
+#, c-format
+msgid ""
+"This will be attached to the command line\n"
+"only if source code charset was given. %c expands to charset value."
+msgstr ""
+"仅在指定了源代码字符集时，这才被附加到命令行。\n"
+"%c 展开成字符集值。"
+
+msgid "Catalog properties"
+msgstr "编目属性"
+
+msgid "Project name and version:"
+msgstr "项目名称和版本："
+
+msgid "Language team:"
+msgstr "语言团队："
+
+msgid "Plural forms:"
+msgstr "复数形式："
+
+msgid "Use default rules for this language"
+msgstr "使用默认语言"
+
+msgid "Use custom expression"
+msgstr "使用自定义表达式"
+
+msgid "Learn about plural forms"
+msgstr "了解复数形式"
+
+msgid "Charset:"
+msgstr "字符集："
+
+msgid "Advanced Extraction Settings..."
+msgstr "高级提取设置..."
+
+msgid "Advanced extraction settings..."
+msgstr "高级提取设置..."
+
+msgid "Translation Properties"
+msgstr "翻译属性"
+
+msgid "Translation properties"
+msgstr "翻译属性"
+
+msgid "Sources Paths"
+msgstr "源路径"
+
+msgid "Sources paths"
+msgstr "源路径"
+
+msgid "Extract text from source files in the following directories:"
+msgstr "从下列目录中的源文件提取文本："
+
+msgid "Base path:"
+msgstr "基本路径："
+
+msgid "Sources Keywords"
+msgstr "源关键字"
+
+msgid "Sources keywords"
+msgstr "源关键字"
+
+msgid ""
+"Use these keywords (function names) to recognize translatable strings\n"
+"in source files:"
+msgstr "使用这些关键字（函数名）来识别源文件中的可翻译字串："
+
+msgid "Also use default keywords for supported languages"
+msgstr "支持的语言也使用默认的关键字"
+
+msgid "Learn About Gettext Keywords"
+msgstr "了解 Gettext 关键字"
+
+msgid "Learn about gettext keywords"
+msgstr "了解 gettext 关键字"
+
+msgid "Update summary"
+msgstr "更新摘要"
+
+msgid ""
+"These strings were found in the sources but were not in the catalog.\n"
+"Poedit will add them to the catalog now."
+msgstr ""
+"在源文中找到这些字串，但编目中没有。\n"
+"Poedit 现在将把这些字串添加到编目。"
+
+msgid "New strings"
+msgstr "新建字串"
+
+msgid ""
+"These strings are no longer in the sources.\n"
+"Poedit will remove them from the catalog now."
+msgstr ""
+"源文件中不再有这些字串。\n"
+"Poedit 现在将从编目中移除这些字串。"
+
+msgid "Obsolete strings"
+msgstr "已废弃的字串"
+
+msgid "(0 new, 0 obsolete)"
+msgstr "（0 个新建，0 个已废弃）"
+
+msgid "Open"
+msgstr "打开"
+
+msgid "Save catalog"
+msgstr "保存编目"
+
+msgid "Validate"
+msgstr "验证"
+
+msgid "Check for errors in the translation"
+msgstr "检查翻译中的错误"
+
+msgid "Update"
+msgstr "更新"
+
+msgid "Update catalog - synchronize it with sources"
+msgstr "更新编目 - 将其与源文同步"
+
+msgid "Sidebar"
+msgstr "侧边栏"
+
+msgid "Show or hide the sidebar"
+msgstr "显示或隐藏侧边栏"
+
+#. TRANSLATORS: "Previous" as in used in the past, now replaced with newer.
+msgid "Previous source text:"
+msgstr "上一个源文本："
+
+msgid ""
+"The old source text (before it changed during an update) that the now-"
+"inaccurate translation corresponds to."
+msgstr "现在不准确的翻译对应的旧的源文本（在此次更新的变更前）。"
+
+msgid "Notes for translators:"
+msgstr "给译员的注释："
+
+msgid "Add comment"
+msgstr "添加注释"
+
+msgid "Add Comment"
+msgstr "添加注释"
+
+msgid "Translation suggestions:"
+msgstr "翻译建议："
+
+#. TRANSLATORS: This is shown when no translation suggestions can be found in the TM (Windows).
+msgid "No matches found"
+msgstr "未找到匹配项"
+
+#. TRANSLATORS: This is shown when no translation suggestions can be found in the TM (macOS, Linux).
+msgid "No Matches Found"
+msgstr "未找到匹配项"
+
+msgid "This string was found in Poedit’s translation memory."
+msgstr "Poedit 的翻译记忆库中找到此字符串。"
+
+msgid "Cannot create temporary directory."
+msgstr "不能创建临时目录。"
+
+msgid "Welcome to Poedit"
+msgstr "欢迎使用 Poedit"
+
+#. TRANSLATORS: This is version information in about dialog, "%s" will be
+#. version number when used
+#, c-format
+msgid "Version %s"
+msgstr "版本 %s"
+
+msgid "Edit a Translation"
+msgstr "编辑翻译"
+
+msgid "Edit a translation"
+msgstr "编辑翻译"
+
+msgid "Open an existing PO file and edit the translation."
+msgstr "打开一个现有的PO文件并编辑翻译。"
+
+msgid ""
+"Take an existing PO file or POT template and create a new translation from "
+"it."
+msgstr "利用现有的 PO 文件或者 POT 模板创建一个新的翻译。"
+
+msgid "Collaborate on a Translation with Others"
+msgstr "与其他人协作翻译"
+
+msgid "Collaborate on a translation with others"
+msgstr "与其他人协作一个翻译"
+
+msgid ""
+"Download a file from Crowdin project, translate and sync your changes back."
+msgstr "从 Crowdin 项目下载一个文件、翻译，然后将您的更改同步回去。"
+
+msgid "What is Crowdin?"
+msgstr "Crowdin 是什么？"
+
+msgid "There are no translations. That’s unusual."
+msgstr "找不到翻译文件，这不正常"
+
+msgid ""
+"Translatable entries aren't added manually in the Gettext system, but are "
+"automatically extracted\n"
+"from source code. This way, they stay up to date and accurate.\n"
+"Translators typically use PO template files (POTs) prepared for them by the "
+"developer."
+msgstr ""
+"翻译条目不是在 Gettext 系统中手动添加的，而是自动从源代码中提取。\n"
+"这样一来，我们才可以掌握最新且最准确的需要翻译的条目。\n"
+"翻译人员通常使用开发商为他们准备的 PO 模板文件（.pot）。"
+
+msgid "(Learn more about GNU gettext)"
+msgstr "（了解更多关于 GNU gettext 的内容）"
+
+msgid "The simplest way to fill this catalog is to update it from a POT:"
+msgstr "填补这个编目的最简单的办法是从一个 POT 文件更新："
+
+msgid "Update from POT"
+msgstr "从 POT 文件更新"
+
+msgid "Take translatable strings from an existing POT template."
+msgstr "从现有的 POT 模板中提取可翻译的字符串。"
+
+msgid ""
+"You can also extract translatable strings directly from the source code:"
+msgstr "你也可以直接从源代码中提取可翻译的字符串："
+
+msgid "Extract from sources"
+msgstr "从源代码中提取"
+
+msgid "Configure source code extraction in Properties."
+msgstr "在属性中配置源代码提取。"
+
+msgid "Sync"
+msgstr "同步"
+
+msgid "Synchronize the translation with Crowdin"
+msgstr "与 Crowdin 同步翻译"
+
+#. TRANSLATORS: This is titlebar of about dialog, "%s" is application name
+#. ("Poedit" here, but please use "%s")
+#, c-format
+msgid "About %s"
+msgstr "关于 %s"
+
+#. TRANSLATORS: Title of the preferences window on Windows and Linux. "%s" is replaced with "Poedit" when running.
+#, c-format
+msgid "%s Preferences"
+msgstr "%s 首选项"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Services"
+msgstr "服务"
+
+#. TRANSLATORS: macOS item in app menu, %s is replaced with "Poedit"
+#, c-format
+msgid "Hide %s"
+msgstr "隐藏 %s"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Hide Others"
+msgstr "隐藏其他"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Show All"
+msgstr "全部显示"
+
+#. TRANSLATORS: macOS item in app menu, %s is replaced with "Poedit"
+#, c-format
+msgid "Quit %s"
+msgstr "退出 %s"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Preferences..."
+msgstr "首选项..."
+
+#. TRANSLATORS: Title of a category in Windows task menu (right-click icon in taskbar)
+msgid "Recent"
+msgstr "最近"
+
+#. TRANSLATORS: Title of a category in Windows task menu (right-click icon in taskbar)
+msgid "Frequent"
+msgstr "频繁"
+
+msgid "&Apply"
+msgstr "应用(&A)"
+
+msgid "Apply"
+msgstr "应用"
+
+msgid "&Back"
+msgstr "返回(&B)"
+
+msgid "Back"
+msgstr "返回"
+
+msgid "&Cancel"
+msgstr "取消(&C)"
+
+msgid "&Clear"
+msgstr "清除(&C)"
+
+msgid "Clear"
+msgstr "清除"
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "Cu&t"
+msgstr "剪切(&T)"
+
+msgid "Cut"
+msgstr "剪切"
+
+msgid "&Delete"
+msgstr "刪除(&D)"
+
+msgid "&Quit"
+msgstr "退出(&Q)"
+
+msgid "File"
+msgstr "文件"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "&New"
+msgstr "新建(&N)"
+
+msgid "&No"
+msgstr "否(&N)"
+
+msgid "No"
+msgstr "否"
+
+msgid "&OK"
+msgstr "确定(&O)"
+
+msgid "Open..."
+msgstr "打开..."
+
+msgid "&Paste"
+msgstr "粘贴(&P)"
+
+msgid "Paste"
+msgstr "粘贴"
+
+msgid "Preferences"
+msgstr "首选项"
+
+msgid "&Redo"
+msgstr "恢复(&R)"
+
+msgid "Refresh"
+msgstr "刷新"
+
+msgid "&Save as"
+msgstr "另存为(&S)"
+
+msgid "Save as"
+msgstr "另存为"
+
+msgid "Select &All"
+msgstr "全选(&A)"
+
+msgid "Select All"
+msgstr "全选"
+
+msgid "&Undo"
+msgstr "撤销(&U)"
+
+msgid "&Yes"
+msgstr "是(&Y)"
+
+msgid "Yes"
+msgstr "是"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Shift+"
+msgstr "Shift+"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Enter"
+msgstr "Enter"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Up"
+msgstr "Up"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Down"
+msgstr "Down"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Left"
+msgstr "左"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Right"
+msgstr "右"
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Ctrl+"
+msgid "ctrl"
+msgstr "ctrl"
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Alt+"
+msgid "alt"
+msgstr "alt"
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Shift+"
+msgid "shift"
+msgstr "shift"

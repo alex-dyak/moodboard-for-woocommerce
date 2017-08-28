@@ -1,0 +1,2068 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: poedit\n"
+"Report-Msgid-Bugs-To: help@poedit.net\n"
+"POT-Creation-Date: 2017-06-01 17:42+0200\n"
+"PO-Revision-Date: 2017-04-13 12:00-0400\n"
+"Last-Translator: vslavik <vaclav@slavik.io>\n"
+"Language-Team: Sorani (Kurdish)\n"
+"Language: ckb_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: poedit\n"
+"X-Crowdin-Language: ckb\n"
+"X-Crowdin-File: /locales/poedit.pot\n"
+
+msgid "Hide this notification message"
+msgstr "شاردنەوەی ئەم پەیامی ئاگادارکردنەوەیە"
+
+msgid "Don't Show Again"
+msgstr "دووبارە پیشانی مەدە"
+
+msgid "Don't show again"
+msgstr "دووبارە پیشانی مەدەرەوە"
+
+#, c-format
+msgid "(New: %i, obsolete: %i)"
+msgstr ""
+
+msgid "Updating catalog"
+msgstr "نوێکردنەوەی تۆمارەکان"
+
+msgid "Collecting source files..."
+msgstr ""
+
+msgid "Extracting translatable strings..."
+msgstr ""
+
+msgid "Failed to load extracted catalog."
+msgstr "نەتوانرا دەرهێنانی کەتەلۆگ باربکرێت."
+
+msgid "Merging differences..."
+msgstr "لکاندنی جیاوازییەکان"
+
+#, c-format
+msgid "'%s' is not a valid POT file."
+msgstr "'%s' پەڕگەیەکی دروستی POT نییە."
+
+#, c-format
+msgid "%i line of file '%s' was not loaded correctly."
+msgid_plural "%i lines of file '%s' were not loaded correctly."
+msgstr[0] "%i دێڕلە فایلی '%s' بە دروستی نەکراوەتەوە."
+msgstr[1] "%i دێڕ لە فایلی '%s' بە دروستی نەکاروەتەوە."
+
+#, c-format
+msgid "Line %d of file '%s' is corrupted (not valid %s data)."
+msgstr "هێلی %d لە فایلی '%s' تێکچووە (زانیارییەکانی '%s' دروست نین)."
+
+#, c-format
+msgid "Malformed header: '%s'"
+msgstr "ناوونیشانی تێکچوو: '%s'"
+
+msgid ""
+"Broken catalog file: singular form msgstr used together with msgid_plural"
+msgstr ""
+"پەڕگەی کەتەلۆگی تێکشکاو:فۆڕمی وەرگێڕانی تاک بەکاردێت پێکەوە لەگەڵ "
+"msgid_plural"
+
+msgid "Broken catalog file: plural form msgstr used without msgid_plural"
+msgstr "پەڕگەی کەتەلۆگی تێکشکاو:فۆڕمی وەرگێڕانی کۆ بەکاردێت بەبێ msgid_plural"
+
+msgid ""
+"There were errors when loading the catalog. Some data may be missing or "
+"corrupted as the result."
+msgstr ""
+"هەڵەیەک ڕوویدا لە کاتی بارکردنی کەتەلۆگ.هەندێک لە داتاکان ڕەنگە دیارنەبن "
+"یاخود تێکشکابن لە ئەنجامی ئەو هەڵەیەدا."
+
+#, c-format
+msgid "Couldn't load file %s, it is probably corrupted."
+msgstr "نەتوانرا پەڕگەی  %s باربکرێت،بەزۆریی پێدەچێت تێکشکابێت."
+
+#, c-format
+msgid ""
+"File '%s' is read-only and cannot be saved.\n"
+"Please save it under different name."
+msgstr ""
+"پەڕگەی '%s' تەنیا دەخوێنرێتەوە و ناتوانرێت پاشەکەوت بکرێن.\n"
+"تکایە لە ژێر ناوێکی دیکەدا پاشەکەوتی بکە."
+
+#, c-format
+msgid "Couldn't save file %s."
+msgstr "نەتوانرا پەڕگە پاشەکەوت بکرێت %s."
+
+msgid ""
+"There was a problem formatting the file nicely (but it was saved all right)."
+msgstr ""
+"کێشەیەک ڕوویدا  لە کاتی بەمەرجکردنی پەڕگەکە(بەڵام هەرچۆنێک بێت پاشەکەوتکرا)."
+
+#, c-format
+msgid ""
+"The catalog couldn't be saved in '%s' charset as specified in catalog "
+"settings.\n"
+"\n"
+"It was saved in UTF-8 instead and the setting was modified accordingly."
+msgstr ""
+"كەتەلۆگەكە ناتوانێت پاشەکەوت لە '%s' هەروەك دياريى كرد لە تایبەتمەندی "
+"كەتەلۆگ.\n"
+"\n"
+"I پاشەکەوت كرا بە UTF-8  لەجياتى و دانانەوەيەكە بەم شێوەيە گۆڕا."
+
+msgid "Error saving catalog"
+msgstr "هەڵە لە پاشەکەوتکردنی کەتەلۆگ"
+
+msgid "PO Translation Files"
+msgstr "بوخچەی وەڕگێرانی PO"
+
+msgid "POT Translation Templates"
+msgstr "تێمپلەتى وەرگێڕانی POT"
+
+msgid "All Translation Files"
+msgstr "هەموو فایلەکانی وەرگێڕان"
+
+msgid "(Use default language)"
+msgstr "(زمانی بنەڕەتی بەکاربهێنە)"
+
+msgid "Select your preferred language"
+msgstr "زمانی پەسەندکراوت دەستنیشان بکە"
+
+msgid "Language selection"
+msgstr "هەڵبژاردنەکانی زمان"
+
+msgid "You must restart Poedit for this change to take effect."
+msgstr ""
+"پێویستە دووبارە Poedit دەستپێبکەیتەوە بۆ ئەوەی گۆڕانکارییەکان شوێنی خۆیان "
+"بگرن."
+
+msgid "Syncing"
+msgstr ""
+
+#. TRANSLATORS: %s is a cloud destination, e.g. "Crowdin" or ftp.wordpress.com etc.
+#, c-format
+msgid "Syncing with %s…"
+msgstr ""
+
+#. TRANSLATORS: %s is a cloud destination, e.g. "Crowdin" or ftp.wordpress.com etc.
+#, c-format
+msgid "Syncing with %s failed."
+msgstr ""
+
+msgid "Syncing error"
+msgstr ""
+
+msgid "Downloading translations is disabled in this project."
+msgstr "لە پڕۆژەیەدا دابەزاندنی وەڕگێرانەکان لەکار خراوە."
+
+msgid "Not authorized, please sign in again."
+msgstr "دەسەڵاتی پێى نەدراوە، تكايە دووبارە بڕۆ ژوورەوە."
+
+msgid ""
+"Crowdin is an online localization management platform and collaborative "
+"translation tool. Poedit can seamlessly sync PO files managed at Crowdin."
+msgstr ""
+"Crowdin پڕۆگرامێکی سەرهێلە بۆ خۆماڵی کردن و ئەمرازێکی وەرگێرانی گرووپی و "
+"هاوبەشە.  Poedit بە شێوەی سەرەتایی توانایی هەیە بۆ هەهانگی  PO لە Crowdin."
+
+msgid "Sign In"
+msgstr "چونەژوورەوە"
+
+msgid "Sign in"
+msgstr "چونەژوورەوە"
+
+msgid "Sign Out"
+msgstr "دەرچوون"
+
+msgid "Sign out"
+msgstr "دەرچوون"
+
+msgid "Waiting for authentication…"
+msgstr "چاوەڕوانی ڕێگەپێدانبە…"
+
+msgid "Updating user information…"
+msgstr "نوێکردنەوەی زانیارییەکانی بەکارهێنەر…"
+
+msgid "Signed in as:"
+msgstr "چویتەژوورەوە وەک:"
+
+msgid "Learn More About Crowdin"
+msgstr "Crowdin زانیاری زیاتر دەربارەی"
+
+msgid "Learn more about Crowdin"
+msgstr "Crowdin زانیاری زیاتر دەربارەی"
+
+msgid "Sign in to Crowdin"
+msgstr "Crowdin چونەژوورەوە بۆ"
+
+msgid "Open Crowdin translation"
+msgstr "Crowdin کردنەوەی ئامرازی وەرگێڕانی"
+
+msgid "Project:"
+msgstr "پڕۆژە:"
+
+msgid "Language:"
+msgstr "زمان:"
+
+msgid "File:"
+msgstr "فایل:"
+
+msgid "No translation projects listed in your Crowdin account."
+msgstr "هیچ پرۆژەیەکی وەرگێران لە ئەکاونتی Crowdin تۆ ریزبەند نەکراوە."
+
+msgid "This project has no files that can be translated in Poedit."
+msgstr "ئەم پڕۆژەیە هیچ پەڕگەیەکی تێدانیە لە Poedit وەربگێردرێت."
+
+msgid "This file can only be edited in Crowdin’s web interface."
+msgstr "ئەم فايلە دەتوانێت تەنها پاكنووس بكرێت لە رووکاری وێبی Crowdin."
+
+msgid "Downloading latest translations…"
+msgstr "دابەزاندنی دوایین وەرگێرانەکان…"
+
+msgid "Syncing with Crowdin failed."
+msgstr "هەماهەنگ کردن لەگەڵ Crowdin سەرکەوتوو نەبوو."
+
+msgid "Crowdin error"
+msgstr "هەڵەی Crowdin"
+
+msgid "Uploading translations…"
+msgstr "بەرزکردنەوەی وەرگێران…"
+
+msgid "&Copy"
+msgstr "&لەبەرگرتنەوە"
+
+msgid "Learn more"
+msgstr "زیاتر بزانە"
+
+msgid "Learn More"
+msgstr "زیاتر فێربە"
+
+msgid "&Help"
+msgstr "&یارمەتی"
+
+msgid "MO files can’t be directly edited in Poedit."
+msgstr "ناتواندرێت راستەوخۆ پەڕەگەکانی MO  لە ناو Poedit دەستکاری بکرێت."
+
+msgid "Error opening file"
+msgstr "هەڵە هەیە لە کردنەوەی فایلدا"
+
+msgid ""
+"Please open and edit the corresponding PO file instead. When you save it, "
+"the MO file will be updated as well."
+msgstr ""
+"تکایە پەڕگەی PO  دووبارە بکەرەوە و دەستکاری بکە لە جیاتی ئەمە. کاتێک تۆ "
+"پاشەکەوتی دەکەیت, پەرگەی MO بە باشی نوێ دەبێتەوە."
+
+msgid "don't delete temporary files (for debugging)"
+msgstr "پەڕگە کاتییەکان مەسڕەوە(بۆ ڕاستکردنەوە)"
+
+msgid "handle a poedit:// URI"
+msgstr "هەڵسوکەوت بکە لەگەڵ poedit:// URI"
+
+msgid "go to item at given line number"
+msgstr ""
+
+msgid "Failed to communicate with Poedit process."
+msgstr ""
+
+#, c-format
+msgid "Unhandled exception occurred: %s"
+msgstr ""
+
+msgid "Open catalog"
+msgstr "کردنەوەی کەتەلۆگ"
+
+#, c-format
+msgid "File '%s' doesn't exist."
+msgstr "پەڕگەی '%s' بوونی نییە."
+
+msgid "Poedit is an easy to use translations editor."
+msgstr "Poedit دەستکاریکەرێکی سادە و ئاسان لە بەکارهێنانە بۆ وەرگێڕانەکان."
+
+msgid "Catalogs Manager"
+msgstr ""
+
+msgid "Check for Updates..."
+msgstr "پشکنین بۆ نوێکردنەوە..."
+
+msgid "&Edit"
+msgstr "&دەستکاری"
+
+msgid "Undo"
+msgstr "پووچکردنەوە"
+
+msgid "Redo"
+msgstr "پێشتر"
+
+msgid "Paste and Match Style"
+msgstr ""
+
+msgid "Delete"
+msgstr "سڕینەوە"
+
+msgid "Spelling and Grammar"
+msgstr ""
+
+msgid "Show Spelling and Grammar"
+msgstr ""
+
+msgid "Check Document Now"
+msgstr ""
+
+msgid "Check Spelling While Typing"
+msgstr ""
+
+msgid "Check Grammar With Spelling"
+msgstr ""
+
+msgid "Correct Spelling Automatically"
+msgstr ""
+
+msgid "Substitutions"
+msgstr ""
+
+msgid "Show Substitutions"
+msgstr ""
+
+msgid "Smart Copy/Paste"
+msgstr ""
+
+msgid "Smart Quotes"
+msgstr ""
+
+msgid "Smart Dashes"
+msgstr ""
+
+msgid "Smart Links"
+msgstr ""
+
+msgid "Text Replacement"
+msgstr ""
+
+msgid "Transformations"
+msgstr ""
+
+msgid "Make Upper Case"
+msgstr ""
+
+msgid "Make Lower Case"
+msgstr ""
+
+msgid "Capitalize"
+msgstr ""
+
+msgid "Speech"
+msgstr "دەنگ"
+
+msgid "Start Speaking"
+msgstr "قسە بکە"
+
+msgid "Stop Speaking"
+msgstr "راوەستاندنی قشەکردن"
+
+msgid "&View"
+msgstr "&بینین"
+
+msgid "Enter Full Screen"
+msgstr "پڕ بە شاشە"
+
+msgid "Window"
+msgstr "پەنجەرە"
+
+msgid "Minimize"
+msgstr "بچوککردنەوە"
+
+msgid "Zoom"
+msgstr "نزیکخستنەوە"
+
+msgid "Bring All to Front"
+msgstr "گشتی بۆ پێشەوە بهێنە"
+
+#. TRANSLATORS:File kind displayed in Finder/Explorer
+msgid "PO Translation"
+msgstr "PO وەرگێرانی"
+
+msgid "The file cannot be opened."
+msgstr "ئەم پەڕگەیە ناتواندرێت بکرێتەوە."
+
+msgid "Invalid file"
+msgstr "جۆری فایل نادروستە"
+
+msgid ""
+"The file may be either corrupted or in a format not recognized by Poedit."
+msgstr "فايلەكە لەوانەيە پەڕگەکە تێک بچێت يان لە نەناسرێتەوە لەلايەن Poedit."
+
+msgid "You can't drop more than one file on Poedit window."
+msgstr "ناتوانیت زیاتر لە یەک پەڕگە فڕێ بدەیت لە پەنجەرەی Poedit."
+
+#, c-format
+msgid "File '%s' is not a message catalog."
+msgstr "پەڕگە '%s' پەیامی کەتەلۆگ نییە."
+
+msgid "Poedit"
+msgstr "Poedit"
+
+msgid "&File"
+msgstr "&پەڕگە"
+
+msgid "&Go"
+msgstr "&بڕۆ"
+
+#. TRANSLATORS: %s is language name in its basic form (as you
+#. would see e.g. in a list of supported languages). You may need
+#. to rephrase it, e.g. to an equivalent of "for language %s".
+#, c-format
+msgid ""
+"Spellchecking is disabled, because the dictionary for %s isn’t installed."
+msgstr "هەڵەگری زمانەوەانی ناچالاکە چونکە فەرهەنگ نامە بۆ %s دانەمەزراوە."
+
+msgid "Install"
+msgstr "دابەزاندن"
+
+msgid "Catalog modified. Do you want to save changes?"
+msgstr "کەتەلۆگ گۆڕدرا.دەتەوێت گۆڕانکارییەکان پاشەکەوت بکەیت؟"
+
+msgid "Save changes"
+msgstr "پاشەکەوت کردنی گۆڕانکارییەکان"
+
+msgid "Your changes will be lost if you don't save them."
+msgstr "گۆڕانکارییەکانت لەدەست دەچێت ئەگەر پاشەکەوتیان نەکەیت."
+
+msgid "Save"
+msgstr "پاشەکەوت کردن"
+
+msgid "Don't save"
+msgstr "پاشەکەوتی مەکە"
+
+msgid "Don't Save"
+msgstr "پاشەکەوتی مەکە"
+
+msgid "Save as..."
+msgstr "پاشەکەوت کردن وەکو..."
+
+msgid "Compile to..."
+msgstr "بەروارد کردن لەگەڵ..."
+
+msgid "Compiled Translation Files"
+msgstr "فایلە وەرگێڕدراوە بەراوردکراوەکان"
+
+msgid "Export as..."
+msgstr "هەناردن وەکو..."
+
+msgid "HTML Files"
+msgstr "HTML فایلەکانی"
+
+msgid "Open catalog template"
+msgstr "کردنەوەی کەتەلۆگی داڕێژە"
+
+msgid "Source code not available."
+msgstr "کۆدی سەرچاوە کراوە بوونی نیە."
+
+msgid "Updating failed"
+msgstr "نوێکردنەوە سەرکەوتو نەبوو"
+
+msgid ""
+"Translations couldn’t be updated from the source code, because no code was "
+"found in the location specified in the catalog’s Properties."
+msgstr ""
+
+msgid "Entries in the catalog are probably incorrect."
+msgstr "تێئاخنرییوەکان لە کەتەلۆگەکە بە زۆری پێدەچێت نادروست بن."
+
+msgid "Updating the catalog failed. Click on 'Details >>' for details."
+msgstr ""
+"نوێکردنەوەی کەتەلۆگەکە شکستی هێنا. کرتە بکە لەسەر 'زانیاری >>' بۆ زانیاری "
+"زیاتر."
+
+#, c-format
+msgid "%d issue with the translation found."
+msgid_plural "%d issues with the translation found."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Validation results"
+msgstr ""
+
+msgid ""
+"Entries with errors were marked in red in the list. Details of the error "
+"will be shown when you select such an entry."
+msgstr ""
+
+msgid "The file was saved safely."
+msgstr ""
+
+msgid ""
+"The file was saved safely and compiled into the MO format, but it will "
+"probably not work correctly."
+msgstr ""
+
+msgid ""
+"The file was saved safely, but it cannot be compiled into the MO format and "
+"used."
+msgstr ""
+
+msgid ""
+"The file was compiled into the MO format, but it will probably not work "
+"correctly."
+msgstr ""
+
+msgid "The file cannot be compiled into the MO format and used."
+msgstr ""
+
+msgid "No problems with the translation found."
+msgstr ""
+
+#, c-format
+msgid "The translation is ready for use, but %d entry is not translated yet."
+msgid_plural ""
+"The translation is ready for use, but %d entries are not translated yet."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "The translation is ready for use."
+msgstr "وەرگێڕانەکە ئامادەیە بۆ بەکارهێنان."
+
+#, c-format
+msgid "Poedit automatically fixed invalid content in the file “%s”."
+msgstr ""
+
+msgid ""
+"The file contained duplicate items, which is not allowed in PO files and "
+"would prevent the file from being used. Poedit fixed the issue, but you "
+"should review translations of any items marked as needing work and correct "
+"them if necessary."
+msgstr ""
+
+msgid "Language of the translation isn't set."
+msgstr ""
+
+msgid "Set Language"
+msgstr "ڕێکخستنی زمان"
+
+msgid "Set language"
+msgstr "ڕێکخستنی زمان"
+
+#. TRANSLATORS: This is shown underneath "Language of the translation isn't set (or ...is the same as source language)."
+msgid ""
+"Suggestions are not available if the translation language is not set "
+"correctly. Other features, such as plural forms, may be affected as well."
+msgstr ""
+
+msgid "Language of the translation is the same as source language."
+msgstr ""
+
+msgid "Fix Language"
+msgstr "زمان چاک بکە"
+
+msgid "Fix language"
+msgstr "زمان چاک بکە"
+
+msgid ""
+"This catalog has entries with plural forms, but doesn't have Plural-Forms "
+"header configured."
+msgstr ""
+"ئەم کەتەلۆگە بڕگەی تێدایە بە فۆڕمی کۆ،بەڵام  شێوەپێدانی فۆڕمی-کۆی نییە لە "
+"ناوونیشانەکەدا."
+
+msgid ""
+"Entries in this catalog have different plural forms count from what "
+"catalog's Plural-Forms header says"
+msgstr ""
+"بڕگەکان لەم کەتەلۆگە کۆ فۆڕمی جیاوازیان هەیە هەژماردەکرێت لەوەی  ناونیشانی "
+"فۆڕمە کۆیەکانی کەتەلۆگەکە دەفەرمووێت"
+
+msgid "Required header Plural-Forms is missing."
+msgstr ""
+
+#, c-format
+msgid "Syntax error in Plural-Forms header (\"%s\")."
+msgstr "هەڵەی ڕستەکار لە ناوونیشانی فۆڕمی کۆ (\"%s\")."
+
+msgid "Fix the Header"
+msgstr ""
+
+msgid "Fix the header"
+msgstr "چاککردنەوەی ناوونیشان"
+
+#. TRANSLATORS: %s is language name in its basic form (as you
+#. would see e.g. in a list of supported languages). You may need
+#. to rephrase it, e.g. to an equivalent of "for language %s".
+#, c-format
+msgid "Plural forms expression used by the catalog is unusual for %s."
+msgstr ""
+
+#. TRANSLATORS: A verb, shown as action button with ""Plural forms expression used by the catalog is unusual for %s.")"
+msgid "Review"
+msgstr "چاو پیاخشاندنەوە"
+
+#, c-format
+msgid "Error loading message catalog file '%s'."
+msgstr "پەیامی هەڵە لە بارکردنی پەڕگەی کەتەلۆگ '%s'."
+
+#, c-format
+msgid "Translated: %d of %d (%d %%)"
+msgstr "وەرگێڕدراو: %d لە %d (%d %%)"
+
+#, c-format
+msgid "Remaining: %d"
+msgstr "ماوە: %d"
+
+#, c-format
+msgid "%d error"
+msgid_plural "%d errors"
+msgstr[0] ""
+msgstr[1] ""
+
+#, c-format
+msgid "%d entry"
+msgid_plural "%d entries"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid " (unsaved)"
+msgstr ""
+
+msgid " (modified)"
+msgstr " (گۆڕدراو)"
+
+#, c-format
+msgid "Failed to update translation memory: %s"
+msgstr ""
+
+msgid "Purge deleted translations"
+msgstr "پاکژکردنەوەی وەرگێڕانە سڕدراوەکان"
+
+msgid "Do you want to remove all translations that are no longer used?"
+msgstr "دەتەوێت هەموو ئەو وەرگێڕانە لاببەیت کە چیتر بەکارنایەن؟"
+
+msgid ""
+"If you continue with purging, all translations marked as deleted will be "
+"permanently removed. You will have to translate them again if they are added "
+"back in the future."
+msgstr ""
+"ئەگەر بەردەوام بیت لەگەڵ بەرکەنارخستن،هەموو ئەو وەرگێڕدراوانەی نیشانەکراون "
+"وەکو سڕدراوە بە یەکجاریی لادەبرێن.ئەو کات دەبێت دووبارە وەریان بگێڕیتەوە "
+"ئەگەر زیادکران لە داهاتوودا."
+
+msgid "Keep"
+msgstr "هێشتنەوە"
+
+msgid "Purge"
+msgstr "پاکژکردنەوە"
+
+msgid "Copy from source text"
+msgstr "لەبەرگرتنەوەی لە دەقی ژێدەرەکەوە"
+
+msgid "Copy from Source Text"
+msgstr "لەبەرگرتنەوەی لە دەقی ژێدەرەکەوە"
+
+#. TRANSLATORS: This is the key shortcut used in menus on Windows, some languages call them differently
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Ctrl+"
+msgstr "Ctrl+"
+
+msgid "Clear translation"
+msgstr "سڕینەوەی وەرگێڕان"
+
+msgid "Clear Translation"
+msgstr "سڕینەوەی وەرگێڕان"
+
+msgid "Edit comment"
+msgstr "دەستکاریکردنی لێدوان"
+
+msgid "Edit Comment"
+msgstr ""
+
+msgid "References:"
+msgstr "ئاماژەپێکراوەکان:"
+
+msgid "&Bookmarks"
+msgstr "&دڵخوازەکان"
+
+#. TRANSLATORS: This is the key shortcut used in menus on Windows, some languages call them differently
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Alt+"
+msgstr "Alt+"
+
+#, c-format
+msgid "Set bookmark %i"
+msgstr "ڕێکخستنی نیشانەکراوی %i"
+
+#, c-format
+msgid "Go to bookmark %i"
+msgstr "چوون بۆ نیشانەکراوی %i"
+
+#, c-format
+msgid "Set Bookmark %i"
+msgstr "ڕێکخستنی نیشانەکراوی %i"
+
+#, c-format
+msgid "Go to Bookmark %i"
+msgstr "چوون بۆ نیشانەکراوی %i"
+
+msgid "Hide Sidebar"
+msgstr "شاردنەوەی لاتەنیشت"
+
+msgid "Show Sidebar"
+msgstr "پیشاندانی لاتەنیشت"
+
+msgid "Hide Status Bar"
+msgstr "شارنەوەی شریتی دۆخ"
+
+msgid "Show Status Bar"
+msgstr "پیشاندانی شریتی دۆخ"
+
+msgid "Source text:"
+msgstr "دەقی ژێدەر:"
+
+msgid "Singular:"
+msgstr "تاک:"
+
+msgid "Plural:"
+msgstr "کۆ:"
+
+msgid "Translation:"
+msgstr "وەرگێڕان:"
+
+msgid "Pre-translated"
+msgstr ""
+
+msgid "Needs Work"
+msgstr ""
+
+#. TRANSLATORS: This indicates that the string's translation isn't final
+#. and has known problems.  For example, it might be machine translated or
+#. fuzzy matched from an older string. The translation should be short and
+#. convey this. If it's problematic to translate it, "Needs review" is
+#. acceptable substitute, but note that the meaning is subtly different:
+#. "needs review" implies that somebody else should review the string after
+#. I am done with it (i.e. consider it good), while "needs work" implies I
+#. need to return to it and finish the translation.
+msgid "Needs work"
+msgstr ""
+
+msgid ""
+"POT files are only templates and don’t contain any translations themselves.\n"
+"To make a translation, create a new PO file based on the template."
+msgstr ""
+"فايلى POT تەنها تێمپلەتن و هیچ وەرگێڕان لە خۆيان ناگرن. \n"
+" وەرگێڕان دروەست دەکەن، پەڕگەیەکی PO ی نوێ دروست بكە لەسەر بنەماى تێمپلەتەكە."
+
+msgid "Create New Translation"
+msgstr "دروستکردنی وەرگێڕانی نوێ"
+
+msgid "Create new translation"
+msgstr "دروستکردنی وەرگێڕانی نوێ"
+
+msgid "Everything"
+msgstr "هەموو شتێک"
+
+#, c-format
+msgid "Form %i"
+msgstr "فۆڕم %i"
+
+msgid "Singular"
+msgstr "تاک"
+
+msgid "Zero"
+msgstr "سفر"
+
+msgid "One"
+msgstr "یەک"
+
+msgid "Two"
+msgstr "دوو"
+
+msgid "Plural"
+msgstr "کۆ"
+
+msgid "Other"
+msgstr "جۆری تر"
+
+#, c-format
+msgid "%s Format"
+msgstr ""
+
+#. TRANSLATORS: %s is replaced with language name, e.g. "PHP" or "C", so "PHP Format" etc."
+#, c-format
+msgid "%s format"
+msgstr ""
+
+#, c-format
+msgid "Source text — %s"
+msgstr "سەرچاوەی دەق — %s"
+
+msgid "Source text"
+msgstr "دەقی ژێدەر"
+
+msgid "unknown language"
+msgstr "زمانی نەزانراو"
+
+#, c-format
+msgid "Translation — %s"
+msgstr "وەرگێڕان — %s"
+
+msgid "ID"
+msgstr "ID"
+
+#, c-format
+msgid "Failed command: %s"
+msgstr "فەرمان سەرکەوتوو نەبوو: %s"
+
+msgid "Failed to merge gettext catalogs."
+msgstr "لکاندنی کەتەلۆگەکان سەرکەوتوو نەبوو."
+
+msgid "Source file"
+msgstr "پەڕگەی ژێدەر"
+
+msgid "Source file occurrence:"
+msgstr "گوێزەرەوەکانی کۆدی ژێدەر:"
+
+msgid "Open in Editor"
+msgstr "کردنەوە لە دەستکاریکەردا"
+
+msgid "Open in editor"
+msgstr "کردنەوە لە دەستکاریکەردا"
+
+msgid "No references for the selected item."
+msgstr ""
+
+#, c-format
+msgid "Error opening file %s!"
+msgstr "هەڵە لە کردنەوەی پەڕگەی %s!"
+
+msgid "Find"
+msgstr "دۆزینەوە"
+
+msgid "Replace"
+msgstr "جێگۆڕین"
+
+#. TRANSLATORS: Expander in Find window for additional options (case sensitive etc.)
+msgid "Options"
+msgstr "هەڵبژاردنەکان"
+
+msgid "Ignore case"
+msgstr ""
+
+msgid "Wrap around"
+msgstr ""
+
+msgid "Whole words only"
+msgstr "تەنیا گشت وشەکان"
+
+msgid "Find in source texts"
+msgstr ""
+
+msgid "Find in translations"
+msgstr "دۆزینەوە لە وەرگێڕاندا"
+
+msgid "Find in comments"
+msgstr "دۆزینەوە لە لێدوانەکان"
+
+msgid "Close"
+msgstr "داخستن"
+
+msgid "Replace &All"
+msgstr ""
+
+msgid "Replace &all"
+msgstr ""
+
+msgid "&Replace"
+msgstr ""
+
+msgid "< &Previous"
+msgstr ""
+
+msgid "&Next >"
+msgstr ""
+
+msgid "String to find"
+msgstr ""
+
+msgid "Replacement string"
+msgstr ""
+
+#, c-format
+msgid "Cannot execute program: %s"
+msgstr "ناتوانرێت پرۆگرام جێبەجێ بکرێت: %s"
+
+msgid "Language Code or Name (e.g. en_GB)"
+msgstr ""
+
+msgid "Translation Language"
+msgstr ""
+
+msgid "Language of the translation:"
+msgstr ""
+
+msgid "Poedit - Catalogs manager"
+msgstr "Poedit - سازکاریی کەتەلۆگەکان"
+
+msgid "Catalog"
+msgstr "کەتەلۆگ"
+
+msgid "Total"
+msgstr "هەموو"
+
+msgid "Untrans"
+msgstr ""
+
+msgid "Errors"
+msgstr ""
+
+msgid "Last modified"
+msgstr "دوایین گۆڕانکاریی"
+
+msgid "Select directory"
+msgstr "پێڕست دەستنیشان بکە"
+
+msgid "Directories:"
+msgstr "پێڕستەکان:"
+
+msgid "<unnamed>"
+msgstr "<ناونەنراو>"
+
+msgid "Do you want to delete the project?"
+msgstr "دەتەوێت پرۆژەکە بسڕیتەوە؟"
+
+msgid "Confirmation"
+msgstr "دڵنیاییپێدان"
+
+msgid ""
+"Do you really want to do mass update of\n"
+"all catalogs in this project?"
+msgstr ""
+"دڵنیای کە دەتەوێت نوێکردنەوەیەکی گشتیی\n"
+"هەموو کەتەلۆگەکان بکەیت لەم پرۆژەیە؟"
+
+msgid "Information about the translator"
+msgstr ""
+
+msgid "Name:"
+msgstr ""
+
+msgid "Your Name"
+msgstr ""
+
+msgid "Email:"
+msgstr ""
+
+msgid "your_email@example.com"
+msgstr ""
+
+msgid ""
+"Your name and email address are only used to set the Last-Translator header "
+"of GNU gettext files."
+msgstr ""
+
+msgid "Editing"
+msgstr "دەستکاریکردن"
+
+msgid "Automatically compile MO file when saving"
+msgstr ""
+
+msgid "Show summary after catalog update"
+msgstr "کورتەیەک پیشان بدە پاش نوێکردنەوەی کەتەلۆگ"
+
+msgid "Check spelling"
+msgstr ""
+
+msgid "Always change focus to text input field"
+msgstr "هەمیشە سەرنج بگۆڕە بۆ خانەی تێئاخنینی دەق"
+
+msgid ""
+"Never let the list of strings take focus. If enabled, you must use Ctrl-"
+"arrows for keyboard navigation but you can also type text immediately, "
+"without having to press Tab to change focus."
+msgstr ""
+"هەرگیز مەهێڵە لیستێک لە زنجیرەنووسەکان سەرنج ببەن.ئەگەر چالاککرا،پێویستە  "
+"Ctrl- و ئاراستەکان بەکاربهێنیت بۆ ڕێنیشاندەرەکانی تەختەکلیل بەڵام دەشتوانیت "
+"بەخێرایی دەق بنووسیت بە بێ ئەوەی کرتە لەسەر تاب بکەیت بۆ گۆڕینی سەرنج."
+
+msgid "Appearance"
+msgstr "ڕووکار"
+
+msgid "Use custom list font:"
+msgstr "بەکارهێنانی فۆنتی تایبەتی:"
+
+msgid "Use custom text fields font:"
+msgstr ""
+
+msgid "Change UI language"
+msgstr "گۆڕینی زمان"
+
+#. TRANSLATORS: This is a note appended to "Check spelling" when running on older Windows versions
+msgid "(requires Windows 8 or newer)"
+msgstr "(پێویستی بە ویندۆزی ٨ یان نوێترە)"
+
+msgid "General"
+msgstr "گشتی"
+
+msgid "Use translation memory"
+msgstr ""
+
+msgid "Learn From Files..."
+msgstr ""
+
+msgid "Learn from files..."
+msgstr ""
+
+#. TRANSLATORS: This is a button that deletes everything in the translation memory (i.e. clears/resets it).
+msgid "Reset"
+msgstr "ڕێکخستنەوە"
+
+#. TRANSLATORS: Followed by "match translations within the file" or "pre-translate from TM"
+msgid "When updating from sources"
+msgstr ""
+
+#. TRANSLATORS: Preceded by "When updating from sources"
+msgid "fuzzy match within the file"
+msgstr ""
+
+#. TRANSLATORS: Preceded by "When updating from sources"
+msgid "pre-translate from TM"
+msgstr ""
+
+msgid ""
+"Poedit can attempt to fill in new entries from only previous translations in "
+"the file or from your entire translation memory. Using the TM won’t be very "
+"effective if it’s near-empty, but it will get better as you add more "
+"translations to it."
+msgstr ""
+
+msgid "Stored translations:"
+msgstr ""
+
+msgid "Database size on disk:"
+msgstr ""
+
+msgid "Select translation files to import"
+msgstr ""
+
+msgid "Translation Memory"
+msgstr "بیرگەی وەرگێڕان"
+
+msgid "Importing translations..."
+msgstr ""
+
+msgid "Finalizing..."
+msgstr ""
+
+msgid "Reset translation memory"
+msgstr ""
+
+msgid "Are you sure you want to reset the translation memory?"
+msgstr ""
+
+msgid ""
+"Resetting the translation memory will irrevocably delete all stored "
+"translations from it. You can’t undo this operation."
+msgstr ""
+
+msgid "Cancel"
+msgstr "هەڵوەشاندنەوە"
+
+#. TRANSLATORS: This is abbreviation of "Translation Memory" used in Preferences on macOS.
+#. Long text looks weird there, too short (like TM) too, but less so. "General" is about ideal
+#. length there.
+msgid "TM"
+msgstr "TM"
+
+msgid ""
+"Source code extractors are used to find translatable strings in the source "
+"code files and extract them so that they can be translated."
+msgstr ""
+
+msgid "Custom Extractors:"
+msgstr ""
+
+msgid "Custom extractors:"
+msgstr ""
+
+msgid "Edit..."
+msgstr ""
+
+msgid "GNU gettext"
+msgstr ""
+
+msgid ""
+"Supports all programming languages recognized by GNU gettext tools (PHP, C/C+"
+"+, C#, Perl, Python, Java, JavaScript and others)."
+msgstr ""
+
+msgid "Delete extractor"
+msgstr "سڕینەوەی دەرهێنەر"
+
+#, c-format
+msgid "Are you sure you want to delete the “%s” extractor?"
+msgstr "ئایا دڵنیایت لە سڕینەوەی دەرهێنەری “%s” extractor؟"
+
+msgid "Extractors"
+msgstr "دەهێنەرەکان"
+
+msgid "Accounts"
+msgstr "هەژمار"
+
+msgid "Automatically check for updates"
+msgstr "پشکنین بۆ نوێکردنەوە بەخۆکاری"
+
+msgid "Include beta versions"
+msgstr "هەروەها وەشانی بیتا"
+
+msgid ""
+"Beta versions contain the latest new features and improvements, but may be a "
+"bit less stable."
+msgstr ""
+
+msgid "Updates"
+msgstr "نوێکردنەوە"
+
+msgid ""
+"These settings affect internal formatting of PO files. Adjust them if you "
+"have specific requirements e.g. because of version control."
+msgstr ""
+
+msgid "Line endings:"
+msgstr ""
+
+msgid "Unix (recommended)"
+msgstr "Unix (پێشنیارکراو)"
+
+msgid "Windows"
+msgstr "Windows"
+
+#. TRANSLATORS: Followed by text control for entering number; wraps text at given width
+msgid "Wrap at:"
+msgstr ""
+
+msgid "Preserve formatting of existing files"
+msgstr ""
+
+msgid "Advanced"
+msgstr "پەرەسەندوو"
+
+msgid "Pre-translating…"
+msgstr ""
+
+#, c-format
+msgid "Pre-translated %u string"
+msgid_plural "Pre-translated %u strings"
+msgstr[0] ""
+msgstr[1] ""
+
+#. TRANSLATORS: This is a somewhat common term describing the action where
+#. you apply the translation memory and/or machine translation to all of the
+#. strings you're translating as the first step, followed by correcting,
+#. improving etc., i.e. actually translating the strings. This may be tricky
+#. to express in other languages as simply as in English, but please try to
+#. keep it similarly concise. Please try to avoid, if possible, describing it
+#. as "auto-translation" and similar, because such terminology would mislead
+#. some users into thinking it's all that needs to be done (spoken from
+#. experience). "Pre-translate" nicely expresses that it's only the step done
+#. *before* actual translation.
+msgid "Pre-translate"
+msgstr ""
+
+msgid "Only fill in exact matches"
+msgstr ""
+
+msgid ""
+"By default, inaccurate results are filled in as well and marked as needing "
+"work. Check this option to only include accurate matches."
+msgstr ""
+
+msgid "Don’t mark exact matches as needing work"
+msgstr ""
+
+msgid ""
+"Only enable if you trust the quality of your TM. By default, all matches "
+"from the TM are marked as needing work and should be reviewed before use."
+msgstr ""
+
+msgid ""
+"Pre-translation automatically finds exact or fuzzy matches for untranslated "
+"strings in the translation memory and fills in their translations."
+msgstr ""
+
+#, c-format
+msgid "%d entry was pre-translated."
+msgid_plural "%d entries were pre-translated."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid ""
+"The translations were marked as needing work, because they may be "
+"inaccurate. You should review them for correctness."
+msgstr ""
+
+msgid "No entries could be pre-translated."
+msgstr ""
+
+msgid ""
+"The TM doesn’t contain any strings similar to the content of this file. It "
+"is only effective for semi-automatic translations after Poedit learns enough "
+"from files that you translated manually."
+msgstr ""
+
+msgid ""
+"<big>Drag and Drop Folders Here</big>\n"
+"\n"
+"or use the + button"
+msgstr ""
+
+msgid ""
+"<big>Drag and drop folders here</big>\n"
+"\n"
+"or use the + button"
+msgstr ""
+
+msgid "Add Folders..."
+msgstr "زایدکردنی فۆڵدەر..."
+
+msgid "Add folders..."
+msgstr "زایدکردنی فۆڵدەر..."
+
+msgid "Add Files..."
+msgstr "زیادکردنی فایل..."
+
+msgid "Add files..."
+msgstr "زیادکردنی فایل..."
+
+msgid "Add Wildcard..."
+msgstr ""
+
+msgid "Add wildcard..."
+msgstr ""
+
+msgid "Paths"
+msgstr "ڕێچکەکان"
+
+msgid "Excluded paths"
+msgstr ""
+
+msgid "Advanced extraction settings"
+msgstr ""
+
+msgid "Extract notes for translators from:"
+msgstr ""
+
+msgid "Comments prefixed with:"
+msgstr ""
+
+msgid "All comments"
+msgstr ""
+
+msgid "Additional xgettext flags:"
+msgstr ""
+
+msgid "Additional keywords"
+msgstr ""
+
+msgid "Name of the project the translation is for"
+msgstr ""
+
+msgid "Team name and email address or URL"
+msgstr ""
+
+msgid "e.g. nplurals=2; plural=(n > 1);"
+msgstr ""
+
+msgid "UTF-8 (recommended)"
+msgstr "UTF-8 (پێشنیارکراو)"
+
+msgid "Please save the file first. This section cannot be edited until then."
+msgstr ""
+
+msgid "Not all plural forms are translated."
+msgstr ""
+
+msgid "The translation should start as a sentence."
+msgstr ""
+
+msgid "The translation should start with a lowercase character."
+msgstr ""
+
+msgid "The translation doesn’t start with a space."
+msgstr ""
+
+msgid "The translation starts with a space, but the source text doesn’t."
+msgstr ""
+
+msgid "The translation is missing a newline at the end."
+msgstr ""
+
+msgid "The translation ends with a newline, but the source text doesn’t."
+msgstr ""
+
+msgid "The translation is missing a space at the end."
+msgstr ""
+
+msgid "The translation ends with a space, but the source text doesn’t."
+msgstr ""
+
+#, c-format
+msgid "The translation should end with “%s”."
+msgstr ""
+
+#, c-format
+msgid "The translation should not end with “%s”."
+msgstr ""
+
+#, c-format
+msgid "The translation ends with “%s”, but the source text ends with “%s”."
+msgstr ""
+
+msgid "Comment:"
+msgstr "لێدوان:"
+
+msgid "OK"
+msgstr "باشە"
+
+msgid "C&lear"
+msgstr ""
+
+msgid "Clear the comment"
+msgstr "سڕینەوەی لێدوان"
+
+msgid "New"
+msgstr "نوێ"
+
+msgid "Create new translations project"
+msgstr "دروستکردنی پرۆژەیەکی نوێی وەرگێڕان"
+
+msgid "Edit"
+msgstr "دەستکاریکردن"
+
+msgid "Edit the project"
+msgstr "دەستکاریکردنی پرۆژەکە"
+
+msgid "Delete the project"
+msgstr "سڕینەوەی پرۆژەکە"
+
+msgid "Update all"
+msgstr "نوێکردنەوەی هەموو"
+
+msgid "Update all catalogs in the project"
+msgstr "نوێکردنەوەی هەموو کەتەلۆگەکان لە پرۆژەکە"
+
+msgid "Edit project"
+msgstr "دەستکاریکردنی پرۆژە"
+
+msgid "Project name:"
+msgstr "ناوی پرۆژە:"
+
+msgid "Browse"
+msgstr "گەڕان"
+
+msgid "Add directory to the list"
+msgstr "زیادکردنی پێڕست بۆ لیستەکە"
+
+msgid "&New..."
+msgstr ""
+
+msgid "New from &POT/PO file..."
+msgstr ""
+
+msgid "New From &POT/PO File..."
+msgstr ""
+
+msgid "&Open..."
+msgstr "&کردنەوە..."
+
+msgid "Open Recent"
+msgstr ""
+
+msgid "Open from Crowdin..."
+msgstr ""
+
+msgid "Open From Crowdin..."
+msgstr ""
+
+msgid "&Close"
+msgstr "&داخستن"
+
+msgid "&Save"
+msgstr "&پاشەکەوت کردن"
+
+msgid "Save &as..."
+msgstr "پاشەکەوت کردن &وەکو..."
+
+msgid "Save &As..."
+msgstr "پاشەکەوت کردن &وەکو..."
+
+msgid "Compile to MO..."
+msgstr ""
+
+msgid "E&xport as HTML..."
+msgstr ""
+
+msgid "Check for updates..."
+msgstr ""
+
+msgid "&Preferences..."
+msgstr "&سازکارییەکان..."
+
+msgid "Catalogs &manager"
+msgstr "سازکاریی &کەتەلۆگەکان"
+
+msgid "Catalogs &Manager"
+msgstr "سازکاریی &کەتەلۆگەکان"
+
+msgid "E&xit"
+msgstr "چوو&نەدەرەوە"
+
+msgid "Quit"
+msgstr "وازهێنان"
+
+msgid "Copy from singular"
+msgstr ""
+
+msgid "Copy From Singular"
+msgstr ""
+
+msgid "Translation needs &work"
+msgstr ""
+
+msgid "Translation Needs &Work"
+msgstr ""
+
+msgid "Edit &comment"
+msgstr "دەستکاریکردنی &لێدوان"
+
+msgid "Edit &Comment"
+msgstr "دەستکاریکردنی &لێدوان"
+
+msgid "Suggestions"
+msgstr ""
+
+msgid "&Find..."
+msgstr "&دۆزینەوە..."
+
+msgid "Replace..."
+msgstr "جێگۆڕین..."
+
+msgid "Find next"
+msgstr "دۆزینەوەی دواتر"
+
+msgid "Find previous"
+msgstr "دۆزینەوەی پێشتر"
+
+msgid "Find and Replace..."
+msgstr "دۆزینەوە و جێگۆڕین..."
+
+msgid "Find Next"
+msgstr "دۆزینەوەی دواتر"
+
+msgid "Find Previous"
+msgstr "دۆزینەوەی پێشتر"
+
+msgid "&Preferences"
+msgstr "&سازکارییەکان"
+
+msgid "Display entry &IDs"
+msgstr ""
+
+msgid "Display Entry &IDs"
+msgstr ""
+
+msgid "Sort by &file order"
+msgstr "ڕێکخستن بەپێی &ڕیزی پەڕگە"
+
+msgid "Sort by &File Order"
+msgstr "ڕێکخستن بەپێی &ڕیزی پەڕگە"
+
+msgid "Sort by &source"
+msgstr "ڕێکخستن بەپێی &ژێدەر"
+
+msgid "Sort by &Source"
+msgstr "ڕێکخستن بەپێی &ژێدەر"
+
+msgid "Sort by &translation"
+msgstr "ڕێکخستن بەپێی &وەرگێڕان"
+
+msgid "Sort by &Translation"
+msgstr "ڕێکخستن بەپێی &وەرگێڕان"
+
+msgid "&Group by context"
+msgstr ""
+
+msgid "&Group By Context"
+msgstr ""
+
+msgid "Entries with errors first"
+msgstr ""
+
+msgid "Entries with Errors First"
+msgstr ""
+
+msgid "&Untranslated entries first"
+msgstr "&سەرەتا وەرنەگێڕدراوە تێئاخنراوەکان"
+
+msgid "&Untranslated Entries First"
+msgstr "&سەرەتا وەرنەگێڕدراوە تێئاخنراوەکان"
+
+msgid "&Show references"
+msgstr "&پیشاندانی ئاماژەپێکراوەکان"
+
+msgid "&Show References"
+msgstr "&پیشاندانی ئاماژەپێکراوەکان"
+
+msgid "Show sidebar"
+msgstr "پیشاندانی لاتەنیشت"
+
+msgid "Show status bar"
+msgstr "پیشاندانی شریتی دۆخ"
+
+msgid "C&atalog"
+msgstr "کە&تەلۆگ"
+
+msgid "&Update from sources"
+msgstr "&نوێکردنەوە لە ژێدەرەکانەوە"
+
+msgid "&Update from Sources"
+msgstr "&نوێکردنەوە لە ژێدەرەکانەوە"
+
+msgid "Update from &POT file..."
+msgstr "نوێکردنەوە لە پەڕگەی &POT ـەوە..."
+
+msgid "Update from &POT File..."
+msgstr "نوێکردنەوە لە پەڕگەی &POT ـەوە..."
+
+msgid "Sync with Crowdin"
+msgstr "Crowdin هاوکاتکردن لەگەڵ "
+
+msgid "Pre-&translate..."
+msgstr ""
+
+msgid "&Purge deleted translations"
+msgstr "&پاکژکردنەوەی وەرگێڕانە سڕاوەکان"
+
+msgid "&Purge Deleted Translations"
+msgstr "&پاکژکردنەوەی وەرگێڕانە سڕاوەکان"
+
+msgid "&Validate translations"
+msgstr ""
+
+msgid "&Validate Translations"
+msgstr ""
+
+msgid "&Properties..."
+msgstr "&تایبەتمەندییەکان..."
+
+msgid "&Done and next"
+msgstr "&جێبەجێکراو و بچۆ دانەی دواتر"
+
+msgid "&Done and Next"
+msgstr "&جێبەجێکراو و بچۆ دانەی دواتر"
+
+msgid "&Previous translation"
+msgstr "&وەرگێڕانی پێشتر"
+
+msgid "&Previous Translation"
+msgstr "&وەرگێڕانی پێشتر"
+
+msgid "&Next translation"
+msgstr "&وەرگێڕانی دواتر"
+
+msgid "&Next Translation"
+msgstr "&وەرگێڕانی دواتر"
+
+msgid "P&revious unfinished"
+msgstr "تەواو&نەکراوی پێشوو"
+
+msgid "P&revious Unfinished"
+msgstr "تەواو&نەکراوی پێشوو"
+
+msgid "Ne&xt unfinished"
+msgstr "تەواو&نەکراوی دواتر"
+
+msgid "Ne&xt Unfinished"
+msgstr "تەواو&نەکراوی دواتر"
+
+msgid "Previous plural form"
+msgstr ""
+
+msgid "Previous Plural Form"
+msgstr ""
+
+msgid "Next plural form"
+msgstr ""
+
+msgid "Next Plural Form"
+msgstr ""
+
+msgid "&Online help"
+msgstr "&یارمەتی سەرهێڵ"
+
+msgid "&Online Help"
+msgstr "&یارمەتی سەرهێڵ"
+
+msgid "&GNU gettext manual"
+msgstr ""
+
+msgid "&GNU gettext Manual"
+msgstr ""
+
+msgid "&About Poedit"
+msgstr "&Poedit دەربارەی"
+
+msgid "&About"
+msgstr "&دەربارە"
+
+msgid "Extractor setup"
+msgstr ""
+
+msgid "List of extensions separated by semicolons (e.g. *.cpp;*.h):"
+msgstr "لیستێک لە extensions جیاکرانەتەوە بە خاڵبۆر (e.g. *.cpp;*.h):"
+
+msgid "Invocation:"
+msgstr ""
+
+msgid "Command to extract translations:"
+msgstr ""
+
+msgid ""
+"This is the command used to launch the extractor.\n"
+"%o expands to the name of output file, %K to list\n"
+"of keywords, %F to list of input files,\n"
+"%C to charset flag (see below)."
+msgstr ""
+
+msgid "An item in keywords list:"
+msgstr "دانەیەک لە لیستەی وشەکلیلەکان:"
+
+msgid ""
+"This will be attached to the command line once\n"
+"for each keyword. %k expands to the keyword."
+msgstr ""
+"ئەمە هاوپێچ دەکرێت بۆ دێڕی فەرمی یەکجار\n"
+"بۆ هەر کلیلەوشەیەک. %k فراوانی دەکات بۆ کلیلەوشەکە."
+
+msgid "An item in input files list:"
+msgstr "دانەیەک لە لیستەی تێئاخنینی پەڕگەکان:"
+
+#, c-format
+msgid ""
+"This will be attached to the command line once\n"
+"for each input file. %f expands to the filename."
+msgstr ""
+"ئەمە هاوپێچ دەکرێت بۆ دێڕی فەرمی یەکجار\n"
+"بۆ هەر پەڕگەیەکی تێچوو. %f فراوانی دەکات بۆ ناوی پەڕگە."
+
+msgid "Source code charset:"
+msgstr "هێڵکاری کۆدی ژێدەر:"
+
+#, c-format
+msgid ""
+"This will be attached to the command line\n"
+"only if source code charset was given. %c expands to charset value."
+msgstr ""
+"ئەمە هاوپێچ دەکرێت بۆ دێڕی فەرمان\n"
+"تەنیا ئەگەر کۆدی هێڵکاریی ژێدەر درابوو. %c فرااوانی دەکات بۆ نرخی هێڵکاریی."
+
+msgid "Catalog properties"
+msgstr "تایبەتمەندییەکانی کەتەلۆگ"
+
+msgid "Project name and version:"
+msgstr "ناو و وەشانی پرۆژە:"
+
+msgid "Language team:"
+msgstr ""
+
+msgid "Plural forms:"
+msgstr ""
+
+msgid "Use default rules for this language"
+msgstr ""
+
+msgid "Use custom expression"
+msgstr ""
+
+msgid "Learn about plural forms"
+msgstr ""
+
+msgid "Charset:"
+msgstr "Koma tîpan (Charset):"
+
+msgid "Advanced Extraction Settings..."
+msgstr ""
+
+msgid "Advanced extraction settings..."
+msgstr ""
+
+msgid "Translation Properties"
+msgstr ""
+
+msgid "Translation properties"
+msgstr ""
+
+msgid "Sources Paths"
+msgstr ""
+
+msgid "Sources paths"
+msgstr "ژێدەرەکانی ڕێچکەکان"
+
+msgid "Extract text from source files in the following directories:"
+msgstr "دەرهێنانی دەق لە پەڕگەکانی ژێدەرەوە لە پێڕستەکانی دادێ:"
+
+msgid "Base path:"
+msgstr "ڕێچکەی بنچینە:"
+
+msgid "Sources Keywords"
+msgstr ""
+
+msgid "Sources keywords"
+msgstr "ژێدەرەکانی کلیلەوشە"
+
+msgid ""
+"Use these keywords (function names) to recognize translatable strings\n"
+"in source files:"
+msgstr ""
+"ئەم کلیلەوشانە بەکاربهێنە(ناوی نەخشەکان) بۆ ناسینەوەی ئەو  زنجیرەنووسانەی "
+"دەتوانرێت وەربگێڕدرێت\n"
+"لە پەڕگەکانی ژێدەرەکە:"
+
+msgid "Also use default keywords for supported languages"
+msgstr ""
+
+msgid "Learn About Gettext Keywords"
+msgstr ""
+
+msgid "Learn about gettext keywords"
+msgstr ""
+
+msgid "Update summary"
+msgstr "کورتە نوێ بکەرەوە"
+
+msgid ""
+"These strings were found in the sources but were not in the catalog.\n"
+"Poedit will add them to the catalog now."
+msgstr ""
+"ئەم زنجیرەنووسانە دۆزرانەوە لە ژێدەرەکاندا بەڵام لە کەتەلۆگەکەدا نەبوون.\n"
+"Poedit ئێستا زیادیان دەکات بۆ کەتەلۆگەکە."
+
+msgid "New strings"
+msgstr "زنجیرەنووسەی نوێ"
+
+msgid ""
+"These strings are no longer in the sources.\n"
+"Poedit will remove them from the catalog now."
+msgstr ""
+"ئەم زنجیرەنووسانە چیتر لە ژێدەرەکەدا نین.\n"
+"Poedit ئێستا لە کەتەلۆگەکە لایان دەبات."
+
+msgid "Obsolete strings"
+msgstr "زنجیرەنووسەی کۆن"
+
+msgid "(0 new, 0 obsolete)"
+msgstr "(0 نوێ، 0 کۆن)"
+
+msgid "Open"
+msgstr "کردنەوە"
+
+msgid "Save catalog"
+msgstr "پاشەکەوت کردنی کەتەلۆگ"
+
+msgid "Validate"
+msgstr ""
+
+msgid "Check for errors in the translation"
+msgstr ""
+
+msgid "Update"
+msgstr "نوێکردنەوە"
+
+msgid "Update catalog - synchronize it with sources"
+msgstr "نوێکردنەوەی کەتەلۆگ - هاوکاتکردنی لەگەڵ ژێدەرەکاندایە"
+
+msgid "Sidebar"
+msgstr "لاتەنیشت"
+
+msgid "Show or hide the sidebar"
+msgstr "پیشاندان و شارنەوەی لاتەنیشت"
+
+#. TRANSLATORS: "Previous" as in used in the past, now replaced with newer.
+msgid "Previous source text:"
+msgstr ""
+
+msgid ""
+"The old source text (before it changed during an update) that the now-"
+"inaccurate translation corresponds to."
+msgstr ""
+
+msgid "Notes for translators:"
+msgstr ""
+
+msgid "Add comment"
+msgstr "نووسینی لێدوان"
+
+msgid "Add Comment"
+msgstr "نووسینی لێدوان"
+
+msgid "Translation suggestions:"
+msgstr ""
+
+#. TRANSLATORS: This is shown when no translation suggestions can be found in the TM (Windows).
+msgid "No matches found"
+msgstr ""
+
+#. TRANSLATORS: This is shown when no translation suggestions can be found in the TM (macOS, Linux).
+msgid "No Matches Found"
+msgstr ""
+
+msgid "This string was found in Poedit’s translation memory."
+msgstr ""
+
+msgid "Cannot create temporary directory."
+msgstr "ناتوانرێت پێڕستی کاتی دروست بکرێت."
+
+msgid "Welcome to Poedit"
+msgstr "Poedit بەخێربێیت بۆ"
+
+#. TRANSLATORS: This is version information in about dialog, "%s" will be
+#. version number when used
+#, c-format
+msgid "Version %s"
+msgstr "وەشان %s"
+
+msgid "Edit a Translation"
+msgstr ""
+
+msgid "Edit a translation"
+msgstr "دەستکاریکردنی وەرگێڕان"
+
+msgid "Open an existing PO file and edit the translation."
+msgstr ""
+
+msgid ""
+"Take an existing PO file or POT template and create a new translation from "
+"it."
+msgstr ""
+
+msgid "Collaborate on a Translation with Others"
+msgstr ""
+
+msgid "Collaborate on a translation with others"
+msgstr ""
+
+msgid ""
+"Download a file from Crowdin project, translate and sync your changes back."
+msgstr ""
+
+msgid "What is Crowdin?"
+msgstr "چییە Crowdin"
+
+msgid "There are no translations. That’s unusual."
+msgstr ""
+
+msgid ""
+"Translatable entries aren't added manually in the Gettext system, but are "
+"automatically extracted\n"
+"from source code. This way, they stay up to date and accurate.\n"
+"Translators typically use PO template files (POTs) prepared for them by the "
+"developer."
+msgstr ""
+
+msgid "(Learn more about GNU gettext)"
+msgstr ""
+
+msgid "The simplest way to fill this catalog is to update it from a POT:"
+msgstr ""
+
+msgid "Update from POT"
+msgstr ""
+
+msgid "Take translatable strings from an existing POT template."
+msgstr ""
+
+msgid ""
+"You can also extract translatable strings directly from the source code:"
+msgstr ""
+
+msgid "Extract from sources"
+msgstr ""
+
+msgid "Configure source code extraction in Properties."
+msgstr ""
+
+msgid "Sync"
+msgstr ""
+
+msgid "Synchronize the translation with Crowdin"
+msgstr ""
+
+#. TRANSLATORS: This is titlebar of about dialog, "%s" is application name
+#. ("Poedit" here, but please use "%s")
+#, c-format
+msgid "About %s"
+msgstr "دەربارەی %s"
+
+#. TRANSLATORS: Title of the preferences window on Windows and Linux. "%s" is replaced with "Poedit" when running.
+#, c-format
+msgid "%s Preferences"
+msgstr ""
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Services"
+msgstr ""
+
+#. TRANSLATORS: macOS item in app menu, %s is replaced with "Poedit"
+#, c-format
+msgid "Hide %s"
+msgstr ""
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Hide Others"
+msgstr ""
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Show All"
+msgstr ""
+
+#. TRANSLATORS: macOS item in app menu, %s is replaced with "Poedit"
+#, c-format
+msgid "Quit %s"
+msgstr ""
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Preferences..."
+msgstr ""
+
+#. TRANSLATORS: Title of a category in Windows task menu (right-click icon in taskbar)
+msgid "Recent"
+msgstr ""
+
+#. TRANSLATORS: Title of a category in Windows task menu (right-click icon in taskbar)
+msgid "Frequent"
+msgstr ""
+
+msgid "&Apply"
+msgstr ""
+
+msgid "Apply"
+msgstr ""
+
+msgid "&Back"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "&Cancel"
+msgstr ""
+
+msgid "&Clear"
+msgstr ""
+
+msgid "Clear"
+msgstr ""
+
+msgid "Copy"
+msgstr "لەبەرگرتنەوە"
+
+msgid "Cu&t"
+msgstr "بڕ&ین"
+
+msgid "Cut"
+msgstr "بڕین"
+
+msgid "&Delete"
+msgstr "&سڕینەوە"
+
+msgid "&Quit"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "&New"
+msgstr ""
+
+msgid "&No"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "&OK"
+msgstr ""
+
+msgid "Open..."
+msgstr ""
+
+msgid "&Paste"
+msgstr "&دانان"
+
+msgid "Paste"
+msgstr "دانان"
+
+msgid "Preferences"
+msgstr ""
+
+msgid "&Redo"
+msgstr "&دواتر"
+
+msgid "Refresh"
+msgstr ""
+
+msgid "&Save as"
+msgstr ""
+
+msgid "Save as"
+msgstr ""
+
+msgid "Select &All"
+msgstr "دیاریکردنی &هەمووی"
+
+msgid "Select All"
+msgstr "دیاریکردنی هەمووی"
+
+msgid "&Undo"
+msgstr "&پێشتر"
+
+msgid "&Yes"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Shift+"
+msgstr "Shift+"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Enter"
+msgstr "Enter"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Up"
+msgstr "دوگمەی سەرەوە"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Down"
+msgstr "دوگمەی خوارەوە"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Left"
+msgstr ""
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Right"
+msgstr ""
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Ctrl+"
+msgid "ctrl"
+msgstr "ctrl"
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Alt+"
+msgid "alt"
+msgstr "alt"
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Shift+"
+msgid "shift"
+msgstr "shift"

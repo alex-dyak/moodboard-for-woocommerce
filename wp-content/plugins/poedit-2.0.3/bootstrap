@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+make_msgfmt()
+{
+    for i in locales/*.po ; do
+        msgfmt -c -o `echo $i | sed -e s/\.po/.mo/g` $i || exit 1
+    done
+}
+
+echo " - aclocal" && aclocal -I admin && \
+echo " - automake" && automake --foreign -a -c -f && \
+echo " - autoconf" && autoconf && \
+\
+echo " - generate-docs.make" && make -C docs  -f generate-docs.make && \
+\
+echo " - msgfmt" && make_msgfmt && \
+exit 0
+
+echo "Automatic build files setup failed!"
+exit 1
+

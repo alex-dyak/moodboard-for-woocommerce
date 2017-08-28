@@ -1,0 +1,2156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: poedit\n"
+"Report-Msgid-Bugs-To: help@poedit.net\n"
+"POT-Creation-Date: 2017-06-01 17:42+0200\n"
+"PO-Revision-Date: 2017-04-13 11:59-0400\n"
+"Last-Translator: vslavik <vaclav@slavik.io>\n"
+"Language-Team: Dutch\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: poedit\n"
+"X-Crowdin-Language: nl\n"
+"X-Crowdin-File: /locales/poedit.pot\n"
+
+msgid "Hide this notification message"
+msgstr "Deze melding verbergen"
+
+msgid "Don't Show Again"
+msgstr "Niet meer weergeven"
+
+msgid "Don't show again"
+msgstr "Niet meer weergeven"
+
+#, c-format
+msgid "(New: %i, obsolete: %i)"
+msgstr "(Nieuw: %i, verouderd: %i)"
+
+msgid "Updating catalog"
+msgstr "Catalogus bijwerken"
+
+msgid "Collecting source files..."
+msgstr "Bronbestanden verzamelen..."
+
+msgid "Extracting translatable strings..."
+msgstr "Vertaalbare strings extraheren..."
+
+msgid "Failed to load extracted catalog."
+msgstr "Laden van geëxtraheerde catalogus mislukt."
+
+msgid "Merging differences..."
+msgstr "Samenvoegen van verschillen..."
+
+#, c-format
+msgid "'%s' is not a valid POT file."
+msgstr "'%s' is geen geldig POT-bestand."
+
+#, c-format
+msgid "%i line of file '%s' was not loaded correctly."
+msgid_plural "%i lines of file '%s' were not loaded correctly."
+msgstr[0] "Regel %i van bestand '%s' is niet correct geladen."
+msgstr[1] "Regels %i van bestand '%s' zijn niet correct geladen."
+
+#, c-format
+msgid "Line %d of file '%s' is corrupted (not valid %s data)."
+msgstr "Regel %d van bestand '%s' is beschadigd (niet-geldige %s-gegevens)."
+
+#, c-format
+msgid "Malformed header: '%s'"
+msgstr "Verkeerd vormgegeven header: '%s'"
+
+msgid ""
+"Broken catalog file: singular form msgstr used together with msgid_plural"
+msgstr ""
+"Beschadigd catalogusbestand: enkelvoudsvorm 'msgstr' samen met "
+"'msgid_plural' gebruikt"
+
+msgid "Broken catalog file: plural form msgstr used without msgid_plural"
+msgstr ""
+"Beschadigd catalogusbestand: meervoudsvorm 'msgstr' gebruikt zonder "
+"'msgid_plural'"
+
+msgid ""
+"There were errors when loading the catalog. Some data may be missing or "
+"corrupted as the result."
+msgstr ""
+"Er zijn fouten opgetreden bij het laden van de catalogus. Sommige gegevens "
+"kunnen hierdoor ontbreken of corrupt zijn."
+
+#, c-format
+msgid "Couldn't load file %s, it is probably corrupted."
+msgstr "Bestand '%s' kon niet geladen worden, het is waarschijnlijk corrupt."
+
+#, c-format
+msgid ""
+"File '%s' is read-only and cannot be saved.\n"
+"Please save it under different name."
+msgstr ""
+"Bestand '%s' is 'alleen-lezen' en kan niet worden\n"
+"opgeslagen. Gelieve het op te slaan onder een andere naam."
+
+#, c-format
+msgid "Couldn't save file %s."
+msgstr "Bestand '%s' kon niet worden opgeslagen."
+
+msgid ""
+"There was a problem formatting the file nicely (but it was saved all right)."
+msgstr ""
+"Er ging iets fout bij het netjes opmaken van het bestand (maar het is wel "
+"opgeslagen)."
+
+#, c-format
+msgid ""
+"The catalog couldn't be saved in '%s' charset as specified in catalog "
+"settings.\n"
+"\n"
+"It was saved in UTF-8 instead and the setting was modified accordingly."
+msgstr ""
+"De catalogus kon niet opgeslagen worden met de '%s'-tekenset die opgegeven "
+"is in de catalogus-instellingen.\n"
+"\n"
+"Hij werd in plaats daarvan opgeslagen in UTF8-formaat en de instelling werd "
+"overeenkomstig daarmee aangepast."
+
+msgid "Error saving catalog"
+msgstr "Fout bij het opslaan van de catalogus"
+
+msgid "PO Translation Files"
+msgstr "PO-vertaalbestanden"
+
+msgid "POT Translation Templates"
+msgstr "POT-vertaalsjablonen"
+
+msgid "All Translation Files"
+msgstr "Alle vertaalbestanden"
+
+msgid "(Use default language)"
+msgstr "(Gebruik de standaardtaal)"
+
+msgid "Select your preferred language"
+msgstr "Kies uw voorkeurstaal"
+
+msgid "Language selection"
+msgstr "Taalselectie"
+
+msgid "You must restart Poedit for this change to take effect."
+msgstr "U moet Poedit opnieuw starten voordat deze verandering effect heeft."
+
+msgid "Syncing"
+msgstr "Synchroniseren"
+
+#. TRANSLATORS: %s is a cloud destination, e.g. "Crowdin" or ftp.wordpress.com etc.
+#, c-format
+msgid "Syncing with %s…"
+msgstr "Synchroniseren met %s…"
+
+#. TRANSLATORS: %s is a cloud destination, e.g. "Crowdin" or ftp.wordpress.com etc.
+#, c-format
+msgid "Syncing with %s failed."
+msgstr "Synchroniseren met %s is mislukt."
+
+msgid "Syncing error"
+msgstr "Synchronisatiefout"
+
+msgid "Downloading translations is disabled in this project."
+msgstr "Het downloaden van vertalingen is uitgeschakeld in dit project."
+
+msgid "Not authorized, please sign in again."
+msgstr "Niet geautoriseerd; log opnieuw in."
+
+msgid ""
+"Crowdin is an online localization management platform and collaborative "
+"translation tool. Poedit can seamlessly sync PO files managed at Crowdin."
+msgstr ""
+"Crowdin is een online vertaalplatform voor het beheren van en het "
+"samenwerken aan vertalingen. Poedit kan naadloos synchroniseren met de op "
+"Crowdin beheerde PO-bestanden."
+
+msgid "Sign In"
+msgstr "Inloggen"
+
+msgid "Sign in"
+msgstr "Inloggen"
+
+msgid "Sign Out"
+msgstr "Uitloggen"
+
+msgid "Sign out"
+msgstr "Uitloggen"
+
+msgid "Waiting for authentication…"
+msgstr "Wachten op autorisatie…"
+
+msgid "Updating user information…"
+msgstr "Gebruikersinformatie bijwerken…"
+
+msgid "Signed in as:"
+msgstr "Ingelogd als:"
+
+msgid "Learn More About Crowdin"
+msgstr "Meer te weten komen over Crowdin"
+
+msgid "Learn more about Crowdin"
+msgstr "Meer te weten komen over Crowdin"
+
+msgid "Sign in to Crowdin"
+msgstr "Inloggen bij Crowdin"
+
+msgid "Open Crowdin translation"
+msgstr "Crowdin-vertaling openen"
+
+msgid "Project:"
+msgstr "Project:"
+
+msgid "Language:"
+msgstr "Taal:"
+
+msgid "File:"
+msgstr "Bestand:"
+
+msgid "No translation projects listed in your Crowdin account."
+msgstr "Er zijn geen vertaalprojecten aanwezig in uw Crowdin-account."
+
+msgid "This project has no files that can be translated in Poedit."
+msgstr "Dit project bevat geen bestanden die vertaald kunnen worden in Poedit."
+
+msgid "This file can only be edited in Crowdin’s web interface."
+msgstr "Dit bestand kan alleen bewerkt worden in de Crowdin-webinterface."
+
+msgid "Downloading latest translations…"
+msgstr "De meest recente vertalingen downloaden…"
+
+msgid "Syncing with Crowdin failed."
+msgstr "Synchronisatie met Crowdin mislukt."
+
+msgid "Crowdin error"
+msgstr "Crowdin-fout"
+
+msgid "Uploading translations…"
+msgstr "Vertalingen uploaden…"
+
+msgid "&Copy"
+msgstr "&Kopiëren"
+
+msgid "Learn more"
+msgstr "Meer te weten komen"
+
+msgid "Learn More"
+msgstr "Meer te weten komen"
+
+msgid "&Help"
+msgstr "&Hulp"
+
+msgid "MO files can’t be directly edited in Poedit."
+msgstr "MO-bestanden kunnen niet direct bewerkt worden in Poedit."
+
+msgid "Error opening file"
+msgstr "Fout bij openen van bestand"
+
+msgid ""
+"Please open and edit the corresponding PO file instead. When you save it, "
+"the MO file will be updated as well."
+msgstr ""
+"Open en bewerk in plaats daarvan het corresponderende PO-bestand. Als u dat "
+"opslaat zal het MO-bestand ook bijgewerkt worden."
+
+msgid "don't delete temporary files (for debugging)"
+msgstr "tijdelijke bestanden niet verwijderen (i.v.m. foutopsporing)"
+
+msgid "handle a poedit:// URI"
+msgstr "omgaan met een poedit://-URI"
+
+msgid "go to item at given line number"
+msgstr ""
+
+msgid "Failed to communicate with Poedit process."
+msgstr "Communicatie met het Poedit-proces mislukt."
+
+#, c-format
+msgid "Unhandled exception occurred: %s"
+msgstr "Er is een niet-verwerkte uitzondering opgetreden: %s"
+
+msgid "Open catalog"
+msgstr "Catalogus openen"
+
+#, c-format
+msgid "File '%s' doesn't exist."
+msgstr "Bestand '%s' bestaat niet."
+
+msgid "Poedit is an easy to use translations editor."
+msgstr "Poedit is een eenvoudig te gebruiken vertalingsbewerker."
+
+msgid "Catalogs Manager"
+msgstr "Catalogusbeheerder"
+
+msgid "Check for Updates..."
+msgstr "Op updates controleren..."
+
+msgid "&Edit"
+msgstr "B&ewerken"
+
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+msgid "Redo"
+msgstr "Opnieuw"
+
+msgid "Paste and Match Style"
+msgstr "Plakken en aan stijl aanpassen"
+
+msgid "Delete"
+msgstr "Verwijderen"
+
+msgid "Spelling and Grammar"
+msgstr "Spelling en grammatica"
+
+msgid "Show Spelling and Grammar"
+msgstr "Spelling en grammatica weergeven"
+
+msgid "Check Document Now"
+msgstr "Document nu controleren"
+
+msgid "Check Spelling While Typing"
+msgstr "Spelling controleren tijdens typen"
+
+msgid "Check Grammar With Spelling"
+msgstr "Grammatica en spelling controleren"
+
+msgid "Correct Spelling Automatically"
+msgstr "Spelling automatisch corrigeren"
+
+msgid "Substitutions"
+msgstr "Vervanging"
+
+msgid "Show Substitutions"
+msgstr "Vervangingen weergeven"
+
+msgid "Smart Copy/Paste"
+msgstr "Slim kopiëren/plakken"
+
+msgid "Smart Quotes"
+msgstr "Slimme aanhalingstekens"
+
+msgid "Smart Dashes"
+msgstr "Slimme streepjes"
+
+msgid "Smart Links"
+msgstr "Slimme links"
+
+msgid "Text Replacement"
+msgstr "Tekstvervanging"
+
+msgid "Transformations"
+msgstr "Omzetting"
+
+msgid "Make Upper Case"
+msgstr "Zet om in hoofdletters"
+
+msgid "Make Lower Case"
+msgstr "Zet om in kleine letters"
+
+msgid "Capitalize"
+msgstr "Zet om in beginhoofdletters"
+
+msgid "Speech"
+msgstr "Spraak"
+
+msgid "Start Speaking"
+msgstr "Beginnen met spreken"
+
+msgid "Stop Speaking"
+msgstr "Stoppen met spreken"
+
+msgid "&View"
+msgstr "B&eeld"
+
+msgid "Enter Full Screen"
+msgstr "Ga naar volledig scherm"
+
+msgid "Window"
+msgstr "Venster"
+
+msgid "Minimize"
+msgstr "Minimaliseren"
+
+msgid "Zoom"
+msgstr "In-/uitzoomen"
+
+msgid "Bring All to Front"
+msgstr "Alles op voorgrond"
+
+#. TRANSLATORS:File kind displayed in Finder/Explorer
+msgid "PO Translation"
+msgstr "PO-vertaling"
+
+msgid "The file cannot be opened."
+msgstr "Het bestand kan niet geopend worden."
+
+msgid "Invalid file"
+msgstr "Ongeldig bestand"
+
+msgid ""
+"The file may be either corrupted or in a format not recognized by Poedit."
+msgstr ""
+"Het bestand kan corrupt zijn of een opmaak hebben die niet herkend wordt "
+"door Poedit."
+
+msgid "You can't drop more than one file on Poedit window."
+msgstr "U kunt niet meer dan één bestand in het Poedit-venster plaatsen."
+
+#, c-format
+msgid "File '%s' is not a message catalog."
+msgstr "Het bestand '%s' is geen berichtcatalogus."
+
+msgid "Poedit"
+msgstr "Poedit"
+
+msgid "&File"
+msgstr "&Bestand"
+
+msgid "&Go"
+msgstr "&Navigeren"
+
+#. TRANSLATORS: %s is language name in its basic form (as you
+#. would see e.g. in a list of supported languages). You may need
+#. to rephrase it, e.g. to an equivalent of "for language %s".
+#, c-format
+msgid ""
+"Spellchecking is disabled, because the dictionary for %s isn’t installed."
+msgstr ""
+"Spellingscontrole is uitgeschakeld, omdat het woordenboek voor %s niet "
+"geïnstalleerd is."
+
+msgid "Install"
+msgstr "Installeren"
+
+msgid "Catalog modified. Do you want to save changes?"
+msgstr "De catalogus is gewijzigd. Wilt u de wijzigingen opslaan?"
+
+msgid "Save changes"
+msgstr "Wijzigingen opslaan"
+
+msgid "Your changes will be lost if you don't save them."
+msgstr "De wijzigingen zullen verloren gaan als u ze niet opslaat."
+
+msgid "Save"
+msgstr "Opslaan"
+
+msgid "Don't save"
+msgstr "Niet opslaan"
+
+msgid "Don't Save"
+msgstr "Niet opslaan"
+
+msgid "Save as..."
+msgstr "Opslaan als..."
+
+msgid "Compile to..."
+msgstr "Compileren naar..."
+
+msgid "Compiled Translation Files"
+msgstr "Gecompileerde vertaalbestanden"
+
+msgid "Export as..."
+msgstr "Exporteren als..."
+
+msgid "HTML Files"
+msgstr "HTML-bestanden"
+
+msgid "Open catalog template"
+msgstr "Catalogus-sjabloon openen"
+
+msgid "Source code not available."
+msgstr "Broncode niet beschikbaar."
+
+msgid "Updating failed"
+msgstr "Bijwerken mislukt"
+
+msgid ""
+"Translations couldn’t be updated from the source code, because no code was "
+"found in the location specified in the catalog’s Properties."
+msgstr ""
+"De vertalingen konden niet bijgewerkt worden vanuit de broncode, omdat er "
+"geen code gevonden is op de locatie, opgegeven in de cataloguseigenschappen."
+
+msgid "Entries in the catalog are probably incorrect."
+msgstr "Invoer in de catalogus is waarschijnlijk onjuist."
+
+msgid "Updating the catalog failed. Click on 'Details >>' for details."
+msgstr ""
+"Bijwerken van de catalogus is mislukt. Klik op ' Details >>' voor meer "
+"informatie."
+
+#, c-format
+msgid "%d issue with the translation found."
+msgid_plural "%d issues with the translation found."
+msgstr[0] "%d probleem gevonden met de vertaling."
+msgstr[1] "%d problemen gevonden met de vertaling."
+
+msgid "Validation results"
+msgstr "Valideringsresultaten"
+
+msgid ""
+"Entries with errors were marked in red in the list. Details of the error "
+"will be shown when you select such an entry."
+msgstr ""
+"Invoer met fouten is rood gemarkeerd in de lijst. Details van de fout zullen "
+"weergegeven worden als u zo'n invoer selecteert."
+
+msgid "The file was saved safely."
+msgstr "Het bestand is veilig opgeslagen."
+
+msgid ""
+"The file was saved safely and compiled into the MO format, but it will "
+"probably not work correctly."
+msgstr ""
+"Het bestand is veilig opgeslagen en gecompileerd naar het mo-formaat, maar "
+"het zal waarschijnlijk niet goed werken."
+
+msgid ""
+"The file was saved safely, but it cannot be compiled into the MO format and "
+"used."
+msgstr ""
+"Het bestand is veilig opgeslagen maar het kan niet gecompileerd worden naar "
+"het mo-formaat, en dus niet gebruikt worden."
+
+msgid ""
+"The file was compiled into the MO format, but it will probably not work "
+"correctly."
+msgstr ""
+"Het bestand is gecompileerd naar het MO-formaat, maar zal waarschijnlijk "
+"niet goed werken."
+
+msgid "The file cannot be compiled into the MO format and used."
+msgstr ""
+"Het bestand kan niet gecompileerd worden naar het MO-formaat en dus niet "
+"gebruikt."
+
+msgid "No problems with the translation found."
+msgstr "Geen problemen met de vertaling gevonden."
+
+#, c-format
+msgid "The translation is ready for use, but %d entry is not translated yet."
+msgid_plural ""
+"The translation is ready for use, but %d entries are not translated yet."
+msgstr[0] ""
+"De vertaling is klaar voor gebruik, maar regel %d is nog niet vertaald."
+msgstr[1] ""
+"De vertaling is klaar voor gebruik, maar regels %d zijn nog niet vertaald."
+
+msgid "The translation is ready for use."
+msgstr "De vertaling is klaar voor gebruik."
+
+#, c-format
+msgid "Poedit automatically fixed invalid content in the file “%s”."
+msgstr ""
+"Poedit heeft automatisch ongeldige content gerepareerd in het bestand '%s'."
+
+msgid ""
+"The file contained duplicate items, which is not allowed in PO files and "
+"would prevent the file from being used. Poedit fixed the issue, but you "
+"should review translations of any items marked as needing work and correct "
+"them if necessary."
+msgstr ""
+"Het bestand bevat dubbele items; dat is niet toegestaan in PO-bestanden, "
+"omdat dit het gebruik van het bestand zou belemmeren. Poedit heeft de fout "
+"hersteld, maar je moet vertalingen van alle items die als onduidelijk "
+"gemarkeerd zijn, nakijken en ze zo nodig corrigeren."
+
+msgid "Language of the translation isn't set."
+msgstr "De taal van de vertaling is niet ingesteld."
+
+msgid "Set Language"
+msgstr "Taal instellen"
+
+msgid "Set language"
+msgstr "Taal instellen"
+
+#. TRANSLATORS: This is shown underneath "Language of the translation isn't set (or ...is the same as source language)."
+msgid ""
+"Suggestions are not available if the translation language is not set "
+"correctly. Other features, such as plural forms, may be affected as well."
+msgstr ""
+"Suggesties zijn niet beschikbaar als de taal van de vertaling niet juist is "
+"ingesteld. Dit kan ook invloed hebben op andere functies, zoals "
+"meervoudsvormen."
+
+msgid "Language of the translation is the same as source language."
+msgstr "Taal van de vertaling is hetzelfde als de brontaal."
+
+msgid "Fix Language"
+msgstr "Taal repareren"
+
+msgid "Fix language"
+msgstr "Taal repareren"
+
+msgid ""
+"This catalog has entries with plural forms, but doesn't have Plural-Forms "
+"header configured."
+msgstr ""
+"Deze catalogus bevat vermeldingen met meervoudsvormen, maar er is geen "
+"meervoudsvorm-header voor ingesteld."
+
+msgid ""
+"Entries in this catalog have different plural forms count from what "
+"catalog's Plural-Forms header says"
+msgstr ""
+"De invoer in deze catalogus heeft een andere meervoudsvorm dan wat er staat "
+"in de meervoudsvorm-header van de catalogus"
+
+msgid "Required header Plural-Forms is missing."
+msgstr "Vereiste meervoudsvorm-header ontbreekt."
+
+#, c-format
+msgid "Syntax error in Plural-Forms header (\"%s\")."
+msgstr "Syntaxfout in meervoudsvorm-header ('%s')."
+
+msgid "Fix the Header"
+msgstr "De header repareren"
+
+msgid "Fix the header"
+msgstr "Repareer de header"
+
+#. TRANSLATORS: %s is language name in its basic form (as you
+#. would see e.g. in a list of supported languages). You may need
+#. to rephrase it, e.g. to an equivalent of "for language %s".
+#, c-format
+msgid "Plural forms expression used by the catalog is unusual for %s."
+msgstr ""
+"De meervoudsvorm-expressie gebruikt door de catalogus is ongebruikelijk voor "
+"%s."
+
+#. TRANSLATORS: A verb, shown as action button with ""Plural forms expression used by the catalog is unusual for %s.")"
+msgid "Review"
+msgstr "Nakijken"
+
+#, c-format
+msgid "Error loading message catalog file '%s'."
+msgstr "Fout bij het laden van het berichtcatalogusbestand '%s'."
+
+#, c-format
+msgid "Translated: %d of %d (%d %%)"
+msgstr "Vertaald: %d van %d (%d %%)"
+
+#, c-format
+msgid "Remaining: %d"
+msgstr "Resterend: %d"
+
+#, c-format
+msgid "%d error"
+msgid_plural "%d errors"
+msgstr[0] "%d fout"
+msgstr[1] "%d fouten"
+
+#, c-format
+msgid "%d entry"
+msgid_plural "%d entries"
+msgstr[0] "%d woord"
+msgstr[1] "%d woorden"
+
+msgid " (unsaved)"
+msgstr "(niet-opgeslagen)"
+
+msgid " (modified)"
+msgstr " (gewijzigd)"
+
+#, c-format
+msgid "Failed to update translation memory: %s"
+msgstr "Bijwerken van vertaalgeheugen mislukt: %s"
+
+msgid "Purge deleted translations"
+msgstr "&Gewiste vertalingen definitief verwijderen"
+
+msgid "Do you want to remove all translations that are no longer used?"
+msgstr "Wilt u alle vertalingen verwijderen die niet langer worden gebruikt?"
+
+msgid ""
+"If you continue with purging, all translations marked as deleted will be "
+"permanently removed. You will have to translate them again if they are added "
+"back in the future."
+msgstr ""
+"Als u doorgaat met verwijderen zullen alle vertalingen die gemarkeerd staan "
+"als 'gewist', definitief worden verwijderd. U zult ze dan opnieuw moeten "
+"vertalen als u ze in de toekomst weer toevoegt."
+
+msgid "Keep"
+msgstr "Behouden"
+
+msgid "Purge"
+msgstr "Definitief verwijderen"
+
+msgid "Copy from source text"
+msgstr "Kopiëren vanuit brontekst"
+
+msgid "Copy from Source Text"
+msgstr "Kopiëren vanuit brontekst"
+
+#. TRANSLATORS: This is the key shortcut used in menus on Windows, some languages call them differently
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Ctrl+"
+msgstr "Ctrl+"
+
+msgid "Clear translation"
+msgstr "Vertaling wissen"
+
+msgid "Clear Translation"
+msgstr "Vertaling wissen"
+
+msgid "Edit comment"
+msgstr "Opmerking bewerken"
+
+msgid "Edit Comment"
+msgstr "Opmerking bewerken"
+
+msgid "References:"
+msgstr "Verwijzingen:"
+
+msgid "&Bookmarks"
+msgstr "&Bladwijzers"
+
+#. TRANSLATORS: This is the key shortcut used in menus on Windows, some languages call them differently
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Alt+"
+msgstr "Alt+"
+
+#, c-format
+msgid "Set bookmark %i"
+msgstr "Bladwijzer %i instellen"
+
+#, c-format
+msgid "Go to bookmark %i"
+msgstr "Naar bladwijzer %i gaan"
+
+#, c-format
+msgid "Set Bookmark %i"
+msgstr "Bladwijzer %i instellen"
+
+#, c-format
+msgid "Go to Bookmark %i"
+msgstr "Naar bladwijzer %i gaan"
+
+msgid "Hide Sidebar"
+msgstr "Zijbalk verbergen"
+
+msgid "Show Sidebar"
+msgstr "Zijbalk tonen"
+
+msgid "Hide Status Bar"
+msgstr "Statusbalk verbergen"
+
+msgid "Show Status Bar"
+msgstr "Statusbalk weergeven"
+
+msgid "Source text:"
+msgstr "Brontekst:"
+
+msgid "Singular:"
+msgstr "Enkelvoud:"
+
+msgid "Plural:"
+msgstr "Meervoud:"
+
+msgid "Translation:"
+msgstr "Vertaling:"
+
+msgid "Pre-translated"
+msgstr "Vooraf vertaald"
+
+msgid "Needs Work"
+msgstr "Behoeft controle"
+
+#. TRANSLATORS: This indicates that the string's translation isn't final
+#. and has known problems.  For example, it might be machine translated or
+#. fuzzy matched from an older string. The translation should be short and
+#. convey this. If it's problematic to translate it, "Needs review" is
+#. acceptable substitute, but note that the meaning is subtly different:
+#. "needs review" implies that somebody else should review the string after
+#. I am done with it (i.e. consider it good), while "needs work" implies I
+#. need to return to it and finish the translation.
+msgid "Needs work"
+msgstr "Behoeft controle"
+
+msgid ""
+"POT files are only templates and don’t contain any translations themselves.\n"
+"To make a translation, create a new PO file based on the template."
+msgstr ""
+"POT-bestanden zijn slechts sjablonen en bevatten zelf geen vertalingen.\n"
+"Maak een nieuw PO-bestand aan op basis van dit sjabloon om een vertaling te "
+"maken."
+
+msgid "Create New Translation"
+msgstr "Nieuwe vertaling maken"
+
+msgid "Create new translation"
+msgstr "Nieuwe vertaling maken"
+
+msgid "Everything"
+msgstr "Alles"
+
+#, c-format
+msgid "Form %i"
+msgstr "Vorm %i"
+
+msgid "Singular"
+msgstr "Enkelvoud"
+
+msgid "Zero"
+msgstr "Nul"
+
+msgid "One"
+msgstr "Één"
+
+msgid "Two"
+msgstr "Twee"
+
+msgid "Plural"
+msgstr "Meervoud"
+
+msgid "Other"
+msgstr "Meer"
+
+#, c-format
+msgid "%s Format"
+msgstr "%s-Formaat"
+
+#. TRANSLATORS: %s is replaced with language name, e.g. "PHP" or "C", so "PHP Format" etc."
+#, c-format
+msgid "%s format"
+msgstr "%s-formaat"
+
+#, c-format
+msgid "Source text — %s"
+msgstr "Brontekst — %s"
+
+msgid "Source text"
+msgstr "Brontekst"
+
+msgid "unknown language"
+msgstr "onbekende taal"
+
+#, c-format
+msgid "Translation — %s"
+msgstr "Vertaling — %s"
+
+msgid "ID"
+msgstr "ID"
+
+#, c-format
+msgid "Failed command: %s"
+msgstr "Mislukte opdracht: %s"
+
+msgid "Failed to merge gettext catalogs."
+msgstr "Gettext-catalogi samenvoegen mislukt."
+
+msgid "Source file"
+msgstr "Bronbestand"
+
+msgid "Source file occurrence:"
+msgstr "Vóórkomen van bronbestand:"
+
+msgid "Open in Editor"
+msgstr "Openen in editor"
+
+msgid "Open in editor"
+msgstr "Openen in editor"
+
+msgid "No references for the selected item."
+msgstr "Geen verwijzingen voor het geselecteerde item."
+
+#, c-format
+msgid "Error opening file %s!"
+msgstr "Fout bij het openen van bestand %s."
+
+msgid "Find"
+msgstr "Zoeken"
+
+msgid "Replace"
+msgstr "Vervangen"
+
+#. TRANSLATORS: Expander in Find window for additional options (case sensitive etc.)
+msgid "Options"
+msgstr "Opties"
+
+msgid "Ignore case"
+msgstr "Hoofd-/kleine letters negeren"
+
+msgid "Wrap around"
+msgstr "Tekstomloop"
+
+msgid "Whole words only"
+msgstr "Alleen hele woorden"
+
+msgid "Find in source texts"
+msgstr "In bronteksten zoeken"
+
+msgid "Find in translations"
+msgstr "In vertalingen zoeken"
+
+msgid "Find in comments"
+msgstr "In opmerkingen zoeken"
+
+msgid "Close"
+msgstr "Sluiten"
+
+msgid "Replace &All"
+msgstr "&Alles vervangen"
+
+msgid "Replace &all"
+msgstr "&Alles vervangen"
+
+msgid "&Replace"
+msgstr "Ve&rvangen"
+
+msgid "< &Previous"
+msgstr "< &Vorige"
+
+msgid "&Next >"
+msgstr "&Volgende >"
+
+msgid "String to find"
+msgstr "Te zoeken term"
+
+msgid "Replacement string"
+msgstr "Vervangende term"
+
+#, c-format
+msgid "Cannot execute program: %s"
+msgstr "Programma kan niet uitgevoerd worden: %s"
+
+msgid "Language Code or Name (e.g. en_GB)"
+msgstr "Taalcode of -naam (bijv. nl_NL)"
+
+msgid "Translation Language"
+msgstr "Taal van de vertaling"
+
+msgid "Language of the translation:"
+msgstr "Taal van de vertaling:"
+
+msgid "Poedit - Catalogs manager"
+msgstr "Poedit-catalogusbeheerder"
+
+msgid "Catalog"
+msgstr "Catalogus"
+
+msgid "Total"
+msgstr "Totaal"
+
+msgid "Untrans"
+msgstr "Onvertaald"
+
+msgid "Errors"
+msgstr "Fouten"
+
+msgid "Last modified"
+msgstr "Laatst gewijzigd"
+
+msgid "Select directory"
+msgstr "Map kiezen"
+
+msgid "Directories:"
+msgstr "Mappen:"
+
+msgid "<unnamed>"
+msgstr "<naamloos>"
+
+msgid "Do you want to delete the project?"
+msgstr "Wilt u het project verwijderen?"
+
+msgid "Confirmation"
+msgstr "Bevestiging"
+
+msgid ""
+"Do you really want to do mass update of\n"
+"all catalogs in this project?"
+msgstr ""
+"Wilt u werkelijk alle catalogi in dit\n"
+"project in één keer bijwerken?"
+
+msgid "Information about the translator"
+msgstr "Informatie over de vertaler"
+
+msgid "Name:"
+msgstr "Naam:"
+
+msgid "Your Name"
+msgstr "Uw naam"
+
+msgid "Email:"
+msgstr "E-mailadres:"
+
+msgid "your_email@example.com"
+msgstr "uw_e-mailadres@voorbeeld.nl"
+
+msgid ""
+"Your name and email address are only used to set the Last-Translator header "
+"of GNU gettext files."
+msgstr ""
+"Uw naam en e-mailadres worden alleen gebruikt om de header 'Laatste-"
+"Vertaler' van de GNU-gettext-bestanden in te stellen."
+
+msgid "Editing"
+msgstr "Bewerken"
+
+msgid "Automatically compile MO file when saving"
+msgstr "Automatisch het MO-bestand compileren bij het opslaan"
+
+msgid "Show summary after catalog update"
+msgstr "Samenvatting tonen na bijwerken catalogus"
+
+msgid "Check spelling"
+msgstr "Spelling controleren"
+
+msgid "Always change focus to text input field"
+msgstr "Altijd cursor in tekstinvoerveld zetten"
+
+msgid ""
+"Never let the list of strings take focus. If enabled, you must use Ctrl-"
+"arrows for keyboard navigation but you can also type text immediately, "
+"without having to press Tab to change focus."
+msgstr ""
+"Nooit de lijst met strings als actief venster instellen. Als deze optie "
+"aanstaat, moet u Ctrl-pijltjestoetsen gebruiken voor de toetsenbord-"
+"navigatie, maar u kunt ook meteen tekst typen, zonder met de tabtoets het "
+"actieve venster te hoeven veranderen."
+
+msgid "Appearance"
+msgstr "Weergave"
+
+msgid "Use custom list font:"
+msgstr "Aangepast lettertype voor lijst gebruiken:"
+
+msgid "Use custom text fields font:"
+msgstr "Aangepast lettertype voor tekstvelden gebruiken:"
+
+msgid "Change UI language"
+msgstr "Interface-taal veranderen"
+
+#. TRANSLATORS: This is a note appended to "Check spelling" when running on older Windows versions
+msgid "(requires Windows 8 or newer)"
+msgstr "(vereist Windows 8 of hoger)"
+
+msgid "General"
+msgstr "Algemeen"
+
+msgid "Use translation memory"
+msgstr "Vertaalgeheugen gebruiken"
+
+msgid "Learn From Files..."
+msgstr "Uit bestanden halen..."
+
+msgid "Learn from files..."
+msgstr "Uit bestanden halen..."
+
+#. TRANSLATORS: This is a button that deletes everything in the translation memory (i.e. clears/resets it).
+msgid "Reset"
+msgstr "Resetten"
+
+#. TRANSLATORS: Followed by "match translations within the file" or "pre-translate from TM"
+msgid "When updating from sources"
+msgstr "Tijdens het bijwerken vanuit bronnen"
+
+#. TRANSLATORS: Preceded by "When updating from sources"
+msgid "fuzzy match within the file"
+msgstr "onduidelijke overeenkomsten binnen het bestand gebruiken"
+
+#. TRANSLATORS: Preceded by "When updating from sources"
+msgid "pre-translate from TM"
+msgstr "vooraf-vertaling vanuit het TM gebruiken"
+
+msgid ""
+"Poedit can attempt to fill in new entries from only previous translations in "
+"the file or from your entire translation memory. Using the TM won’t be very "
+"effective if it’s near-empty, but it will get better as you add more "
+"translations to it."
+msgstr ""
+"Poedit kan proberen nieuwe invoer alleen vanuit eerdere vertalingen in het "
+"bestand in te vullen of vanuit het gehele vertaalgeheugen. Het gebruik van "
+"het TM zal niet erg effectief zijn als het bijna leeg is, maar het zal beter "
+"worden als u er meer vertalingen aan toevoegt."
+
+msgid "Stored translations:"
+msgstr "Opgeslagen vertalingen:"
+
+msgid "Database size on disk:"
+msgstr "Databasegrootte op schijf:"
+
+msgid "Select translation files to import"
+msgstr "Selecteer de te importeren taalbestanden"
+
+msgid "Translation Memory"
+msgstr "Vertaalgeheugen"
+
+msgid "Importing translations..."
+msgstr "Vertalingen importeren..."
+
+msgid "Finalizing..."
+msgstr "Voltooien..."
+
+msgid "Reset translation memory"
+msgstr "Vertaalgeheugen resetten"
+
+msgid "Are you sure you want to reset the translation memory?"
+msgstr "Bent u er zeker van het vertaalgeheugen te resetten?"
+
+msgid ""
+"Resetting the translation memory will irrevocably delete all stored "
+"translations from it. You can’t undo this operation."
+msgstr ""
+"Het resetten van het vertaalgeheugen zal onherroepelijk alle opgeslagen "
+"vertalingen eruit wissen. U kunt deze actie niet terugdraaien."
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. TRANSLATORS: This is abbreviation of "Translation Memory" used in Preferences on macOS.
+#. Long text looks weird there, too short (like TM) too, but less so. "General" is about ideal
+#. length there.
+msgid "TM"
+msgstr "TM"
+
+msgid ""
+"Source code extractors are used to find translatable strings in the source "
+"code files and extract them so that they can be translated."
+msgstr ""
+"Er worden broncode-extractors gebruikt om vertaalbare strings in de broncode-"
+"bestanden te vinden en extraheren, zodat ze vertaald kunnen worden."
+
+msgid "Custom Extractors:"
+msgstr "Aangepaste extractors:"
+
+msgid "Custom extractors:"
+msgstr "Aangepaste extractors:"
+
+msgid "Edit..."
+msgstr "Bewerken..."
+
+msgid "GNU gettext"
+msgstr "GNU-gettext"
+
+msgid ""
+"Supports all programming languages recognized by GNU gettext tools (PHP, C/C+"
+"+, C#, Perl, Python, Java, JavaScript and others)."
+msgstr ""
+"Ondersteunt alle programmeertalen herkend door GNU-gettext-tools (PHP, C/C+"
+"+, C#, Perl, Python, Java, JavaScript en andere)."
+
+msgid "Delete extractor"
+msgstr "Extractor verwijderen"
+
+#, c-format
+msgid "Are you sure you want to delete the “%s” extractor?"
+msgstr "Weet u zeker dat u extractor '%s' wilt verwijderen?"
+
+msgid "Extractors"
+msgstr "Extractors"
+
+msgid "Accounts"
+msgstr "Accounts"
+
+msgid "Automatically check for updates"
+msgstr "Automatisch op updates controleren"
+
+msgid "Include beta versions"
+msgstr "Inclusief bèta-versies"
+
+msgid ""
+"Beta versions contain the latest new features and improvements, but may be a "
+"bit less stable."
+msgstr ""
+"Bèta-versies bevatten de nieuwste functies en verbeteringen, maar kunnen "
+"iets minder stabiel zijn."
+
+msgid "Updates"
+msgstr "Updates"
+
+msgid ""
+"These settings affect internal formatting of PO files. Adjust them if you "
+"have specific requirements e.g. because of version control."
+msgstr ""
+"Deze instellingen hebben invloed op de interne opmaak van de PO-bestanden. "
+"Pas ze aan als u specifieke eisen hebt, bijv. vanwege versiecontrole."
+
+msgid "Line endings:"
+msgstr "Regeleindes:"
+
+msgid "Unix (recommended)"
+msgstr "Unix (aanbevolen)"
+
+msgid "Windows"
+msgstr "Windows"
+
+#. TRANSLATORS: Followed by text control for entering number; wraps text at given width
+msgid "Wrap at:"
+msgstr "Tekstterugloop bij:"
+
+msgid "Preserve formatting of existing files"
+msgstr "Opmaak van bestaande bestanden behouden"
+
+msgid "Advanced"
+msgstr "Geavanceerd"
+
+msgid "Pre-translating…"
+msgstr "Vooraf vertalen…"
+
+#, c-format
+msgid "Pre-translated %u string"
+msgid_plural "Pre-translated %u strings"
+msgstr[0] "%u string vooraf vertaald"
+msgstr[1] "%u strings vooraf vertaald"
+
+#. TRANSLATORS: This is a somewhat common term describing the action where
+#. you apply the translation memory and/or machine translation to all of the
+#. strings you're translating as the first step, followed by correcting,
+#. improving etc., i.e. actually translating the strings. This may be tricky
+#. to express in other languages as simply as in English, but please try to
+#. keep it similarly concise. Please try to avoid, if possible, describing it
+#. as "auto-translation" and similar, because such terminology would mislead
+#. some users into thinking it's all that needs to be done (spoken from
+#. experience). "Pre-translate" nicely expresses that it's only the step done
+#. *before* actual translation.
+msgid "Pre-translate"
+msgstr "Vooraf vertalen"
+
+msgid "Only fill in exact matches"
+msgstr "Vul alleen exacte overeenkomsten in"
+
+msgid ""
+"By default, inaccurate results are filled in as well and marked as needing "
+"work. Check this option to only include accurate matches."
+msgstr ""
+"Standaard worden onduidelijke resultaten ook ingevuld en voor controle "
+"gemarkeerd. Vink deze optie aan om alleen nauwkeurige overeenkomsten te "
+"gebruiken."
+
+msgid "Don’t mark exact matches as needing work"
+msgstr "Exacte overeenkomsten niet markeren ter controle"
+
+msgid ""
+"Only enable if you trust the quality of your TM. By default, all matches "
+"from the TM are marked as needing work and should be reviewed before use."
+msgstr ""
+"Alleen inschakelen als u de kwaliteit van het TM vertrouwt. Standaard worden "
+"alle overeenkomsten uit het TM gemarkeerd voor controle en moeten ze vóór "
+"gebruik nagekeken worden."
+
+msgid ""
+"Pre-translation automatically finds exact or fuzzy matches for untranslated "
+"strings in the translation memory and fills in their translations."
+msgstr ""
+"Vooraf-vertaling zoekt automatisch exacte of onduidelijke overeenkomsten "
+"voor niet-vertaalde tekenreeksen in het vertaalgeheugen en vult hun "
+"vertalingen in."
+
+#, c-format
+msgid "%d entry was pre-translated."
+msgid_plural "%d entries were pre-translated."
+msgstr[0] "%d invoer is vooraf-vertaald."
+msgstr[1] "%d woorden zijn vooraf-vertaald."
+
+msgid ""
+"The translations were marked as needing work, because they may be "
+"inaccurate. You should review them for correctness."
+msgstr ""
+"De vertalingen zijn gemarkeerd voor controle omdat ze mogelijk onnauwkeurig "
+"zijn. U dient ze te controleren op juistheid."
+
+msgid "No entries could be pre-translated."
+msgstr "Er kon geen invoer vooraf vertaald worden."
+
+msgid ""
+"The TM doesn’t contain any strings similar to the content of this file. It "
+"is only effective for semi-automatic translations after Poedit learns enough "
+"from files that you translated manually."
+msgstr ""
+"Het vertaalgeheugen bevat geen strings die gelijk zijn aan de inhoud van dit "
+"bestand. Het is alleen geschikt voor semi-automatische vertalingen, nadat "
+"Poedit voldoende geleerd heeft van bestanden die u handmatig vertaald hebt."
+
+msgid ""
+"<big>Drag and Drop Folders Here</big>\n"
+"\n"
+"or use the + button"
+msgstr ""
+"<big>Sleep mappen hierheen</big>\n"
+"\n"
+"of gebruik de knop +"
+
+msgid ""
+"<big>Drag and drop folders here</big>\n"
+"\n"
+"or use the + button"
+msgstr ""
+"<big>Sleep mappen hierheen</big>\n"
+"\n"
+"of gebruik de knop +"
+
+msgid "Add Folders..."
+msgstr "Mappen toevoegen..."
+
+msgid "Add folders..."
+msgstr "Mappen toevoegen..."
+
+msgid "Add Files..."
+msgstr "Bestanden toevoegen..."
+
+msgid "Add files..."
+msgstr "Bestanden toevoegen..."
+
+msgid "Add Wildcard..."
+msgstr "Jokertekens toevoegen..."
+
+msgid "Add wildcard..."
+msgstr "Jokertekens toevoegen..."
+
+msgid "Paths"
+msgstr "Paden"
+
+msgid "Excluded paths"
+msgstr "Uitgesloten paden"
+
+msgid "Advanced extraction settings"
+msgstr "Geavanceerde extractie-instellingen"
+
+msgid "Extract notes for translators from:"
+msgstr "Opmerkingen voor vertalers extraheren uit:"
+
+msgid "Comments prefixed with:"
+msgstr "Opmerkingen voorafgegaan door:"
+
+msgid "All comments"
+msgstr "Alle opmerkingen"
+
+msgid "Additional xgettext flags:"
+msgstr "Aanvullende xgettext-flags:"
+
+msgid "Additional keywords"
+msgstr "Aanvullende zoekwoorden"
+
+msgid "Name of the project the translation is for"
+msgstr "Naam van het project waar de vertaling voor is"
+
+msgid "Team name and email address or URL"
+msgstr "Teamnaam en e-mailadres of URL"
+
+msgid "e.g. nplurals=2; plural=(n > 1);"
+msgstr "bijv. nplurals=2; plural=(n != 1);"
+
+msgid "UTF-8 (recommended)"
+msgstr "UTF-8 (aanbevolen)"
+
+msgid "Please save the file first. This section cannot be edited until then."
+msgstr ""
+"Sla het bestand eerst op. Deze sectie kan tot dan toe niet bewerkt worden."
+
+msgid "Not all plural forms are translated."
+msgstr "Niet alle meervoudsvormen zijn vertaald."
+
+msgid "The translation should start as a sentence."
+msgstr "De vertaling moet beginnen als een zin."
+
+msgid "The translation should start with a lowercase character."
+msgstr "De vertaling moet beginnen met een kleine letter."
+
+msgid "The translation doesn’t start with a space."
+msgstr "De vertaling begint niet met een spatie."
+
+msgid "The translation starts with a space, but the source text doesn’t."
+msgstr "De vertaling begint met een spatie, maar de brontekst niet."
+
+msgid "The translation is missing a newline at the end."
+msgstr "In de vertaling ontbreekt een regelafbreking aan het eind."
+
+msgid "The translation ends with a newline, but the source text doesn’t."
+msgstr "De vertaling eindigt met een regelafbreking, maar de brontekst niet."
+
+msgid "The translation is missing a space at the end."
+msgstr "In de vertaling ontbreekt een spatie aan het eind."
+
+msgid "The translation ends with a space, but the source text doesn’t."
+msgstr "De vertaling eindigt met een spatie, maar de brontekst niet."
+
+#, c-format
+msgid "The translation should end with “%s”."
+msgstr "De vertaling moet eindigen met \"%s\"."
+
+#, c-format
+msgid "The translation should not end with “%s”."
+msgstr "De vertaling mag niet eindigen met \"%s\"."
+
+#, c-format
+msgid "The translation ends with “%s”, but the source text ends with “%s”."
+msgstr "De vertaling eindigt met \"%s\", maar de brontekst met \"%s\"."
+
+msgid "Comment:"
+msgstr "Opmerking:"
+
+msgid "OK"
+msgstr "Ok"
+
+msgid "C&lear"
+msgstr "&Wissen"
+
+msgid "Clear the comment"
+msgstr "Opmerking wissen"
+
+msgid "New"
+msgstr "Nieuw"
+
+msgid "Create new translations project"
+msgstr "Nieuw vertaalproject maken"
+
+msgid "Edit"
+msgstr "Bewerken"
+
+msgid "Edit the project"
+msgstr "Het project bewerken"
+
+msgid "Delete the project"
+msgstr "Het project verwijderen"
+
+msgid "Update all"
+msgstr "Alles bijwerken"
+
+msgid "Update all catalogs in the project"
+msgstr "Alle catalogi in het project bijwerken"
+
+msgid "Edit project"
+msgstr "Het project bewerken"
+
+msgid "Project name:"
+msgstr "Projectnaam:"
+
+msgid "Browse"
+msgstr "Bladeren"
+
+msgid "Add directory to the list"
+msgstr "Map aan de lijst toevoegen"
+
+msgid "&New..."
+msgstr "&Nieuw..."
+
+msgid "New from &POT/PO file..."
+msgstr "Nieuw vanuit &POT/PO-bestand..."
+
+msgid "New From &POT/PO File..."
+msgstr "Nieuw vanuit &POT/PO-bestand..."
+
+msgid "&Open..."
+msgstr "&Openen..."
+
+msgid "Open Recent"
+msgstr "Recent bestand openen"
+
+msgid "Open from Crowdin..."
+msgstr "Openen vanuit Crowdin..."
+
+msgid "Open From Crowdin..."
+msgstr "Openen vanuit Crowdin..."
+
+msgid "&Close"
+msgstr "&Sluiten"
+
+msgid "&Save"
+msgstr "Op&slaan"
+
+msgid "Save &as..."
+msgstr "Opslaan &als..."
+
+msgid "Save &As..."
+msgstr "Opslaan &als..."
+
+msgid "Compile to MO..."
+msgstr "Naar MO-formaat compileren..."
+
+msgid "E&xport as HTML..."
+msgstr "E&xporteren als html..."
+
+msgid "Check for updates..."
+msgstr "Controleren op updates..."
+
+msgid "&Preferences..."
+msgstr "&Voorkeuren..."
+
+msgid "Catalogs &manager"
+msgstr "Catalogus&beheerder"
+
+msgid "Catalogs &Manager"
+msgstr "Catalogus&beheerder"
+
+msgid "E&xit"
+msgstr "&Afsluiten"
+
+msgid "Quit"
+msgstr "Afsluiten"
+
+msgid "Copy from singular"
+msgstr "Kopiëren vanuit de enkelvoudsvorm"
+
+msgid "Copy From Singular"
+msgstr "Kopiëren vanuit de enkelvoudsvorm"
+
+msgid "Translation needs &work"
+msgstr "De vertaling behoeft &controle"
+
+msgid "Translation Needs &Work"
+msgstr "De vertaling behoeft &controle"
+
+msgid "Edit &comment"
+msgstr "&Opmerking bewerken"
+
+msgid "Edit &Comment"
+msgstr "&Opmerking bewerken"
+
+msgid "Suggestions"
+msgstr "Suggesties"
+
+msgid "&Find..."
+msgstr "&Zoeken..."
+
+msgid "Replace..."
+msgstr "Vervangen..."
+
+msgid "Find next"
+msgstr "Volgende zoeken"
+
+msgid "Find previous"
+msgstr "Vorige zoeken"
+
+msgid "Find and Replace..."
+msgstr "Zoeken en vervangen..."
+
+msgid "Find Next"
+msgstr "Volgende zoeken"
+
+msgid "Find Previous"
+msgstr "Vorige zoeken"
+
+msgid "&Preferences"
+msgstr "&Voorkeuren"
+
+msgid "Display entry &IDs"
+msgstr "Invoer-&ID's weergeven"
+
+msgid "Display Entry &IDs"
+msgstr "Invoer-&ID's weergeven"
+
+msgid "Sort by &file order"
+msgstr "Sorteren op bestands&volgorde"
+
+msgid "Sort by &File Order"
+msgstr "Sorteren op bestands&volgorde"
+
+msgid "Sort by &source"
+msgstr "Sorteren op &bron"
+
+msgid "Sort by &Source"
+msgstr "Sorteren op &bron"
+
+msgid "Sort by &translation"
+msgstr "Sorteren op ver&taling"
+
+msgid "Sort by &Translation"
+msgstr "Sorteren op ver&taling"
+
+msgid "&Group by context"
+msgstr "&Groeperen naar context"
+
+msgid "&Group By Context"
+msgstr "&Groeperen naar context"
+
+msgid "Entries with errors first"
+msgstr "Invoer met fouten eerst"
+
+msgid "Entries with Errors First"
+msgstr "Invoer met fouten eerst"
+
+msgid "&Untranslated entries first"
+msgstr "&Onvertaalde invoer eerst"
+
+msgid "&Untranslated Entries First"
+msgstr "&Onvertaalde invoer eerst"
+
+msgid "&Show references"
+msgstr "&Verwijzingen weergeven"
+
+msgid "&Show References"
+msgstr "&Verwijzingen weergeven"
+
+msgid "Show sidebar"
+msgstr "Zijbalk tonen"
+
+msgid "Show status bar"
+msgstr "Statusbalk tonen"
+
+msgid "C&atalog"
+msgstr "C&atalogus"
+
+msgid "&Update from sources"
+msgstr "Bij&werken vanuit de bronteksten"
+
+msgid "&Update from Sources"
+msgstr "Bij&werken vanuit de bronteksten"
+
+msgid "Update from &POT file..."
+msgstr "Bijwerken vanuit &POT-bestand..."
+
+msgid "Update from &POT File..."
+msgstr "Bijwerken vanuit &POT-bestand..."
+
+msgid "Sync with Crowdin"
+msgstr "Synchroniseren met Crowdin"
+
+msgid "Pre-&translate..."
+msgstr "Vooraf-ver&talen..."
+
+msgid "&Purge deleted translations"
+msgstr "&Gewiste vertalingen definitief verwijderen"
+
+msgid "&Purge Deleted Translations"
+msgstr "&Gewiste vertalingen definitief verwijderen"
+
+msgid "&Validate translations"
+msgstr "Vertalingen &valideren"
+
+msgid "&Validate Translations"
+msgstr "Vertalingen &valideren"
+
+msgid "&Properties..."
+msgstr "&Eigenschappen..."
+
+msgid "&Done and next"
+msgstr "&Klaar en volgende"
+
+msgid "&Done and Next"
+msgstr "&Klaar en volgende"
+
+msgid "&Previous translation"
+msgstr "&Vorige vertaling"
+
+msgid "&Previous Translation"
+msgstr "&Vorige vertaling"
+
+msgid "&Next translation"
+msgstr "&Volgende vertaling"
+
+msgid "&Next Translation"
+msgstr "&Volgende vertaling"
+
+msgid "P&revious unfinished"
+msgstr "Vo&rige onvoltooide"
+
+msgid "P&revious Unfinished"
+msgstr "Vo&rige onvoltooide"
+
+msgid "Ne&xt unfinished"
+msgstr "&Volgende onvoltooide"
+
+msgid "Ne&xt Unfinished"
+msgstr "&Volgende onvoltooide"
+
+msgid "Previous plural form"
+msgstr "Vorige meervoudsvorm"
+
+msgid "Previous Plural Form"
+msgstr "Vorige meervoudsvorm"
+
+msgid "Next plural form"
+msgstr "Volgende meervoudsvorm"
+
+msgid "Next Plural Form"
+msgstr "Volgende meervoudsvorm"
+
+msgid "&Online help"
+msgstr "Online-&hulp"
+
+msgid "&Online Help"
+msgstr "Online-hulp"
+
+msgid "&GNU gettext manual"
+msgstr "&GNU-gettext-handleiding"
+
+msgid "&GNU gettext Manual"
+msgstr "&GNU-gettext-handleiding"
+
+msgid "&About Poedit"
+msgstr "&Over Poedit"
+
+msgid "&About"
+msgstr "&Over"
+
+msgid "Extractor setup"
+msgstr "Instellen extractor"
+
+msgid "List of extensions separated by semicolons (e.g. *.cpp;*.h):"
+msgstr "Lijst met extensies, gescheiden door puntkomma's (bijv. *.cpp; *.h):"
+
+msgid "Invocation:"
+msgstr "Aanroep:"
+
+msgid "Command to extract translations:"
+msgstr "Commando om vertalingen te extraheren:"
+
+msgid ""
+"This is the command used to launch the extractor.\n"
+"%o expands to the name of output file, %K to list\n"
+"of keywords, %F to list of input files,\n"
+"%C to charset flag (see below)."
+msgstr ""
+"Dit is het commando dat gebruikt wordt om de extractor te starten.\n"
+"%o pakt uit naar de naam van het uitvoerbestand, %K naar de lijst\n"
+" van sleutelwoorden, %F naar de lijst van invoervelden,\n"
+"%C naar de karakterset-vlag (zie hieronder)."
+
+msgid "An item in keywords list:"
+msgstr "Een item in de trefwoordenlijst:"
+
+msgid ""
+"This will be attached to the command line once\n"
+"for each keyword. %k expands to the keyword."
+msgstr ""
+"Dit wordt voor elk trefwoord aan de opdrachtregel \n"
+" toegevoegd. %k wordt vervangen door het trefwoord."
+
+msgid "An item in input files list:"
+msgstr "Een item in de lijst van invoerbestanden:"
+
+#, c-format
+msgid ""
+"This will be attached to the command line once\n"
+"for each input file. %f expands to the filename."
+msgstr ""
+"Dit wordt voor elk invoerbestand \n"
+" aan de opdrachtregel toegevoegd. %f wordt vervangen door de bestandsnaam."
+
+msgid "Source code charset:"
+msgstr "Broncode-tekenset:"
+
+#, c-format
+msgid ""
+"This will be attached to the command line\n"
+"only if source code charset was given. %c expands to charset value."
+msgstr ""
+"Dit wordt alleen aan de opdrachtregel toegevoegd als de bron-tekenset \n"
+"is opgegeven. %c wordt uitgebreid tot de tekensetwaarde."
+
+msgid "Catalog properties"
+msgstr "Cataloguseigenschappen"
+
+msgid "Project name and version:"
+msgstr "Projectnaam en -versie:"
+
+msgid "Language team:"
+msgstr "Taalteam:"
+
+msgid "Plural forms:"
+msgstr "Meervoudsvormen:"
+
+msgid "Use default rules for this language"
+msgstr "Standaardregels voor deze taal gebruiken"
+
+msgid "Use custom expression"
+msgstr "Aangepaste expressie gebruiken"
+
+msgid "Learn about plural forms"
+msgstr "Meer informatie over meervoudsvormen"
+
+msgid "Charset:"
+msgstr "Tekenset:"
+
+msgid "Advanced Extraction Settings..."
+msgstr "Geavanceerde extractie-instellingen..."
+
+msgid "Advanced extraction settings..."
+msgstr "Geavanceerde extractie-instellingen..."
+
+msgid "Translation Properties"
+msgstr "Eigenschappen van de vertaling"
+
+msgid "Translation properties"
+msgstr "Eigenschappen van vertaling"
+
+msgid "Sources Paths"
+msgstr "Bronpaden"
+
+msgid "Sources paths"
+msgstr "Bronpaden"
+
+msgid "Extract text from source files in the following directories:"
+msgstr "Extraheer tekst uit de bronbestanden in de volgende mappen:"
+
+msgid "Base path:"
+msgstr "Root-pad:"
+
+msgid "Sources Keywords"
+msgstr "Trefwoorden van de bronnen"
+
+msgid "Sources keywords"
+msgstr "Trefwoorden van bronnen"
+
+msgid ""
+"Use these keywords (function names) to recognize translatable strings\n"
+"in source files:"
+msgstr ""
+"Gebruik deze trefwoorden (functienamen) om vertaalbare strings in\n"
+"bronbestanden te herkennen:"
+
+msgid "Also use default keywords for supported languages"
+msgstr "Gebruik ook standaardtrefwoorden voor ondersteunde talen"
+
+msgid "Learn About Gettext Keywords"
+msgstr "Meer informatie over Gettext-trefwoorden"
+
+msgid "Learn about gettext keywords"
+msgstr "Meer informatie over gettext-trefwoorden"
+
+msgid "Update summary"
+msgstr "Samenvatting van de update"
+
+msgid ""
+"These strings were found in the sources but were not in the catalog.\n"
+"Poedit will add them to the catalog now."
+msgstr ""
+"Deze strings zijn in de broncode gevonden, maar stonden niet in de "
+"catalogus.\n"
+"Poedit zal ze nu aan de catalogus toevoegen."
+
+msgid "New strings"
+msgstr "Nieuwe strings"
+
+msgid ""
+"These strings are no longer in the sources.\n"
+"Poedit will remove them from the catalog now."
+msgstr ""
+"Deze strings staan niet meer in de broncode.\n"
+"Poedit zal ze nu uit de catalogus verwijderen."
+
+msgid "Obsolete strings"
+msgstr "Verouderde strings"
+
+msgid "(0 new, 0 obsolete)"
+msgstr "(0 nieuw, 0 verouderd)"
+
+msgid "Open"
+msgstr "Openen"
+
+msgid "Save catalog"
+msgstr "Catalogus opslaan"
+
+msgid "Validate"
+msgstr "Valideren"
+
+msgid "Check for errors in the translation"
+msgstr "De vertaling op fouten controleren"
+
+msgid "Update"
+msgstr "Bijwerken"
+
+msgid "Update catalog - synchronize it with sources"
+msgstr "Catalogus bijwerken - synchroniseren met de bronnen"
+
+msgid "Sidebar"
+msgstr "Zijbalk"
+
+msgid "Show or hide the sidebar"
+msgstr "De zijbalk weergeven of verbergen"
+
+#. TRANSLATORS: "Previous" as in used in the past, now replaced with newer.
+msgid "Previous source text:"
+msgstr "Vorige brontekst:"
+
+msgid ""
+"The old source text (before it changed during an update) that the now-"
+"inaccurate translation corresponds to."
+msgstr ""
+"De oude brontekst (voordat hij gewijzigd werd tijdens een update) waar de nu "
+"onnauwkeurige vertaling mee correspondeert."
+
+msgid "Notes for translators:"
+msgstr "Opmerkingen voor vertalers:"
+
+msgid "Add comment"
+msgstr "Opmerking toevoegen"
+
+msgid "Add Comment"
+msgstr "Opmerking toevoegen"
+
+msgid "Translation suggestions:"
+msgstr "Vertaalsuggesties:"
+
+#. TRANSLATORS: This is shown when no translation suggestions can be found in the TM (Windows).
+msgid "No matches found"
+msgstr "Geen overeenkomsten gevonden"
+
+#. TRANSLATORS: This is shown when no translation suggestions can be found in the TM (macOS, Linux).
+msgid "No Matches Found"
+msgstr "Geen overeenkomsten gevonden"
+
+msgid "This string was found in Poedit’s translation memory."
+msgstr "Deze tekenreeks is gevonden in het vertaalgeheugen van Poedit."
+
+msgid "Cannot create temporary directory."
+msgstr "Tijdelijke map maken niet mogelijk."
+
+msgid "Welcome to Poedit"
+msgstr "Welkom bij Poedit"
+
+#. TRANSLATORS: This is version information in about dialog, "%s" will be
+#. version number when used
+#, c-format
+msgid "Version %s"
+msgstr "Versie %s"
+
+msgid "Edit a Translation"
+msgstr "Een vertaling bewerken"
+
+msgid "Edit a translation"
+msgstr "Een vertaling bewerken"
+
+msgid "Open an existing PO file and edit the translation."
+msgstr "Een bestaand PO-bestand openen en de vertaling bewerken."
+
+msgid ""
+"Take an existing PO file or POT template and create a new translation from "
+"it."
+msgstr ""
+"Neem een bestaand PO-bestand of POT-sjabloon en maak er een nieuwe vertaling "
+"van."
+
+msgid "Collaborate on a Translation with Others"
+msgstr "Samenwerken met anderen aan een vertaling"
+
+msgid "Collaborate on a translation with others"
+msgstr "Samenwerken met anderen aan een vertaling"
+
+msgid ""
+"Download a file from Crowdin project, translate and sync your changes back."
+msgstr ""
+"Download een bestand van een Crowdin-project, vertaal het en synchroniseer "
+"de wijzigingen terug."
+
+msgid "What is Crowdin?"
+msgstr "Wat is Crowdin?"
+
+msgid "There are no translations. That’s unusual."
+msgstr "Er zijn geen vertalingen. Dat is ongebruikelijk."
+
+msgid ""
+"Translatable entries aren't added manually in the Gettext system, but are "
+"automatically extracted\n"
+"from source code. This way, they stay up to date and accurate.\n"
+"Translators typically use PO template files (POTs) prepared for them by the "
+"developer."
+msgstr ""
+"Vertaalbare invoer wordt niet handmatig aan het Gettext-systeem toegevoegd, "
+"maar automatisch geëxtraheerd\n"
+"uit de broncode. Op deze manier blijven ze up-to-date en accuraat.\n"
+"Vertalers gebruiken meestal PO-sjabloonbestanden (POT's) die de ontwikkelaar "
+"voor hen gemaakt heeft."
+
+msgid "(Learn more about GNU gettext)"
+msgstr "(Meer te weten komen over GNU-gettext)"
+
+msgid "The simplest way to fill this catalog is to update it from a POT:"
+msgstr ""
+"De eenvoudigste manier om deze catalogus aan te vullen is door hem bij te "
+"werken vanuit een POT-bestand:"
+
+msgid "Update from POT"
+msgstr "Bijwerken vanuit POT-bestand"
+
+msgid "Take translatable strings from an existing POT template."
+msgstr "Vertaalbare strings uit een bestaand POT-sjabloon halen."
+
+msgid ""
+"You can also extract translatable strings directly from the source code:"
+msgstr ""
+"U kunt ook vertaalbare strings rechtstreeks extraheren uit de broncode:"
+
+msgid "Extract from sources"
+msgstr "Extraheren uit broncode"
+
+msgid "Configure source code extraction in Properties."
+msgstr "Configureer broncode-extractie in 'Eigenschappen'."
+
+msgid "Sync"
+msgstr "Synchroniseren"
+
+msgid "Synchronize the translation with Crowdin"
+msgstr "De vertaling met Crowdin synchroniseren"
+
+#. TRANSLATORS: This is titlebar of about dialog, "%s" is application name
+#. ("Poedit" here, but please use "%s")
+#, c-format
+msgid "About %s"
+msgstr "Over %s"
+
+#. TRANSLATORS: Title of the preferences window on Windows and Linux. "%s" is replaced with "Poedit" when running.
+#, c-format
+msgid "%s Preferences"
+msgstr "%s-voorkeuren"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Services"
+msgstr "Services"
+
+#. TRANSLATORS: macOS item in app menu, %s is replaced with "Poedit"
+#, c-format
+msgid "Hide %s"
+msgstr "Verberg %s"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Hide Others"
+msgstr "Verberg andere"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Show All"
+msgstr "Toon alles"
+
+#. TRANSLATORS: macOS item in app menu, %s is replaced with "Poedit"
+#, c-format
+msgid "Quit %s"
+msgstr "Stoppen met %s"
+
+#. TRANSLATORS: macOS item in app menu
+msgid "Preferences..."
+msgstr "Voorkeuren..."
+
+#. TRANSLATORS: Title of a category in Windows task menu (right-click icon in taskbar)
+msgid "Recent"
+msgstr "Recente"
+
+#. TRANSLATORS: Title of a category in Windows task menu (right-click icon in taskbar)
+msgid "Frequent"
+msgstr "Frequente"
+
+msgid "&Apply"
+msgstr "&Toepassen"
+
+msgid "Apply"
+msgstr "Toepassen"
+
+msgid "&Back"
+msgstr "&Terug"
+
+msgid "Back"
+msgstr "Terug"
+
+msgid "&Cancel"
+msgstr "&Annuleren"
+
+msgid "&Clear"
+msgstr "&Wissen"
+
+msgid "Clear"
+msgstr "Wissen"
+
+msgid "Copy"
+msgstr "Kopiëren"
+
+msgid "Cu&t"
+msgstr "Kni&ppen"
+
+msgid "Cut"
+msgstr "Knippen"
+
+msgid "&Delete"
+msgstr "&Verwijderen"
+
+msgid "&Quit"
+msgstr "&Afsluiten"
+
+msgid "File"
+msgstr "Bestand"
+
+msgid "Help"
+msgstr "Hulp"
+
+msgid "&New"
+msgstr "&Nieuw"
+
+msgid "&No"
+msgstr "&Nee"
+
+msgid "No"
+msgstr "Nee"
+
+msgid "&OK"
+msgstr "&Ok"
+
+msgid "Open..."
+msgstr "Openen..."
+
+msgid "&Paste"
+msgstr "&Plakken"
+
+msgid "Paste"
+msgstr "Plakken"
+
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+msgid "&Redo"
+msgstr "Opnie&uw doen"
+
+msgid "Refresh"
+msgstr "Vernieuwen"
+
+msgid "&Save as"
+msgstr "&Opslaan als"
+
+msgid "Save as"
+msgstr "Opslaan als"
+
+msgid "Select &All"
+msgstr "&Alles selecteren"
+
+msgid "Select All"
+msgstr "Alles selecteren"
+
+msgid "&Undo"
+msgstr "&Ongedaan maken"
+
+msgid "&Yes"
+msgstr "&Ja"
+
+msgid "Yes"
+msgstr "Ja"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Shift+"
+msgstr "Shift+"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Enter"
+msgstr "Enter"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Up"
+msgstr "Omhoog"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Down"
+msgstr "Omlaag"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Left"
+msgstr "Links"
+
+#. TRANSLATORS: Keyboard shortcut for display in Windows menus
+msgid "Right"
+msgstr "Rechts"
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Ctrl+"
+msgid "ctrl"
+msgstr "ctrl"
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Alt+"
+msgid "alt"
+msgstr "alt"
+
+#. TRANSLATORS: Keyboard shortcut, must correspond to translation of "Shift+"
+msgid "shift"
+msgstr "shift"
