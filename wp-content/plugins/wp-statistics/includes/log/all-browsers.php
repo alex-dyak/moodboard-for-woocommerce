@@ -27,7 +27,7 @@ $rangeenddate   = $WP_Statistics->real_current_date( 'Y-m-d', '-0', $rangeend_ut
 
 ?>
 <div class="wrap">
-    <h2><?php _e( 'Browser Statistics', 'wp_statistics' ); ?></h2>
+    <h2><?php _e( 'Browser Statistics', 'wp-statistics' ); ?></h2>
 
     <div><?php wp_statistics_date_range_selector( WP_STATISTICS_BROWSERS_PAGE, $daysToDisplay ); ?></div>
 
@@ -35,8 +35,12 @@ $rangeenddate   = $WP_Statistics->real_current_date( 'Y-m-d', '-0', $rangeend_ut
         <div class="metabox-holder">
             <div class="meta-box-sortables">
                 <div class="postbox">
-                    <div class="handlediv" title="<?php _e( 'Click to toggle', 'wp_statistics' ); ?>"><br/></div>
-                    <h3 class="hndle"><span><?php _e( 'Browsers', 'wp_statistics' ); ?></span></h3>
+                    <?php $paneltitle = __( 'Browsers', 'wp-statistics' ); ?>
+                    <button class="handlediv" type="button" aria-expanded="true">
+                        <span class="screen-reader-text"><?php printf( __( 'Toggle panel: %s', 'wp-statistics' ), $paneltitle ); ?></span>
+                        <span class="toggle-indicator" aria-hidden="true"></span>
+                    </button>
+                    <h2 class="hndle"><span><?php echo $paneltitle; ?></span></h2>
                     <div class="inside">
                         <script type="text/javascript">
                             jQuery(function () {
@@ -64,7 +68,7 @@ $rangeenddate   = $WP_Statistics->real_current_date( 'Y-m-d', '-0', $rangeend_ut
 
                                     browser_chart = jQuery.jqplot('browsers-log', [browser_data], {
                                         title: {
-                                            text: '<b>' + <?php echo json_encode( __( 'Browsers by type', 'wp_statistics' ) ); ?> +'</b>',
+                                            text: '<b>' + <?php echo json_encode( __( 'Browsers by type', 'wp-statistics' ) ); ?> +'</b>',
                                             fontSize: '12px',
                                             fontFamily: 'Tahoma',
                                             textColor: '#000000',
@@ -123,8 +127,12 @@ $rangeenddate   = $WP_Statistics->real_current_date( 'Y-m-d', '-0', $rangeend_ut
         <div class="metabox-holder">
             <div class="meta-box-sortables">
                 <div class="postbox">
-                    <div class="handlediv" title="<?php _e( 'Click to toggle', 'wp_statistics' ); ?>"><br/></div>
-                    <h3 class="hndle"><span><?php _e( 'Platform', 'wp_statistics' ); ?></span></h3>
+                    <?php $paneltitle = __( 'Platform', 'wp-statistics' ); ?>
+                    <button class="handlediv" type="button" aria-expanded="true">
+                        <span class="screen-reader-text"><?php printf( __( 'Toggle panel: %s', 'wp-statistics' ), $paneltitle ); ?></span>
+                        <span class="toggle-indicator" aria-hidden="true"></span>
+                    </button>
+                    <h2 class="hndle"><span><?php echo $paneltitle; ?></span></h2>
                     <div class="inside">
                         <script type="text/javascript">
                             jQuery(function () {
@@ -152,7 +160,7 @@ $rangeenddate   = $WP_Statistics->real_current_date( 'Y-m-d', '-0', $rangeend_ut
 
                                     platform_chart = jQuery.jqplot('platform-log', [platform_data], {
                                         title: {
-                                            text: '<b>' + <?php echo json_encode( __( 'Browsers by platform', 'wp_statistics' ) ); ?> +'</b>',
+                                            text: '<b>' + <?php echo json_encode( __( 'Browsers by platform', 'wp-statistics' ) ); ?> +'</b>',
                                             fontSize: '12px',
                                             fontFamily: 'Tahoma',
                                             textColor: '#000000',
@@ -258,8 +266,12 @@ $rangeenddate   = $WP_Statistics->real_current_date( 'Y-m-d', '-0', $rangeend_ut
 <?php function BrowserVersionStats( $Browser, $rangestartdate = null, $rangeenddate = null ) {
 	$Browser_tag = strtolower( preg_replace( '/[^a-zA-Z]/', '', $Browser ) ); ?>
     <div class="postbox">
-        <div class="handlediv" title="<?php _e( 'Click to toggle', 'wp_statistics' ); ?>"><br/></div>
-        <h3 class="hndle"><span><?php echo sprintf( __( '%s Version', 'wp_statistics' ), $Browser ); ?></span></h3>
+        <?php $paneltitle = sprintf( __( '%s Version', 'wp-statistics' ), $Browser ); ?>
+        <button class="handlediv" type="button" aria-expanded="true">
+            <span class="screen-reader-text"><?php printf( __( 'Toggle panel: %s', 'wp-statistics' ), $paneltitle ); ?></span>
+            <span class="toggle-indicator" aria-hidden="true"></span>
+        </button>
+        <h2 class="hndle"><span><?php echo $paneltitle; ?></span></h2>
         <div class="inside">
             <script type="text/javascript">
                 jQuery(function () {
