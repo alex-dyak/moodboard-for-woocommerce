@@ -24,7 +24,7 @@ list( $daysToDisplay, $rangestart_utime, $rangeend_utime ) = wp_statistics_date_
 
 ?>
 <div class="wrap">
-    <h2><?php _e( 'Top Countries', 'wp_statistics' ); ?></h2>
+    <h2><?php _e( 'Top Countries', 'wp-statistics' ); ?></h2>
 
 	<?php wp_statistics_date_range_selector( WP_STATISTICS_COUNTRIES_PAGE, $daysToDisplay ); ?>
 
@@ -32,15 +32,19 @@ list( $daysToDisplay, $rangestart_utime, $rangeend_utime ) = wp_statistics_date_
         <div class="metabox-holder">
             <div class="meta-box-sortables">
                 <div class="postbox">
-                    <div class="handlediv" title="<?php _e( 'Click to toggle', 'wp_statistics' ); ?>"><br/></div>
-                    <h3 class="hndle"><span><?php _e( 'Top Countries', 'wp_statistics' ); ?></span></h3>
+                    <?php $paneltitle =  __( 'Top Countries', 'wp-statistics' ); ?>
+                    <button class="handlediv" type="button" aria-expanded="true">
+                        <span class="screen-reader-text"><?php printf( __( 'Toggle panel: %s', 'wp-statistics' ), $paneltitle ); ?></span>
+                        <span class="toggle-indicator" aria-hidden="true"></span>
+                    </button>
+                    <h2 class="hndle"><span><?php echo $paneltitle; ?></h2>
                     <div class="inside">
                         <table class="widefat table-stats" id="last-referrer" style="width: 100%;">
                             <tr>
-                                <td><?php _e( 'Rank', 'wp_statistics' ); ?></td>
-                                <td><?php _e( 'Flag', 'wp_statistics' ); ?></td>
-                                <td><?php _e( 'Country', 'wp_statistics' ); ?></td>
-                                <td><?php _e( 'Visitor Count', 'wp_statistics' ); ?></td>
+                                <td><?php _e( 'Rank', 'wp-statistics' ); ?></td>
+                                <td><?php _e( 'Flag', 'wp-statistics' ); ?></td>
+                                <td><?php _e( 'Country', 'wp-statistics' ); ?></td>
+                                <td><?php _e( 'Visitor Count', 'wp-statistics' ); ?></td>
                             </tr>
 
 							<?php

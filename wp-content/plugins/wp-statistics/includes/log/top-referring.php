@@ -1,7 +1,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function () {
         jQuery('.show-map').click(function () {
-            alert('<?php _e( 'To be added soon', 'wp_statistics' ); ?>');
+            alert('<?php _e( 'To be added soon', 'wp-statistics' ); ?>');
         });
 
         postboxes.add_postbox_toggles(pagenow);
@@ -72,7 +72,7 @@ if ( $referr ) {
 
 ?>
 <div class="wrap">
-    <h2><?php _e( 'Top Referring Sites', 'wp_statistics' ); ?></h2>
+    <h2><?php _e( 'Top Referring Sites', 'wp-statistics' ); ?></h2>
 
     <div><?php wp_statistics_date_range_selector( WP_STATISTICS_REFERRERS_PAGE, $daysToDisplay, null, null, $referr_field ); ?></div>
 
@@ -82,7 +82,7 @@ if ( $referr ) {
 		<?php if ( $referr ) { ?>
             <li class="all"><a <?php if ( ! $referr ) {
 					echo 'class="current"';
-				} ?>href="?page=<?php echo WP_STATISTICS_REFERRERS_PAGE . $date_args; ?>"><?php _e( 'All', 'wp_statistics' ); ?></a>
+				} ?>href="?page=<?php echo WP_STATISTICS_REFERRERS_PAGE . $date_args; ?>"><?php _e( 'All', 'wp-statistics' ); ?></a>
             </li>
             |
             <li>
@@ -91,7 +91,7 @@ if ( $referr ) {
 		<?php } else { ?>
             <li class="all"><a <?php if ( ! $referr ) {
 					echo 'class="current"';
-				} ?>href="?page=<?php echo WP_STATISTICS_REFERRERS_PAGE . $date_args; ?>"><?php _e( 'All', 'wp_statistics' ); ?>
+				} ?>href="?page=<?php echo WP_STATISTICS_REFERRERS_PAGE . $date_args; ?>"><?php _e( 'All', 'wp-statistics' ); ?>
                     <span class="count">(<?php echo $total; ?>)</span></a></li>
 		<?php } ?>
     </ul>
@@ -99,13 +99,16 @@ if ( $referr ) {
         <div class="metabox-holder">
             <div class="meta-box-sortables">
                 <div class="postbox">
-                    <div class="handlediv" title="<?php _e( 'Click to toggle', 'wp_statistics' ); ?>"><br/></div>
-					<?php if ( $referr ) { ?>
-                        <h3 class="hndle"><span><?php _e( 'Referring sites from', 'wp_statistics' ); ?>
-                                : <?php echo $WP_Statistics->html_sanitize_referrer( $referr ); ?></span></h3>
-					<?php } else { ?>
-                        <h3 class="hndle"><span><?php _e( 'Top Referring Sites', 'wp_statistics' ); ?></span></h3>
-					<?php } ?>
+                    <?php if ( $referr ) {
+                        $paneltitle = sprintf( __( 'Referring site: %s', 'wp-statistics' ), $WP_Statistics->html_sanitize_referrer( $referr ) );
+                    } else {
+                        $paneltitle = __( 'Top Referring Sites', 'wp-statistics' );
+                    }; ?>
+                    <button class="handlediv" type="button" aria-expanded="true">
+                        <span class="screen-reader-text"><?php printf( __( 'Toggle panel: %s', 'wp-statistics' ), $paneltitle ); ?></span>
+                        <span class="toggle-indicator" aria-hidden="true"></span>
+                    </button>
+                    <h2 class="hndle"><span><?php echo $paneltitle; ?></h2>
                     <div class="inside">
 						<?php
 						echo "<div class='log-latest'>";
@@ -134,7 +137,7 @@ if ( $referr ) {
 									echo "<div class='log-referred'><a href='?page=" . WP_STATISTICS_OVERVIEW_PAGE . "&type=last-all-visitor&ip={$item->ip}'>" . wp_statistics_icons( 'dashicons-visibility', 'visibility' ) . "{$item->ip}</a></div>";
 									echo "<div class='log-ip'>" . date( get_option( 'date_format' ), strtotime( $item->last_counter ) ) . " - <a href='http://www.geoiptool.com/en/?IP={$item->ip}' target='_blank'>{$item->ip}</a></div>";
 									echo "<div class='clear'></div>";
-									echo "<a class='show-map' title='" . __( 'Map', 'wp_statistics' ) . "'><div class='dashicons dashicons-location-alt'></div></a>";
+									echo "<a class='show-map' title='" . __( 'Map', 'wp-statistics' ) . "'><div class='dashicons dashicons-location-alt'></div></a>";
 
 									if ( array_search( strtolower( $item->agent ), array(
 											'chrome',
@@ -150,7 +153,7 @@ if ( $referr ) {
 									}
 
 									echo "<div class='log-agent'><a href='?page=" . WP_STATISTICS_OVERVIEW_PAGE . "&type=last-all-visitor&agent={$item->agent}'>{$agent}</a>";
-									echo $WP_Statistics->get_referrer_link( $item->referred, 100 );
+									echo $WP_Statistics->get_referrer_link( $item->referred, 100 ) . '</div>';
 									echo "</div>";
 								}
 							} else {
@@ -164,7 +167,7 @@ if ( $referr ) {
 
 									echo "<div class='log-item'>";
 									echo "<div class='log-referred'>{$i} - <a href='?page=" . WP_STATISTICS_REFERRERS_PAGE . "&referr=" . $referrer_html . $date_args . "'>" . $referrer_html . "</a></div>";
-									echo "<div class='log-ip'>" . __( 'References', 'wp_statistics' ) . ': ' . number_format_i18n( $value ) . '</div>';
+									echo "<div class='log-ip'>" . __( 'References', 'wp-statistics' ) . ': ' . number_format_i18n( $value ) . '</div>';
 									echo "<div class='clear'></div>";
 									echo "<div class='log-url'>" . $WP_Statistics->get_referrer_link( $items, 100 ) . '</div>';
 									echo "</div>";
@@ -180,7 +183,7 @@ if ( $referr ) {
                 <div class="pagination-log">
 					<?php if ( $total > 0 ) {
 						echo $Pagination->display(); ?>
-                        <p id="result-log"><?php echo ' ' . __( 'Page', 'wp_statistics' ) . ' ' . $Pagination->getCurrentPage() . ' ' . __( 'From', 'wp_statistics' ) . ' ' . $Pagination->getTotalPages(); ?></p>
+                        <p id="result-log"><?php printf( __( 'Page %1$s of %2$s', 'wp-statistics' ), $Pagination->getCurrentPage(), $Pagination->getTotalPages() ); ?></p>
 					<?php } ?>
                 </div>
             </div>

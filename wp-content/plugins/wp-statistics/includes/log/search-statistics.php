@@ -26,7 +26,7 @@ list( $daysToDisplay, $rangestart_utime, $rangeend_utime ) = wp_statistics_date_
 $daysInThePast = round( ( time() - $rangeend_utime ) / 86400, 0 );
 ?>
 <div class="wrap">
-    <h2><?php _e( 'Search Engine Referral Statistics', 'wp_statistics' ); ?></h2>
+    <h2><?php _e( 'Search Engine Referral Statistics', 'wp-statistics' ); ?></h2>
 
 	<?php wp_statistics_date_range_selector( WP_STATISTICS_SEARCHES_PAGE, $daysToDisplay ); ?>
 
@@ -34,9 +34,12 @@ $daysInThePast = round( ( time() - $rangeend_utime ) / 86400, 0 );
         <div class="metabox-holder">
             <div class="meta-box-sortables">
                 <div class="postbox">
-                    <div class="handlediv" title="<?php _e( 'Click to toggle', 'wp_statistics' ); ?>"><br/></div>
-                    <h3 class="hndle"><span><?php _e( 'Search Engine Referral Statistics', 'wp_statistics' ); ?></span>
-                    </h3>
+                    <?php $paneltitle = __( 'Search Engine Referral Statistics', 'wp-statistics' ); ?>
+                    <button class="handlediv" type="button" aria-expanded="true">
+                        <span class="screen-reader-text"><?php printf( __( 'Toggle panel: %s', 'wp-statistics' ), $paneltitle ); ?></span>
+                        <span class="toggle-indicator" aria-hidden="true"></span>
+                    </button>
+                    <h2 class="hndle"><span><?php echo $paneltitle; ?></span></h2>
                     <div class="inside">
                         <script type="text/javascript">
                             var visit_chart;
@@ -85,7 +88,7 @@ $daysInThePast = round( ( time() - $rangeend_utime ) / 86400, 0 );
 									echo 'searches_data_line_total';
 								}?>], {
                                     title: {
-                                        text: '<b>' + <?php echo json_encode( __( 'Search engine referrals in the last', 'wp_statistics' ) . ' ' . $daysToDisplay . ' ' . __( 'days', 'wp_statistics' ) ); ?> +'</b>',
+                                        text: '<b>' + <?php echo json_encode( sprintf( __( 'Search engine referrals in the last %s days', 'wp-statistics' ), $daysToDisplay ) ); ?> +'</b>',
                                         fontSize: '12px',
                                         fontFamily: 'Tahoma',
                                         textColor: '#000000',
@@ -106,7 +109,7 @@ $daysInThePast = round( ( time() - $rangeend_utime ) / 86400, 0 );
                                         yaxis: {
                                             min: 0,
                                             padMin: 1.0,
-                                            label: '<?php echo addslashes( __( 'Number of referrals', 'wp_statistics' ) ); ?>',
+                                            label: '<?php echo addslashes( __( 'Number of referrals', 'wp-statistics' ) ); ?>',
                                             labelRenderer: jQuery.jqplot.CanvasAxisLabelRenderer,
                                             labelOptions: {
                                                 angle: -90,
@@ -123,7 +126,7 @@ $daysInThePast = round( ( time() - $rangeend_utime ) / 86400, 0 );
                                         labels: [<?php foreach ( $search_engines as $se ) {
 											echo "'" . addslashes( $se['translated'] ) . "', ";
 										} if ( $total_stats == 1 ) {
-											echo "'" . addslashes( __( 'Total', 'wp_statistics' ) ) . "'";
+											echo "'" . addslashes( __( 'Total', 'wp-statistics' ) ) . "'";
 										} ?>],
                                         renderer: jQuery.jqplot.EnhancedLegendRenderer,
                                         rendererOptions: {

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: YITH WooCommerce Wishlist v2.1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-11 15:57+0200\n"
-"PO-Revision-Date: 2017-08-04 06:48:45+0000\n"
+"PO-Revision-Date: 2017-08-04 07:00:03+0000\n"
 "Last-Translator: Valentyn Zubenko <valentyn.zubenko@gmail.com>\n"
 "Language-Team: Your Inspiration Themes <support@yithemes.com>\n"
 "MIME-Version: 1.0\n"
@@ -781,7 +781,7 @@ msgstr ""
 #: templates/admin/wishlist-panel-premium.php:273
 #@ yith-woocommerce-wishlist
 msgid "'ADD TO CART' CHECKBOX"
-msgstr ""
+msgstr "'ДОБАВИТЬ В КОРЗИНУ' CHECKBOX"
 
 #: templates/admin/wishlist-panel-premium.php:275
 #, php-format
@@ -792,7 +792,7 @@ msgstr ""
 #: templates/admin/wishlist-panel-premium.php:278
 #@ yith-woocommerce-wishlist
 msgid "'ADD TO CART'"
-msgstr ""
+msgstr "'ДОБАВИТЬ В КОРЗИНУ'"
 
 #: templates/admin/wishlist-panel-premium.php:285
 #@ yith-woocommerce-wishlist
