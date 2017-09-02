@@ -196,7 +196,7 @@ Domain Path: 		/languages/
 .handmade-ourteam h6,
 .handmade-icon-box h3,
 .p-font {
-  font-family: 'Varela Round';
+  font-family: '' Comic Sans MS ', cursive';
 }
 .handmade-testimonial.style1 h3,
 .s-font,
@@ -206,7 +206,7 @@ Domain Path: 		/languages/
 .entry-comments h3.comments-title,
 footer.main-footer-wrapper .sidebar .widget-footer-logo .footer-logo-read-more a,
 footer.main-footer-wrapper .bottom-bar-wrapper .bottom-bar-text {
-  font-family: 'Playfair Display';
+  font-family: '' Comic Sans MS ', cursive';
 }
 .post-navigation {
   padding: 0;
@@ -2078,13 +2078,6 @@ body.menu-mobile-in .main-menu-overlay {
     display: none;
     vertical-align: middle;
   }
-  header.main-header {
-    background-color: rgba(255, 255, 255, 0.78);
-    background-image: url(http://handmade.loc/wp-content/uploads/2017/07/home_slider3-640x500-3.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-attachment: inherit;
-  }
   header.main-header .header-wrapper {
     display: table;
     position: relative;
@@ -2137,15 +2130,15 @@ body.menu-mobile-in .main-menu-overlay {
   }
   header.main-header .header-customize-left,
   header.main-header .header-customize-right {
-    color: #333333;
+    color: #3f3f3f;
   }
   header.main-header .header-customize-left .search-box input,
   header.main-header .header-customize-right .search-box input {
-    color: #333333;
+    color: #3f3f3f;
   }
   header.main-header .header-customize-left .shopping-cart-wrapper .widget_shopping_cart_content .widget_shopping_cart_icon > i.wicon + span.total,
   header.main-header .header-customize-right .shopping-cart-wrapper .widget_shopping_cart_content .widget_shopping_cart_icon > i.wicon + span.total {
-    background-color: #333333;
+    background-color: #3f3f3f;
     color: #fff;
   }
   header.main-header .header-customize-item {
@@ -2173,7 +2166,7 @@ body.menu-mobile-in .main-menu-overlay {
     display: block;
     width: 1px;
     height: 16px;
-    background-color: 1;
+    background-color: #eeeeee;
     top: 0;
     bottom: 0;
     margin: auto;
@@ -2200,7 +2193,7 @@ body.menu-mobile-in .main-menu-overlay {
     -moz-border-radius: 100%;
     border-radius: 100%;
     background-color: transparent;
-    border: solid 2px 1;
+    border: solid 2px #eeeeee;
     line-height: 39px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -2232,7 +2225,7 @@ body.menu-mobile-in .main-menu-overlay {
   }
   header.main-header .search-box input {
     height: 30px;
-    border: solid 1px 1;
+    border: solid 1px #eeeeee;
     color: #191919;
     background-color: transparent;
     height: 50px;
@@ -2272,7 +2265,7 @@ body.menu-mobile-in .main-menu-overlay {
     background-color: #fff;
     left: 0;
     right: 0;
-    border: solid 1px 1;
+    border: solid 1px #eeeeee;
     border-top: none;
   }
   header.main-header .ajax-search-result > ul {
@@ -2324,7 +2317,7 @@ body.menu-mobile-in .main-menu-overlay {
     left: 15px;
     right: 15px;
     top: 0;
-    border-top: solid 1px 1;
+    border-top: solid 1px #eeeeee;
   }
   header.main-header .ajax-search-result .search-view-more {
     text-align: center;
@@ -2384,7 +2377,7 @@ body.menu-mobile-in .main-menu-overlay {
     padding: 5px 0;
     list-style: none;
     margin: 0;
-    border: solid 2px 1;
+    border: solid 2px #eeeeee;
     border-top: none;
     background-color: #fff;
     line-height: 36px;
@@ -2424,7 +2417,7 @@ body.menu-mobile-in .main-menu-overlay {
     border-width: 2px;
   }
   header.main-header .menu-wrapper {
-    font-family: 'Varela Round';
+    font-family: '' Comic Sans MS ', cursive';
     display: inline-block;
     vertical-align: middle;
   }
@@ -2499,7 +2492,7 @@ body.menu-mobile-in .main-menu-overlay {
   header.main-header .menu-wrapper .x-nav-menu ul.x-sub-menu-multi-column > li.x-menu-item.x-header-column > a.x-menu-a-text {
     font-weight: 400;
     font-size: 22px;
-    font-family: 'Playfair Display';
+    font-family: '' Comic Sans MS ', cursive';
     letter-spacing: 0.05em;
     position: relative;
     display: block;
@@ -2538,7 +2531,7 @@ body.menu-mobile-in .main-menu-overlay {
   }
   header.main-header .menu-wrapper .x-nav-menu ul.x-sub-menu-multi-column > li.x-menu-item.x-tabs .x-sub-menu-tab > li.x-menu-item > a.x-menu-a-text {
     font-size: 15px;
-    font-family: 'Playfair Display';
+    font-family: '' Comic Sans MS ', cursive';
     color: #333333;
   }
   header.main-header .menu-wrapper .x-nav-menu ul.x-sub-menu-multi-column > li.x-menu-item.x-tabs .x-sub-menu-tab > li.x-menu-item > a.x-menu-a-text:hover {
@@ -2554,7 +2547,7 @@ body.menu-mobile-in .main-menu-overlay {
     border-top: none;
   }
   header.main-header .header-nav-above {
-    border-bottom: solid 1px 1;
+    border-bottom: solid 1px #eeeeee;
   }
   header.main-header .header-wrapper {
     border-bottom-style: solid;
@@ -2617,7 +2610,7 @@ body.menu-mobile-in .main-menu-overlay {
     vertical-align: middle;
     height: 16px;
     width: 1px;
-    background-color: 1;
+    background-color: #eeeeee;
     margin-left: 15px;
     margin-right: 15px;
   }
@@ -2637,13 +2630,13 @@ body.menu-mobile-in .main-menu-overlay {
   header.main-header .nav-hover-primary-base .menu-wrapper .x-nav-menu > li.menu-current > a.x-menu-a-text,
   header.main-header .nav-hover-primary-base .menu-wrapper .x-nav-menu > li > a.x-menu-a-text:hover,
   header.main-header .nav-hover-primary-base .menu-wrapper .x-nav-menu > li.x-menu-item:hover > a {
-    color: #333333;
+    color: #3f3f3f;
   }
   header.main-header .nav-hover-primary-base .header-customize i.fa {
     color: #191919;
   }
   header.main-header .nav-hover-primary-base .header-customize i.fa:hover {
-    color: #333333;
+    color: #3f3f3f;
   }
   header.header-2 .header-logo {
     position: absolute;
@@ -2701,7 +2694,7 @@ body.menu-mobile-in .main-menu-overlay {
   }
   header.header-6 .header-customize-nav .shopping-cart-wrapper .widget_shopping_cart_content .widget_shopping_cart_icon > i.wicon + span.total,
   header.header-7 .header-customize-nav .shopping-cart-wrapper .widget_shopping_cart_content .widget_shopping_cart_icon > i.wicon + span.total {
-    background-color: #333333;
+    background-color: #3f3f3f;
   }
   header.header-6 .header-customize-nav .search-with-category .form-search-left > span:after,
   header.header-7 .header-customize-nav .search-with-category .form-search-left > span:after {
@@ -2733,7 +2726,7 @@ body.menu-mobile-in .main-menu-overlay {
   }
   body.header-6 .top-bar,
   body.header-7 .top-bar {
-    border-bottom: solid 1px 1;
+    border-bottom: solid 1px #eeeeee;
   }
   .sticky-wrapper.is-sticky > .header-nav-wrapper {
     z-index: 997;
@@ -2924,7 +2917,7 @@ body.menu-mobile-in .main-menu-overlay {
   z-index: 9998;
   min-width: 300px;
   background: #fff;
-  border: solid 2px 1;
+  border: solid 2px #eeeeee;
   padding: 0;
   line-height: 2em;
   -webkit-transition: 0.5s all;
@@ -9681,11 +9674,4 @@ h3.sc-title,
 .top-bar .sidebar .widget.base-primary-color i.fa:hover,
 .top-bar .sidebar .widget.base-primary-color a:hover {
   color: #d3ac64;
-}
-body {
-  background-image: url("http://handmade.loc/wp-content/themes/handmade/assets/images/theme-options/pattern-6.png");
-  background-repeat: repeat;
-  background-position: center center;
-  background-size: auto;
-  background-attachment: scroll;
 }
