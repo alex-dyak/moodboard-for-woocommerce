@@ -109,24 +109,21 @@ function collections_admin_posts_filter_restrict_manage_posts(){
 
 }
 
-//add_filter( 'parse_query', 'admin_posts_filter' );
 
-function admin_posts_filter( $query ) {
-	global $pagenow;
-	if ( is_admin() && $pagenow=='edit.php') {
-		//добавлям фильтрацию по городу в запрос
-		if (!empty($_GET['post_type']) && $_GET['post_type'] == 'product' ) {
-			//$query->query_vars['meta_key'] = 'City';
-			//$query->query_vars['meta_value'] = $_GET['ADMIN_FILTER_FIELD_CITY'];
-		}
-	}
+add_filter( 'woocommerce_default_address_fields' , 'override_default_address_fields' );
+function override_default_address_fields( $address_fields ) {
+	// @ for postcode
+	$address_fields['postcode']['label'] = __('Номер отделения НП', 'woocommerce');
+
+	return $address_fields;
 }
 
-add_filter( 'product_type_selector', 'remove_product_types' );
+add_filter( 'woocommerce_product_tabs', 'woo_reorder_tabs', 98 );
+function woo_reorder_tabs( $tabs ) {
 
-function remove_product_types( $types ){
-	unset( $types['grouped'] );
-	unset( $types['external'] );
+	$tabs['reviews']['priority'] = 15;			// Reviews third
+	$tabs['description']['priority'] = 10;			// Description second
+	$tabs['additional_information']['priority'] = 5;	// Additional information first
 
-	return $types;
+	return $tabs;
 }
