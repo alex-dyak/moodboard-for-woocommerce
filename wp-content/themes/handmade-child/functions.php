@@ -109,7 +109,7 @@ function collections_admin_posts_filter_restrict_manage_posts(){
 
 }
 
-
+// Rename form fields.
 add_filter( 'woocommerce_default_address_fields' , 'override_default_address_fields' );
 function override_default_address_fields( $address_fields ) {
 	// @ for postcode
