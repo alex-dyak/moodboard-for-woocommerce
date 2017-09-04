@@ -113,7 +113,7 @@ function collections_admin_posts_filter_restrict_manage_posts(){
 add_filter( 'woocommerce_default_address_fields' , 'override_default_address_fields' );
 function override_default_address_fields( $address_fields ) {
 	// @ for postcode
-	$address_fields['postcode']['label'] = __('Номер отделения НП', 'woocommerce');
+	$address_fields['postcode']['label'] = __('Номер отделения', 'woocommerce');
 
 	return $address_fields;
 }
@@ -128,4 +128,5 @@ function woo_reorder_tabs( $tabs ) {
 	return $tabs;
 }
 
+// Uncheck different address checkbox.
 add_filter( 'woocommerce_ship_to_different_address_checked', '__return_false' );
