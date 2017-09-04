@@ -35,5 +35,98 @@ add_filter( 'woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby' 
 
 function custom_woocommerce_catalog_orderby( $sortby ) {
 	$sortby['name_list'] = 'По имени';
+
 	return $sortby;
+}
+
+// Remove and add products columns.
+add_filter( 'manage_edit-product_columns', 'new_product_column',11 );
+function new_product_column($columns){
+
+	//remove column
+	unset( $columns['wp-statistics'] );
+	unset( $columns['g5plus_product_new'] );
+	unset( $columns['g5plus_product_hot'] );
+	unset( $columns['featured'] );
+	unset( $columns['product_type'] );
+
+	//add column
+	$columns['collections'] = __( 'Коллекция');
+
+	return $columns;
+}
+
+// Adding the data for each collections column.
+add_action( 'manage_product_posts_custom_column' , 'product_list_column_content', 10, 2 );
+function product_list_column_content( $column, $postid ) {
+	global $post;
+	$terms                    = get_the_terms( $post->ID, 'collections' );
+	$product_collections_name = '';
+	switch ( $column ) {
+		case 'collections' :
+			foreach ( $terms as $term ) {
+				$product_collections_name = $term->name;
+				break;
+			}
+			echo $product_collections_name;
+			break;
+	}
+}
+
+add_filter('manage_edit-product_sortable_columns', 'add_views_sortable_column');
+function add_views_sortable_column($sortable_columns){
+	$sortable_columns['collections'] = array('collections', 'desc');
+
+	return $sortable_columns;
+}
+
+
+add_action( 'restrict_manage_posts', 'collections_admin_posts_filter_restrict_manage_posts' );
+/**
+ * Create the filter dropdown.
+ *
+ * @return void
+ */
+function collections_admin_posts_filter_restrict_manage_posts(){
+	global $typenow;
+	if( $typenow == 'product' ){
+		$taxes = array( 'collections' );
+		foreach ( $taxes as $tax ) {
+			$current_tax = isset( $_GET[$tax] ) ? $_GET[$tax] : '';
+			$tax_obj = get_taxonomy($tax);
+
+			$terms = get_terms($tax);
+			if(count($terms) > 0) {
+				echo "<select name='$tax' id='$tax' class='postform'>";
+				echo "<option value=''>Все Коллекции</option>";
+				foreach ($terms as $term) {
+					echo '<option value='. $term->slug, $current_tax == $term->slug ? ' selected="selected"' : '','>' . $term->name .' (' . $term->count .')</option>';
+				}
+				echo "</select>";
+			}
+		}
+	}
+
+}
+
+//add_filter( 'parse_query', 'admin_posts_filter' );
+
+function admin_posts_filter( $query ) {
+	global $pagenow;
+	if ( is_admin() && $pagenow=='edit.php') {
+		//добавлям фильтрацию по городу в запрос
+		if (!empty($_GET['post_type']) && $_GET['post_type'] == 'product' ) {
+			//$query->query_vars['meta_key'] = 'City';
+			//$query->query_vars['meta_value'] = $_GET['ADMIN_FILTER_FIELD_CITY'];
+		}
+	}
+}
+
+add_filter( 'product_type_selector', 'remove_product_types' );
+
+function remove_product_types( $types ){
+	unset( $types['grouped'] );
+	unset( $types['external'] );
+
+	return $types;
 }

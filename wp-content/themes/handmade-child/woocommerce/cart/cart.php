@@ -23,6 +23,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<thead>
 		<tr>
 			<th class="product-remove">&nbsp;</th>
+			<th class="product-SKU"><?php esc_html_e( 'SKU', 'woocommerce' ); ?></th>
 			<th class="product-name"><?php esc_html_e( 'Product', 'g5plus-handmade' ); ?></th>
 			<th class="product-price"><?php esc_html_e( 'Price', 'g5plus-handmade' ); ?></th>
 			<th class="product-quantity"><?php esc_html_e( 'Quantity', 'g5plus-handmade' ); ?></th>
@@ -47,6 +48,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</td>
 
+					<td class="product-SKU">
+						<?php
+						echo $_product->get_sku();
+						?>
+					</td>
 
 					<td class="product-name">
                         <?php

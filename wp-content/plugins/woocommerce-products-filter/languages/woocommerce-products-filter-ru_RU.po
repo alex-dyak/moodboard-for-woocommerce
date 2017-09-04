@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WOOF - WooCommerce Products Filter v1.1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-08-29 11:15:56+0000\n"
+"PO-Revision-Date: 2017-08-29 11:19:28+0000\n"
 "Last-Translator: developer <alex_dyak@mail.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -2980,5 +2980,5 @@ msgstr ""
 #: views/woof.php:505
 #@ woocommerce-products-filter
 msgid "Reset"
-msgstr "Сбросить"
+msgstr "Очистить"
 
