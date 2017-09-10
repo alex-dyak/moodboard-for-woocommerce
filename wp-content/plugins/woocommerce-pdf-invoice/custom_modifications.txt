@@ -1,0 +1,30 @@
+Description: 
+Added functionality to generate 
+and download monthly list of invoices 
+as PDF document.
+
+----------    Changes    ------------
+-------------------------------------
+file: class-pdf-functions-class.php
+
+Include files:
+ - class-pdf-send-pdf-class.php
+
+Added functions:
+ - invoices_download_filter()
+ - inv_admin_footer()
+
+
+Modified functions:
+ - __construct()
+ - admin_pdf_url_check()
+ 
+-------------------------------------
+file: class-pdf-send-pdf-class.php
+
+Added functions:
+ - get_woocommerce_monthly_invoices()
+
+
+Modified functions:
+ - get_woocommerce_invoice_content()
