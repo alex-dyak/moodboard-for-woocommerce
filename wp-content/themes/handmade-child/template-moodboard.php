@@ -6,10 +6,14 @@
 
 <?php get_header(); ?>
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">
+
 <style>
-	td {
-		width: 64px;
-		height: 64px;
+	.product-thumbnail {
+		width: 200px;
+		height: 200px;
 	}
 
 	#box {
@@ -28,94 +32,52 @@
 </style>
 
 <script>
-	function dragStart(e) {
-		e.dataTransfer.setData("text/plain",e.target.id);
-	}
+	zindex = 11;
 
-	function dragEnter(e) {
-		event.preventDefault();
-		return true;
-	}
+	$(function() {
 
-	function dragDrop(e) {
-		var data = e.dataTransfer.getData("text/plain");
-		e.target.appendChild(document.getElementById(data));
-	}
+		$('.product-thumbnail').draggable({});
 
-	function dragOver(e) {
-		event.preventDefault();
-	}
+		$('#box').droppable({
+			drop: function() {
+				//$('.product-thumbnail').css("width", "200px");
+			}
+		});
 
+	});
 
-	// Movement inside Box.
-	var ball = document.getElementById('ball');
-
-	ball.onmousedown = function(e) {
-
-		var coords = getCoords(ball);
-		var shiftX = e.pageX - coords.left;
-		var shiftY = e.pageY - coords.top;
-
-		ball.style.position = 'absolute';
-		document.body.appendChild(ball);
-		moveAt(e);
-
-		ball.style.zIndex = 1000; // над другими элементами
-
-		function moveAt(e) {
-			ball.style.left = e.pageX - shiftX + 'px';
-			ball.style.top = e.pageY - shiftY + 'px';
-		}
-
-		document.onmousemove = function(e) {
-			moveAt(e);
-		};
-
-		ball.onmouseup = function() {
-			document.onmousemove = null;
-			ball.onmouseup = null;
-		};
-
-	}
-
-	ball.ondragstart = function() {
-		return false;
-	};
-
-
-	function getCoords(elem) { // кроме IE8-
-		var box = elem.getBoundingClientRect();
-
-		return {
-			top: box.top + pageYOffset,
-			left: box.left + pageXOffset
-		};
-
-	}
 </script>
 
 
 <?php
 global $woocommerce;
+global $product;
 // Get cart items.
 $cart = WC()->cart->get_cart();
-// Get Wishlist items.
-$query_args = array();
-$wishlist_items = YITH_WCWL()->get_products( $query_args );
 
+// Get Wishlist items.
+$user_id = get_current_user_id();
+$wishlists = YITH_WCWL()->get_wishlists();
+if ( ! empty( $wishlists ) && isset( $wishlists[0] ) ) {
+	$wishlist_id = $wishlists[0]['wishlist_token'];
+} else {
+	$wishlist_id = false;
+}
+$query_args = array();
+$query_args[ 'wishlist_token' ] = $wishlist_id;
+$query_args[ 'wishlist_visibility' ] = 'visible';
+$wishlist_items = YITH_WCWL()->get_products( $query_args );
 ?>
 
-<div id="section" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="dragOver(event)">
-	<table border="1">
-		<tr>
-			<td><img src="http://magazin.loc/wp-content/uploads/2017/04/5.png" id="ball" draggable="true" ondragstart="dragStart(event)"
-			         style="cursor: pointer; position: absolute; left: 248px; top: 129px; z-index: 1000;"/></td>
-		<?php
-		if ( $cart ) {
-			?>
 
+<?php
+if ( $cart ) : ?>
+
+<h2><?php _e('Товары из корзины', 'handmade-child'); ?></h2>
+<table>
+	<tr>
 			<?php
-			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+			foreach ( $cart as $cart_item_key => $cart_item ) {
 				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 				$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
@@ -125,42 +87,60 @@ $wishlist_items = YITH_WCWL()->get_products( $query_args );
 				$attachment = wp_get_attachment_image_src($attachment_ids[0], 'medium' );
 			}
 			?>
-			<td>
-				<img src="<?php echo $attachment[0] ; ?>" id="<?php  echo $product_id; ?>" draggable="true" ondragstart="dragStart(event)" />
-			</td>
-			<?php
-			}
-		}
-		if( count( $wishlist_items ) > 0 ) :
-		$added_items = array();
-		foreach( $wishlist_items as $item ) :
-		global $product;
 
-		$item['prod_id'] = yit_wpml_object_id ( $item['prod_id'], 'product', true );
+				<td class="product-thumbnail" onmousedown="style.zIndex = zindex++">
+				<img class="dragElement"
+				     src="<?php echo $attachment[0] ; ?>"
+				     id="<?php  echo $product_id; ?>"
+					/>
+				</td>
+			<?php } ?>
 
-		if( in_array( $item['prod_id'], $added_items ) ){
-			continue;
-		}
+	</tr>
+</table>
+<?php endif; ?>
 
-		$added_items[] = $item['prod_id'];
-		$product = wc_get_product( $item['prod_id'] );
-		$attachment_ids[0] = get_post_thumbnail_id(  $item['prod_id'] );
-		$attachment = wp_get_attachment_image_src($attachment_ids[0], 'medium' );
-
-		if( $product && $product->exists() ) :
+	<?php	if ( count( $wishlist_items ) > 0 ) {
+			$added_items = array();
 		?>
+		<h2><?php _e('Товары из списка желаний', 'handmade-child'); ?></h2>
+		<table>
+			<tr>
+				<?php
+					foreach ( $wishlist_items as $item ) {
+						global $product;
 
-			<td class="product-thumbnail">
-				<img src="<?php echo $attachment[0] ; ?>" id="<?php  echo  $item['prod_id']; ?>" draggable="true" ondragstart="dragStart(event)" />
-			</td>
+						$item['prod_id'] = yit_wpml_object_id( $item['prod_id'],
+							'product', TRUE );
 
-			<?php endif;
-		endforeach;
-		endif; ?>
+						if ( in_array( $item['prod_id'], $added_items ) ) {
+							continue;
+						}
 
-		</tr>
-	</table>
-</div>
+						$added_items[] = $item['prod_id'];
+						$product = wc_get_product( $item['prod_id'] );
+						$attachment_ids[0] = get_post_thumbnail_id( $item['prod_id'] );
+						$attachment = wp_get_attachment_image_src( $attachment_ids[0], 'medium' );
 
-<div id="box" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="dragOver(event)"></div>
+						if ( $product && $product->exists() ) {
+							?>
+							<td class="product-thumbnail" onmousedown="style.zIndex = zindex++">
+								<img class="dragElement"
+								     src="<?php echo $attachment[0]; ?>"
+								     id="<?php echo $item['prod_id']; ?>"
+								     />
+							</td>
+						<?php
+						}
+					}
+				}
+				?>
+
+			</tr>
+		</table>
+
+
+<!--<div id="box" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="dragOver(event)"></div>-->
+<div id="box"></div>
+
 <?php get_footer(); ?>

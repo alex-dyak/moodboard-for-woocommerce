@@ -287,9 +287,9 @@ function wcfe_show_data_my_account_page() {
 	if ( !$user )
 		return;
 
- 
+  $html = '';
  if(is_array(get_option('wc_fields_account'))){
- 	$html = '';
+
  	$html .= '<table>';
  	$html .= '<tr><th>Custom Field Name</th><th>Field Value</th></tr>';
 
