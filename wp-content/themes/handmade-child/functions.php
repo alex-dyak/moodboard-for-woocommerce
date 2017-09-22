@@ -139,3 +139,10 @@ function woo_reorder_tabs( $tabs ) {
 
 // Uncheck different address checkbox.
 add_filter( 'woocommerce_ship_to_different_address_checked', '__return_false' );
+
+// Redirect after logout.
+add_action('wp_logout','auto_redirect_after_logout');
+function auto_redirect_after_logout(){
+  wp_redirect( home_url() );
+  exit();
+}
