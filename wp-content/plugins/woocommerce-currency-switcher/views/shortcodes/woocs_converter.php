@@ -1,6 +1,12 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
 global $WOOCS;
+
+if (!class_exists('WooCommerce')) {
+    echo "<div class='notice'>". _e('Warning: Woocommerce is not activated', 'woocommerce-currency-switcher')."</div>";
+    return;
+}
+
 $currencies = $WOOCS->get_currencies();
 if (isset($exclude))
 {

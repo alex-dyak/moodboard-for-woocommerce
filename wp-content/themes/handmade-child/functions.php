@@ -61,15 +61,17 @@ add_action( 'manage_product_posts_custom_column' , 'product_list_column_content'
 function product_list_column_content( $column, $postid ) {
 	global $post;
 	$terms                    = get_the_terms( $post->ID, 'collections' );
-	$product_collections_name = '';
-	switch ( $column ) {
-		case 'collections' :
-			foreach ( $terms as $term ) {
-				$product_collections_name = $term->name;
+	if ( $terms ) {
+		$product_collections_name = '';
+		switch ( $column ) {
+			case 'collections' :
+				foreach ( $terms as $term ) {
+					$product_collections_name = $term->name;
+					break;
+				}
+				echo $product_collections_name;
 				break;
-			}
-			echo $product_collections_name;
-			break;
+		}
 	}
 }
 
@@ -127,6 +129,8 @@ add_filter( 'woocommerce_product_tabs', 'woo_reorder_tabs', 98 );
 function woo_reorder_tabs( $tabs ) {
 
 	$tabs['reviews']['priority'] = 15;			// Reviews third
+	$tabs['reviews']['title'] = __('Отзывы', 'woocommerce');
+	$tabs['reviews']['callback'] = 'comments_template';
 	$tabs['description']['priority'] = 10;			// Description second
 	$tabs['additional_information']['priority'] = 5;	// Additional information first
 

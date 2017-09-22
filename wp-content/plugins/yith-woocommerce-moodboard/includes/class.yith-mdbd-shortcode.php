@@ -136,6 +136,8 @@ if( ! class_exists( 'YITH_mdbd_Shortcode' ) ) {
 				$current_page = max( 1, get_query_var( 'paged' ) );
 
 				// sets variables for pagination, if shortcode atts is set to yes
+				$pagination = '';
+				$per_page = '';
 				if( $pagination == 'yes' && $count > 1 ){
 					$pages = ceil( $count / $per_page );
 
