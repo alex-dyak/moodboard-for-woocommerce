@@ -61,15 +61,17 @@ add_action( 'manage_product_posts_custom_column' , 'product_list_column_content'
 function product_list_column_content( $column, $postid ) {
 	global $post;
 	$terms                    = get_the_terms( $post->ID, 'collections' );
-	$product_collections_name = '';
-	switch ( $column ) {
-		case 'collections' :
-			foreach ( $terms as $term ) {
-				$product_collections_name = $term->name;
+	if ( $terms ) {
+		$product_collections_name = '';
+		switch ( $column ) {
+			case 'collections' :
+				foreach ( $terms as $term ) {
+					$product_collections_name = $term->name;
+					break;
+				}
+				echo $product_collections_name;
 				break;
-			}
-			echo $product_collections_name;
-			break;
+		}
 	}
 }
 
@@ -112,6 +114,11 @@ function collections_admin_posts_filter_restrict_manage_posts(){
 // Rename form fields.
 add_filter( 'woocommerce_default_address_fields' , 'override_default_address_fields' );
 function override_default_address_fields( $address_fields ) {
+
+	unset($address_fields['company']);
+	unset($address_fields['address_2']);
+	unset($address_fields['state']);
+	unset($address_fields['address_2']);
 	// @ for postcode
 	$address_fields['postcode']['label'] = __('Номер отделения', 'woocommerce');
 
@@ -122,6 +129,8 @@ add_filter( 'woocommerce_product_tabs', 'woo_reorder_tabs', 98 );
 function woo_reorder_tabs( $tabs ) {
 
 	$tabs['reviews']['priority'] = 15;			// Reviews third
+	$tabs['reviews']['title'] = __('Отзывы', 'woocommerce');
+	$tabs['reviews']['callback'] = 'comments_template';
 	$tabs['description']['priority'] = 10;			// Description second
 	$tabs['additional_information']['priority'] = 5;	// Additional information first
 
@@ -130,3 +139,10 @@ function woo_reorder_tabs( $tabs ) {
 
 // Uncheck different address checkbox.
 add_filter( 'woocommerce_ship_to_different_address_checked', '__return_false' );
+
+// Redirect after logout.
+add_action('wp_logout','auto_redirect_after_logout');
+function auto_redirect_after_logout(){
+  wp_redirect( home_url() );
+  exit();
+}

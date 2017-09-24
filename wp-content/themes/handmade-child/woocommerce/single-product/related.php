@@ -87,13 +87,17 @@ $g5plus_woocommerce_loop['layout'] = 'slider';
 	<?php
 	// Get products by collection.
 	$product_collection = wc_get_product_terms(  $product->get_id(),  'collections',  $args = array() );
-
+	if ( $product_collection ) {
+		$collection = $product_collection[0]->slug;
+	} else {
+		$collection = '';
+	}
 	$args = array(
 		'tax_query' => array(
 			array(
 				'taxonomy' => 'collections',
 				'field'    => 'slug',
-				'terms'    => $product_collection[0]->slug
+				'terms'    => $collection
 			)
 		)
 	);

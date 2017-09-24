@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: YITH WooCommerce Wishlist v2.1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-11 15:57+0200\n"
-"PO-Revision-Date: 2017-08-04 07:00:03+0000\n"
+"PO-Revision-Date: 2017-09-20 07:51:18+0000\n"
 "Last-Translator: Valentyn Zubenko <valentyn.zubenko@gmail.com>\n"
 "Language-Team: Your Inspiration Themes <support@yithemes.com>\n"
 "MIME-Version: 1.0\n"
@@ -280,7 +280,7 @@ msgstr "Показывать статус склада"
 #: includes/class.yith-wcwl-admin-init.php:1158
 #@ yith-woocommerce-wishlist
 msgid "Show \"In stock\" or \"Out of stock\" label for each product in wishlist"
-msgstr ""
+msgstr "Show \"В наличии\" or \"Закончился\" label for each product in wishlist"
 
 #: includes/class.yith-wcwl-admin-init.php:1165
 #@ yith-woocommerce-wishlist
@@ -963,17 +963,17 @@ msgstr "Показывать статус склада"
 #: templates/wishlist-view.php:229
 #@ yith-woocommerce-wishlist
 msgid "Remove this product"
-msgstr ""
+msgstr "Удалить этот продукт"
 
 #: templates/wishlist-view.php:170
 #@ yith-woocommerce-wishlist
 msgid "Free!"
-msgstr ""
+msgstr "Свободно!"
 
 #: templates/wishlist-view.php:176
 #@ yith-woocommerce-wishlist
 msgid "Out of Stock"
-msgstr ""
+msgstr "Закончился"
 
 #: templates/wishlist-view.php:176
 #@ yith-woocommerce-wishlist

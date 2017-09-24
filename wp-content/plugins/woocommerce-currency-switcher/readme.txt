@@ -3,8 +3,8 @@ Contributors: RealMag777
 Donate link: http://codecanyon.net/item/woocommerce-currency-switcher/8085217?ref=realmag777
 Tags: woocommerce currency switcher, currencies, currencies switcher, currency switcher, woocommerce switcher, currency converter, currency, shortcode, switcher, woocommerce
 Requires at least: 3.8.0
-Tested up to: 4.8
-Stable tag: 1.1.9
+Tested up to: 4.8.1
+Stable tag: 1.2.0
 
 WooCommerce Currency Switcher – is a WordPress plugin that allows to switch products prices and get their rates converted in the real time!
 
@@ -16,13 +16,13 @@ Currency Switcher is available as with shortcode **[woocs]** so with the widget.
 
 Plus it is possible to show on the front 2 additional widgets: currency converter and currencies rates widget/shortcode as here (in sidebar) [http://demo.currency-switcher.com/](http://demo.currency-switcher.com/)
 
-More info is here: [http://currency-switcher.com/](http://currency-switcher.com/)
+More info is here: [https://currency-switcher.com/](https://currency-switcher.com/)
 
 
 
 ### The Plugin Features:
 
-* Shortcode - just add in text widget [woocs width='100px'] OR [woocs width='50%'], all of them are in [the plugin codex](http://currency-switcher.com/codex/)
+* Shortcode - just add in text widget [woocs width='100px'] OR [woocs width='50%'], all of them are in [the plugin codex](https://currency-switcher.com/codex/)
 * 3 Widgets: currencies switcher, currency converter, currencies rates
 * 5 kinds of selectors with flags + flag mode
 * 2 more additional AJAXED shortcodes: [woocs_rates exclude="" precision=2] & [woocs_converter exclude="" precision=2]
@@ -43,7 +43,7 @@ More info is here: [http://currency-switcher.com/](http://currency-switcher.com/
 * Compatible with – WooCommerce PDF Invoices & Packing Slips
 * Compatible with – WooCommerce Subscriptions by woothemes
 * 90% compatibility with different payment gates in 'multiple allowed' mode, just try it!
-* More compatibility: [http://currency-switcher.com/codex/#compatibility](http://currency-switcher.com/codex/#compatibility)
+* More compatibility: [https://currency-switcher.com/codex/#compatibility](https://currency-switcher.com/codex/#compatibility)
 
 Premium version of the plugin: [http://codecanyon.net/item/woocommerce-currency-switcher/8085217?ref=realmag777](http://codecanyon.net/item/woocommerce-currency-switcher/8085217?ref=realmag777)
 
@@ -58,7 +58,7 @@ https://www.youtube.com/watch?v=wUoM9EHjnYs
 
 
 ### Video tutorials:
-[http://currency-switcher.com/video-tutorials/](http://currency-switcher.com/video-tutorials/)
+[https://currency-switcher.com/video-tutorials/](https://currency-switcher.com/video-tutorials/)
 
 
 
@@ -74,13 +74,13 @@ Q: Where can I see demo?
 R: [http://demo.currency-switcher.com/](http://demo.currency-switcher.com/)
 
 Q: Documentation?
-R: [http://currency-switcher.com/documentation/](http://currency-switcher.com/documentation/) and [http://currency-switcher.com/codex/](http://currency-switcher.com/codex/)
+R: [https://currency-switcher.com/documentation/](https://currency-switcher.com/documentation/) and [https://currency-switcher.com/codex/](https://currency-switcher.com/codex/)
 
 Q: Videos?
-R: [http://currency-switcher.com/video-tutorials/](http://currency-switcher.com/video-tutorials/)
+R: [https://currency-switcher.com/video-tutorials/](https://currency-switcher.com/video-tutorials/)
 
 Q: More FAQ?
-R: [http://currency-switcher.com/category/faq/](http://currency-switcher.com/category/faq/)
+R: [https://currency-switcher.com/category/faq/](https://currency-switcher.com/category/faq/)
 
 
 == Screenshots ==
@@ -91,28 +91,32 @@ R: [http://currency-switcher.com/category/faq/](http://currency-switcher.com/cat
 
 == Changelog ==
 
+= 1.2.0 =
+* https://currency-switcher.com/update-v-2-2-0-v-1-2-0/
+* previous v.1.1.9 is here: [v.1.1.9](https://currency-switcher.com/wp-content/uploads/2017/09/woocommerce-currency-switcher-1.1.9.zip)
+
 = 1.1.9 =
 * Heap of small bugs fixed
 * A lot of code was remade to make WooCommerce 3.0.0 and WOOCS compatible
-* previous v.1.1.8 is here: [v.1.1.8](http://currency-switcher.com/wp-content/uploads/2017/04/woocommerce-currency-switcher-1.1.8.zip)
+* previous v.1.1.8 is here: [v.1.1.8](https://currency-switcher.com/wp-content/uploads/2017/04/woocommerce-currency-switcher-1.1.8.zip)
 
 = 1.1.8 =
-* http://currency-switcher.com/update-v-2-1-8-and-v-1-1-8/
-* previous v.1.1.7 is here: http://currency-switcher.com/wp-content/uploads/2016/12/woocommerce-currency-switcher-117.zip
+* https://currency-switcher.com/update-v-2-1-8-and-v-1-1-8/
+* previous v.1.1.7 is here: https://currency-switcher.com/wp-content/uploads/2016/12/woocommerce-currency-switcher-117.zip
 
 = 1.1.7 =
 * Heap of small bugs fixed
 * https://wordpress.org/support/topic/multi-currency-on-invoices?replies=8 - resolved
 * new option in the currencies settings: Decimals
 * new hook: woocs_drop_down_view
-* advanced API doc: http://currency-switcher.com/codex/	
+* advanced API doc: https://currency-switcher.com/codex/	
 	
 = 1.1.6 =
 * Heap of small bugs fixed
 * New hook woocs_price_html_tail
 * Approx. value on cart and chekout page in the currency of customer (in multiple mode only+geoip enabled)
 * New hook woocs_get_approximate_amount_text
-* Previous version of the plugin is here: http://currency-switcher.com/wp-content/uploads/2016/05/woocommerce-currency-switcher-1154.zip
+* Previous version of the plugin is here: https://currency-switcher.com/wp-content/uploads/2016/05/woocommerce-currency-switcher-1154.zip
 
 = 1.1.5.4 =
 * Improvements for security functionality
@@ -133,8 +137,8 @@ R: [http://currency-switcher.com/category/faq/](http://currency-switcher.com/cat
 * New option: Hide switcher on checkout page
 * Hint: wp-admin/admin.php?page=wc-settings&tab=woocs&woocs_reset=1 - reset currency options - be care
 * Improved: cron periods added - weekly, monthly
-* New filter: add_filter('woocs_price_format', 'my_woocs_price_format', 999, 2); - Any manipulation with price format, look it in the docs http://currency-switcher.com/documentation/#!/section_8
-* previous v.1.1.4 is here: http://currency-switcher.com/wp-content/uploads/2016/01/woocommerce-currency-switcher-114.zip
+* New filter: add_filter('woocs_price_format', 'my_woocs_price_format', 999, 2); - Any manipulation with price format, look it in the docs https://currency-switcher.com/documentation/#!/section_8
+* previous v.1.1.4 is here: https://currency-switcher.com/wp-content/uploads/2016/01/woocommerce-currency-switcher-114.zip
 
 = 1.1.4 =
 * WordPress 4.3 small adaptation - using __construct in the widget, prev widget-API was deprecated
@@ -148,7 +152,7 @@ R: [http://currency-switcher.com/category/faq/](http://currency-switcher.com/cat
 * added storage optionally, transient for sites which can work with session normally because of server options
 * added new drop-down wselect -> https://github.com/websanova/wSelect#wselectjs
 * in shortcode [woocs] and currency switcher widget added new option txt_type which allows show currency description in drop-down instead of its code
-* previous v.1.1.2 is here: http://currency-switcher.com/wp-content/uploads/2015/08/woocommerce-currency-switcher-112.zip
+* previous v.1.1.2 is here: https://currency-switcher.com/wp-content/uploads/2015/08/woocommerce-currency-switcher-112.zip
 
 = 1.1.2 =
 * some small bugs fixed
@@ -170,7 +174,7 @@ R: [http://currency-switcher.com/category/faq/](http://currency-switcher.com/cat
 little inconvenience in wp-admin/edit.php?post_type=shop_order with displayed orders amount + order amounts inside!
 You can close orders using old version of the plugin and then update to the v.1.0.9 or greater. If you are happy with 1.0.4 version of the plugin - continue use it.
 If you uses basic currency for payments - update the plugin with no doubt.
-WOOCS 1.0.4 is here - http://currency-switcher.com/wp-content/uploads/2015/07/woocommerce-currency-switcher-104.zip
+WOOCS 1.0.4 is here - https://currency-switcher.com/wp-content/uploads/2015/07/woocommerce-currency-switcher-104.zip
 
 = 1.0.4 =
 * Validation error: PayPal amounts do not match fixed

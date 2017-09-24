@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: HandMade Child Theme v1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-08-28 14:48:01+0000\n"
+"PO-Revision-Date: 2017-09-22 07:23:55+0000\n"
 "Last-Translator: developer <alex_dyak@mail.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -9492,9 +9492,9 @@ msgstr "Искать:"
 #@ g5plus-handmade
 msgid "%s customer review"
 msgid_plural "%s customer reviews"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "отзыв"
+msgstr[1] "отзыва"
+msgstr[2] "отзывы"
 
 #: woocommerce/quick-view/rating.php:29
 #: woocommerce/single-product/rating.php:28

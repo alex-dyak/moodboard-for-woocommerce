@@ -1,5 +1,6 @@
-var wocs_loading_first_time = true;//simply flag var
+var woocs_loading_first_time = true;//simply flag var
 var sumbit_currency_changing = true;//juts a flag variable for drop-down redraws when prices redraws by AJAX
+
 jQuery(function ($) {
 
     jQuery.fn.life = function (types, data, fn) {
@@ -82,7 +83,7 @@ jQuery(function ($) {
 		    selectText: "Select currency",
 		    //background:'#ff0000',
 		    onSelected: function (data) {
-			if (!wocs_loading_first_time)
+			if (!woocs_loading_first_time)
 			{
 			    var form = jQuery(data.selectedItem).closest('form.woocommerce-currency-switcher-form');
 			    jQuery(form).find('input[name="woocommerce-currency-switcher"]').eq(0).val(data.selectedData.value);
@@ -105,7 +106,7 @@ jQuery(function ($) {
 	}
     }
 
-
+ woocs_loading_first_time = false;
 
 
     if (woocs_drop_down_view == 'wselect' && woocs_is_mobile != 1) {
@@ -203,6 +204,7 @@ jQuery(function ($) {
 
 		//if no prices on the page - do nothing
 		if (products_ids.length === 0) {
+                    sumbit_currency_changing = true;
 		    return;
 		}
 
@@ -217,7 +219,11 @@ jQuery(function ($) {
 		    if (!jQuery.isEmptyObject(data)) {
 			jQuery('.woocs_price_info').remove();
 			jQuery.each(jQuery('.woocs_price_code'), function (index, item) {
-			    jQuery(item).replaceWith(data.ids[jQuery(item).data('product-id')]);
+                            
+                        if(data.ids[jQuery(item).data('product-id')]!=undefined){
+                            jQuery(item).replaceWith(data.ids[jQuery(item).data('product-id')]);
+                        }   
+			   
 			});
 			//***
 			jQuery('.woocommerce-currency-switcher').val(data.current_currency);
@@ -270,7 +276,7 @@ jQuery(function ($) {
     }, 300);
     //***
     
-    wocs_loading_first_time = false;
+   
 });
 
 

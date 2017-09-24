@@ -2,7 +2,10 @@
 <?php
 //*** hide if there is checkout page
 global $post;
-
+if (!class_exists('WooCommerce')) {
+    echo "<div class='notice'>". _e('Warning: Woocommerce is not activated', 'woocommerce-currency-switcher')."</div>";
+    return;
+}
 if (get_option('woocs_restrike_on_checkout_page', 0))
 {
     if (is_object($post))
@@ -68,7 +71,7 @@ if ($drop_down_view == 'flags')
     <?php endif; ?>
 
 
-    <form method="post" action="" class="woocommerce-currency-switcher-form <?php if ($show_flags): ?>woocs_show_flags<?php endif; ?>" data-ver="<?php echo WOOCS_VERSION ?>">
+        <form method="<?php echo apply_filters('woocs_form_method','post')?>" action="" class="woocommerce-currency-switcher-form <?php if ($show_flags): ?>woocs_show_flags<?php endif; ?>" data-ver="<?php echo WOOCS_VERSION ?>">
         <input type="hidden" name="woocommerce-currency-switcher" value="<?php echo $this->current_currency ?>" />
         <select name="woocommerce-currency-switcher" style="width: <?php echo $width ?>;" data-width="<?php echo $width ?>" data-flag-position="<?php echo $flag_position ?>" class="woocommerce-currency-switcher" onchange="woocs_redirect(this.value);
                     void(0);">

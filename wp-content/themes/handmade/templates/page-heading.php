@@ -244,11 +244,6 @@ if(!isset($page_title_layout) || ($page_title_layout == '') || ($page_title_layo
 
     if (is_singular('product')) {
         $page_title_layout = $g5plus_options['single_product_title_layout'];
-	    // Set page title like Collection name.
-	    $product = wc_get_product( $post->ID );
-	    $product_collection = wc_get_product_terms(  $product->get_id(),  'collections',  $args = array() );
-	    $term_name = $product_collection[0]->name;
-	    $page_title = $term_name;
     }
 
     else if (is_singular('portfolio')) {

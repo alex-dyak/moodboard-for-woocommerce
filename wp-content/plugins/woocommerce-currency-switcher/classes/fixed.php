@@ -170,7 +170,8 @@ final class WOOCS_FIXED {
 	return $is;
     }
     
-     public function is_empty($post_id, $code, $type) {
+    
+    public function is_empty($post_id, $code, $type) {
 	$is = false;
 	$val = $this->get_value($post_id, $code, $type);
 	if ((int) $val === -1) {
@@ -181,6 +182,7 @@ final class WOOCS_FIXED {
 
     public function get_price_type($product, $price) {
 	$type = 'regular';
+
 	static $products_data = array();
 	$product_id = 0;
 	//$_regular_price = get_post_meta($post_id, '_regular_price', true);
