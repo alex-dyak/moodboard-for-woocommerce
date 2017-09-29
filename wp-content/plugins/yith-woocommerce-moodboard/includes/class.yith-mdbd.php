@@ -508,7 +508,7 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
         public function count_add_to_moodboard( $product_id = false ) {
             global $product, $wpdb;
 
-            $product_id = ! ( $product_id ) ? $product->id : $product_id;
+            $product_id = ! ( $product_id ) ? $product->get_id() : $product_id;
 
             if( ! $product_id ){
                 return 0;
@@ -559,6 +559,7 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
                     'visible'
                 );
 
+                $is_default = '';
                 if( ! empty( $user_id ) ){
                     $sql .= " AND i.`user_id` = %d";
                     $sql_args[] = $user_id;
@@ -573,6 +574,7 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
                     $sql .= " AND i.`moodboard_id` = %d";
                     $sql_args[] = $moodboard_id;
                 }
+
                 elseif( empty( $moodboard_id ) && empty( $moodboard_token ) && $is_default != 1 ){
                     $sql .= " AND i.`moodboard_id` IS NULL";
                 }
@@ -623,9 +625,10 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
                 }
 
                 $sql .= " GROUP BY i.prod_id, l.ID";
+                $offset = '';
 
                 if( ! empty( $limit ) ){
-                    $sql .= " LIMIT " . $offset . ", " . $limit;
+                  $sql .= " LIMIT " . $offset . ", " . $limit;
                 }
 
                 $moodboard = $wpdb->get_results( $wpdb->prepare( $sql, $sql_args ), ARRAY_A );
@@ -648,8 +651,8 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
                         unset( $moodboard[ $key ] );
                     }
                 }
-
-                if( ! empty( $limit ) ){
+              $offset = '';
+              if( ! empty( $limit ) ){
                     $moodboard = array_slice( $moodboard, $offset, $limit );
                 }
             }
@@ -730,8 +733,8 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
                 $sql_args[] = "%" . $search . "%";
                 $sql_args[] = "%" . $search . "%";
             }
-
-            if( ! empty( $limit ) ){
+          $offset = '';
+          if( ! empty( $limit ) ){
                 $sql .= " LIMIT " . $offset . ", " . $limit;
             }
 
@@ -822,6 +825,7 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
         public function get_moodboards( $args = array() ){
             global $wpdb;
 
+            $orderby = '';
             $default = array(
                 'id' => false,
                 'user_id' => ( is_user_logged_in() ) ? get_current_user_id(): false,
@@ -1165,7 +1169,7 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
         public function get_addtomoodboard_url() {
             global $product;
             	
-            return esc_url( add_query_arg( 'add_to_moodboard', $product->id ) );
+            return esc_url( add_query_arg( 'add_to_moodboard', $product->get_id() ) );
         }
         
         /**
@@ -1186,7 +1190,7 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
                 $product = new WC_Product( $id );
                 
             if ( $product->product_type == 'variable' ) {
-                return get_permalink( $product->id );
+                return get_permalink( $product->get_id() );
             }
             
     		$url = YITH_mdbd_URL . 'add-to-cart.php?moodboard_item_id=' . rtrim( $id, '_' );
@@ -1208,7 +1212,7 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
         public function get_affiliate_product_url( $id ) {
             _deprecated_function( 'YITH_mdbd::get_affiliate_product_url', '2.0.0' );
             $product = get_product( $id );
-            return get_post_meta( $product->id, '_product_url', true );
+            return get_post_meta( $product->get_id(), '_product_url', true );
         }
         
         /**
@@ -1407,7 +1411,7 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
 
             if( $product->is_type( 'simple' ) && get_option( 'yith_mdbd_redirect_cart' ) == 'yes' ){
                 if( ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) && yith_mdbd_is_moodboard() ){
-                    $url = add_query_arg( 'add-to-cart', $product->id, function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url() );
+                    $url = add_query_arg( 'add-to-cart', $product->get_id(), function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url() );
                 }
             }
 
@@ -1415,7 +1419,7 @@ if ( ! class_exists( 'YITH_mdbd' ) ) {
                 if( ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) && yith_mdbd_is_moodboard() ) {
                     $url = add_query_arg(
 	                    array(
-		                    'remove_from_moodboard_after_add_to_cart' => $product->id,
+		                    'remove_from_moodboard_after_add_to_cart' => $product->get_id(),
 		                    'moodboard_id' => $moodboard_id,
 		                    'moodboard_token' => $yith_mdbd_moodboard_token
 	                    ),

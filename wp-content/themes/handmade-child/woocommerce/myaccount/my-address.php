@@ -59,11 +59,14 @@ $col    = 1;
 					'last_name'   => get_user_meta( $customer_id, $name . '_last_name', true ),
 					'company'     => get_user_meta( $customer_id, $name . '_company', true ),
 					'address_1'   => get_user_meta( $customer_id, $name . '_address_1', true ),
-					'address_2'   => get_user_meta( $customer_id, $name . '_address_2', true ),
 					'city'        => get_user_meta( $customer_id, $name . '_city', true ),
 					'state'       => get_user_meta( $customer_id, $name . '_state', true ),
 					'postcode'    => get_user_meta( $customer_id, $name . '_postcode', true ),
 					'country'     => get_user_meta( $customer_id, $name . '_country', true ),
+					// Custom fields.
+					'phone'       => get_user_meta( $customer_id, $name . '_phone', true ),
+					'email'       => get_user_meta( $customer_id, $name . '_email', true ),
+					$name . '_post_number' => get_user_meta( $customer_id, $name . '_post_number', true ),
 				), $customer_id, $name );
 
 				$formatted_address = WC()->countries->get_formatted_address( $address );
@@ -72,6 +75,10 @@ $col    = 1;
 					_e( 'You have not set up this type of address yet.', 'woocommerce' );
 				} else {
 					echo $formatted_address;
+					if ( array_key_exists ( 'shipping_post_number', $address ) ) {
+						echo '<br>';
+						echo $address['shipping_post_number'];
+					}
 				}
 			?>
 		</address>

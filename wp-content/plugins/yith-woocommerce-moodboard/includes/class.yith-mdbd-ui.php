@@ -74,7 +74,7 @@ if( ! class_exists( 'YITH_mdbd_UI' ) ) {
 
             $html .= $exists ? ' hide" style="display:none;"' : ' show"';
 
-            $html .= '><a href="' . esc_url( add_query_arg( 'add_to_moodboard', $product->id ) ) . '" data-product-id="' . $product->id . '" data-product-type="' . $product_type . '" ' . $classes . ' >' . $icon . $label . '</a>';
+            $html .= '><a href="' . esc_url( add_query_arg( 'add_to_moodboard', $product->get_id() ) ) . '" data-product-id="' . $product->get_id() . '" data-product-type="' . $product_type . '" ' . $classes . ' >' . $icon . $label . '</a>';
             $html .= '<img src="' . esc_url( admin_url( 'images/wpspin_light.gif' ) ) . '" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden" />';
             $html .= '</div>';
 

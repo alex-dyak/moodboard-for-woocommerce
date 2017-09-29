@@ -336,18 +336,18 @@ if( ! class_exists( 'YITH_mdbd_Shortcode' ) ) {
 			}
 
 			// exists in default moodboard
-			$exists = YITH_mdbd()->is_product_in_moodboard( $current_product->id, $default_moodboard );
+			$exists = YITH_mdbd()->is_product_in_moodboard( $current_product->get_id(), $default_moodboard );
 
 			// get moodboard url
 			$moodboard_url = YITH_mdbd()->get_moodboard_url();
 
 			// get product type
-			$product_type = $current_product->product_type;
+			$product_type = $current_product->get_type();
 
 			$additional_params = array(
 				'moodboard_url' => $moodboard_url,
 				'exists' => $exists,
-				'product_id' => $current_product->id,
+				'product_id' => $current_product->get_id(),
 				'product_type' => $product_type,
 				'label' => $label,
 				'browse_moodboard_text' => $browse_moodboard,
