@@ -46,7 +46,7 @@ function new_product_column($columns){
 	//remove column
 	unset( $columns['wp-statistics'] );
 	unset( $columns['g5plus_product_new'] );
-	unset( $columns['g5plus_product_hot'] );
+	//unset( $columns['g5plus_product_hot'] );
 	unset( $columns['featured'] );
 	unset( $columns['product_type'] );
 
@@ -167,7 +167,65 @@ add_filter( 'woocommerce_localisation_address_formats', function( $formats ){
 // add the replacement value
 add_filter( 'woocommerce_formatted_address_replacements', function( $replacements, $args ){
 	// we want to replace {phone} in the format with the data we populated
-	$replacements['{phone}'] = $args['phone'];
-	$replacements['{email}'] = $args['email'];
+	if ( array_key_exists('phone', $args ) ) {
+		$replacements['{phone}'] = $args['phone'];
+	} else {
+		$replacements['{phone}'] = '';
+	}
+
+	if ( array_key_exists('email', $args ) ) {
+		$replacements['{email}'] = $args['email'];
+	} else {
+		$replacements['{email}'] = '';
+	}
+
 	return $replacements;
 }, 10, 2 );
+
+/**
+ * Adds a meta box to the product editing screen
+ */
+function prfx_custom_meta() {
+	add_meta_box( 'prfx_meta', __( 'Рекомендованный товар', 'prfx-textdomain' ), 'prfx_meta_callback', 'product', 'side' );
+}
+add_action( 'add_meta_boxes', 'prfx_custom_meta' );
+
+/**
+ * Outputs the content of the meta box
+ */
+function prfx_meta_callback( $post ) {
+	wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
+	$prfx_stored_meta = get_post_meta( $post->ID );
+	?>
+
+	<p>
+		<label for="_recommended" class="prfx-row-title"><?php _e( 'Рекомендовать', 'prfx-textdomain' )?></label>
+		<input type="checkbox" name="_recommended" id="_recommended"
+		       <?php if ( isset($prfx_stored_meta['_recommended']) &&  $prfx_stored_meta['_recommended'] == true ) { ?>checked="checked"<?php } ?> />
+	</p>
+
+	<?php
+}
+
+/**
+ * Saves the custom meta input
+ */
+function prfx_meta_save( $post_id ) {
+
+	// Checks save status
+	$is_autosave = wp_is_post_autosave( $post_id );
+	$is_revision = wp_is_post_revision( $post_id );
+	$is_valid_nonce = ( isset( $_POST[ 'prfx_nonce' ] ) && wp_verify_nonce( $_POST[ 'prfx_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+
+	// Exits script depending on save status
+	if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+		return;
+	}
+
+	// Checks for input and sanitizes/saves if needed
+	if( isset( $_POST[ '_recommended' ] ) ) {
+		update_post_meta( $post_id, '_recommended',  $_POST[ '_recommended' ] );
+	}
+
+}
+add_action( 'save_post', 'prfx_meta_save' );

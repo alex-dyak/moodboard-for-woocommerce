@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.8.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-07-25 01:16:13+0000\n"
+"PO-Revision-Date: 2017-09-23 11:17:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,11 +74,11 @@ msgstr "Некоторые HTML теги недопустимы, включая:
 
 #: wp-includes/default-widgets.php:103
 msgid "Custom HTML"
-msgstr "Пользовательский HTML"
+msgstr "HTML-код"
 
 #: wp-includes/default-widgets.php:96
 msgid "Arbitrary HTML code."
-msgstr "Произвольный HTML код."
+msgstr "Произвольный HTML-код."
 
 #: wp-includes/widgets/class-wp-widget-tag-cloud.php:141
 msgid "Show tag counts"
@@ -1366,7 +1366,7 @@ msgstr "Извините, обратные ссылки для этого объ
 
 #: wp-trackback.php:85
 msgid "I really need an ID for this to work."
-msgstr "Мне правда нужен ID чтобы это сработало."
+msgstr "Мне нужен ID, чтобы это сработало."
 
 #: wp-includes/script-loader.php:549
 msgid "Term removed."
@@ -2025,7 +2025,7 @@ msgstr "Нельзя создать уже имеющийся комментар
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:403
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:420
 msgid "Sorry, you must be logged in to comment."
-msgstr "Извините, вы должны войти для комментирования."
+msgstr "Извините, для отправки комментария необходимо авторизоваться."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:156
 msgid "Query parameter not permitted: %s"
@@ -2259,7 +2259,7 @@ msgstr "Имя пользователя или e-mail"
 
 #: wp-includes/customize/class-wp-customize-selective-refresh.php:207
 msgid "Click to edit this element."
-msgstr "Нажмите чтобы отредактировать этот элемент."
+msgstr "Нажмите, чтобы отредактировать этот элемент."
 
 #: wp-includes/customize/class-wp-customize-selective-refresh.php:206
 msgid "Click to edit the site title."
@@ -2271,7 +2271,7 @@ msgstr "Нажмите для редактирования этого видже
 
 #: wp-includes/customize/class-wp-customize-selective-refresh.php:204
 msgid "Click to edit this menu."
-msgstr "Нажмите чтобы отредактировать это меню."
+msgstr "Нажмите, чтобы отредактировать это меню."
 
 #: wp-includes/customize/class-wp-customize-header-image-control.php:176
 msgid "While you can crop images to your liking after clicking <strong>Add new image</strong>, we recommend matching the size of your video."

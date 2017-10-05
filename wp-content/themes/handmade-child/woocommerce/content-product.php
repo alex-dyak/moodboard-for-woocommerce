@@ -88,9 +88,6 @@ if ($product_quick_view == 0) {
             do_action( 'woocommerce_after_shop_loop_item_title' );
             ?>
         </div>
-	    <div class="add-to-moodboard">
-	        <button class="single_add_to_cart_button button alt" type="submit"><?php _e( 'Добавить на доску', 'woocommerce' ); ?></button>
-	    </div>
 
     </div>
 </div>

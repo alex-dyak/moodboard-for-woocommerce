@@ -22,23 +22,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $text_align = is_rtl() ? 'right' : 'left';
 
+$shipping_method = $order->get_shipping_method();
+
 ?><table id="addresses" cellspacing="0" cellpadding="0" style="width: 100%; vertical-align: top;" border="0">
 	<tr>
-		<td class="td" style="text-align:<?php echo $text_align; ?>; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" valign="top" width="50%">
+        <?php
+        if( $shipping_method == 'Доставка Укр Почта' ) :
+        ?>
+		<td class="td" style="text-align: center; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" valign="top" width="50%">
 			<h3><?php _e( 'Укр Почта', 'woocommerce' ); ?></h3>
 
 			<p class="text"><?php echo $order->get_formatted_billing_address(); ?></p>
-			<p class="text"><?php echo __( 'Телефон: ', 'woocommerce' ) . $_POST['billing_phone']; ?></p>
-			<p class="text"><?php echo __( 'Номер отделения: ', 'woocommerce' ) . $_POST['billing_post_number']; ?></p>
 		</td>
+        <?php
+        elseif ( $shipping_method == 'Доставка Новая Почта' ) :
+        ?>
 		<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() && ( $shipping = $order->get_formatted_shipping_address() ) ) : ?>
-			<td class="td" style="text-align:<?php echo $text_align; ?>; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" valign="top" width="50%">
+			<td class="td" style="text-align: center; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" valign="top" width="50%">
 				<h3><?php _e( 'Новая Почта', 'woocommerce' ); ?></h3>
 
 				<p class="text"><?php echo $shipping; ?></p>
 				<p class="text"><?php echo __( 'Телефон: ', 'woocommerce' ) . $_POST['shipping_phone']; ?></p>
 				<p class="text"><?php echo __( 'Номер отделения: ', 'woocommerce' ) . $_POST['shipping_post_number']; ?></p>
 			</td>
+		<?php endif; ?>
 		<?php endif; ?>
 	</tr>
 </table>
