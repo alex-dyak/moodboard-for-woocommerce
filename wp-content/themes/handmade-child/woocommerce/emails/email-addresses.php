@@ -34,9 +34,7 @@ $shipping_method = $order->get_shipping_method();
 
 			<p class="text"><?php echo $order->get_formatted_billing_address(); ?></p>
 		</td>
-        <?php
-        elseif ( $shipping_method == 'Доставка Новая Почта' ) :
-        ?>
+        <?php elseif ( $shipping_method == 'Доставка Новая Почта' ) : ?>
 		<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() && ( $shipping = $order->get_formatted_shipping_address() ) ) : ?>
 			<td class="td" style="text-align: center; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" valign="top" width="50%">
 				<h3><?php _e( 'Новая Почта', 'woocommerce' ); ?></h3>
