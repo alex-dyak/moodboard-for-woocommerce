@@ -31,40 +31,36 @@ $args = array(
 $terms = get_terms( 'collections', $args );
 ?>
 <div class="container clearfix">
-    <div class="row clearfix">
+    <div class="row row-flex">
 <?php
 // Loop through and display the series
 if ( ! empty( $terms ) ) {
-	echo '<div class="col-md-9">';
-	echo '<div class="clearfix layout-container">';
-	echo '<div class="clearfix columns-3">';
 
 	foreach ( $terms as $term ) {
-		$img = get_term_meta( $term->term_id, 'wpcf-collection-featured-img',
-			TRUE );
+		$img = get_term_meta( $term->term_id, 'wpcf-collection-featured-img', TRUE );
 		?>
-        <div class="col-md-4 collection-item hover-name" data-title="<?php echo $term->name; ?>">
+        <div class="col-md-4 col-sm-4 col-xs-12 collection-item hover-name" data-title="<?php echo $term->name; ?>">
             <a href="<?php echo get_term_link( (int)$term->term_id, 'collections' ); ?>">
-                <img class="img-link" src="<?php echo $img; ?>" width="300"
-                     height="300" border="0"
+                <img class="img-link" src="<?php echo $img; ?>"
                      alt="<?php echo $term->name; ?>">
             </a>
         </div>
 		<?php
 	}
-	echo '</div></div></div>';
 }
-$big = 999999;
-echo '<div class="collection-pagination">';
-echo paginate_links( array(
-	'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-	'format'  => '?paged=%#%',
-	'current' => $paged,
-	'total'   => ceil( $number_of_pages / $per_page )
-) );
-echo '</div>';
 ?>
     </div>
+  <?php
+  $big = 999999;
+  echo '<div class="collection-pagination">';
+  echo paginate_links( array(
+    'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+    'format'  => '?paged=%#%',
+    'current' => $paged,
+    'total'   => ceil( $number_of_pages / $per_page )
+  ) );
+  echo '</div>';
+  ?>
 </div>
 <?php get_footer(); ?>
 
