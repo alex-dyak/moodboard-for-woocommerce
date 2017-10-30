@@ -38,10 +38,14 @@ if ( ! empty( $terms ) ) {
 
 	foreach ( $terms as $term ) {
 		$img = get_term_meta( $term->term_id, 'wpcf-collection-featured-img', TRUE );
-		?>
-        <div class="col-md-4 col-sm-4 col-xs-12 collection-item hover-name" data-title="<?php echo $term->name; ?>">
-            <a href="<?php echo get_term_link( (int)$term->term_id, 'collections' ); ?>">
-                <img class="img-link" src="<?php echo $img; ?>"
+		$img_name = explode('.jpg' , $img );
+		$img_collection_size = $img_name[0] . '-300x300.jpg';
+
+      ?>
+        <div class="col-md-4 col-sm-4 col-xs-12 collection-item">
+            <a class="hover-name" href="<?php echo get_term_link( (int)$term->term_id, 'collections' ); ?>"
+               data-title="<?php echo $term->name; ?>">
+                <img class="img-link" src="<?php echo $img_collection_size; ?>"
                      alt="<?php echo $term->name; ?>">
             </a>
         </div>
