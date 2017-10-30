@@ -5,7 +5,8 @@
 
 // Доделать пагинацию.
 ?>
-<?php get_header();
+<?php get_header(); ?>
+<?php  g5plus_get_template('page');
 
 if ( get_query_var( 'paged' ) ){
 	$paged = get_query_var('paged');
@@ -16,7 +17,7 @@ else if ( get_query_var( 'page' ) ){
 else {
 	$paged = 1;
 }
-$per_page = 12;
+$per_page = 20;
 $number_of_pages = count( get_terms( 'collections',array('hide_empty'=>'0') ) );
 $offset = $per_page * ( $paged - 1) ;
 
@@ -31,7 +32,7 @@ $args = array(
 $terms = get_terms( 'collections', $args );
 ?>
 <div class="container clearfix">
-    <div class="row row-flex">
+    <div class="row">
 <?php
 // Loop through and display the series
 if ( ! empty( $terms ) ) {
@@ -42,7 +43,7 @@ if ( ! empty( $terms ) ) {
 		$img_collection_size = $img_name[0] . '-300x300.jpg';
 
       ?>
-        <div class="col-md-4 col-sm-4 col-xs-12 collection-item">
+        <div class="col-md-3 col-sm-4 col-xs-12 col-lg-3 collection-item">
             <a class="hover-name" href="<?php echo get_term_link( (int)$term->term_id, 'collections' ); ?>"
                data-title="<?php echo $term->name; ?>">
                 <img class="img-link" src="<?php echo $img_collection_size; ?>"
