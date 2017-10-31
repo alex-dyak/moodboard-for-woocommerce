@@ -201,7 +201,7 @@ function prfx_meta_callback( $post ) {
 	<p>
 		<label for="_recommended" class="prfx-row-title"><?php _e( 'Рекомендовать', 'prfx-textdomain' )?></label>
 		<input type="checkbox" name="_recommended" id="_recommended"
-		       <?php if ( isset($prfx_stored_meta['_recommended']) &&  $prfx_stored_meta['_recommended'] == true ) { ?>checked="checked"<?php } ?> />
+		       <?php if ( isset($prfx_stored_meta['_recommended'][0]) &&  $prfx_stored_meta['_recommended'][0] == true ) { ?>checked="checked"<?php } ?> />
 	</p>
 
 	<?php
@@ -226,6 +226,9 @@ function prfx_meta_save( $post_id ) {
 	if( isset( $_POST[ '_recommended' ] ) ) {
 		update_post_meta( $post_id, '_recommended',  $_POST[ '_recommended' ] );
 	}
+    else {
+      update_post_meta( $post_id, '_recommended',  '' );
+    }
 
 }
 add_action( 'save_post', 'prfx_meta_save' );

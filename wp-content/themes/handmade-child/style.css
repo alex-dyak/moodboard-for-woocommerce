@@ -83,3 +83,7 @@ a.woof_front_toggle {
     border-radius: 50px 50px 50px 50px;
     margin-bottom: 10px;
 }
+
+.handmade-post .handmade-post-image-overlay {
+    background-color: rgba(222, 193, 140, 0);
+}

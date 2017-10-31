@@ -76,12 +76,14 @@ if (($content_col_number == 12) && ($layout_style == 'full')) {
 $archive_class = array('archive-product-wrap','clearfix');
 $archive_class[] = 'layout-' . $layout_style;
 
-get_header( 'shop' ); ?>
+get_header( 'shop' );
+g5plus_get_template('page');
+?>
 <?php
 /**
  * @hooked - g5plus_archive_product_heading - 5
  **/
-do_action('g5plus_before_archive_product');
+//do_action('g5plus_before_archive_product');
 ?>
 <main  class="site-content-archive-product">
   <?php
@@ -108,9 +110,20 @@ do_action('g5plus_before_archive_product');
 			<div class="<?php echo esc_attr($content_col) ?>">
 				<div class="<?php echo join(' ',$archive_class); ?>">
                     <?php
-                    $args = array(
-	                    'post_type' => 'product',
+                    $meta_query   = WC()->query->get_meta_query();
+                    $meta_query[] = array(
+                      'key'   => '_recommended',
+                      'value' => 'on'
                     );
+                    $args = [
+                      'post_type'              => 'product',
+                      'stock'                  => 1,
+                      'posts_per_page'         => 6,
+                      'posts_per_archive_page' => 6,
+                      'orderby'                => 'date',
+                      'order'                  => 'DESC',
+                      'meta_query'             => $meta_query,
+                    ];
                     $query = new WP_Query( $args );
                     ?>
           <?php if ( $query->have_posts() ) : ?>
