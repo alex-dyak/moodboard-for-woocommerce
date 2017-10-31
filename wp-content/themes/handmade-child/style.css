@@ -87,3 +87,8 @@ a.woof_front_toggle {
 .handmade-post .handmade-post-image-overlay {
     background-color: rgba(222, 193, 140, 0);
 }
+
+.blog-inner .entry-thumbnail a.entry-thumbnail_overlay:before,
+.handmade-post .entry-thumbnail a.entry-thumbnail_overlay:before {
+    background-color: rgba(222, 193, 140, 0);
+}
