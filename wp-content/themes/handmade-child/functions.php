@@ -2,6 +2,7 @@
 add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_styles', 1000 );
 function child_theme_enqueue_styles() {
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'g5plus_framework_style' ) );
+    wp_enqueue_script('customscript', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), '', TRUE );
 }
 
 add_action( 'after_setup_theme', 'g5plus_child_theme_setup');

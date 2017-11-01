@@ -92,3 +92,17 @@ a.woof_front_toggle {
 .handmade-post .entry-thumbnail a.entry-thumbnail_overlay:before {
     background-color: rgba(222, 193, 140, 0);
 }
+
+.handmade-post-author {
+    display: none;
+}
+
+.post-entry-meta {
+    font-size:0;
+}
+
+.scrolled {
+    position:fixed;
+    top:0px;
+    margin-top: -30px;
+}
