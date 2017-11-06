@@ -40,8 +40,12 @@ $shipping_method = $order->get_shipping_method();
 				<h3><?php _e( 'Новая Почта', 'woocommerce' ); ?></h3>
 
 				<p class="text"><?php echo $shipping; ?></p>
-				<p class="text"><?php echo __( 'Телефон: ', 'woocommerce' ) . $_POST['shipping_phone']; ?></p>
-				<p class="text"><?php echo __( 'Номер отделения: ', 'woocommerce' ) . $_POST['shipping_post_number']; ?></p>
+               <?php if( ! empty( $_POST['shipping_phone'] ) ): ?>
+                <p class="text"><?php echo __( 'Телефон: ', 'woocommerce' ) . $_POST['shipping_phone']; ?></p>
+               <?php endif; ?>
+              <?php if ( ! empty( $_POST['shipping_post_number'] ) ) : ?>
+                   <p class="text"><?php echo __( 'Номер отделения: ', 'woocommerce' ) . $_POST['shipping_post_number']; ?></p>
+                <?php endif; ?>
 			</td>
 		<?php endif; ?>
 		<?php endif; ?>

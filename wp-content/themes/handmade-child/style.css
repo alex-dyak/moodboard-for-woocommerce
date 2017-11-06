@@ -106,3 +106,11 @@ a.woof_front_toggle {
     top:0px;
     margin-top: -30px;
 }
+
+.single-payment {
+    font-size: large;
+}
+
+.create-account {
+    margin-left: 20px;
+}

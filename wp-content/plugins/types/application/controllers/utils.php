@@ -229,8 +229,8 @@ final class Types_Utils {
 		// Split the $url into two parts with the wp-content directory as the separator.
 		$parsed_url = explode( parse_url( WP_CONTENT_URL, PHP_URL_PATH ), $url );
 
-		// Return null if image is not on domain (WP_CONTENT_URL)
-		if( count( $parsed_url ) === 1 ) {
+		// Return null if image is not on domain (WP_CONTENT_URL).
+		if ( count( $parsed_url ) === 1 ) {
 			return null;
 		}
 
