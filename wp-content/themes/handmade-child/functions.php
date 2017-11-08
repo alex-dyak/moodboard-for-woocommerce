@@ -233,3 +233,9 @@ function prfx_meta_save( $post_id ) {
 
 }
 add_action( 'save_post', 'prfx_meta_save' );
+
+if( function_exists('acf_add_options_page') ) {
+
+  acf_add_options_page();
+
+}
