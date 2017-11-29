@@ -674,7 +674,7 @@ if (!function_exists('g5plus_render_comments')) {
                                 <i class="pe-7s-clock"></i> <?php echo get_comment_date('M j, Y'); ?>
                             </span>
                             <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-                            <?php edit_comment_link(esc_html__('Edit', 'g5plus-handmade'), '', '') ?>
+                            <?php edit_comment_link(esc_html__('Редактировать', 'g5plus-handmade'), '', '') ?>
                         </div>
                     </div>
                 </div>
@@ -689,7 +689,7 @@ Replaces the excerpt "more" text by a link
 if (!function_exists('g5plus_excerpt_more')) {
     function g5plus_excerpt_more($more) {
         global $post;
-        return '... <a class="read-more p-color" rel="bookmark" title="'. get_the_title() .'" href="'. get_permalink($post->ID) . '">'. esc_html__('View more','g5plus-handmade') .'</a>';
+        return '... <a class="read-more p-color" rel="bookmark" title="'. get_the_title() .'" href="'. get_permalink($post->ID) . '">'. esc_html__('Смотреть еще','g5plus-handmade') .'</a>';
     }
     add_filter('excerpt_more', 'g5plus_excerpt_more');
 }

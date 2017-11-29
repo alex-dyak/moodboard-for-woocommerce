@@ -28,7 +28,7 @@ $order_id = $order->get_order_number();
 $trecking_number = get_field( 'trecking_number', $order_id );
 ?>
 
-<p><?php printf( __( "Hi there. Your recent order on %s has been completed. Your order details are shown below for your reference.", 'woocommerce' ), get_option( 'blogname' ) ); ?></p>
+<p><?php printf( __( "Здравствуйте. Ваш последний заказ на %s завершен. Информация о вашем заказе приведена ниже для справки.", 'woocommerce' ), get_option( 'blogname' ) ); ?></p>
 <h3><?php echo __( "Трекинговый номер: ", 'woocommerce' ) . $trecking_number; ?></h3>
 
 <?php
