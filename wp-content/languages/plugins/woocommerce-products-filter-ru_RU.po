@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WOOF - WooCommerce Products Filter v1.1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-08-29 11:19:28+0000\n"
+"PO-Revision-Date: 2017-11-29 10:33:19+0000\n"
 "Last-Translator: developer <alex_dyak@mail.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -364,7 +364,7 @@ msgstr ""
 #: ext/by_rating/index.php:55
 #@ woocommerce-products-filter
 msgid "By rating"
-msgstr ""
+msgstr "По рейтингу"
 
 #: ext/by_rating/views/options.php:18
 #@ woocommerce-products-filter
@@ -1379,48 +1379,48 @@ msgstr ""
 #: index.php:733
 #@ woocommerce-products-filter
 msgid "orderby"
-msgstr ""
+msgstr "сортировка по"
 
 #: index.php:734
 #@ woocommerce-products-filter
 msgid "date"
-msgstr ""
+msgstr "Новизне"
 
 #: index.php:735
 #@ woocommerce-products-filter
 msgid "per page"
-msgstr ""
+msgstr "за страницу"
 
 #: index.php:736
 #: index.php:810
 #@ woocommerce-products-filter
 msgid "price range"
-msgstr ""
+msgstr "ценовой диапазон"
 
 #: index.php:737
 #@ woocommerce-products-filter
 msgid "menu order"
-msgstr ""
+msgstr "Исходная сортировка"
 
 #: index.php:738
 #@ woocommerce-products-filter
 msgid "popularity"
-msgstr ""
+msgstr "Популярности"
 
 #: index.php:739
 #@ woocommerce-products-filter
 msgid "rating"
-msgstr ""
+msgstr "Рейтингу"
 
 #: index.php:740
 #@ woocommerce-products-filter
 msgid "price low to high"
-msgstr ""
+msgstr "Цена по возрастанию"
 
 #: index.php:741
 #@ woocommerce-products-filter
 msgid "price high to low"
-msgstr ""
+msgstr "Цена по убыванию"
 
 #: index.php:802
 #@ woocommerce-products-filter

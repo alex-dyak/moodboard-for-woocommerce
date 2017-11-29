@@ -35,7 +35,7 @@ add_filter( 'woocommerce_default_catalog_orderby_options', 'custom_woocommerce_c
 add_filter( 'woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby' );
 
 function custom_woocommerce_catalog_orderby( $sortby ) {
-	$sortby['name_list'] = 'По имени';
+	$sortby['По имени'] = 'По имени';
 
 	return $sortby;
 }
@@ -238,4 +238,22 @@ if( function_exists('acf_add_options_page') ) {
 
   acf_add_options_page();
 
+}
+
+add_filter( 'gettext', 'theme_sort_change', 20, 3 );
+function theme_sort_change( $translated_text, $text, $domain ) {
+
+	if ( is_woocommerce() ) {
+
+		switch ( $translated_text ) {
+
+			case 'Sort by newness' :
+
+				$translated_text = __( 'Sort by Newest', 'g5plus-handmade' );
+				break;
+		}
+
+	}
+
+	return $translated_text;
 }
